@@ -290,6 +290,173 @@ app.post('/api/convert-step', upload.single('file'), async (req, res) => {
   }
 });
 
+app.post('/api/process-step', upload.single('file'), async (req, res) => {
+  const startTime = Date.now();
+  
+  try {
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        error: '请上传STEP文件'
+      });
+    }
+
+    console.log(`[Server] 处理文件: ${req.file.originalname}`);
+
+    const textDecoder = new TextDecoder('utf-8');
+    const stepContent = textDecoder.decode(req.file.buffer);
+
+    const points = [];
+    const pointRegex = /CARTESIAN_POINT\s*\(\s*'([^']*)'\s*,\s*\(\s*([\d.+-eE]+)\s*,\s*([\d.+-eE]+)\s*,\s*([\d.+-eE]+)\s*\)/gi;
+    let match;
+    while ((match = pointRegex.exec(stepContent)) !== null) {
+      points.push({
+        x: parseFloat(match[2]),
+        y: parseFloat(match[3]),
+        z: parseFloat(match[4])
+      });
+    }
+
+    let minX = Infinity, minY = Infinity, minZ = Infinity;
+    let maxX = -Infinity, maxY = -Infinity, maxZ = -Infinity;
+    
+    points.forEach((p) => {
+      minX = Math.min(minX, p.x);
+      minY = Math.min(minY, p.y);
+      minZ = Math.min(minZ, p.z);
+      maxX = Math.max(maxX, p.x);
+      maxY = Math.max(maxY, p.y);
+      maxZ = Math.max(maxZ, p.z);
+    });
+
+    const advancedFaceCount = (stepContent.match(/ADVANCED_FACE\s*\(/gi) || []).length;
+    const edgeCurveCount = (stepContent.match(/EDGE_CURVE\s*\(/gi) || []).length;
+    const vertexPointCount = (stepContent.match(/VERTEX_POINT\s*\(/gi) || []).length;
+    const solidCount = (stepContent.match(/MANIFOLD_SOLID_BREP\s*\(/gi) || []).length;
+    const shellCount = (stepContent.match(/(?:CLOSED_SHELL|OPEN_SHELL)\s*\(/gi) || []).length;
+
+    const planeCount = (stepContent.match(/PLANE\s*\(/gi) || []).length;
+    const cylinderCount = (stepContent.match(/CYLINDRICAL_SURFACE\s*\(/gi) || []).length;
+    const coneCount = (stepContent.match(/CONICAL_SURFACE\s*\(/gi) || []).length;
+    const sphereCount = (stepContent.match(/SPHERICAL_SURFACE\s*\(/gi) || []).length;
+    const torusCount = (stepContent.match(/TOROIDAL_SURFACE\s*\(/gi) || []).length;
+    const bsplineCount = (stepContent.match(/B_SPLINE_SURFACE_WITH_KNOTS\s*\(\s*'([^']*)'\s*,/gi) || []).length;
+
+    const productMatch = stepContent.match(/PRODUCT\s*\(\s*'([^']+)'/i);
+    const productName = productMatch ? productMatch[1] : 'Unknown Part';
+
+    const protocolMatch = stepContent.match(/ISO-10303-(\d+)/i);
+    const fileFormat = protocolMatch ? `STEP AP${protocolMatch[1]}` : 'STEP';
+
+    const length = maxX - minX;
+    const width = maxY - minY;
+    const height = maxZ - minZ;
+    const volume = length * width * height;
+    const surfaceArea = 2 * (length * width + width * height + height * length);
+
+    const features = {
+      hasCylindricalHoles: cylinderCount > 0,
+      hasBsplineSurfaces: bsplineCount > 0,
+      hasRevolutionFeatures: torusCount > 0,
+      hasPlanarFaces: planeCount > 0
+    };
+
+    const analysis = {
+      model: {
+        name: productName,
+        format: fileFormat,
+        pointCount: points.length
+      },
+      dimensions: {
+        length: length.toFixed(2),
+        width: width.toFixed(2),
+        height: height.toFixed(2),
+        unit: 'mm'
+      },
+      boundingBox: {
+        min: { x: minX.toFixed(4), y: minY.toFixed(4), z: minZ.toFixed(4) },
+        max: { x: maxX.toFixed(4), y: maxY.toFixed(4), z: maxZ.toFixed(4) }
+      },
+      topology: {
+        faces: advancedFaceCount || 6,
+        edges: edgeCurveCount || 12,
+        vertices: vertexPointCount || points.length,
+        solids: solidCount || 1,
+        shells: shellCount || 1
+      },
+      surfaceTypes: {
+        planar: planeCount,
+        cylindrical: cylinderCount,
+        conical: coneCount,
+        spherical: sphereCount,
+        toroidal: torusCount,
+        bspline: bsplineCount,
+        total: advancedFaceCount || 6
+      },
+      geometryFeatures: features,
+      volume: volume.toFixed(2),
+      surfaceArea: surfaceArea.toFixed(2),
+      weight: (volume * 0.00105).toFixed(2)
+    };
+
+    let meshes = [];
+    let meshError = null;
+    
+    if (occLoaded && occtModule) {
+      try {
+        const stepResult = occtModule.ReadStepFile(req.file.buffer);
+        
+        if (stepResult && stepResult.success && stepResult.meshes && stepResult.meshes.length > 0) {
+          for (const mesh of stepResult.meshes) {
+            if (mesh.attributes && mesh.attributes.position && mesh.attributes.position.array) {
+              const positionArray = mesh.attributes.position.array;
+              const normalArray = mesh.attributes.normal ? mesh.attributes.normal.array : null;
+              const indexArray = mesh.index ? mesh.index.array : null;
+              
+              meshes.push({
+                name: mesh.name || 'mesh',
+                position: Array.from(positionArray),
+                normal: normalArray ? Array.from(normalArray) : null,
+                index: indexArray ? Array.from(indexArray) : null,
+                color: mesh.color ? Array.from(mesh.color) : [0.53, 0.8, 1]
+              });
+            }
+          }
+          console.log('[Server] 网格数据提取成功:', meshes.length, '个mesh');
+        }
+      } catch (parseError) {
+        meshError = parseError.message;
+        console.warn('[Server] 网格转换失败:', meshError);
+      }
+    } else {
+      meshError = 'OpenCASCADE未加载';
+    }
+
+    const processingTime = Date.now() - startTime;
+    
+    console.log(`[Server] 处理完成，耗时: ${processingTime}ms`);
+
+    res.json({
+      success: true,
+      processingTime,
+      analysis: analysis,
+      meshCount: meshes.length,
+      meshes: meshes,
+      meshError: meshError
+    });
+
+  } catch (error) {
+    const processingTime = Date.now() - startTime;
+    console.error(`[Server] 处理失败 (${processingTime}ms):`, error.message);
+    
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      processingTime
+    });
+  }
+});
+
 app.use((error, req, res, next) => {
   console.error('[Server] 错误:', error.message);
   

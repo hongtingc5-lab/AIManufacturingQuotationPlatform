@@ -102,36 +102,53 @@ function STEPModelLoader() {
   }
 
   async function loadSTEPFile(file: File) {
+    const startTime = Date.now();
     console.log('[Viewer] 开始加载STEP文件:', file.name);
     
     try {
-      console.log('[Viewer] 尝试使用后端服务分析...');
-      const analysisResult = await STEPService.analyzeSTEP(file);
+      console.log('[Viewer] 调用合并处理服务...');
       
-      if (!analysisResult.success) {
-        throw new Error(analysisResult.error);
+      const processResult = await STEPService.processSTEP(file);
+      
+      const totalTime = Date.now() - startTime;
+      console.log('[Viewer] 处理完成，耗时:', totalTime, 'ms');
+      
+      if (!processResult.success) {
+        throw new Error(processResult.error);
+      }
+      
+      const analysisResult = processResult.analysis;
+      if (!analysisResult) {
+        throw new Error('分析数据为空');
       }
       
       const volume = parseFloat(analysisResult.volume);
       const surfaceArea = parseFloat(analysisResult.surfaceArea);
       const weight = parseFloat(analysisResult.weight);
       
-      console.log('[Viewer] 尝试使用后端服务转换网格...');
-      const convertResult = await STEPService.convertToGLB(file);
+      console.log('[Viewer] 处理结果:', {
+        meshCount: processResult.meshCount,
+        hasMeshes: !!processResult.meshes,
+        meshError: processResult.meshError
+      });
       
-      if (convertResult.success && convertResult.meshes && convertResult.meshes.length > 0) {
+      if (processResult.meshes && processResult.meshes.length > 0) {
         console.log('[Viewer] 网格数据加载成功，正在渲染...');
+        console.log('[Viewer] Mesh数量:', processResult.meshes.length);
         
         if (groupRef.current) {
           groupRef.current.clear();
           
           let minX = Infinity, minY = Infinity, minZ = Infinity;
           let maxX = -Infinity, maxY = -Infinity, maxZ = -Infinity;
+          let totalVertices = 0;
           
-          for (const meshData of convertResult.meshes) {
+          for (const meshData of processResult.meshes) {
             const { position, normal, index, color } = meshData;
             
             if (!position || position.length === 0) continue;
+            
+            console.log('[Viewer] 处理mesh:', meshData.name, '顶点数:', position.length / 3);
             
             const geometry = new THREE.BufferGeometry();
             geometry.setAttribute('position', new THREE.Float32BufferAttribute(position, 3));
@@ -158,31 +175,36 @@ function STEPModelLoader() {
             const mesh = new THREE.Mesh(geometry, material);
             groupRef.current.add(mesh);
             
-            const positions = geometry.attributes.position.array;
-            for (let i = 0; i < positions.length; i += 3) {
-              minX = Math.min(minX, positions[i]);
-              minY = Math.min(minY, positions[i + 1]);
-              minZ = Math.min(minZ, positions[i + 2]);
-              maxX = Math.max(maxX, positions[i]);
-              maxY = Math.max(maxY, positions[i + 1]);
-              maxZ = Math.max(maxZ, positions[i + 2]);
+            totalVertices += position.length / 3;
+            
+            for (let i = 0; i < position.length; i += 3) {
+              minX = Math.min(minX, position[i]);
+              minY = Math.min(minY, position[i + 1]);
+              minZ = Math.min(minZ, position[i + 2]);
+              maxX = Math.max(maxX, position[i]);
+              maxY = Math.max(maxY, position[i + 1]);
+              maxZ = Math.max(maxZ, position[i + 2]);
             }
           }
           
-          const center = new THREE.Vector3(
-            (minX + maxX) / 2,
-            (minY + maxY) / 2,
-            (minZ + maxZ) / 2
-          );
+          console.log('[Viewer] 总顶点数:', totalVertices);
+          console.log('[Viewer] 原始坐标范围:', { minX, minY, minZ, maxX, maxY, maxZ });
           
-          groupRef.current.position.sub(center);
+          const centerX = (minX + maxX) / 2;
+          const centerZ = (minZ + maxZ) / 2;
+          const sizeY = maxY - minY;
+          
+          groupRef.current.position.set(-centerX, -minY, -centerZ);
+          
+          console.log('[Viewer] 最终位置:', { x: -centerX, y: -minY, z: -centerZ });
+          console.log('[Viewer] 模型尺寸:', { width: maxX - minX, height: sizeY, depth: maxZ - minZ });
           
           const boundingBox = {
-            min: { x: minX - center.x, y: minY - center.y, z: minZ - center.z },
-            max: { x: maxX - center.x, y: maxY - center.y, z: maxZ - center.z },
+            min: { x: minX - centerX, y: 0, z: minZ - centerZ },
+            max: { x: maxX - centerX, y: sizeY, z: maxZ - centerZ },
           };
           
-          const boundingVolume = (maxX - minX) * (maxY - minY) * (maxZ - minZ);
+          const boundingVolume = (maxX - minX) * sizeY * (maxZ - minZ);
           
           setModelGeometry({
             volume: boundingVolume,
@@ -211,7 +233,7 @@ function STEPModelLoader() {
           console.log('[Viewer] STEP模型渲染成功');
         }
       } else {
-        console.warn('[Viewer] 网格转换失败，使用分析数据显示包围盒:', convertResult.error);
+        console.warn('[Viewer] 网格转换失败，使用分析数据显示包围盒:', processResult.meshError);
         fallbackToBoxWithInfo(analysisResult);
       }
     } catch (error) {
@@ -309,12 +331,6 @@ function STEPModelLoader() {
     setViewerReady(true);
   }
 
-  useFrame((state, delta) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.05;
-    }
-  });
-
   return <group ref={groupRef} />;
 }
 
@@ -322,8 +338,8 @@ function CameraController() {
   const { camera } = useThree();
 
   useEffect(() => {
-    camera.position.set(150, 100, 150);
-    camera.lookAt(0, 0, 0);
+    camera.position.set(600, 500, 600);
+    camera.lookAt(0, 200, 0);
   }, [camera]);
 
   return null;
@@ -336,7 +352,7 @@ export default function Viewer() {
     <div className="viewer-container w-full h-full rounded-lg overflow-hidden relative">
       <Canvas shadows>
         <Suspense fallback={null}>
-          <PerspectiveCamera makeDefault position={[150, 100, 150]} fov={50} />
+          <PerspectiveCamera makeDefault position={[300, 250, 300]} fov={50} />
           <CameraController />
 
           <ambientLight intensity={0.4} />
@@ -380,7 +396,10 @@ export default function Viewer() {
             minDistance={50}
             maxDistance={500}
             maxPolarAngle={Math.PI / 2}
-            target={[0, 0, 0]}
+            target={[0, 40, 0]}
+            autoRotate={false}
+            enableDamping={true}
+            dampingFactor={0.05}
           />
         </Suspense>
       </Canvas>

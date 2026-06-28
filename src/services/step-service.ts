@@ -70,6 +70,16 @@ export interface STEPConvertResult {
   error?: string;
 }
 
+export interface STEPProcessResult {
+  success: boolean;
+  processingTime?: number;
+  analysis?: STEPAnalysisResult;
+  meshCount?: number;
+  meshes?: STEPMesh[];
+  meshError?: string;
+  error?: string;
+}
+
 export class STEPService {
   /**
    * 检查服务端状态
@@ -165,6 +175,43 @@ export class STEPService {
       return {
         success: false,
         error: error.response?.data?.error || error.message || 'STEP转换失败',
+      };
+    }
+  }
+
+  /**
+   * 一次性处理STEP文件（分析+转换）
+   */
+  static async processSTEP(file: File): Promise<STEPProcessResult> {
+    try {
+      console.log('[STEP Service] 开始处理文件:', file.name);
+      
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await apiClient.post<STEPProcessResult>(
+        '/api/process-step',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+          timeout: 180000,
+        }
+      );
+
+      console.log('[STEP Service] 处理完成:', {
+        processingTime: response.data.processingTime,
+        meshCount: response.data.meshCount,
+        hasAnalysis: !!response.data.analysis
+      });
+
+      return response.data;
+    } catch (error: any) {
+      console.error('[STEP Service] 处理失败:', error);
+      return {
+        success: false,
+        error: error.response?.data?.error || error.message || 'STEP处理失败',
       };
     }
   }
