@@ -1,0 +1,642 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Quoting Analysis - Industrial AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffdbcd",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "tertiary": "#943700",
+                      "primary-container": "#2563eb",
+                      "on-surface": "#191b23",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#ededf9",
+                      "on-surface-variant": "#434655",
+                      "surface-tint": "#0053db",
+                      "surface-container-low": "#f3f3fe",
+                      "on-tertiary-fixed": "#360f00",
+                      "surface": "#faf8ff",
+                      "surface-dim": "#d9d9e5",
+                      "surface-container-high": "#e7e7f3",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-bright": "#faf8ff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#dae2fd",
+                      "secondary": "#565e74",
+                      "surface-container-highest": "#e1e2ed",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#eeefff",
+                      "on-background": "#191b23",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary": "#ffffff",
+                      "primary": "#004ac6",
+                      "tertiary-container": "#bc4800",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "background": "#faf8ff",
+                      "inverse-surface": "#2e3039",
+                      "surface-variant": "#e1e2ed",
+                      "on-tertiary-container": "#ffede6",
+                      "outline": "#737686",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-secondary-container": "#5c647a",
+                      "on-secondary-fixed": "#131b2e",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "secondary-container": "#dae2fd",
+                      "outline-variant": "#c3c6d7",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#f0f0fb",
+                      "on-primary-fixed": "#00174b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container_max": "1440px",
+                      "unit": "4px",
+                      "sidebar_width": "260px",
+                      "margin_mobile": "16px",
+                      "padding_card": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "mono-data": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "title-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body { background-color: #F8FAFC; }
+        .shadow-level-1 { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); }
+        .shadow-level-2 { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        /* Simple chart bar styles */
+        .chart-bar-blue { background-color: #2563EB; }
+        .chart-bar-gray { background-color: #94A3B8; }
+    </style>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="flex h-screen overflow-hidden bg-surface-bright text-on-surface font-body-md text-body-md antialiased">
+<!-- SideNavBar -->
+<nav class="docked h-full w-72 left-0 top-0 flex flex-col h-screen py-md overflow-y-auto bg-surface-dim dark:bg-inverse-surface border-r border-outline-variant dark:border-outline hidden md:flex shrink-0">
+<div class="px-lg py-md flex items-center gap-sm mb-6 mt-4 px-6">
+<img alt="Industrial AI Logo" class="w-8 h-8 rounded" data-alt="Industrial AI Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlELFe2FAcOBczQoqRzgMg8es_Sz2BzrX5LIpZwqbdeASpWsrV0zTQ12ytoY06UjIje6M73Fi2g4WgpnWXSJCGC8FEPfpaoOBkzecMaqVBZp19orq1REISMSBnMgPH-WOPX4u23v93SWedbGaH0shQY-sybqVBBTYz8hHLcCYW2pQSKftE3V7S5T78TwzEyofL6KTZvMwbu2GBnQhbAB-mtAlAH0OXudfy43nZoKLhEUe69b4Eg3Vk049QE-C0NrRVRUgRDhdDmMg"/>
+<div>
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-primary-fixed">Industrial AI</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Management Platform</p>
+</div>
+</div>
+<ul class="flex-1 px-4 space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="后台首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="用户管理后台.html">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">User Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="客户管理页面.html">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-label-md text-label-md">Customer Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="供应商管理.html">
+<span class="material-symbols-outlined">factory</span>
+<span class="font-label-md text-label-md">Supplier Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="供应管理.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Supply Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="RFQ管理.html">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="font-label-md text-label-md">RFQ Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="ai管理页面.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">AI Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="知识库管理页面.html">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label-md text-label-md">Knowledge Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="MES监管.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md">MES Supervision</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="客服中心.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-label-md text-label-md">Service Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="营销页面管理.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-md text-label-md">Marketing Pages</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="平台权限中心.html">
+<span class="material-symbols-outlined">vpn_key</span>
+<span class="font-label-md text-label-md">Platform Permissions</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="财务管理页面.html">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Financial Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container rounded-lg mx-2 transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="数据分析页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-md text-label-md">Data Analysis</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="系统设置.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">System Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Workspace -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden bg-background relative">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full pl-6 pr-10 py-sm h-16 bg-surface-bright dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container dark:bg-inverse-surface rounded-full px-4 py-2 focus-within:ring-2 focus-within:ring-primary transition-colors duration-200 ease-in-out w-full max-w-md">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant w-full" placeholder="Search analytics, reports, or trends..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-inverse-surface rounded-full transition-colors duration-200 ease-in-out relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface-bright"></span>
+</button>
+<button class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-inverse-surface rounded-full transition-colors duration-200 ease-in-out">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant dark:bg-outline mx-1"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="font-body-md text-body-md text-on-surface">Platform Administrator</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Admin</div>
+</div>
+<img alt="Administrator Headshot" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="Administrator Headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSuRSeCI0SHShf3MLuQ9CVRQe2ZsHfy6Wgt6cNtFTimaTsOwhvnLA8nF0cY6lt-bqmwlxUSk8xFTCpcAYiLsu8wUA9ZHY2SieoJERksz_ErW34_el9Y8PF5jK6KYgoEb4DG8ERMtmnGGMp2OR-lt8I3BKpyCmkMZOT92UmE4nR9I_m9ylkoji7Q-l_y-iJJC31yB2gxrGqOclBVkIJpYgjrKN3odRw-c-D7kBmqMGgwh8NZHRO7-fuNda55pmhzwn0GnHT_TN-niU"/>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<main class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-1">AI Quoting Analysis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Evaluate AI pricing model accuracy and operational impact against manual engineering review.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline text-on-surface rounded font-label-sm text-label-sm flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-level-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export Data
+                    </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded font-label-sm text-label-sm font-bold hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors shadow-level-1">
+                        Generate Report
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- KPI Cards (Top Row) -->
+<div class="col-span-12 grid grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest rounded-lg p-5 border border-outline-variant shadow-level-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total RFQs Processed</span>
+<span class="material-symbols-outlined text-primary text-[20px]">request_quote</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">14,285</div>
+<div class="flex items-center gap-1 text-emerald-600 font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>12.5% vs last month</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-5 border border-outline-variant shadow-level-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">AI Auto-Quote Rate</span>
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">68.2%</div>
+<div class="flex items-center gap-1 text-emerald-600 font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>4.1% vs last month</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-5 border border-outline-variant shadow-level-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg Variance (AI vs Manual)</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">difference</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">±3.4%</div>
+<div class="flex items-center gap-1 text-emerald-600 font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+<span>0.8% improvement</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-5 border border-outline-variant shadow-level-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Time Saved (Est.)</span>
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">3,420h</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span>This quarter</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Chart: Accuracy Trend -->
+<div class="col-span-8 bg-surface-container-lowest rounded-lg border border-outline-variant shadow-level-1 p-5 h-96 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-title-sm text-title-sm text-on-surface">Accuracy Trend: AI vs Manual Review</h3>
+<div class="flex gap-2 bg-surface-container-low rounded p-1">
+<button class="px-3 py-1 bg-surface-container-lowest shadow-sm rounded text-label-sm font-label-sm text-on-surface">Daily</button>
+<button class="px-3 py-1 rounded text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-high transition-colors">Weekly</button>
+<button class="px-3 py-1 rounded text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-high transition-colors">Monthly</button>
+</div>
+</div>
+<!-- Simulated Line Chart via CSS grid/flex -->
+<div class="flex-1 relative border-l border-b border-outline-variant flex items-end pt-4 pr-2">
+<!-- Y Axis labels -->
+<div class="absolute -left-8 top-0 bottom-0 flex flex-col justify-between text-[10px] text-on-surface-variant font-mono-data py-2">
+<span>100%</span>
+<span>95%</span>
+<span>90%</span>
+<span>85%</span>
+<span>80%</span>
+</div>
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between py-2 z-0 pointer-events-none">
+<div class="w-full h-px bg-outline-variant/30"></div>
+<div class="w-full h-px bg-outline-variant/30"></div>
+<div class="w-full h-px bg-outline-variant/30"></div>
+<div class="w-full h-px bg-outline-variant/30"></div>
+<div class="w-full h-px bg-outline-variant/30"></div>
+</div>
+<!-- Data Points & Lines (Visual representation) -->
+<div class="w-full h-full flex justify-between items-end relative z-10 px-4">
+<!-- Mon -->
+<div class="h-[75%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[80%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Mon</span>
+</div>
+<!-- Tue -->
+<div class="h-[78%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[85%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Tue</span>
+</div>
+<!-- Wed -->
+<div class="h-[72%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[88%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Wed</span>
+</div>
+<!-- Thu -->
+<div class="h-[80%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[82%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Thu</span>
+</div>
+<!-- Fri -->
+<div class="h-[85%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[92%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Fri</span>
+</div>
+<!-- Sat -->
+<div class="h-[90%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[95%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Sat</span>
+</div>
+<!-- Sun -->
+<div class="h-[88%] w-2 chart-bar-gray rounded-t relative group">
+<div class="absolute bottom-0 w-2 h-[94%] chart-bar-blue rounded-t opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono-data text-on-surface-variant">Sun</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-8 mb-2">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-[#94A3B8]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Manual Accuracy Base</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-[#2563EB]"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AI Model v4.2 Accuracy</span>
+</div>
+</div>
+</div>
+<!-- Side Info: Model Benchmarks -->
+<div class="col-span-4 flex flex-col gap-6 h-96">
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-level-1 p-5 flex-1 flex flex-col overflow-hidden">
+<h3 class="font-title-sm text-title-sm text-on-surface mb-4">Model Performance Benchmarks</h3>
+<div class="flex-1 overflow-y-auto pr-2 space-y-4">
+<!-- Model 1 -->
+<div class="p-3 border border-primary/20 bg-primary-fixed/10 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 px-2 py-1 bg-primary text-on-primary text-[10px] font-bold rounded-bl-lg">ACTIVE</div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">GPT-4-Turbo (Fine-tuned)</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Speed/Quote</div>
+<div class="font-mono-data text-mono-data text-on-surface font-semibold">1.2s</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Error Rate</div>
+<div class="font-mono-data text-mono-data text-on-surface font-semibold text-emerald-600">3.4%</div>
+</div>
+</div>
+</div>
+<!-- Model 2 -->
+<div class="p-3 border border-outline-variant rounded-lg opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Claude 3.5 Sonnet (Base)</span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded text-[10px]">Testing</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Speed/Quote</div>
+<div class="font-mono-data text-mono-data text-on-surface font-semibold">0.9s</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Error Rate</div>
+<div class="font-mono-data text-mono-data text-on-surface font-semibold">4.8%</div>
+</div>
+</div>
+</div>
+<!-- Model 3 -->
+<div class="p-3 border border-outline-variant rounded-lg opacity-60">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Legacy Rules Engine</span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded text-[10px]">Deprecated</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Speed/Quote</div>
+<div class="font-mono-data text-mono-data text-on-surface font-semibold">0.1s</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Error Rate</div>
+<div class="font-mono-data text-mono-data text-on-surface font-semibold text-error">12.5%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table: Heatmap / Detailed Analysis -->
+<div class="col-span-12 bg-surface-container-lowest rounded-lg border border-outline-variant shadow-level-1 overflow-hidden flex flex-col">
+<div class="p-5 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h3 class="font-title-sm text-title-sm text-on-surface">RFQ Complexity Analysis</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">filter_list</span>
+<select class="pl-8 pr-8 py-1.5 bg-surface border border-outline-variant rounded font-label-sm text-label-sm focus:border-primary focus:ring-1 focus:ring-primary appearance-none text-on-surface">
+<option>High Complexity</option>
+<option>Medium Complexity</option>
+<option>Low Complexity</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase w-12 text-center">ID</th>
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Part Category</th>
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Material</th>
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">AI Est. Price</th>
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Engineer Final</th>
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Variance</th>
+<th class="p-3 font-label-sm text-label-sm font-bold text-on-surface-variant uppercase text-center">Status</th>
+</tr>
+</thead>
+<tbody class="font-mono-data text-mono-data">
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors h-12">
+<td class="p-3 text-on-surface-variant text-center">#892</td>
+<td class="p-3 text-on-surface">CNC Milled Enclosure</td>
+<td class="p-3 text-on-surface-variant">Alum 6061-T6</td>
+<td class="p-3 text-on-surface font-semibold">$1,245.00</td>
+<td class="p-3 text-on-surface font-semibold">$1,250.00</td>
+<td class="p-3 text-emerald-600">-0.4%</td>
+<td class="p-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">ACCEPTED</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors h-12">
+<td class="p-3 text-on-surface-variant text-center">#893</td>
+<td class="p-3 text-on-surface">Complex Sheet Metal Bracket</td>
+<td class="p-3 text-on-surface-variant">SS 304</td>
+<td class="p-3 text-on-surface font-semibold">$412.50</td>
+<td class="p-3 text-on-surface font-semibold">$455.00</td>
+<td class="p-3 text-error">-9.3%</td>
+<td class="p-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">REVISED</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors h-12">
+<td class="p-3 text-on-surface-variant text-center">#894</td>
+<td class="p-3 text-on-surface">Injection Mold Core</td>
+<td class="p-3 text-on-surface-variant">Tool Steel P20</td>
+<td class="p-3 text-on-surface font-semibold">$8,950.00</td>
+<td class="p-3 text-on-surface font-semibold">$8,800.00</td>
+<td class="p-3 text-amber-600">+1.7%</td>
+<td class="p-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">ACCEPTED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors h-12">
+<td class="p-3 text-on-surface-variant text-center">#895</td>
+<td class="p-3 text-on-surface">Turned Shaft Assembly</td>
+<td class="p-3 text-on-surface-variant">Titanium Gr 5</td>
+<td class="p-3 text-on-surface font-semibold">$3,120.00</td>
+<td class="p-3 text-on-surface-variant italic">Pending</td>
+<td class="p-3 text-on-surface-variant">--</td>
+<td class="p-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-surface-variant text-on-surface-variant">REVIEW</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
+
+
+
+
+
+

@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Training Center | ForgeAI Industrial Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e1e2ed",
+                    "primary-fixed": "#dbe1ff",
+                    "tertiary-container": "#bc4800",
+                    "secondary-container": "#dae2fd",
+                    "on-surface": "#191b23",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "surface-dim": "#d9d9e5",
+                    "secondary-fixed": "#dae2fd",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-background": "#191b23",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary-container": "#ffede6",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#faf8ff",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f3f3fe",
+                    "on-primary-container": "#eeefff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed": "#ffdbcd",
+                    "outline-variant": "#c3c6d7",
+                    "surface-bright": "#faf8ff",
+                    "inverse-surface": "#2e3039",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "outline": "#737686",
+                    "surface-variant": "#e1e2ed",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#0053db",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#5c647a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-container-high": "#e7e7f3",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2563eb",
+                    "surface-container": "#ededf9",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#943700",
+                    "secondary": "#565e74",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface": "#faf8ff",
+                    "primary": "#004ac6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "margin": "24px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .nav-transition { transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-240px)] h-16 z-30 bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center px-6">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-[14px] leading-[20px] outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="Search courses, documents, or technical standards..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2">
+<span class="text-[14px] leading-[20px] font-semibold text-primary">AI Machining Intelligent Cloud Platform</span>
+<span class="text-outline-variant">|</span>
+<span class="text-[14px] leading-[20px] text-on-surface-variant">Supplier Portal</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">settings</span>
+</button>
+<img alt="Zhang Wei, Senior Supplier Administrator" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Zhang Wei, Senior Supplier Administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGKvp7N7Yrahgq-j5XqPUK9Dbe0Lci6SbypGnSwsVydP2pgGPXCnaDYwuQF8oHg3Zoq6a6EShZweODuBtHoccLZqto7zFYBk7kNVeKfLV0TiqRbXxm1lkWP9Lr0LYc1ykDPWuoWfF68d6vZRxGfglxoBHQ9RRrbgD8umZ3Bh_hzoHFn5ZQ6FuaD4fAAJ8xf09ZoNHH1d4sz5s8DMrfOnBhtjDsuShoz5mSD2l77Kt0RZSY-BhwKscm4nGF8JOXg_p54__73Ib-Qk">
+</div>
+</header>
+<!-- SideNavBar (Collapsible) -->
+<aside class="fixed left-0 top-0 h-full w-[240px] z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+<div class="mb-8 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[22px]" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;">precision_manufacturing</span>
+</div>
+<div>
+<h1 class="text-[20px] leading-[24px] font-bold text-primary tracking-tight">ForgeAI</h1>
+<p class="text-[12px] leading-[16px] text-on-surface-variant opacity-70">Supplier Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="首页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">dashboard</span>
+<span class="text-[14px] leading-[20px] font-medium">Operations Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="企业入驻.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">business_center</span>
+<span class="text-[14px] leading-[20px] font-medium">Enterprise Onboarding</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="RFQ竞价中心.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">request_quote</span>
+<span class="text-[14px] leading-[20px] font-medium">RFQ Bidding Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="平台订单页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">shopping_cart</span>
+<span class="text-[14px] leading-[20px] font-medium">Platform Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="业务订单CRM页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">receipt_long</span>
+<span class="text-[14px] leading-[20px] font-medium">Business Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="企业中心页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">domain</span>
+<span class="text-[14px] leading-[20px] font-medium">Enterprise Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary font-semibold rounded-lg shadow-sm transition-colors" href="培训中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;">school</span>
+<span class="text-[14px] leading-[20px] font-medium">Training Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="考核中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">assignment_turned_in</span>
+<span class="text-[14px] leading-[20px] font-medium">Assessment Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="消息中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">mail</span>
+<span class="text-[14px] leading-[20px] font-medium">Message Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="帮助中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">help</span>
+<span class="text-[14px] leading-[20px] font-medium">Help Center</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3 px-2">
+<img alt="Zhang Wei, Senior Supplier Administrator" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Zhang Wei, Senior Supplier Administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGKvp7N7Yrahgq-j5XqPUK9Dbe0Lci6SbypGnSwsVydP2pgGPXCnaDYwuQF8oHg3Zoq6a6EShZweODuBtHoccLZqto7zFYBk7kNVeKfLV0TiqRbXxm1lkWP9Lr0LYc1ykDPWuoWfF68d6vZRxGfglxoBHQ9RRrbgD8umZ3Bh_hzoHFn5ZQ6FuaD4fAAJ8xf09ZoNHH1d4sz5s8DMrfOnBhtjDsuShoz5mSD2l77Kt0RZSY-BhwKscm4nGF8JOXg_p54__73Ib-Qk">
+<div class="overflow-hidden">
+<p class="text-[14px] leading-[20px] font-semibold text-on-surface truncate">Zhang Wei</p>
+<p class="text-[11px] leading-[16px] text-on-surface-variant truncate">Senior Supplier Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-[240px] pt-16 min-h-screen bg-background">
+<div class="max-w-[1440px] mx-auto p-lg lg:p-xl space-y-xl">
+<!-- Page Header & Tabs -->
+<section class="space-y-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Training Center</h2>
+<p class="text-on-surface-variant font-body-lg">Enhance your manufacturing capabilities and master the latest industry standards and process specifications</p>
+</div>
+<div class="flex items-center gap-sm bg-surface-container rounded-xl p-1 shadow-sm">
+<button class="px-md py-2 bg-surface rounded-lg text-primary font-label-md shadow-sm border border-outline-variant/30 transition-all">My Learning</button>
+<button class="px-md py-2 text-on-surface-variant hover:text-on-surface font-label-md transition-all">Platform Open Courses</button>
+</div>
+</div>
+<div class="flex items-center gap-md overflow-x-auto pb-2 border-b border-outline-variant no-scrollbar">
+<button class="px-md pb-4 border-b-2 border-primary text-primary font-label-md whitespace-nowrap">Onboarding Training</button>
+<button class="px-md pb-4 text-on-surface-variant hover:text-primary font-label-md whitespace-nowrap">Platform Rules</button>
+<button class="px-md pb-4 text-on-surface-variant hover:text-primary font-label-md whitespace-nowrap">Process Standards</button>
+<button class="px-md pb-4 text-on-surface-variant hover:text-primary font-label-md whitespace-nowrap">Video Courses</button>
+<button class="px-md pb-4 text-on-surface-variant hover:text-primary font-label-md whitespace-nowrap">Documents</button>
+<button class="px-md pb-4 text-on-surface-variant hover:text-primary font-label-md whitespace-nowrap">Online Exams</button>
+</div>
+</section>
+<!-- Featured Course Banner -->
+<section class="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-lg group">
+<div class="absolute inset-0 bg-gradient-to-r from-on-primary-fixed to-transparent z-10 opacity-80"></div>
+<div class="absolute inset-0 z-0 bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDy44cPd3NBPPiZ87kl4n-UsktZBeOw81no0UMI6pCebjiZKfbPgX4KOyjA-kI-o0Hz7S0foaKyGcDTzTHsWVsd3IqUrYiZZQz5Q7GBlRj7tZaDMo7xjM7nGv0InCqljWapiI7xiWAEYLx3BNIUoDOb5ttlxKEbpFPBUcyKXB7srEL05f18-OeC6hbH_zfuGmHiV-ayEK5rciFk8cx5mQqouoHHOnx4dwApR9CiQoYKGAiX20DZm6auWrte5c7yU2SX5rKud7qJ1AU");'></div>
+<div class="absolute inset-0 z-20 flex flex-col justify-center px-lg md:px-xl space-y-md">
+<span class="inline-block px-3 py-1 bg-primary text-white font-label-sm rounded-full w-fit">Popular Courses</span>
+<h3 class="font-headline-lg text-white max-w-2xl leading-tight">2024 Platform Quality Compliance: Advanced Manufacturing Standards Course</h3>
+<p class="text-primary-fixed max-w-xl font-body-lg">Master lean production quality control and digital compliance auditing under Industry 4.0.</p>
+<div class="flex items-center gap-md pt-4">
+<button class="px-xl py-3 bg-white text-primary font-label-md rounded-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+                            Start Learning Now <span class="material-symbols-outlined">play_circle</span>
+</button>
+<span class="text-white/80 font-label-sm">Estimated time: 12 hours | 1,240 learners</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Course Library (Left 8 columns) -->
+<div class="lg:col-span-8 space-y-lg">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_library</span>
+                            Course Library
+                        </h4>
+<a class="text-primary font-label-md flex items-center hover:underline" href="#">View More <span class="material-symbols-outlined text-sm ml-1">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Course Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all overflow-hidden group">
+<div class="relative h-40 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcW-HO-WKd_ZrjwvkSd8FdvlDWBbILZ0lshT1DEqDcqywgSIZLLt-ioJiHJ-jmQtkXKj_CHgbz8iQcwrZaV62X87VbO6t0ybGfu7Q-cJd22JUbpLKRiRj__3zO8S68nJkJ26OUA30ArayX2i4n5zvoKqHEKmYW0JMjH7EREj9Acczhysyr4wu7yDrU_k8z0_p9U41fhWqjz8DkyzzdEcSxwmwXVy7LpjolfPRa3eMqkQEkNxunqwTVJlWyXcryk1r3UUZLMSPaeN0"/>
+<div class="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md uppercase font-bold tracking-widest">Advanced</div>
+</div>
+<div class="p-md space-y-md">
+<h5 class="font-headline-sm text-base text-on-surface line-clamp-1">Industrial 5-Axis CNC Machining: Precision Process Optimization</h5>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 4.5 hours</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span> Difficulty: Intermediate</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[11px] font-bold text-on-surface-variant">
+<span class="">Current Progress</span>
+<span class="">65%</span>
+</div>
+<div class="w-full h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all overflow-hidden group">
+<div class="relative h-40 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqjxH_YLmscFSF7uvubo5rj82hZuetp3FdOD1Vi978paVs7Oid1k5j5rQPikuwMS8qytJyrBIXeP2P-R1lMFsYCMYzjoQs5yC2Xu4nhqdf4zKr4JynqEDeKBCrHabWFPCbRZzo6pQNEC_4Oyu3ygPozVVlKJJ51BgqZ3lAveHHqjOz-ltexBzMz4BHWRqqONXNywa1RSg7cZUvyOM1X-wCu-fkgHAxNURC9Q4mxfvIHUyxjXn0FprIUNEPQu9iBhYg9gSYnxppUj8"/>
+<div class="absolute top-2 right-2 bg-primary text-white text-[10px] px-2 py-1 rounded-md uppercase font-bold tracking-widest">Required</div>
+</div>
+<div class="p-md space-y-md">
+<h5 class="font-headline-sm text-base text-on-surface line-clamp-1">Quality Lab: Precision Measurement and Data Analysis</h5>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 2.0 hours</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span> Difficulty: Beginner</span>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-[11px] font-bold text-on-surface-variant">
+<span class="">Current Progress</span>
+<span class="">12%</span>
+</div>
+<div class="w-full h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar (4 columns) -->
+<div class="lg:col-span-4 space-y-xl">
+<!-- Upcoming Exams -->
+<div class="bg-surface border border-outline-variant rounded-xl p-md space-y-md shadow-sm">
+<h4 class="font-label-md text-on-surface-variant font-bold uppercase tracking-wider flex items-center justify-between">
+                            Pending Exams
+                            <span class="bg-error/10 text-error px-2 py-0.5 rounded-full text-[10px]">2 pending</span>
+</h4>
+<div class="space-y-sm">
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant/30 flex items-center gap-md">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-on-surface font-semibold">Process Capability Index (Cpk) Test</p>
+<p class="text-[11px] text-error font-medium flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[12px]">timer</span> Remaining time: 2 days
+                                    </p>
+</div>
+<button class="px-3 py-1.5 bg-primary text-white text-[12px] font-bold rounded hover:opacity-90 transition-opacity">Start</button>
+</div>
+<div class="p-md bg-surface-container rounded-lg border border-outline-variant/30 flex items-center gap-md opacity-75">
+<div class="p-2 bg-secondary-container rounded-lg text-secondary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-on-surface font-semibold">Monthly Safety Production Assessment</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Deadline: 2024-06-30</p>
+</div>
+<button class="px-3 py-1.5 border border-outline text-[12px] font-bold rounded hover:bg-surface transition-colors">Locked</button>
+</div>
+</div>
+</div>
+<!-- Recent Certificates -->
+<div class="bg-surface border border-outline-variant rounded-xl p-md space-y-md shadow-sm">
+<h4 class="font-label-md text-on-surface-variant font-bold uppercase tracking-wider flex items-center justify-between">
+                            Certificates Earned
+                            <span class="material-symbols-outlined text-primary-fixed-dim">verified</span>
+</h4>
+<div class="grid grid-cols-1 gap-sm">
+<div class="group flex items-center gap-md p-md bg-surface-container-low border border-primary/20 rounded-lg cursor-pointer hover:border-primary transition-colors">
+<div class="relative w-12 h-16 bg-white border border-outline-variant rounded flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+<div class="absolute bottom-1 right-1 bg-primary w-2 h-2 rounded-full border border-white"></div>
+</div>
+<div>
+<p class="font-label-md text-on-surface font-semibold">ISO 9001 Compliance Certification</p>
+<p class="text-[11px] text-on-surface-variant">Issued: 2024-03-12</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] px-1.5 py-0.5 bg-green-100 text-green-700 rounded border border-green-200">Active</span>
+<span class="text-[10px] text-primary hover:underline font-bold">View Details</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-low border border-outline-variant/30 rounded-lg">
+<div class="w-12 h-16 bg-white border border-outline-variant rounded flex items-center justify-center shadow-sm grayscale">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">military_tech</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface font-semibold">Lean Supply Chain Management Certificate</p>
+<p class="text-[11px] text-on-surface-variant">Issued: 2023-11-20</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] px-1.5 py-0.5 bg-surface-container text-on-surface-variant rounded border border-outline-variant">Expired</span>
+<span class="text-[10px] text-primary hover:underline font-bold">Recertify</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 border-2 border-dashed border-outline-variant text-on-surface-variant font-label-md rounded-lg hover:bg-surface-container-low transition-colors">
+                            Apply for New Certification
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarTexts = document.querySelectorAll('.sidebar-text');
+    const mainContent = document.querySelector('main');
+    let isExpanded = false;
+
+    function applyExpandedState() {
+        sidebar.classList.remove('w-20');
+        sidebar.classList.add('w-64', 'shadow-2xl');
+        sidebarTexts.forEach(text => {
+            text.classList.remove('opacity-0', 'invisible');
+            text.classList.add('opacity-100', 'visible');
+        });
+    }
+
+    function applyCollapsedState() {
+        sidebar.classList.remove('w-64', 'shadow-2xl');
+        sidebar.classList.add('w-20');
+        sidebarTexts.forEach(text => {
+            text.classList.add('opacity-0', 'invisible');
+            text.classList.remove('opacity-100', 'visible');
+        });
+    }
+
+    sidebarToggle.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        if (isExpanded) {
+            applyExpandedState();
+        } else {
+            applyCollapsedState();
+        }
+    });
+
+    sidebar.addEventListener('mouseenter', () => {
+        if (!isExpanded) {
+            applyExpandedState();
+        }
+    });
+
+    sidebar.addEventListener('mouseleave', () => {
+        if (!isExpanded) {
+            applyCollapsedState();
+        }
+    });
+
+    // Initialize progress bar animations
+    document.querySelectorAll('.bg-primary').forEach(bar => {
+        const width = bar.style.width;
+        if (width) {
+            bar.style.width = '0';
+            setTimeout(() => {
+                bar.style.transition = 'width 1s ease-out';
+                bar.style.width = width;
+            }, 300);
+        }
+    });
+</script>
+</body></html>
+

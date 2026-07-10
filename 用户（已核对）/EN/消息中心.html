@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Industrial AI - Message Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e7e7f3",
+                    "tertiary": "#943700",
+                    "on-primary-fixed": "#00174b",
+                    "surface-container-highest": "#e1e2ed",
+                    "primary": "#004ac6",
+                    "on-secondary-fixed": "#131b2e",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface-variant": "#e1e2ed",
+                    "surface-container": "#ededf9",
+                    "primary-container": "#2563eb",
+                    "on-surface-variant": "#434655",
+                    "surface-bright": "#faf8ff",
+                    "secondary-container": "#dae2fd",
+                    "inverse-on-surface": "#f0f0fb",
+                    "secondary": "#565e74",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-container-low": "#f3f3fe",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "outline-variant": "#c3c6d7",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-tertiary-container": "#ffede6",
+                    "secondary-fixed": "#dae2fd",
+                    "tertiary-container": "#bc4800",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "primary-fixed": "#dbe1ff",
+                    "inverse-primary": "#b4c5ff",
+                    "inverse-surface": "#2e3039",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#191b23",
+                    "on-primary-container": "#eeefff",
+                    "outline": "#737686",
+                    "surface": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#5c647a",
+                    "background": "#faf8ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-surface": "#191b23",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d9d9e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "margin": "24px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .message-stream::-webkit-scrollbar { width: 6px; }
+        .message-stream::-webkit-scrollbar-track { background: transparent; }
+        .message-stream::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        
+        .active-category {
+            background-color: #dae2fd;
+            border-left: 4px solid #004ac6;
+        }
+    </style>
+<link data-customer-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-customer-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-customer-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-customer-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-customer-shell-boot>
+document.documentElement.classList.add("customer-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("customer-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-customer-shell-boot>
+html.customer-shell-loading {
+  background: #f8fafc;
+}
+html.customer-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 ml-64 w-[calc(100%-16rem)] bg-surface-container-lowest shadow-sm border-b border-outline-variant h-16 flex items-center px-6">
+ <div class="flex-1 flex items-center justify-between gap-4">
+    <div class="relative w-full max-w-md">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <input type="text" placeholder="Search for messages, orders, or models..." class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary transition-all">
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+<a href="ai模型智能报价.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Start AI Quote</span>
+</a>
+<a href="报价模型上传页.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span>Start Professional Quote</span>
+</a>
+      <button class="relative p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <div class="h-8 w-px bg-outline-variant mx-1"></div>
+      <div class="flex items-center gap-3">
+        <div class="text-right hidden sm:block">
+          <p class="text-label-md font-label-md font-bold text-on-surface">Zhang Wei</p>
+          <p class="text-label-sm font-label-sm text-secondary">Senior Engineer</p>
+        </div>
+        <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-40">
+  <div class="p-6 flex items-center gap-3">
+    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-sm">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+    </div>
+    <div>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">Industrial AI</h1>
+      <p class="text-label-sm font-label-sm text-secondary">Precision Quoting</p>
+    </div>
+  </div>
+  <nav class="flex-1 mt-4 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="用户系统首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="ai模型智能报价.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">Smart Workbench</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价模型上传页.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md">Professional Quoting</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价订单中心.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">Order Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="数据分析页面.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Data Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="模型中心.html">
+<span class="material-symbols-outlined">deployed_code</span>
+<span class="font-label-md text-label-md">Model Hub</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="会员中心.html">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-label-md text-label-md">Member Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-primary text-on-primary font-bold shadow-sm" href="消息中心.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-label-md text-label-md">Message Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="账号中心.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Account Center</span>
+</a>
+  </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container">
+      <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      <div class="overflow-hidden">
+        <p class="text-label-md font-label-md font-bold truncate text-on-surface">Zhang Wei</p>
+        <p class="text-label-sm font-label-sm text-secondary truncate">Senior Engineer</p>
+      </div>
+    </div>
+  </div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 h-[calc(100vh-64px)] overflow-hidden flex">
+<!-- Left Side: Message Content Stream (Wide Area) -->
+<section class="flex-1 flex flex-col bg-surface overflow-hidden relative">
+<!-- Stream Header -->
+<header class="h-14 border-b border-outline-variant flex items-center justify-between px-lg bg-surface-container-lowest z-10">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">AI Alerts</h1>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/10 text-primary text-[10px] font-bold uppercase tracking-wider">AI Insight</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors rounded-full">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Messages Scroll Area -->
+<div class="flex-1 overflow-y-auto message-stream p-lg flex flex-col gap-xl">
+<!-- Date Separator -->
+<div class="flex justify-center">
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Today, May 25th</span>
+</div>
+<!-- AI Reminder Message -->
+<div class="flex flex-col items-start max-w-2xl">
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center gap-sm mb-2">
+<span class="material-symbols-outlined text-primary text-[18px]">smart_toy</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Intelligent Agent</span>
+<span class="text-[11px] text-outline ml-auto">09:42 AM</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Model 'housing_v4' analysis complete. High manufacturability score detected. Material efficiency improved by 12% compared to v3.</p>
+<div class="mt-md pt-md border-t border-outline-variant flex gap-md">
+<button class="flex-1 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md font-bold hover:opacity-90">View Report</button>
+<button class="flex-1 py-2 border border-outline text-on-surface-variant rounded-lg font-label-md text-label-md hover:bg-surface-container-low">Approve Path</button>
+</div>
+</div>
+</div>
+<!-- Order Message -->
+<div class="flex flex-col items-start max-w-2xl">
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex items-center gap-sm mb-2">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">shopping_cart</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Order Center</span>
+<span class="text-[11px] text-outline ml-auto">11:15 AM</span>
+</div>
+<div class="flex gap-md bg-surface-container-low p-sm rounded-lg border border-outline-variant/30 mb-sm">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">precision_manufacturing</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">#QT-20240525-001</p>
+<p class="text-[12px] text-on-surface-variant">Status Update: Approved</p>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Order #QT-20240525-001 has been approved by the procurement manager. Manufacturing scheduling will begin shortly.</p>
+</div>
+</div>
+<!-- System Notification -->
+<div class="flex flex-col items-start max-w-2xl">
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex items-center gap-sm mb-2">
+<span class="material-symbols-outlined text-error text-[18px]">error</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">System Admin</span>
+<span class="text-[11px] text-outline ml-auto">Yesterday</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-bold mb-1">Upcoming Maintenance Alert</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">System maintenance scheduled for May 26th from 02:00 to 04:00 UTC. Expect intermittent connectivity during this window.</p>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute bottom-10 right-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]">manufacturing</span>
+</div>
+</div>
+</section>
+<!-- Right Side: Message Categories/List (Fixed width) -->
+<section class="w-[320px] bg-surface-container-low border-l border-outline-variant flex flex-col">
+<header class="p-md border-b border-outline-variant bg-surface-container-lowest">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg pl-10 text-label-md py-2 focus:ring-primary focus:border-primary" placeholder="Search categories..." type="text">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">search</span>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto">
+<!-- System Notifications -->
+<div class="p-md flex items-start gap-md hover:bg-surface-container transition-colors cursor-pointer border-b border-outline-variant/30">
+<div class="p-2 bg-error-container rounded-lg">
+<span class="material-symbols-outlined text-on-error-container">campaign</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">System Notifications</span>
+<span class="text-[10px] text-outline">Yesterday</span>
+</div>
+<p class="text-[12px] text-on-surface-variant truncate">Maintenance scheduled for May 26...</p>
+</div>
+</div>
+<!-- AI Reminders (ACTIVE) -->
+<div class="p-md flex items-start gap-md active-category transition-colors cursor-pointer border-b border-outline-variant/30 shadow-inner">
+<div class="p-2 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-0.5">
+<span class="font-label-md text-label-md font-bold text-primary">AI Alerts</span>
+<span class="text-[10px] text-primary">09:42 AM</span>
+</div>
+<p class="text-[12px] text-on-surface-variant truncate font-semibold">Model 'housing_v4' analysis complete...</p>
+</div>
+</div>
+<!-- Order Messages -->
+<div class="p-md flex items-start gap-md hover:bg-surface-container transition-colors cursor-pointer border-b border-outline-variant/30">
+<div class="p-2 bg-secondary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-fixed">inventory_2</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Order Messages</span>
+<span class="text-[10px] text-outline">11:15 AM</span>
+</div>
+<p class="text-[12px] text-on-surface-variant truncate">Order #QT-20240525-001 has...</p>
+</div>
+</div>
+<!-- Review Messages -->
+<div class="p-md flex items-start gap-md hover:bg-surface-container transition-colors cursor-pointer border-b border-outline-variant/30">
+<div class="p-2 bg-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-tertiary-fixed">fact_check</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Review Messages</span>
+<span class="text-[10px] text-outline">Tue</span>
+</div>
+<p class="text-[12px] text-on-surface-variant truncate">Design check required for part-Z...</p>
+</div>
+<div class="mt-1 w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<!-- Customer Service -->
+<div class="p-md flex items-start gap-md hover:bg-surface-container transition-colors cursor-pointer">
+<div class="p-2 bg-surface-container-highest rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant">support_agent</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Customer Service</span>
+<span class="text-[10px] text-outline">Mon</span>
+</div>
+<p class="text-[12px] text-on-surface-variant truncate">How can I help you with the...</p>
+</div>
+</div>
+</div>
+<!-- Footer for Category Stats -->
+<footer class="p-md border-t border-outline-variant text-center">
+<p class="font-label-sm text-label-sm text-outline">You have 1 unread important message</p>
+</footer>
+</section>
+</main>
+<script>
+        // Simple micro-interaction for list item hover
+        document.querySelectorAll('.message-stream div').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if(card.classList.contains('bg-white')) {
+                    card.classList.add('translate-x-1');
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                if(card.classList.contains('bg-white')) {
+                    card.classList.remove('translate-x-1');
+                }
+            });
+        });
+
+        // Dynamic date display (mocked)
+        const dateSpan = document.querySelector('.bg-surface-container.text-on-surface-variant');
+        const now = new Date();
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        // dateSpan.textContent = "Today, " + now.toLocaleDateString('en-US', options);
+    </script>
+
+
+</body></html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,333 @@
+<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Customer Login | ForgeAI 工业平台</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#131b2e",
+                    "primary-container": "#2563eb",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-tertiary-fixed": "#360f00",
+                    "outline": "#737686",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary": "#565e74",
+                    "background": "#faf8ff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d9d9e5",
+                    "on-primary-fixed": "#00174b",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "primary": "#004ac6",
+                    "surface-container": "#ededf9",
+                    "inverse-surface": "#2e3039",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-variant": "#e1e2ed",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#943700",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-high": "#e7e7f3",
+                    "surface": "#faf8ff",
+                    "on-primary-container": "#eeefff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-secondary-container": "#5c647a",
+                    "tertiary-fixed": "#ffdbcd",
+                    "tertiary-container": "#bc4800",
+                    "surface-container-low": "#f3f3fe",
+                    "on-surface": "#191b23",
+                    "inverse-on-surface": "#f0f0fb",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "on-error-container": "#93000a",
+                    "on-background": "#191b23",
+                    "secondary-container": "#dae2fd",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-tint": "#0053db",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#dae2fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "xl": "32px",
+                    "margin": "24px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .login-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .form-glow:focus-within {
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg text-body-lg min-h-screen overflow-x-hidden">
+<!-- Split Screen Container -->
+<main class="flex min-h-screen w-full flex-col md:flex-row">
+<!-- Left Side: Industrial Hero -->
+<section class="relative hidden md:flex md:w-1/2 lg:w-[60%] flex-col justify-end p-xl overflow-hidden bg-inverse-surface">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+<div class="h-full w-full bg-cover bg-center scale-105 transform hover:scale-100 transition-transform duration-[10s]" data-alt="A high-resolution, professional photograph of a sophisticated robotic arm operating on a high-precision CNC machining floor. The lighting is cinematic, featuring cool blue industrial tones with sharp highlights on metallic surfaces. The atmosphere is clean, technically advanced, and evokes a sense of high-efficiency industrial manufacturing. Sparse sparks and subtle lens flares emphasize the precision of the machinery in a modern factory setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAahMR0bpb-ySe0whskfbPqW5rBqdw0LxsUhiKC_U4VIuBlXDSeqgX0skW4D838wm-22eOdtn7EWfP31KpXSTTKeRaVkyC5IF-5T_VpwzbV6DM4nAEjRIl3vnLOhttefpg0gZf6FZGt2V1w5IJxEjRnqHU7nbYi7_FmKkJmFXYQRNBonbuSq2Ml-UGX5-UGWBt7ok3e0erusPHdE4irS8RWslC6tfjxFEOA-Dk2c3m0jZt_5MRLu98jcLvCUbrbkSG2hWB0OZSd9wg')"></div>
+</div>
+<!-- Content Anchor -->
+<div class="relative z-20 mb-12 max-w-2xl">
+<div class="mb-6 inline-flex items-center gap-2 px-3 py-1 bg-primary-container text-white rounded-full">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">Customer Login</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-white mb-4 tracking-tight leading-tight">
+                    客户协同入口，<br>
+<span class="text-primary-fixed-dim">Customer Login / 手机号优先</span>
+</h1>
+<p class="text-on-primary-container opacity-80 max-w-lg font-body-lg text-body-lg">
+                    当前系统先兼容简单的账号密码登录，后续将接入邮箱验证码登录、Google / Gmail、LinkedIn、Facebook、微信和手机号等方式。无论通过哪种方式进入，手机号都作为主身份锚点，最终都需要完成手机短信验证。
+                </p>
+</div>
+<!-- Subtle Grid Pattern Overlay -->
+<div class="absolute inset-0 z-[5] opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 40px 40px;"></div>
+</section>
+<!-- Right Side: Login Canvas -->
+<section class="flex-1 flex flex-col justify-center items-center px-6 py-12 md:px-margin lg:px-xl bg-surface-container-lowest">
+<div class="w-full max-w-[440px] flex flex-col items-center">
+<!-- Brand Identity -->
+<div class="mb-10 text-center">
+<img alt="ForgeAI Logo" class="h-16 w-auto mb-6 mx-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHwlWMiaVJwmA-IjMha-IqG-aMzN31xsmOaD9lbYMIZzsAr3UmZGEM1gAmQmIZzlIKhfXJkkvcaEmZRsDwLwG7fv6OSws1Q3c_8WJ-3pKfKNhjlHCi80Kng476Z5p3id1Asa_P5wQSVqw9_84l_oeAgp3fNGi-6wzDJwAl1CPEfpr4LmKzvNgFJ9LTnEf6PO5_u7ydZ0VI3LmxF7h5JC_yDSitgKBLe4GPBwABEtRpv_ZDW-2YQ0bzynDBT-r65_mHOV39GulWi18">
+<h2 class="font-headline-md text-headline-md text-on-surface">Customer Login</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">客户登录入口，进入您的工业智能工作台</p>
+</div>
+<!-- Login Card -->
+<div class="w-full bg-white rounded-xl p-0 transition-all duration-300">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant mb-8">
+<button class="flex-1 pb-4 font-label-md text-label-md text-primary border-b-2 border-primary login-transition" id="accountTab" onclick="switchLogin('account')">
+                            账号 / 邮箱登录
+                        </button>
+<button class="flex-1 pb-4 font-label-md text-label-md text-on-surface-variant border-b-2 border-transparent hover:text-on-surface login-transition" id="smsTab" onclick="switchLogin('sms')">
+                            手机号登录
+                        </button>
+</div>
+<!-- Form Content -->
+<form class="space-y-6" id="loginForm" onsubmit="return false">
+<!-- Account Login Fields -->
+<div class="space-y-5" id="accountFields">
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="identifier">手机号 / 邮箱 / 历史账号</label>
+<div class="relative form-glow rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">alternate_email</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="identifier" name="identifier" placeholder="请输入已注册的手机号、邮箱或历史账号" type="text">
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between mb-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">密码</label>
+<a class="font-label-md text-label-md text-primary hover:underline" href="./忘记密码.html">忘记密码？</a>
+</div>
+<div class="relative form-glow rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">lock</span>
+<input class="w-full pl-10 pr-12 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="password" name="password" placeholder="请输入密码" type="password">
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-low px-4 py-3 text-[13px] leading-6 text-on-surface-variant">
+                            当前先保留简单的账号密码逻辑，后续会接入邮箱验证码登录。若通过邮箱或 Gmail 登录，首次进入后仍需绑定手机号并接收短信验证码。
+                        </div>
+</div>
+<!-- SMS Login Fields (Hidden by default) -->
+<div class="hidden space-y-5" id="smsFields">
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="phone">手机号</label>
+<div class="flex gap-2">
+<div class="relative flex-1 form-glow rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">smartphone</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="phone" name="phone" placeholder="请输入手机号" type="tel">
+</div>
+<button class="px-4 py-2 border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary-container hover:text-white transition-colors whitespace-nowrap" type="button">
+                                        发送验证码
+                                    </button>
+</div>
+</div>
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="code">短信验证码</label>
+<div class="relative form-glow rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">verified_user</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="code" name="code" placeholder="请输入 6 位短信验证码" type="text">
+</div>
+</div>
+<div class="rounded-lg bg-secondary-container/50 px-4 py-3 text-[13px] leading-6 text-on-surface-variant">
+                            手机号是主登录方式，也可以直接作为主注册方式。无论通过哪种方式进入系统，最终都需要完成手机短信验证。
+                        </div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="remember" type="checkbox">
+<label class="ml-2 font-body-sm text-body-sm text-on-surface-variant" for="remember">30 天内记住我</label>
+</div>
+<!-- Submit CTA -->
+<button class="w-full py-4 bg-primary-container text-white font-label-md text-label-md rounded-lg shadow-md hover:shadow-lg hover:bg-primary transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
+<span>登录工作台</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<div class="mt-6 rounded-xl border border-outline-variant bg-surface-container-low p-4 text-left">
+<h3 class="font-label-md text-label-md text-on-surface mb-2">后续扩展登录方式说明</h3>
+<ul class="space-y-2 text-body-sm text-on-surface-variant leading-6">
+<li>邮箱与 Gmail 登录需要支持邮件验证码，登录成功后仍需绑定手机号并接收短信验证码。</li>
+<li>Google / Gmail、LinkedIn、Facebook、微信等第三方应用统一按扫码登录设计，扫码完成后仍需手机号验证。</li>
+<li>手机号注册用户登录后，可在个人页面继续绑定邮箱和第三方应用账号。</li>
+</ul>
+</div>
+<!-- Divider -->
+<div class="relative my-8 text-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<span class="relative px-4 bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">或使用后续接入方式</span>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#EA4335]/10 text-[#EA4335] font-semibold">G</span>
+<span class="font-label-sm text-label-sm">Google / Gmail</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#0A66C2]/10 text-[#0A66C2] font-semibold">in</span>
+<span class="font-label-sm text-label-sm">LinkedIn</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2]/10 text-[#1877F2] font-semibold">f</span>
+<span class="font-label-sm text-label-sm">Facebook</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
+<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#07C160]/10 text-[#07C160] font-semibold">微</span>
+<span class="font-label-sm text-label-sm">微信</span>
+</button>
+</div>
+<p class="mt-4 text-center text-[12px] leading-5 text-on-surface-variant">
+                            第三方应用统一按扫码登录预留，首次使用时必须绑定手机号并完成短信验证码验证。
+                        </p>
+<div class="mt-6 rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4 text-left">
+<h3 class="font-label-md text-label-md text-on-surface mb-2">游客体验</h3>
+<p class="text-body-sm text-on-surface-variant leading-6">
+                            无需立即注册，也可以先用游客身份体验基础看板、样例报价流程与平台浏览能力。需要保存进度、提交询价或绑定邮箱和第三方应用时，再升级为手机号正式客户账号。
+                        </p>
+<button class="mt-3 inline-flex items-center gap-2 rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+<span>进入游客体验</span>
+</button>
+</div>
+<!-- Footer Links -->
+<div class="mt-10 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            还没有账号？
+                            <a class="text-primary font-label-md text-label-md ml-1 hover:underline" href="./注册页.html">立即注册</a>
+</p>
+<p class="mt-3 text-[12px] leading-5 text-on-surface-variant">
+                            手机号注册成功后，可在个人页面继续绑定邮箱、Google / Gmail、LinkedIn、Facebook、微信等账号。
+                        </p>
+</div>
+</div>
+<!-- Footer Legal (Mini) -->
+<div class="mt-auto pt-12 pb-6 text-center text-outline text-[11px] font-label-sm">
+<p>© 2024 ForgeAI Industrial. 版权所有。</p>
+<div class="mt-2 flex gap-4 justify-center">
+<a class="hover:text-on-surface transition-colors" href="#">服务条款</a>
+<a class="hover:text-on-surface transition-colors" href="#">隐私政策</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+        function switchLogin(mode) {
+            const accountFields = document.getElementById('accountFields');
+            const smsFields = document.getElementById('smsFields');
+            const accountTab = document.getElementById('accountTab');
+            const smsTab = document.getElementById('smsTab');
+
+            if (mode === 'account') {
+                accountFields.classList.remove('hidden');
+                smsFields.classList.add('hidden');
+                
+                accountTab.classList.add('text-primary', 'border-primary');
+                accountTab.classList.remove('text-on-surface-variant', 'border-transparent');
+                
+                smsTab.classList.add('text-on-surface-variant', 'border-transparent');
+                smsTab.classList.remove('text-primary', 'border-primary');
+            } else {
+                accountFields.classList.add('hidden');
+                smsFields.classList.remove('hidden');
+                
+                smsTab.classList.add('text-primary', 'border-primary');
+                smsTab.classList.remove('text-on-surface-variant', 'border-transparent');
+                
+                accountTab.classList.add('text-on-surface-variant', 'border-transparent');
+                accountTab.classList.remove('text-primary', 'border-primary');
+            }
+        }
+
+        // Add some subtle interaction animations
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('shadow-sm');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('shadow-sm');
+            });
+        });
+    </script>
+</body></html>

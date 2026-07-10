@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>客服中心 - 后台运营</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            font-feature-settings: 'liga';
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "tertiary": "#943700",
+                        "primary-container": "#2563eb",
+                        "on-surface": "#191b23",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "on-surface-variant": "#434655",
+                        "surface-tint": "#0053db",
+                        "surface-container-low": "#f3f3fe",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface": "#faf8ff",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-high": "#e7e7f3",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-bright": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary": "#565e74",
+                        "surface-container-highest": "#e1e2ed",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "on-background": "#191b23",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#bc4800",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#faf8ff",
+                        "inverse-surface": "#2e3039",
+                        "surface-variant": "#e1e2ed",
+                        "on-tertiary-container": "#ffede6",
+                        "outline": "#737686",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-container": "#5c647a",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-container": "#dae2fd",
+                        "outline-variant": "#c3c6d7",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-primary-fixed": "#00174b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container_max": "1440px",
+                        "unit": "4px",
+                        "sidebar_width": "260px",
+                        "margin_mobile": "16px",
+                        "padding_card": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "mono-data": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="flex h-screen overflow-hidden bg-surface-bright text-on-surface font-body-md text-body-md antialiased">
+<!-- SideNavBar (Shared Component) -->
+<nav class="docked h-full w-72 left-0 top-0 flex flex-col h-screen py-md overflow-y-auto bg-surface-dim dark:bg-inverse-surface border-r border-outline-variant dark:border-outline hidden md:flex shrink-0">
+<div class="px-lg py-md flex items-center gap-sm mb-6 mt-4 px-6">
+<img alt="Industrial AI Logo" class="w-8 h-8 rounded" data-alt="Industrial AI Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlELFe2FAcOBczQoqRzgMg8es_Sz2BzrX5LIpZwqbdeASpWsrV0zTQ12ytoY06UjIje6M73Fi2g4WgpnWXSJCGC8FEPfpaoOBkzecMaqVBZp19orq1REISMSBnMgPH-WOPX4u23v93SWedbGaH0shQY-sybqVBBTYz8hHLcCYW2pQSKftE3V7S5T78TwzEyofL6KTZvMwbu2GBnQhbAB-mtAlAH0OXudfy43nZoKLhEUe69b4Eg3Vk049QE-C0NrRVRUgRDhdDmMg"/>
+<div>
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-primary-fixed">Industrial AI</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">运营后台</p>
+</div>
+</div>
+<ul class="flex-1 px-4 space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="后台首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">平台总览</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="用户管理后台.html">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">用户管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="客户管理页面.html">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-label-md text-label-md">客户管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="供应商管理.html">
+<span class="material-symbols-outlined">factory</span>
+<span class="font-label-md text-label-md">供应商管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="供应管理.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">供应管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="RFQ管理.html">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="font-label-md text-label-md">RFQ管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="ai管理页面.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">AI管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="知识库管理页面.html">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label-md text-label-md">知识库管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="MES监管.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md">MES监管</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container rounded-lg mx-2 transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="客服中心.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-label-md text-label-md">客服中心</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="营销页面管理.html">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-md text-label-md">营销页面管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="平台权限中心.html">
+<span class="material-symbols-outlined">vpn_key</span>
+<span class="font-label-md text-label-md">平台权限中心</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="财务管理页面.html">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">财务管理</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="数据分析页面.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">数据分析</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="系统设置.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">系统设置</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden bg-background relative">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full pl-6 pr-10 py-sm h-16 bg-surface-bright dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container dark:bg-inverse-surface rounded-full px-4 py-2 focus-within:ring-2 focus-within:ring-primary transition-colors duration-200 ease-in-out w-full max-w-md">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant w-full" placeholder="搜索客户、RFQ或企业信息..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-inverse-surface rounded-full transition-colors duration-200 ease-in-out relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface-bright"></span>
+</button>
+<button class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-inverse-surface rounded-full transition-colors duration-200 ease-in-out">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant dark:bg-outline mx-1"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="font-body-md text-body-md text-on-surface">平台管理员</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">管理员</div>
+</div>
+<img alt="Administrator Headshot" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="Administrator Headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSuRSeCI0SHShf3MLuQ9CVRQe2ZsHfy6Wgt6cNtFTimaTsOwhvnLA8nF0cY6lt-bqmwlxUSk8xFTCpcAYiLsu8wUA9ZHY2SieoJERksz_ErW34_el9Y8PF5jK6KYgoEb4DG8ERMtmnGGMp2OR-lt8I3BKpyCmkMZOT92UmE4nR9I_m9ylkoji7Q-l_y-iJJC31yB2gxrGqOclBVkIJpYgjrKN3odRw-c-D7kBmqMGgwh8NZHRO7-fuNda55pmhzwn0GnHT_TN-niU"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-y-auto p-gutter pb-24">
+<div class="mb-6">
+<nav class="flex text-label-sm font-label-sm text-on-surface-variant mb-2"><ol class="flex items-center space-x-2"><li><a class="hover:text-primary transition-colors" href="后台首页.html">首页</a></li><li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li><li class="text-on-surface font-semibold">客服中心</li></ol></nav>
+<div class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-4"><div><h1 class="text-display-lg font-display-lg text-on-surface m-0">客服中心</h1><p class="text-body-md font-body-md text-on-surface-variant mt-1">一个首页切换三个附属页，直接处理客户会话、供应商支持和客服管理任务。</p></div><div class="flex flex-wrap gap-3"><button class="h-10 px-4 bg-surface-container-lowest border border-outline-variant rounded-lg text-title-sm font-title-sm text-on-surface flex items-center gap-2 hover:bg-surface-container transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">rule</span>查看分配规则</button><button class="h-10 px-4 bg-primary text-on-primary rounded-lg text-title-sm font-title-sm flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">download</span>导出服务日报</button></div></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8"><div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">support_agent</span></div><span class="inline-flex px-2 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm">在线 26</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">当前在线客服</div><div class="text-display-lg font-display-lg text-on-surface leading-none">38</div><p class="text-body-md text-on-surface-variant mt-3">客户线 22 人，供应商线 11 人，管理线 5 人。</p></div><div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">mark_chat_unread</span></div><span class="inline-flex px-2 py-1 rounded-full bg-error-container text-on-error-container text-label-sm font-label-sm">未读 19</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">即时会话</div><div class="text-display-lg font-display-lg text-on-surface leading-none">146</div><p class="text-body-md text-on-surface-variant mt-3">红点气泡代表新消息，优先处理报价与交期相关会话。</p></div><div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">assignment</span></div><span class="inline-flex px-2 py-1 rounded-full bg-tertiary-fixed text-tertiary text-label-sm font-label-sm">超时 14</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">工单池</div><div class="text-display-lg font-display-lg text-on-surface leading-none">328</div><p class="text-body-md text-on-surface-variant mt-3">待处理、处理中、已解决和超时工单统一看板化。</p></div><div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">psychology</span></div><span class="inline-flex px-2 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm">AI 71%</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">AI辅助命中率</div><div class="text-display-lg font-display-lg text-on-surface leading-none">71%</div><p class="text-body-md text-on-surface-variant mt-3">快捷回复、AI回复和历史聊天已经接入统一工作台。</p></div></div>
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] p-6 mb-8"><div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4 mb-6"><div><h2 class="text-title-sm font-title-sm text-on-surface">首页附属页切换</h2><p class="text-body-md text-on-surface-variant mt-1">点击按钮切换三个中心，内容在首页直接展示。</p></div><div class="flex flex-wrap gap-3"><button class="service-tab-btn h-12 px-4 rounded-xl bg-primary text-on-primary shadow-sm flex items-center gap-3" data-service-tab="customer-panel"><span class="material-symbols-outlined">support_agent</span><span class="text-left"><span class="block text-body-md font-semibold">客户客服中心</span><span class="block text-label-sm opacity-90">我的客户 · 会话中心</span></span></button><button class="service-tab-btn h-12 px-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface-variant flex items-center gap-3" data-service-tab="supplier-panel"><span class="material-symbols-outlined">factory</span><span class="text-left"><span class="block text-body-md font-semibold">供应商客服中心</span><span class="block text-label-sm opacity-90">入驻 · RFQ · MES</span></span></button><button class="service-tab-btn h-12 px-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface-variant flex items-center gap-3" data-service-tab="admin-panel"><span class="material-symbols-outlined">monitoring</span><span class="text-left"><span class="block text-body-md font-semibold">客服管理中心</span><span class="block text-label-sm opacity-90">状态墙 · KPI · 分配</span></span></button></div></div>
+<div data-service-panel="customer-panel" class="space-y-6"><div class="grid grid-cols-1 xl:grid-cols-12 gap-6"><div class="xl:col-span-3 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">我的客户</h3><p class="text-label-sm text-on-surface-variant mt-1">红点代表新消息或待处理</p></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">32 家</span></div><div class="space-y-3"><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="relative"><div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-semibold">华</div><span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-error border-2 border-white"></span></div><div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><div class="font-medium text-on-surface truncate">华南智能装备集团</div><span class="px-2 py-0.5 rounded-full bg-error text-white text-[11px]">4</span></div><div class="text-label-sm text-on-surface-variant truncate">报价确认 · 需要补充交期要求</div></div></div><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="relative"><div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-semibold">医</div><span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-error border-2 border-white"></span></div><div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><div class="font-medium text-on-surface truncate">华东医疗精密科技</div><span class="px-2 py-0.5 rounded-full bg-error text-white text-[11px]">2</span></div><div class="text-label-sm text-on-surface-variant truncate">售后回访 · 客户等待尺寸复核</div></div></div><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="w-10 h-10 rounded-full bg-tertiary text-white flex items-center justify-center font-semibold">新</div><div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><div class="font-medium text-on-surface truncate">北方新能源总成</div><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">待回访</span></div><div class="text-label-sm text-on-surface-variant truncate">试单放量客户，建议转专属客服承接</div></div></div></div></div><div class="xl:col-span-5 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">在线聊天</h3><p class="text-label-sm text-on-surface-variant mt-1">客户客服中心 · 会话中心</p></div><div class="flex items-center gap-2"><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">AI辅助回复已开启</span><span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container text-label-sm">待处理 3</span></div></div><div class="space-y-4 mb-4"><div class="flex justify-end"><div class="max-w-[80%] rounded-2xl rounded-tr-md bg-primary text-on-primary px-4 py-3 shadow-sm">这个五轴加工件需要明天下午前确认报价，表面处理做黑色阳极氧化。</div></div><div class="flex gap-3 items-start"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined text-[18px]">smart_toy</span></div><div class="flex-1 space-y-3"><div class="max-w-[88%] rounded-2xl rounded-tl-md bg-surface-container-lowest border border-outline-variant/40 px-4 py-3 text-on-surface">已收到。建议优先走人工报价协助，并同步确认膜厚、公差和交期。</div><div class="flex flex-wrap gap-2"><span class="px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-body-md">快捷回复：已转人工报价</span><span class="px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-body-md">附件：报价记录 #Q-22041</span><span class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-body-md">模型查看</span></div></div></div></div><div class="rounded-xl bg-surface-container-lowest border border-outline-variant/40 p-4"><div class="flex flex-wrap gap-2"><button class="px-3 h-9 rounded-lg bg-primary text-on-primary text-body-md">转人工报价</button><button class="px-3 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md text-on-surface">发送文件</button><button class="px-3 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md text-on-surface">图片发送</button><button class="px-3 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md text-on-surface">历史聊天</button></div></div></div><div class="xl:col-span-4 space-y-6"><div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><h3 class="text-title-sm font-title-sm text-on-surface">待处理事宜</h3><span class="text-label-sm text-on-surface-variant">客户线</span></div><div class="space-y-3"><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div><div class="font-medium text-on-surface">待回复消息</div><div class="text-label-sm text-on-surface-variant">8 个会话超过 10 分钟未处理</div></div><span class="px-2.5 py-1 rounded-full bg-error text-white text-label-sm">8</span></div><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div><div class="font-medium text-on-surface">报价协助</div><div class="text-label-sm text-on-surface-variant">人工报价协助与修改报价并行</div></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">12</span></div><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div><div class="font-medium text-on-surface">售后回访</div><div class="text-label-sm text-on-surface-variant">退款、重做、物流异常待跟进</div></div><span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary text-label-sm">5</span></div></div></div><div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><h3 class="text-title-sm font-title-sm text-on-surface">今日工单看板</h3><span class="text-label-sm text-on-surface-variant">实时</span></div><div class="grid grid-cols-2 gap-3 text-body-md"><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant">待处理</div><div class="text-title-sm font-semibold text-on-surface mt-1">46</div></div><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant">处理中</div><div class="text-title-sm font-semibold text-on-surface mt-1">28</div></div><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant">已解决</div><div class="text-title-sm font-semibold text-on-surface mt-1">103</div></div><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant">超时工单</div><div class="text-title-sm font-semibold text-error mt-1">3</div></div></div></div></div></div></div>
+<div data-service-panel="supplier-panel" class="hidden space-y-6"><div class="grid grid-cols-1 xl:grid-cols-12 gap-6"><div class="xl:col-span-3 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">我的供应商</h3><p class="text-label-sm text-on-surface-variant mt-1">入驻、RFQ、MES 支持统一承接</p></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">18 家</span></div><div class="space-y-3"><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="relative"><div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-semibold">苏</div><span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-error border-2 border-white"></span></div><div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><div class="font-medium text-on-surface truncate">苏州智精制造</div><span class="px-2 py-0.5 rounded-full bg-error text-white text-[11px]">3</span></div><div class="text-label-sm text-on-surface-variant truncate">ISO审核资料待补齐</div></div></div><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="relative"><div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center font-semibold">宁</div><span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-error border-2 border-white"></span></div><div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-2"><div class="font-medium text-on-surface truncate">宁波五轴中心</div><span class="px-2 py-0.5 rounded-full bg-error text-white text-[11px]">5</span></div><div class="text-label-sm text-on-surface-variant truncate">RFQ 报价异常需人工协助</div></div></div></div></div><div class="xl:col-span-5 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">供应商支持会话</h3><p class="text-label-sm text-on-surface-variant mt-1">入驻协助 · RFQ支持 · 平台订单支持</p></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">AI辅助回复</span></div><div class="space-y-4"><div class="flex justify-end"><div class="max-w-[82%] rounded-2xl rounded-tr-md bg-primary text-on-primary px-4 py-3 shadow-sm">我们已经上传了资质，但 ISO 文件页码缺失，系统一直卡在待审核状态。</div></div><div class="flex gap-3 items-start"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined text-[18px]">support_agent</span></div><div class="flex-1 space-y-3"><div class="max-w-[88%] rounded-2xl rounded-tl-md bg-surface-container-lowest border border-outline-variant/40 px-4 py-3 text-on-surface">当前缺少盖章页与有效期页，建议先走资质审核补件流程，同时保留入驻进度。</div><div class="grid grid-cols-2 gap-3 text-body-md"><div class="rounded-lg bg-surface-container-lowest p-3 border border-outline-variant/40">企业审核 12</div><div class="rounded-lg bg-surface-container-lowest p-3 border border-outline-variant/40">报价异常 9</div><div class="rounded-lg bg-surface-container-lowest p-3 border border-outline-variant/40">MES支持 13</div><div class="rounded-lg bg-surface-container-lowest p-3 border border-outline-variant/40">财务支持 6</div></div></div></div></div></div><div class="xl:col-span-4 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><h3 class="text-title-sm font-title-sm text-on-surface">待处理事项</h3><span class="text-label-sm text-on-surface-variant">供应商线</span></div><div class="space-y-3"><div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-between"><div><div class="font-medium text-on-surface">入驻协助</div><div class="text-label-sm text-on-surface-variant">企业审核、资质审核、ISO审核</div></div><span class="px-2.5 py-1 rounded-full bg-error text-white text-label-sm">11</span></div><div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-between"><div><div class="font-medium text-on-surface">平台订单支持</div><div class="text-label-sm text-on-surface-variant">接单异常、延期申请、发货异常</div></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">7</span></div><div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-between"><div><div class="font-medium text-on-surface">扫码上传进度</div><div class="text-label-sm text-on-surface-variant">4 家供应商等待上传生产节点</div></div><span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm">4</span></div></div></div></div></div>
+<div data-service-panel="admin-panel" class="hidden space-y-6"><div class="grid grid-cols-1 xl:grid-cols-12 gap-6"><div class="xl:col-span-3 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">客服状态墙</h3><p class="text-label-sm text-on-surface-variant mt-1">在线状态与排班概览</p></div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">总计 38</span></div><div class="space-y-3 text-body-md"><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><span>在线客服</span><span class="font-semibold text-on-surface">26</span></div><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><span>忙碌客服</span><span class="font-semibold text-on-surface">8</span></div><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><span>离线客服</span><span class="font-semibold text-on-surface">4</span></div><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><span>今日咨询</span><span class="font-semibold text-on-surface">1,246</span></div><div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><span>今日工单</span><span class="font-semibold text-on-surface">328</span></div></div></div><div class="xl:col-span-5 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">服务总览</h3><p class="text-label-sm text-on-surface-variant mt-1">客服人员管理、工单管理与服务质量集中监控</p></div><span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm">今日满意率 96.4%</span></div><div class="grid grid-cols-2 gap-4 mb-4"><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant text-body-md">首响时间</div><div class="text-title-sm font-semibold text-on-surface mt-1">58 秒</div></div><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant text-body-md">投诉率</div><div class="text-title-sm font-semibold text-on-surface mt-1">0.8%</div></div><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant text-body-md">工单完成率</div><div class="text-title-sm font-semibold text-on-surface mt-1">92%</div></div><div class="rounded-xl bg-surface-container-lowest p-4 border border-outline-variant/40"><div class="text-on-surface-variant text-body-md">AI解决率</div><div class="text-title-sm font-semibold text-on-surface mt-1">43%</div></div></div><div class="space-y-3"><div><div class="flex items-center justify-between text-body-md mb-1"><span>客户咨询分析</span><span class="font-semibold text-on-surface">68%</span></div><div class="h-2 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full w-[68%] bg-primary rounded-full"></div></div></div><div><div class="flex items-center justify-between text-body-md mb-1"><span>供应商咨询分析</span><span class="font-semibold text-on-surface">52%</span></div><div class="h-2 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full w-[52%] bg-secondary rounded-full"></div></div></div><div><div class="flex items-center justify-between text-body-md mb-1"><span>AI解决率</span><span class="font-semibold text-on-surface">43%</span></div><div class="h-2 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full w-[43%] bg-tertiary rounded-full"></div></div></div></div></div><div class="xl:col-span-4 bg-surface-container-low rounded-xl p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-4"><h3 class="text-title-sm font-title-sm text-on-surface">分配机制与 AI 管理</h3><span class="text-label-sm text-on-surface-variant">自动 + 人工</span></div><div class="space-y-3"><div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="font-medium text-on-surface">自动分配</div><div class="text-label-sm text-on-surface-variant mt-1">新客户自动分配、新供应商自动分配、按负载和行业标签分配。</div></div><div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="font-medium text-on-surface">服务容量</div><div class="text-label-sm text-on-surface-variant mt-1">每位客服管理 10~20 家客户或供应商，超出后自动停止分配。</div></div><div class="p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/40"><div class="font-medium text-on-surface">AI客服管理</div><div class="text-label-sm text-on-surface-variant mt-1">AI知识库 128 条，快捷回复库 246 条，自动回复规则 34 条。</div></div></div></div></div></div>
+</section>
+</main>
+</div>
+<script data-service-center-tabs>
+(function(){var buttons=document.querySelectorAll('[data-service-tab]');var panels=document.querySelectorAll('[data-service-panel]');if(!buttons.length||!panels.length)return;function setActive(target){buttons.forEach(function(button){var active=button.getAttribute('data-service-tab')===target;button.classList.toggle('bg-primary',active);button.classList.toggle('text-on-primary',active);button.classList.toggle('shadow-sm',active);button.classList.toggle('border',!active);button.classList.toggle('border-outline-variant',!active);button.classList.toggle('bg-surface-container-lowest',!active);button.classList.toggle('text-on-surface-variant',!active);});panels.forEach(function(panel){panel.classList.toggle('hidden',panel.getAttribute('data-service-panel')!==target);});}buttons.forEach(function(button){button.addEventListener('click',function(){setActive(button.getAttribute('data-service-tab'));});});setActive('customer-panel');})();
+</script>
+</body></html>
+
+
+
+
+
+
+
+
+
+

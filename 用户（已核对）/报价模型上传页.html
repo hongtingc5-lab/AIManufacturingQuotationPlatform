@@ -1,0 +1,759 @@
+﻿<!DOCTYPE html><html class="light" lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Industrial AI - 专业报价</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#bc4800",
+                    "tertiary": "#943700",
+                    "background": "#faf8ff",
+                    "on-primary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#b4c5ff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2e3039",
+                    "secondary-container": "#dae2fd",
+                    "primary": "#004ac6",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e1e2ed",
+                    "surface-container-high": "#e7e7f3",
+                    "on-surface": "#191b23",
+                    "outline": "#737686",
+                    "surface-tint": "#0053db",
+                    "surface-container-low": "#f3f3fe",
+                    "on-background": "#191b23",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-container-highest": "#e1e2ed",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-surface-variant": "#434655",
+                    "surface-bright": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#ededf9",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d9d9e5",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-error": "#ffffff",
+                    "secondary": "#565e74",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "primary-container": "#2563eb",
+                    "on-secondary-container": "#5c647a",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "secondary-fixed": "#dae2fd",
+                    "on-tertiary-fixed": "#360f00",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-tertiary-container": "#ffede6",
+                    "surface": "#faf8ff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary-container": "#eeefff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "默认": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf8ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .drop-zone-active { border-color: #004ac6; background-color: #eeefff; }
+        .support-float {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 70;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+        .support-panel {
+            width: min(360px, calc(100vw - 32px));
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(37, 99, 235, 0.14);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: 0 24px 48px rgba(15, 23, 42, 0.16);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            transform-origin: bottom right;
+        }
+        .support-panel.is-collapsed {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(14px) scale(0.96);
+        }
+        .support-option {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            border: 1px solid #c3c6d7;
+            border-radius: 16px;
+            background: #ffffff;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+        .support-option:hover,
+        .support-option.is-active {
+            border-color: #2563eb;
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.10);
+            transform: translateY(-1px);
+        }
+        .support-option-icon {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #eeefff;
+            color: #004ac6;
+        }
+        .support-launcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 9999px;
+            padding: 12px 18px;
+            background: #004ac6;
+            color: #ffffff;
+            box-shadow: 0 16px 30px rgba(0, 74, 198, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .support-launcher:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 32px rgba(0, 74, 198, 0.34);
+        }
+        @media (max-width: 768px) {
+            .support-float {
+                right: 12px;
+                bottom: 12px;
+                left: 12px;
+                align-items: stretch;
+            }
+            .support-launcher {
+                justify-content: center;
+            }
+        }
+    </style>
+<link data-customer-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-customer-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-customer-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-customer-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+/* 添加上传进度相关的样式 */
+.upload-item {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #004ac6;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #6c757d;
+    min-width: 36px;
+    text-align: right;
+}
+</style>
+<script data-customer-shell-boot>
+document.documentElement.classList.add("customer-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("customer-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-customer-shell-boot>
+html.customer-shell-loading {
+  background: #f8fafc;
+}
+html.customer-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 ml-64 w-[calc(100%-16rem)] bg-surface-container-lowest shadow-sm border-b border-outline-variant h-16 flex items-center px-6">
+  <div class="flex-1 flex items-center justify-between gap-4">
+    <div class="relative w-full max-w-md">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <input type="text" placeholder="搜索报价、订单或文件..." class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary transition-all">
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+<a href="ai模型智能报价.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>开始智能报价</span>
+</a>
+<a href="报价模型上传页.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span>开始专业报价</span>
+</a>
+      <button class="relative p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <div class="h-8 w-px bg-outline-variant mx-1"></div>
+      <div class="flex items-center gap-3">
+        <div class="text-right hidden sm:block">
+          <p class="text-label-md font-label-md font-bold text-on-surface">张伟</p>
+          <p class="text-label-sm font-label-sm text-secondary">高级工程师</p>
+        </div>
+        <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-40">
+  <div class="p-6 flex items-center gap-3">
+    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-sm">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+    </div>
+    <div>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">Industrial AI</h1>
+      <p class="text-label-sm font-label-sm text-secondary">智能报价工作台</p>
+    </div>
+  </div>
+  <nav class="flex-1 mt-4 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="用户系统首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">工作台</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="ai模型智能报价.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">智能工作台</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-primary text-on-primary font-bold shadow-sm" href="报价模型上传页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="font-label-md text-label-md">专业报价</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价订单中心.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">订单中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="数据分析页面.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">数据分析</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="模型中心.html">
+<span class="material-symbols-outlined">deployed_code</span>
+<span class="font-label-md text-label-md">模型中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="会员中心.html">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-label-md text-label-md">会员中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="消息中心.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md text-label-md">消息中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="账号中心.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">账号中心</span>
+</a>
+  </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container">
+      <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      <div class="overflow-hidden">
+        <p class="text-label-md font-label-md font-bold truncate text-on-surface">张伟</p>
+        <p class="text-label-sm font-label-sm text-secondary truncate">高级工程师</p>
+      </div>
+    </div>
+  </div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 pt-4 px-8 pb-12 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col mb-10">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-2">新建报价</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">上传 CAD 模型，立即获取 AI 驱动的 DFM 分析与精密报价。</p>
+</div>
+<!-- Bento Layout Grid -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Left Column: Upload Area -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-8 shadow-sm flex flex-col items-center justify-center min-h-[450px] transition-all border-dashed border-2 hover:border-primary group cursor-pointer relative overflow-hidden" id="drop-zone">
+<!-- Decorative Abstract Background -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-[80px]"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary rounded-full blur-[80px]"></div>
+</div>
+<div class="bg-primary-container/10 p-6 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[64px] text-primary" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-3">拖拽上传您的 3D 文件</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8 text-center max-w-md">安全上传单零件或装配文件，用于高精度工业报价。</p>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md shadow-sm hover:opacity-90 transition-all flex items-center gap-2 mb-8" onclick="document.getElementById('file-input').click()">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                            从设备选择文件
+                        </button>
+
+<input type="file" id="file-input" accept=".step,.stl,.iges,.obj,.x_t,.x_b,.3mf,.amf" multiple style="display:none;">
+<div id="upload-progress" class="mt-6 space-y-2">
+    <!-- 动态添加的上传进度项会显示在这里 -->
+</div>
+<!-- Supported Formats -->
+<div class="flex flex-wrap justify-center gap-3">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant">.STEP</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant">.STL</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant">.IGES</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant">.OBJ</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm font-label-sm text-on-surface-variant border border-outline-variant">.PARASOLID</span>
+</div>
+<p class="mt-6 text-label-sm font-label-sm text-outline">每个模型最大 250MB</p>
+</div>
+<!-- Additional Upload Info -->
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="p-2 bg-on-tertiary-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="history">history</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-on-surface">最近模型</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">从模型中心重新发起报价</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="hub">hub</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-on-surface">云端集成</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">从 Fusion 360 或 SolidWorks 导入</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Features/Status -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- 即时分析 Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">即时分析</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Our AI engine automatically identifies geometric complexities, thread counts, and volume tolerances within seconds of upload.</p>
+</div>
+<!-- IP 保护 Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600" data-icon="shield_lock">shield_lock</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">IP 保护</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Enterprise-grade encryption and NDA-compliant processing ensure your proprietary designs never leave our secure, firewalled server clusters.</p>
+</div>
+<!-- 实时库存 Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-600" data-icon="inventory_2">inventory_2</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">实时库存</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Pricing is dynamically adjusted based on real-time global material stock, energy costs, and machine availability in our network.</p>
+</div>
+<!-- Quote Progress/Steps -->
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant">
+<h4 class="text-label-md font-label-md text-on-surface mb-4">报价流程</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-[10px] text-on-primary font-bold">1</div>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm text-on-surface">上传 CAD</p>
+<p class="text-[11px] text-on-surface-variant">支持 5 种以上格式</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex items-start gap-3 opacity-50">
+<div class="w-6 h-6 rounded-full bg-outline flex items-center justify-center text-[10px] text-white font-bold">2</div>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm text-on-surface">DFM 分析</p>
+<p class="text-[11px] text-on-surface-variant">AI 驱动的可制造性检查</p>
+</div>
+</div>
+<div class="flex items-start gap-3 opacity-50">
+<div class="w-6 h-6 rounded-full bg-outline flex items-center justify-center text-[10px] text-white font-bold">3</div>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm text-on-surface">选择表面处理</p>
+<p class="text-[11px] text-on-surface-variant">阳极氧化、涂层或抛光</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Support Widget -->
+<div class="support-float">
+<div class="support-panel" id="support-panel">
+<div class="flex items-start justify-between gap-4 mb-4">
+<div>
+<p class="text-label-md font-label-md text-on-surface">报价协助支持</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">上传模型后可随时切换人工客服或智能客服（工程师角色）。</p>
+</div>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" id="support-close" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<button class="support-option is-active" data-support-type="human" type="button">
+<span class="support-option-icon">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+</span>
+<span class="flex-1">
+<span class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-on-surface">人工客服</span>
+<span class="px-2 py-1 rounded-full bg-primary-container/10 text-primary text-[11px] font-semibold">优先处理</span>
+</span>
+<span class="block mt-1 text-body-sm font-body-sm text-on-surface-variant">适合定制装配、商务沟通、复杂项目协作与人工跟进。</span>
+</span>
+</button>
+<button class="support-option" data-support-type="ai" type="button">
+<span class="support-option-icon">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+</span>
+<span class="flex-1">
+<span class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-on-surface">智能客服（工程师）</span>
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-semibold">7x24 在线</span>
+</span>
+<span class="block mt-1 text-body-sm font-body-sm text-on-surface-variant">适合快速解答材料、工艺、DFM、模型上传规范与报价流程问题。</span>
+</span>
+</button>
+</div>
+<div class="mt-4 rounded-lg bg-surface-container-low px-4 py-3">
+<p class="text-[13px] font-medium text-on-surface" id="support-status-title">当前已选择：人工客服</p>
+<p class="text-[12px] leading-5 text-on-surface-variant mt-1" id="support-status-copy">将优先安排人工协助您处理复杂多零件项目与定制装配需求。</p>
+</div>
+</div>
+<button class="support-launcher" id="support-toggle" type="button" aria-expanded="true">
+<span class="material-symbols-outlined" data-icon="headset_mic">headset_mic</span>
+<span>客服支持</span>
+</button>
+</div>
+<script>
+        const dropZone = document.getElementById('drop-zone');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => {
+                dropZone.classList.add('drop-zone-active');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => {
+              dropZone.classList.remove('drop-zone-active');
+            }, false);
+        });
+         dropZone.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files.length > 0) {
+              
+                handleFiles(files);
+            }
+        }
+
+        function handleFiles(files) {
+      
+            const fileArray = Array.from(files);
+            
+            fileArray.forEach(file => {
+               
+                const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
+                if (!allowedTypes.includes(file.type)) {
+                    alert(`文件 ${file.name} 格式不支持，请上传图片或PDF文件`);
+                    return;
+                }
+                
+              
+                const maxSize = 10 * 1024 * 1024; // 10MB
+                if (file.size > maxSize) {
+                    alert(`文件 ${file.name} 大小超过10MB限制`);
+                    return;
+                }
+                
+                
+                uploadFile(file);
+            });
+        }
+
+        function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+            
+           
+            showUploadProgress(file.name);
+            
+           
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('上传成功:', data.fileUrl);
+                    showUploadSuccess(file.name, data.fileUrl);
+                } else {
+                    console.error('上传失败:', data.message);
+                    showUploadError(file.name, data.message);
+                }
+            })
+            .catch(error => {
+                console.error('上传出错:', error);
+                showUploadError(file.name, '网络错误，请重试');
+            });
+        }
+
+        function showUploadProgress(fileName) {
+       
+            const progressContainer = document.getElementById('upload-progress');
+            if (progressContainer) {
+                const progressItem = document.createElement('div');
+                progressItem.className = 'upload-item';
+                progressItem.innerHTML = `
+                    <span>📄 ${fileName}</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0%</span>
+                `;
+                progressContainer.appendChild(progressItem);
+            }
+        }
+
+        function showUploadSuccess(fileName, fileUrl) {
+       
+            const uploadItems = document.querySelectorAll('.upload-item');
+            uploadItems.forEach(item => {
+                if (item.textContent.includes(fileName)) {
+                    item.innerHTML = `
+                        <span>✅ ${fileName}</span>
+                        <span style="color: green;">上传成功</span>
+                        <a href="${fileUrl}" target="_blank">查看</a>
+                    `;
+                }
+            });
+        }
+
+        function showUploadError(fileName, errorMsg) {
+      
+            const uploadItems = document.querySelectorAll('.upload-item');
+            uploadItems.forEach(item => {
+                if (item.textContent.includes(fileName)) {
+                    item.innerHTML = `
+                        <span>❌ ${fileName}</span>
+                        <span style="color: red;">上传失败: ${errorMsg}</span>
+                    `;
+                }
+            });
+        }
+
+        
+        dropZone.addEventListener('click', () => {
+            const fileInput = document.getElementById('file-input');
+            if (fileInput) {
+                fileInput.click();
+            }
+        });
+
+    
+        const fileInput = document.getElementById('file-input');
+        if (fileInput) {
+            fileInput.addEventListener('change', (e) => {
+                const files = e.target.files;
+                if (files.length > 0) {
+                    handleFiles(files);
+                }
+                
+                fileInput.value = '';
+            });
+        }
+
+        const supportPanel = document.getElementById('support-panel');
+        const supportToggle = document.getElementById('support-toggle');
+        const supportClose = document.getElementById('support-close');
+        const supportStatusTitle = document.getElementById('support-status-title');
+        const supportStatusCopy = document.getElementById('support-status-copy');
+        const supportOptions = document.querySelectorAll('[data-support-type]');
+
+        const supportCopyMap = {
+            human: {
+                title: '当前已选择：人工客服',
+                copy: '将优先安排人工协助您处理复杂多零件项目与定制装配需求。'
+            },
+            ai: {
+                title: '当前已选择：智能客服（工程师）',
+                copy: '将由工程师角色的智能客服先为您解答上传规范、工艺路径与报价相关问题。'
+            }
+        };
+
+        function setSupportPanelOpen(isOpen) {
+            if (!supportPanel || !supportToggle) {
+                return;
+            }
+            supportPanel.classList.toggle('is-collapsed', !isOpen);
+            supportToggle.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        if (supportToggle) {
+            supportToggle.addEventListener('click', () => {
+                const isCollapsed = supportPanel.classList.contains('is-collapsed');
+                setSupportPanelOpen(isCollapsed);
+            });
+        }
+
+        if (supportClose) {
+            supportClose.addEventListener('click', () => {
+                setSupportPanelOpen(false);
+            });
+        }
+
+        supportOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const type = option.dataset.supportType;
+                supportOptions.forEach(item => item.classList.remove('is-active'));
+                option.classList.add('is-active');
+
+                if (supportCopyMap[type]) {
+                    supportStatusTitle.textContent = supportCopyMap[type].title;
+                    supportStatusCopy.textContent = supportCopyMap[type].copy;
+                }
+            });
+        });
+              </script>
+
+
+
+
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+

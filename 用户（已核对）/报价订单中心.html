@@ -1,0 +1,696 @@
+﻿<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Industrial AI - 订单中心</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1;
+        }
+    </style>
+<link data-customer-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-customer-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-customer-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-customer-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-customer-shell-boot>
+document.documentElement.classList.add("customer-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("customer-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-customer-shell-boot>
+html.customer-shell-loading {
+  background: #f8fafc;
+}
+html.customer-shell-loading body {
+  visibility: hidden;
+}
+</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#434655",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#191b23",
+                      "inverse-surface": "#2e3039",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#eeefff",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed": "#00174b",
+                      "primary": "#004ac6",
+                      "outline": "#737686",
+                      "on-secondary-container": "#5c647a",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#2563eb",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#dae2fd",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f3f3fe",
+                      "surface-bright": "#faf8ff",
+                      "on-tertiary-container": "#ffede6",
+                      "surface-dim": "#d9d9e5",
+                      "outline-variant": "#c3c6d7",
+                      "tertiary": "#943700",
+                      "surface-container": "#ededf9",
+                      "inverse-on-surface": "#f0f0fb",
+                      "surface-tint": "#0053db",
+                      "surface": "#faf8ff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#dae2fd",
+                      "secondary": "#565e74",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "surface-variant": "#e1e2ed",
+                      "surface-container-highest": "#e1e2ed",
+                      "on-secondary-fixed": "#131b2e",
+                      "primary-fixed": "#dbe1ff",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "tertiary-container": "#bc4800",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e7e7f3",
+                      "on-background": "#191b23",
+                      "tertiary-fixed": "#ffdbcd",
+                      "background": "#faf8ff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-primary-fixed-variant": "#003ea8"
+              },
+              "borderRadius": {
+                      "默认": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "lg": "24px",
+                      "gutter": "16px",
+                      "md": "16px",
+                      "margin": "24px",
+                      "base": "4px",
+                      "xs": "4px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<body class="bg-background text-on-background min-h-screen">
+
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-40">
+  <div class="p-6 flex items-center gap-3">
+    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-sm">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+    </div>
+    <div>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">Industrial AI</h1>
+      <p class="text-label-sm font-label-sm text-secondary">智能报价工作台</p>
+    </div>
+  </div>
+  <nav class="flex-1 mt-4 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="用户系统首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">工作台</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="ai模型智能报价.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">智能工作台</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价模型上传页.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md">专业报价</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-primary text-on-primary font-bold shadow-sm" href="报价订单中心.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-md text-label-md">订单中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="数据分析页面.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">数据分析</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="模型中心.html">
+<span class="material-symbols-outlined">deployed_code</span>
+<span class="font-label-md text-label-md">模型中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="会员中心.html">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-label-md text-label-md">会员中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="消息中心.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md text-label-md">消息中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="账号中心.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">账号中心</span>
+</a>
+  </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container">
+      <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      <div class="overflow-hidden">
+        <p class="text-label-md font-label-md font-bold truncate text-on-surface">张伟</p>
+        <p class="text-label-sm font-label-sm text-secondary truncate">高级工程师</p>
+      </div>
+    </div>
+  </div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 ml-64 w-[calc(100%-16rem)] bg-surface-container-lowest shadow-sm border-b border-outline-variant h-16 flex items-center px-6">
+  <div class="flex-1 flex items-center justify-between gap-4">
+    <div class="relative w-full max-w-md">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <input type="text" placeholder="搜索订单号或文件..." class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary transition-all">
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+<a href="ai模型智能报价.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>开始智能报价</span>
+</a>
+<a href="报价模型上传页.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span>开始专业报价</span>
+</a>
+      <button class="relative p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <div class="h-8 w-px bg-outline-variant mx-1"></div>
+      <div class="flex items-center gap-3">
+        <div class="text-right hidden sm:block">
+          <p class="text-label-md font-label-md font-bold text-on-surface">张伟</p>
+          <p class="text-label-sm font-label-sm text-secondary">高级工程师</p>
+        </div>
+        <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<div class="p-lg max-w-[1200px] mx-auto space-y-lg">
+<!-- Page Header Section -->
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">订单中心</h2>
+<p class="font-body-sm text-on-surface-variant mt-1">管理您的机械零件报价、历史订单及生产进度</p>
+</div>
+<button class="flex items-center gap-sm bg-primary text-on-primary px-xl py-md rounded-lg font-label-md shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_shopping_cart</span>
+                    开始新报价
+                </button>
+</div>
+<!-- Stats Overview (Bento Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="bg-surface p-md rounded-xl border border-outline-variant shadow-sm flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">task</span>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase">总报价数</p>
+<p class="font-headline-sm text-headline-sm">124</p>
+</div>
+</div>
+<div class="bg-surface p-md rounded-xl border border-outline-variant shadow-sm flex items-center gap-md">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px]">pending_actions</span>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase">待处理</p>
+<p class="font-headline-sm text-headline-sm">8</p>
+</div>
+</div>
+<div class="bg-surface p-md rounded-xl border border-outline-variant shadow-sm flex items-center gap-md">
+<div class="w-12 h-12 bg-tertiary-container/10 rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[32px]">precision_manufacturing</span>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase">生产中</p>
+<p class="font-headline-sm text-headline-sm">15</p>
+</div>
+</div>
+<div class="bg-surface p-md rounded-xl border border-outline-variant shadow-sm flex items-center gap-md">
+<div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase">已交付</p>
+<p class="font-headline-sm text-headline-sm">101</p>
+</div>
+</div>
+</div>
+<!-- Filter Tabs -->
+<div class="bg-surface rounded-xl border border-outline-variant p-base shadow-sm sticky top-[72px] z-30">
+<div class="flex gap-xs p-1 overflow-x-auto scrollbar-hide">
+<button class="px-lg py-2 rounded-lg font-label-md bg-primary text-on-primary transition-all">全部报价</button>
+<button class="px-lg py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all">待确认</button>
+<button class="px-lg py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all">待付款</button>
+<button class="px-lg py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all">已下单</button>
+<button class="px-lg py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all">已完成</button>
+<button class="px-lg py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all">共享报价单</button>
+<div class="flex-1"></div>
+<button class="px-md flex items-center gap-xs font-label-md text-primary">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        高级筛选
+                    </button>
+</div>
+</div>
+<!-- Quotation List -->
+<div class="space-y-md">
+<!-- Quotation Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+<!-- Card Header -->
+<div class="px-lg py-md bg-surface-container/30 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="font-label-md font-bold text-on-surface">QT-20240525-001</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] rounded-full font-bold uppercase tracking-tight">待付款</span>
+<span class="text-label-sm text-outline border-l border-outline-variant pl-md ml-base">2024-05-25 14:30</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-xs px-3 py-1.5 text-label-sm text-on-surface-variant hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+                                复制
+                            </button>
+<button class="flex items-center gap-xs px-3 py-1.5 text-label-sm text-error hover:bg-error-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                                删除
+                            </button>
+</div>
+</div>
+<!-- Card Content (Multi-Model) -->
+<div class="p-lg">
+<div class="flex flex-col xl:flex-row gap-lg">
+<!-- Thumbnail Area -->
+<a aria-label="查看 Engine_Mount_Main_A1.step 报价详情" class="w-24 h-24 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center shrink-0 overflow-hidden group relative block" href="报价详情.html">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-fidelity 3D CAD model rendering of a precision-machined aerospace aluminum bracket. The part features complex milled pockets and counterbored holes. The lighting is dramatic and technical, with a soft blue rim light reflecting off the metallic surface against a clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ZLrRHpT35fQGTVYO9uz8RQz_5bV-QwJUWdYBI0GNESdCpLX2GVSRYdvJ26xgVgE_Au0du7qJ7vsXTGsxCE-ltBVbXmOPjbVqhP_ietRZLilqYQHGj__Tqk9xzHhDUz1NtSI_WFNF8t8wPNn84uK5utXnR2g9zxUhLtQTwXFIEOxTPDj0G1KhpevTePCUVwM27F6266o84Qt9aMEsy8Xx485pHFE6kraEfvGNXNxTH0RZZ1a0M19sbis1AhIjx4a445-2LyPuWQU">
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</a>
+<!-- Model Primary Info -->
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-lg">
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">主要零件名</p>
+<a class="font-label-md text-on-surface font-semibold hover:text-primary transition-colors" href="报价详情.html">Engine_Mount_Main_A1.step</a>
+<p class="text-label-sm text-on-surface-variant">数量: 10 件</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">零件信息</p>
+<p class="font-label-md text-on-surface">单位: mm</p>
+<p class="text-label-sm text-on-surface-variant">长宽高: 120 x 85 x 45</p>
+<p class="text-label-sm text-on-surface-variant">体积: 142.5 cm3</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">材质 / 工艺</p>
+<p class="font-label-md text-on-surface">AL 6061-T6 / CNC 四轴铣削</p>
+<p class="text-label-sm text-on-surface-variant">表面处理: 喷砂阳极氧化</p>
+<p class="text-label-sm text-on-surface-variant">螺纹: M6 x 1，8 孔</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">预估交付日期</p>
+<p class="font-label-md text-on-surface estimated-date" data-format="cn" data-offset-days="9" data-prefix="预计 " data-source-date="2026-07-08" data-suffix=" 交付"></p>
+<p class="text-label-sm text-on-surface-variant">小计: ¥ 10,360.00</p>
+</div>
+</div>
+</div>
+<!-- Accordion for more models -->
+<div class="mt-md pt-md border-t border-dashed border-outline-variant">
+<button class="flex items-center gap-xs text-primary font-label-md hover:underline" onclick="toggleDetails('details-001')">
+<span class="material-symbols-outlined transition-transform duration-300" id="icon-001">keyboard_arrow_down</span>
+                                展开更多模型 (共 3 个)
+                            </button>
+<div class="hidden mt-md space-y-md animate-in slide-in-from-top-2 duration-300" id="details-001">
+<!-- Extra Model 1 -->
+<div class="flex flex-col md:flex-row gap-lg bg-surface-container/20 p-md rounded-lg border border-outline-variant/50">
+<a aria-label="查看 Support_Pin_04.step 报价详情" class="w-16 h-16 bg-surface-container rounded-lg border border-outline-variant overflow-hidden shrink-0 block" href="报价详情.html">
+<img class="w-full h-full object-cover" data-alt="Technical 3D rendering of a small custom stainless steel bushing with internal threading. High precision industrial aesthetic, crisp focus, neutral studio lighting on a bright white background, consistent with a professional machining catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACVy41sHpPkweoRbYX5tnxjYSSh6-p8GgeVXtWodMQIzOyaxWptgM0MGRBzrXdZz8MlQi-V7tlB1P0EIfmFmGM9I5pawEquDfqndJ9BfFB-ZSlJHNgJNpgLUXbmWs4KJ1A8kSYLlCEiMncJDC4Be26Trl3VlYbkNn3bo9QpJ9SZ8r_wCpRqkaMTwXC_URnrMac7NI_nkvRAlSzmQwCKJFAKeVg7BSUkAexUCC8CM-RUaKPTpPqYuYmDj-xukwwhUtkGT3Jdy9LEDA">
+</a>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-md">
+<div class="space-y-1">
+<a class="text-label-sm font-semibold text-on-surface hover:text-primary transition-colors" href="报价详情.html">Support_Pin_04.step</a>
+<p class="text-label-sm text-on-surface-variant">数量: 50 件</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-medium text-on-surface">单位: mm</p>
+<p class="text-label-sm text-on-surface-variant">长宽高: 18 x 18 x 42</p>
+<p class="text-label-sm text-on-surface-variant">体积: 6.8 cm3</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-medium text-on-surface">SS 304 / CNC 车削</p>
+<p class="text-label-sm text-on-surface-variant">表面处理: 钝化</p>
+<p class="text-label-sm text-on-surface-variant">螺纹: 内螺纹 M8</p>
+</div>
+<div class="space-y-1 md:text-right">
+<p class="text-label-sm text-outline uppercase">预估交付日期</p>
+<p class="text-label-sm font-bold text-on-surface estimated-date" data-format="cn" data-offset-days="8" data-prefix="预计 " data-source-date="2026-07-08" data-suffix=" 交付"></p>
+<p class="text-label-sm text-on-surface-variant">小计: ¥ 1,250.00</p>
+</div>
+</div>
+</div>
+<!-- Extra Model 2 -->
+<div class="flex flex-col md:flex-row gap-lg bg-surface-container/20 p-md rounded-lg border border-outline-variant/50">
+<a aria-label="查看 Flange_Adapter.step 报价详情" class="w-16 h-16 bg-surface-container rounded-lg border border-outline-variant overflow-hidden shrink-0 block" href="报价详情.html">
+<img class="w-full h-full object-cover" data-alt="3D model of a complex machined flange with multiple alignment holes. Clear technical visualization, premium industrial design, soft shadows, metallic finish, bright white environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_CD71WeHiM4K3e8_Z-M4wJJEAi5oYQ0bLW4VHGBzplgjwXALTy-7dEKqAw5DSbLxPlzwK17e0B_m6c4kd9Qv-t2fORINhpREs9bc54BHzgjfoozzT8M65_0-2ie4MrkHwjCTcxyXzrEAXBniBTcmbFM7K_R4d85_Td13Mj3ou5lvV2iAOROd-GI8b0xCGLx1G7Le5uW1XLeDBm8-Oj78NgW_O-SSaIF8SfiTjK9fXWMJx1wJeJ84MEsOToV0p0ij7KHsqSK275E">
+</a>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-md">
+<div class="space-y-1">
+<a class="text-label-sm font-semibold text-on-surface hover:text-primary transition-colors" href="报价详情.html">Flange_Adapter.step</a>
+<p class="text-label-sm text-on-surface-variant">数量: 2 件</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-medium text-on-surface">单位: 英寸</p>
+<p class="text-label-sm text-on-surface-variant">长宽高: 4.8 x 4.8 x 1.3</p>
+<p class="text-label-sm text-on-surface-variant">体积: 29.4 cm3</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-medium text-on-surface">碳钢 / CNC 三轴铣削</p>
+<p class="text-label-sm text-on-surface-variant">表面处理: 发黑防锈</p>
+<p class="text-label-sm text-on-surface-variant">螺纹: 6 个攻丝孔</p>
+</div>
+<div class="space-y-1 md:text-right">
+<p class="text-label-sm text-outline uppercase">预估交付日期</p>
+<p class="text-label-sm font-bold text-on-surface estimated-date" data-format="cn" data-offset-days="11" data-prefix="预计 " data-source-date="2026-07-08" data-suffix=" 交付"></p>
+<p class="text-label-sm text-on-surface-variant">小计: ¥ 840.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Footer -->
+<div class="px-lg py-md bg-surface border-t border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-outline">报价总金额 (含税)</span>
+<span class="font-headline-sm text-headline-sm text-primary">¥ 12,450.00</span>
+</div>
+<div class="flex items-center gap-md">
+<p class="text-label-sm text-on-surface-variant max-w-[200px] text-right hidden sm:block">包含运费及质检报告 (FOB Shanghai)</p>
+<a class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md hover:opacity-90 shadow-sm transition-all active:scale-[0.98] inline-flex items-center justify-center" href="报价详情.html">
+                                查看详情
+                            </a>
+</div>
+</div>
+</div>
+<!-- Quotation Card 2 (Ordered) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+<div class="px-lg py-md bg-surface-container/30 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="font-label-md font-bold text-on-surface">QT-20240524-092</span>
+<span class="px-3 py-1 bg-green-100 text-green-700 text-[11px] rounded-full font-bold uppercase tracking-tight">已下单</span>
+<span class="text-label-sm text-outline border-l border-outline-variant pl-md ml-base">2024-05-24 10:15</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-xs px-3 py-1.5 text-label-sm text-on-surface-variant hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+                                复制
+                            </button>
+</div>
+</div>
+<div class="p-lg">
+<div class="flex flex-col xl:flex-row gap-lg">
+<a aria-label="查看 Heat_Sink_Custom.step 报价详情" class="w-24 h-24 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center shrink-0 overflow-hidden block" href="报价详情.html">
+<img class="w-full h-full object-cover" data-alt="High-resolution technical visualization of an intricate titanium heatsink for specialized electronics. Delicate fin patterns and precise finishing shown with micro-reflections. Modern industrial lighting, professional SaaS interface asset style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPOCmy9AckDA2F_hQ2R7TW9G5CY-w3BqPpFZ2I5UZD6phSNd0gNx1DGokA_4yjl3oh7Q53FzIA-TL3PwindhGMioxKiN0loE6Rey6l6IfxOFrdh8I5ujJC5o5-P14cx3luh574CszWosk_lPiCFm1Bgad5f1wL-zEA1QTH4sxg3d-T2h2VrpvkAz2pg-DbxYuzG6BGMFt6vvdo-fUHXFfq9_N24zYaX2pfFPNfD3BpOl5y9Px3BRsI-vD_HejSnRNMv4Kl5UyB_zA">
+</a>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-lg">
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">主要零件名</p>
+<a class="font-label-md text-on-surface font-semibold hover:text-primary transition-colors" href="报价详情.html">Heat_Sink_Custom.step</a>
+<p class="text-label-sm text-on-surface-variant">数量: 100 件</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">零件信息</p>
+<p class="font-label-md text-on-surface">单位: mm</p>
+<p class="text-label-sm text-on-surface-variant">长宽高: 220 x 140 x 60</p>
+<p class="text-label-sm text-on-surface-variant">体积: 438.6 cm3</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">材质 / 工艺</p>
+<p class="font-label-md text-on-surface">钛合金 Gr5 / CNC 五轴铣削</p>
+<p class="text-label-sm text-on-surface-variant">表面处理: 精密喷砂 + 去毛刺</p>
+<p class="text-label-sm text-on-surface-variant">螺纹: M4 x 0.7，24 孔</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm text-outline uppercase">生产状态</p>
+<div class="flex items-center gap-sm mt-1">
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-primary"></div>
+</div>
+<span class="text-label-sm text-primary font-bold">66%</span>
+</div>
+<p class="font-label-md text-on-surface estimated-date" data-format="cn" data-offset-days="6" data-prefix="预计 " data-source-date="2026-07-08" data-suffix=" 交付"></p>
+<p class="text-label-sm text-on-surface-variant">小计: ¥ 38,800.00</p>
+</div>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-dashed border-outline-variant">
+<button class="flex items-center gap-xs text-primary font-label-md hover:underline" onclick="toggleDetails('details-092')">
+<span class="material-symbols-outlined transition-transform duration-300" id="icon-092">keyboard_arrow_down</span>
+                                展开更多模型 (共 2 个)
+                            </button>
+<div class="hidden mt-md space-y-md animate-in slide-in-from-top-2 duration-300" id="details-092">
+<div class="flex flex-col md:flex-row gap-lg bg-surface-container/20 p-md rounded-lg border border-outline-variant/50">
+<a aria-label="查看 Airflow_Frame_B.step 报价详情" class="w-16 h-16 bg-surface-container rounded-lg border border-outline-variant overflow-hidden shrink-0 block" href="报价详情.html">
+<img class="w-full h-full object-cover" data-alt="Compact machined frame with fine vent channels and mounting holes, rendered as a premium industrial catalog 3D visualization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_CD71WeHiM4K3e8_Z-M4wJJEAi5oYQ0bLW4VHGBzplgjwXALTy-7dEKqAw5DSbLxPlzwK17e0B_m6c4kd9Qv-t2fORINhpREs9bc54BHzgjfoozzT8M65_0-2ie4MrkHwjCTcxyXzrEAXBniBTcmbFM7K_R4d85_Td13Mj3ou5lvV2iAOROd-GI8b0xCGLx1G7Le5uW1XLeDBm8-Oj78NgW_O-SSaIF8SfiTjK9fXWMJx1wJeJ84MEsOToV0p0ij7KHsqSK275E">
+</a>
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-md">
+<div class="space-y-1">
+<a class="text-label-sm font-semibold text-on-surface hover:text-primary transition-colors" href="报价详情.html">Airflow_Frame_B.step</a>
+<p class="text-label-sm text-on-surface-variant">数量: 20 件</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-medium text-on-surface">单位: mm</p>
+<p class="text-label-sm text-on-surface-variant">长宽高: 96 x 74 x 26</p>
+<p class="text-label-sm text-on-surface-variant">体积: 54.2 cm3</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-medium text-on-surface">AL 7075 / CNC 五轴铣削</p>
+<p class="text-label-sm text-on-surface-variant">表面处理: 硬质阳极氧化</p>
+<p class="text-label-sm text-on-surface-variant">螺纹: M3 x 0.5，12 孔</p>
+</div>
+<div class="space-y-1 md:text-right">
+<p class="text-label-sm text-outline uppercase">生产状态</p>
+<p class="text-label-sm font-bold text-primary">检验排程 80%</p>
+<p class="text-label-sm text-on-surface estimated-date" data-format="cn" data-offset-days="4" data-prefix="预计 " data-source-date="2026-07-08" data-suffix=" 交付"></p>
+<p class="text-label-sm text-on-surface-variant">小计: ¥ 6,800.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-lg py-md bg-surface border-t border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-outline">报价总金额</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">¥ 45,600.00</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="border border-outline text-on-surface-variant px-lg py-sm rounded-lg font-label-md hover:bg-surface-container transition-all">
+                                物流查询
+                            </button>
+<a class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md hover:opacity-90 shadow-sm transition-all inline-flex items-center justify-center" href="报价详情.html">
+                                查看详情
+                            </a>
+</div>
+</div>
+</div>
+<!-- Quotation Card 3 (Draft) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden opacity-80">
+<div class="px-lg py-md bg-surface-container/30 border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="font-label-md font-bold text-on-surface">QT-20240523-224</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded-full font-bold uppercase tracking-tight">待确认</span>
+<span class="text-label-sm text-outline border-l border-outline-variant pl-md ml-base">2024-05-23 09:00</span>
+</div>
+<div class="flex items-center gap-sm">
+<a class="flex items-center gap-xs px-3 py-1.5 text-label-sm text-on-surface-variant hover:bg-surface-container rounded transition-colors" href="报价详情二级-报价信息修改.html">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                继续编辑
+                            </a>
+<button class="flex items-center gap-xs px-3 py-1.5 text-label-sm text-error hover:bg-error-container rounded transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                                删除
+                            </button>
+</div>
+</div>
+<div class="p-lg">
+<div class="flex flex-col xl:flex-row gap-lg grayscale">
+<div class="w-24 h-24 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[40px]">description</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<p class="text-label-sm text-outline uppercase">主要零件包名</p>
+<p class="font-label-md text-on-surface font-semibold mt-1">Multiple_Items_Batch_B.zip</p>
+<p class="text-body-sm text-on-surface-variant mt-2">已上传模型: 5 个</p>
+<div class="w-full h-1 bg-surface-container rounded-full mt-4">
+<div class="w-1/4 h-full bg-primary animate-pulse"></div>
+</div>
+</div>
+</div>
+<div class="mt-md rounded-lg border border-dashed border-outline-variant bg-surface-container/30 px-md py-sm text-body-sm text-on-surface-variant">
+包含 5 个 CAD 文件，正在进行自动报价解析中。
+</div>
+</div>
+<div class="px-lg py-md bg-surface border-t border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm text-outline italic">报价计算中...</span>
+</div>
+<button class="bg-surface-container text-outline px-lg py-sm rounded-lg font-label-md cursor-not-allowed">
+                            查看详情
+                        </button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between py-md">
+<p class="text-label-sm text-on-surface-variant">显示 1 到 10 条，共 124 条报价</p>
+<div class="flex items-center gap-xs">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-md">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-md">13</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id.split('-')[1]);
+            
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                details.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function formatEstimatedDate(date, format) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+
+            if (format === 'en') {
+                const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                return monthNames[date.getMonth()] + ' ' + day + ', ' + year;
+            }
+
+            return year + '-' + month + '-' + day;
+        }
+
+        function renderEstimatedDates() {
+            document.querySelectorAll('.estimated-date').forEach((node) => {
+                const sourceDate = node.dataset.sourceDate ? new Date(node.dataset.sourceDate + 'T00:00:00') : new Date();
+                const offsetDays = Number(node.dataset.offsetDays || 0);
+                const prefix = node.dataset.prefix || '';
+                const suffix = node.dataset.suffix || '';
+                const format = node.dataset.format || 'cn';
+                const resultDate = new Date(sourceDate);
+
+                resultDate.setDate(resultDate.getDate() + offsetDays);
+                node.textContent = prefix + formatEstimatedDate(resultDate, format) + suffix;
+            });
+        }
+
+        renderEstimatedDates();
+
+        // Add hover effects for cards dynamically
+        document.querySelectorAll('.quotation-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('scale-[1.002]');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('scale-[1.002]');
+            });
+        });
+    </script>
+
+
+</body></html>
+
+
+
+
+
+
+
+
+

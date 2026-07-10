@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ForgeAI - 帮助中心与反馈</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e1e2ed",
+                    "outline-variant": "#c3c6d7",
+                    "on-error-container": "#93000a",
+                    "outline": "#737686",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#004ac6",
+                    "secondary-fixed": "#dae2fd",
+                    "secondary-container": "#dae2fd",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-dim": "#d9d9e5",
+                    "tertiary-container": "#bc4800",
+                    "surface": "#faf8ff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-background": "#191b23",
+                    "surface-tint": "#0053db",
+                    "tertiary": "#943700",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-secondary-fixed": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e7e7f3",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-secondary-container": "#5c647a",
+                    "background": "#faf8ff",
+                    "on-surface": "#191b23",
+                    "inverse-surface": "#2e3039",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#eeefff",
+                    "surface-container": "#ededf9",
+                    "surface-container-low": "#f3f3fe",
+                    "on-primary-fixed": "#00174b",
+                    "surface-bright": "#faf8ff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#565e74",
+                    "primary-container": "#2563eb",
+                    "surface-container-highest": "#e1e2ed",
+                    "on-surface-variant": "#434655",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary-fixed-variant": "#003ea8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "md": "16px",
+                    "base": "4px",
+                    "margin": "24px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-nav-item { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .bento-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .bento-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+    </style>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+<div class="mb-8 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[22px]" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;">precision_manufacturing</span>
+</div>
+<div>
+<h1 class="text-[20px] leading-[24px] font-bold text-primary tracking-tight">ForgeAI</h1>
+<p class="text-[12px] leading-[16px] text-on-surface-variant opacity-70">供应商门户</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="首页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">dashboard</span>
+<span class="text-[14px] leading-[20px] font-medium">经营驾驶舱</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="企业入驻.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">business_center</span>
+<span class="text-[14px] leading-[20px] font-medium">企业入驻</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="RFQ竞价中心.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">request_quote</span>
+<span class="text-[14px] leading-[20px] font-medium">RFQ竞价中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="平台订单页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">shopping_cart</span>
+<span class="text-[14px] leading-[20px] font-medium">平台订单</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="业务订单CRM页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">receipt_long</span>
+<span class="text-[14px] leading-[20px] font-medium">业务订单</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="企业中心页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">domain</span>
+<span class="text-[14px] leading-[20px] font-medium">企业中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="培训中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">school</span>
+<span class="text-[14px] leading-[20px] font-medium">培训中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="考核中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">assignment_turned_in</span>
+<span class="text-[14px] leading-[20px] font-medium">考核中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="消息中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">mail</span>
+<span class="text-[14px] leading-[20px] font-medium">消息中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary font-semibold rounded-lg shadow-sm transition-colors" href="帮助中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;">help</span>
+<span class="text-[14px] leading-[20px] font-medium">帮助中心</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3 px-2">
+<img alt="张伟，高级供应商管理员" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="张伟，高级供应商管理员" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGKvp7N7Yrahgq-j5XqPUK9Dbe0Lci6SbypGnSwsVydP2pgGPXCnaDYwuQF8oHg3Zoq6a6EShZweODuBtHoccLZqto7zFYBk7kNVeKfLV0TiqRbXxm1lkWP9Lr0LYc1ykDPWuoWfF68d6vZRxGfglxoBHQ9RRrbgD8umZ3Bh_hzoHFn5ZQ6FuaD4fAAJ8xf09ZoNHH1d4sz5s8DMrfOnBhtjDsuShoz5mSD2l77Kt0RZSY-BhwKscm4nGF8JOXg_p54__73Ib-Qk">
+<div class="overflow-hidden">
+<p class="text-[14px] leading-[20px] font-semibold text-on-surface truncate">张伟</p>
+<p class="text-[11px] leading-[16px] text-on-surface-variant truncate">高级供应商管理员</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-240px)] h-16 z-30 bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center px-6">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-[14px] leading-[20px] outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="搜索问题、工单或帮助文档..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2">
+<span class="text-[14px] leading-[20px] font-semibold text-primary">AI机械加工智能云平台</span>
+<span class="text-outline-variant">|</span>
+<span class="text-[14px] leading-[20px] text-on-surface-variant">供应商门户</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">settings</span>
+</button>
+<img alt="张伟，高级供应商管理员" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="张伟，高级供应商管理员" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGKvp7N7Yrahgq-j5XqPUK9Dbe0Lci6SbypGnSwsVydP2pgGPXCnaDYwuQF8oHg3Zoq6a6EShZweODuBtHoccLZqto7zFYBk7kNVeKfLV0TiqRbXxm1lkWP9Lr0LYc1ykDPWuoWfF68d6vZRxGfglxoBHQ9RRrbgD8umZ3Bh_hzoHFn5ZQ6FuaD4fAAJ8xf09ZoNHH1d4sz5s8DMrfOnBhtjDsuShoz5mSD2l77Kt0RZSY-BhwKscm4nGF8JOXg_p54__73Ib-Qk">
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[240px] pt-16 min-h-screen bg-surface">
+<div class="p-margin space-y-lg">
+<!-- Hero 搜索 Section -->
+<section class="relative rounded-xl overflow-hidden h-[320px] flex flex-col items-center justify-center text-center p-xl">
+
+<div class="absolute inset-0 bg-primary/10 backdrop-blur-[2px]"></div>
+<div class="relative z-10 space-y-6 w-full max-w-2xl">
+<h2 class="text-headline-lg font-headline-lg text-on-primary">帮助中心与反馈</h2>
+<p class="text-body-lg font-body-lg text-primary-fixed">我们能为您提供什么帮助？搜索操作指南或联系我们的技术支持团队。</p>
+<div class="relative shadow-xl rounded-full">
+<span class="material-symbols-outlined absolute left-6 top-1/2 -translate-y-1/2 text-primary text-2xl">search</span>
+<input class="w-full pl-16 pr-24 py-5 rounded-full border-none text-body-lg focus:ring-4 focus:ring-primary/20" placeholder="输入关键词，如“报价流程”、“支付安全”..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-bold hover:bg-primary-container transition-colors">
+                            搜索
+                        </button>
+</div>
+</div>
+</section>
+<!-- Quick Access Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="bento-card bg-surface-container-lowest p-lg rounded-xl border border-outline-variant flex items-start gap-4 cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">quiz</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm mb-2">常见问题 (FAQ)</h3>
+<p class="text-body-sm text-on-surface-variant">快速查找关于账号管理、订单状态和结算周期的常见疑问。</p>
+</div>
+</div>
+<div class="bento-card bg-surface-container-lowest p-lg rounded-xl border border-outline-variant flex items-start gap-4 cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-2xl">menu_book</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm mb-2">操作指南</h3>
+<p class="text-body-sm text-on-surface-variant">手把手教您如何高效使用 ForgeAI 平台的每一项企业功能。</p>
+</div>
+</div>
+<div class="bento-card bg-surface-container-lowest p-lg rounded-xl border border-outline-variant flex items-start gap-4 cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">gavel</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm mb-2">平台规则</h3>
+<p class="text-body-sm text-on-surface-variant">了解供应商入驻标准、交易协议及平台合规性要求。</p>
+</div>
+</div>
+</div>
+<!-- Two Column Layout: Support & Tickets -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Work Order Feedback (Ticket History) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<div>
+<h3 class="text-headline-sm font-headline-sm">工单反馈</h3>
+<p class="text-label-sm text-on-surface-variant">查看您最近提交的技术支持或业务咨询记录</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:underline">
+<span class="material-symbols-outlined text-sm">add</span>
+                            提交新工单
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-label-md text-on-surface-variant">
+<tr>
+<th class="px-lg py-4 font-bold">工单编号</th>
+<th class="px-lg py-4 font-bold">工单主题</th>
+<th class="px-lg py-4 font-bold">状态</th>
+<th class="px-lg py-4 font-bold">最后更新</th>
+<th class="px-lg py-4 font-bold">操作</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-variant/20 transition-colors">
+<td class="px-lg py-4 text-body-sm font-mono">TK-882941</td>
+<td class="px-lg py-4 text-body-sm">RFQ 自动导入失败问题排查</td>
+<td class="px-lg py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-md text-[10px] font-bold uppercase">处理中</span>
+</td>
+<td class="px-lg py-4 text-body-sm text-on-surface-variant">15 分钟前</td>
+<td class="px-lg py-4">
+<button class="text-primary hover:text-on-primary-fixed-variant transition-colors">查看详情</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors">
+<td class="px-lg py-4 text-body-sm font-mono">TK-882705</td>
+<td class="px-lg py-4 text-body-sm">账户主体变更材料审核</td>
+<td class="px-lg py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded-md text-[10px] font-bold uppercase">已解决</span>
+</td>
+<td class="px-lg py-4 text-body-sm text-on-surface-variant">昨天 14:20</td>
+<td class="px-lg py-4">
+<button class="text-primary hover:text-on-primary-fixed-variant transition-colors">查看详情</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors">
+<td class="px-lg py-4 text-body-sm font-mono">TK-882192</td>
+<td class="px-lg py-4 text-body-sm">大宗订单结算差异化申请</td>
+<td class="px-lg py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded-md text-[10px] font-bold uppercase">已解决</span>
+</td>
+<td class="px-lg py-4 text-body-sm text-on-surface-variant">3天前</td>
+<td class="px-lg py-4">
+<button class="text-primary hover:text-on-primary-fixed-variant transition-colors">查看详情</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low text-center">
+<button class="text-label-md font-label-md text-on-surface-variant hover:text-primary">查看所有工单历史</button>
+</div>
+</div>
+<!-- 联系客服 Widget -->
+<div class="lg:col-span-4 space-y-lg">
+<div class="bg-primary text-on-primary rounded-xl p-lg shadow-lg relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10 rotate-12 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[120px]">support_agent</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm mb-2 relative z-10">联系客服</h3>
+<p class="text-body-sm text-primary-fixed mb-6 relative z-10">遇到紧急问题？我们的专家团队全天候为您提供支持。</p>
+<div class="space-y-3 relative z-10">
+<button class="w-full bg-on-primary text-primary py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+                                在线咨询 (在线)
+                            </button>
+<button class="w-full bg-primary-container border border-on-primary/30 text-on-primary py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-primary/80 transition-colors">
+<span class="material-symbols-outlined">call</span>
+                                拨打客服专线
+                            </button>
+</div>
+<div class="mt-6 pt-6 border-t border-on-primary/20 relative z-10">
+<div class="flex justify-between items-center text-label-sm">
+<span>当前排队人数</span>
+<span class="font-bold">2 人</span>
+</div>
+<div class="flex justify-between items-center text-label-sm mt-2">
+<span>预计等待时间</span>
+<span class="font-bold">&lt; 3 分钟</span>
+</div>
+</div>
+</div>
+<!-- 平台公告 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-lg">
+<h3 class="text-label-md font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">campaign</span>
+                            平台公告
+                        </h3>
+<ul class="space-y-4">
+<li>
+<a class="group" href="#">
+<p class="text-body-sm font-medium group-hover:text-primary transition-colors">关于2024年供应商资质年度审核的通知</p>
+<p class="text-label-sm text-on-surface-variant">2024-05-12</p>
+</a>
+</li>
+<li>
+<a class="group" href="#">
+<p class="text-body-sm font-medium group-hover:text-primary transition-colors">系统升级公告：订单管理模块性能优化</p>
+<p class="text-label-sm text-on-surface-variant">2024-05-10</p>
+</a>
+</li>
+<li>
+<a class="group" href="#">
+<p class="text-body-sm font-medium group-hover:text-primary transition-colors">【重要】关于支付网关维护的紧急预告</p>
+<p class="text-label-sm text-on-surface-variant">2024-05-08</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Visual Decorative Section (Featured Content) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-lg mt-xl">
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of high-precision CNC machining parts reflecting bright studio lights in a clean manufacturing environment, shallow depth of field, cool blue tones, industrial high-tech aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCWzoFj3Loo7ImmuJ8UIb549WZ-r9v3EbQtBu-HA9ke8MS8vzkCdEARlXD1ImMY8wn-RvJ91w89_xcOVbsGf1R2Tl1QHVRQlPmdJokZ40R20_FcKuc3ZBk2xnC8OEhg4rzJjTvIIrLPb0f0YV8YWbhMu7smYKw9qoMUqcNObu5zYFWt_TIWcScTSfM2VFEgqrBDMqdCpnIQo5xaWCLm8JOIKmMuwY-G7YVphZpYl5S_NU5nMexQNqHQ21SBwQfIE5wNWtYUWpVjCc')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-center p-lg">
+<span class="text-primary-fixed text-[10px] font-bold uppercase tracking-wider mb-2">热门专题</span>
+<h4 class="text-headline-sm text-white font-bold mb-1">高效报价策略指南</h4>
+<p class="text-body-sm text-white/70 max-w-xs">如何提升 RFQ 响应速度并提高中标率？</p>
+</div>
+</div>
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic digital dashboard displaying complex logistical data and maps, glowing interfaces, dark background with vibrant cyan and white data visualization, corporate SaaS aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB029rmreHZu1xDywBU013nDzUGiPM2iSpvmNA7WSks2xKbeOoT-wCuZBliVgd7UFxjoPScEN6_6DS-tiwjnZj5BnLNSxgAbRoHeCyKeIkt6cI7gNM3IcaT-b69fwnGUBX9i6leHK_8jkhmxcqYQ9eEqTDrsrlFves9f4BJe3rPtAy9Yd2izePGt_JEiGpkBr4b_lPwU4TkOzlKibmuHTy_BHT66ZZjNnmOUP9H-CHjs7bbR72kZfjpMvSnr8fxtL4MV-VjvpmAFPg')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-center p-lg">
+<span class="text-primary-fixed text-[10px] font-bold uppercase tracking-wider mb-2">新功能上线</span>
+<h4 class="text-headline-sm text-white font-bold mb-1">智能供应链预测工具</h4>
+<p class="text-body-sm text-white/70 max-w-xs">利用 AI 提前预警原材料波动与交付风险。</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action Button for Support (Contextual) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="absolute right-full mr-4 px-3 py-1.5 bg-on-background text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity duration-300">
+            需要即时帮助？
+        </span>
+</button>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => card.style.transform = '', 100);
+            });
+        });
+
+        // 搜索 Bar Focus Effect
+        const main搜索 = document.querySelector('section input');
+        main搜索.addEventListener('focus', () => {
+            main搜索.parentElement.classList.add('ring-4', 'ring-primary/30');
+        });
+        main搜索.addEventListener('blur', () => {
+            main搜索.parentElement.classList.remove('ring-4', 'ring-primary/30');
+        });
+    </script>
+</body></html>
+
