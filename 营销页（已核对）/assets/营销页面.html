@@ -1114,13 +1114,15 @@
     .factory-dark-section .factory-layout {
       gap: 0;
       align-items: start;
-      grid-template-columns: minmax(0, 1.12fr) minmax(380px, 0.88fr);
+      grid-template-columns: minmax(0, 1.28fr) minmax(330px, 0.72fr);
     }
 
     .factory-dark-section .factory-image-large {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-content: start;
       gap: clamp(18px, 2.4vw, 34px);
-      padding: clamp(42px, 6vw, 82px) clamp(18px, 3.2vw, 58px);
+      padding: clamp(56px, 6.4vw, 88px) clamp(18px, 3vw, 54px) clamp(58px, 7vh, 96px) clamp(22px, 4vw, 72px);
       overflow: visible;
       border-radius: 0;
       box-shadow: none;
@@ -1128,11 +1130,20 @@
 
     .factory-visual-card {
       position: relative;
-      min-height: clamp(500px, 70vh, 760px);
+      height: clamp(310px, 26vw, 390px);
+      min-height: 0;
       overflow: hidden;
-      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
       background: #13263d;
-      box-shadow: 0 26px 70px rgba(5, 18, 34, 0.34);
+      box-shadow: 0 28px 72px rgba(4, 13, 26, 0.36), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+      isolation: isolate;
+      transition: transform 0.32s ease, box-shadow 0.32s ease;
+    }
+
+    .factory-visual-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 34px 86px rgba(4, 13, 26, 0.42), 0 1px 0 rgba(255, 255, 255, 0.12) inset;
     }
 
     .factory-visual-card::after {
@@ -1140,24 +1151,65 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(8, 20, 34, 0.04), rgba(8, 20, 34, 0.28)),
-        linear-gradient(90deg, rgba(8, 20, 34, 0.18), rgba(8, 20, 34, 0));
+        linear-gradient(180deg, rgba(8, 20, 34, 0.02) 0%, rgba(8, 20, 34, 0.12) 44%, rgba(8, 20, 34, 0.44) 100%),
+        linear-gradient(90deg, rgba(8, 20, 34, 0.2), rgba(8, 20, 34, 0));
       pointer-events: none;
+      z-index: 1;
     }
 
     .factory-dark-section .factory-visual-card img {
       height: 100%;
       min-height: 0;
       object-fit: cover;
+      transition: transform 0.48s ease;
+    }
+
+    .factory-visual-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .factory-visual-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      min-height: 38%;
+      padding: clamp(22px, 2.3vw, 34px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      color: #ffffff;
+      background: linear-gradient(90deg, rgba(9, 16, 27, 0.86), rgba(9, 16, 27, 0.58));
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .factory-visual-caption span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .factory-visual-caption strong {
+      color: #ffffff;
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: 0;
     }
 
     .factory-dark-section .factory-card {
       position: sticky;
       top: clamp(92px, 11vh, 126px);
       display: flex;
-      min-height: calc(100vh - clamp(92px, 11vh, 126px));
+      height: fit-content;
+      min-height: 0;
+      align-self: start;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       padding: clamp(52px, 6vw, 92px);
       color: #ffffff;
       background: transparent;
@@ -2799,26 +2851,24 @@
 
       .factory-dark-section .factory-layout {
         grid-template-columns: minmax(0, 1fr);
+        min-height: auto;
       }
 
       .factory-dark-section .factory-card {
         position: relative;
         top: auto;
         min-height: auto;
-        padding: 44px 32px 54px;
+        padding: 44px 32px 28px;
       }
 
       .factory-dark-section .factory-image-large {
         gap: 18px;
-        padding: 32px;
+        padding: 0 32px 54px;
       }
 
       .factory-visual-card {
-        min-height: 360px;
-      }
-
-      .factory-visual-card:nth-child(n+3) {
-        display: none;
+        height: 340px;
+        min-height: 0;
       }
 
       .stats-grid,
@@ -3199,14 +3249,25 @@
       }
 
       .factory-dark-section .factory-image-large {
+        grid-template-columns: minmax(0, 1fr);
         gap: 12px;
-        padding: 20px 14px 0;
+        padding: 0 14px 34px;
       }
 
       .factory-visual-card {
         min-height: 0;
         height: 260px;
         border-radius: 16px;
+      }
+
+      .factory-visual-caption {
+        min-height: 42%;
+        padding: 18px;
+        gap: 7px;
+      }
+
+      .factory-visual-caption strong {
+        font-size: 22px;
       }
 
       .factory-dark-section .factory-card {
@@ -3629,13 +3690,32 @@
     <div class="container factory-layout">
       <div class="factory-image-large">
         <div class="factory-visual-card">
-          <img src="./precision/factory-floor.jpg" alt="" loading="lazy">
+          <img src="./precision/factory-floor.jpg" alt="精密加工生产现场" loading="lazy">
+          <div class="factory-visual-caption">
+            <span>01 / 智能产线</span>
+            <strong>高精度加工现场</strong>
+          </div>
         </div>
         <div class="factory-visual-card">
-          <img src="./precision/factory-racks.jpg" alt="" loading="lazy">
+          <img src="./precision/factory-racks.jpg" alt="工厂物料存储货架" loading="lazy">
+          <div class="factory-visual-caption">
+            <span>02 / 物料管理</span>
+            <strong>规范化仓储流转</strong>
+          </div>
         </div>
         <div class="factory-visual-card">
-          <img src="./precision/factory-storage.jpg" alt="" loading="lazy">
+          <img src="./precision/factory-storage.jpg" alt="生产基地仓储区域" loading="lazy">
+          <div class="factory-visual-caption">
+            <span>03 / 制程协同</span>
+            <strong>稳定交付节拍</strong>
+          </div>
+        </div>
+        <div class="factory-visual-card">
+          <img src="./precision/factory-card-interior.jpg" alt="工厂内部设备与生产环境" loading="lazy">
+          <div class="factory-visual-caption">
+            <span>04 / 质量闭环</span>
+            <strong>全流程质控追踪</strong>
+          </div>
         </div>
       </div>
       <div class="factory-card">
