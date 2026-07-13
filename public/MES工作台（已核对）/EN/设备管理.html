@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Equipment Management - ForgeAI MES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e7e7f3",
+                    "secondary-fixed": "#dae2fd",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#ededf9",
+                    "on-primary-container": "#eeefff",
+                    "primary": "#004ac6",
+                    "on-background": "#191b23",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbcd",
+                    "primary-container": "#2563eb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "error-container": "#ffdad6",
+                    "secondary": "#565e74",
+                    "on-error": "#ffffff",
+                    "tertiary": "#943700",
+                    "secondary-container": "#dae2fd",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface-dim": "#d9d9e5",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-tint": "#0053db",
+                    "on-surface": "#191b23",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container-low": "#f3f3fe",
+                    "on-secondary-container": "#5c647a",
+                    "background": "#faf8ff",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-secondary-fixed": "#131b2e",
+                    "tertiary-container": "#bc4800",
+                    "surface-variant": "#e1e2ed",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "outline": "#737686",
+                    "surface-container-highest": "#e1e2ed",
+                    "surface": "#faf8ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-surface": "#2e3039",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-surface-variant": "#434655",
+                    "surface-bright": "#faf8ff",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed-variant": "#7d2d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "margin-desktop": "32px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "margin-mobile": "16px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "2xl": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "mono-data": ["monospace"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "mono-data": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for technical look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: #c3c6d7; border-radius: 4px; }
+    </style>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen overflow-x-hidden antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Shared Component: SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full flex-col p-md overflow-y-auto bg-surface-container-lowest border-r border-outline-variant w-72 z-50">
+<div class="flex items-center gap-sm px-sm py-lg mb-md">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">factory</span>
+</div>
+<div>
+<h2 class="text-[20px] leading-[24px] font-bold text-primary tracking-tight">ForgeAI</h2>
+<p class="text-[12px] leading-[16px] text-secondary">Industrial MES</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="MES首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[14px] leading-[20px] font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="工单管理.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="text-[14px] leading-[20px] font-medium">Order Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="工序执行页面.html">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="text-[14px] leading-[20px] font-medium">Process Execution</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded bg-secondary-container text-primary font-bold opacity-90 transition-all" href="设备管理.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_repair_service</span>
+<span class="text-[14px] leading-[20px] font-medium">Equipment Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="质量管理.html">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-[14px] leading-[20px] font-medium">Quality Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="物料库存.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[14px] leading-[20px] font-medium">Material Inventory</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="ai生产助手.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-[14px] leading-[20px] font-medium">AI Production Assistant</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="告警中心.html">
+<span class="material-symbols-outlined">notifications_active</span>
+<span class="text-[14px] leading-[20px] font-medium">Alert Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="数据分析.html">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[14px] leading-[20px] font-medium">Data Analysis</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors group" href="系统管理.html">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="text-[14px] leading-[20px] font-medium">System Management (RBAC)</span>
+</a>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-md flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[14px] leading-[20px] font-medium">Account Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded text-secondary hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[14px] leading-[20px] font-medium">Message Center</span>
+</a>
+</div>
+</nav>
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 md:left-72 right-0 flex justify-between items-center px-lg h-16 z-40 bg-surface-container-lowest border-b border-outline-variant transition-all">
+<div class="flex items-center gap-md">
+<button class="md:hidden p-sm hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</button>
+<h1 class="hidden font-headline-sm text-headline-sm text-primary">ForgeAI</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="pl-xl pr-md py-sm bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none w-64 transition-all" placeholder="Search equipment ID or tags..." type="text">
+</div>
+<button class="p-sm hover:bg-surface-container rounded-full transition-colors relative group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:scale-95 transition-transform">notifications</span>
+<span class="absolute top-1 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-sm hover:bg-surface-container rounded-full transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:scale-95 transition-transform">settings</span>
+</button>
+<div class="hidden sm:flex flex-col items-end gap-[2px] text-right">
+<p class="text-[12px] leading-[14px] font-semibold text-on-surface">Zhang Wei</p>
+<p class="text-[10px] leading-[12px] text-on-surface-variant">Senior Engineer</p>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-sm cursor-pointer">
+<img alt="Zhang Wei, Senior Engineer" class="w-full h-full object-cover" data-alt="Zhang Wei, Senior Engineer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsyM9gxeEnlg9cKf1hyDqzOD4_mVWnl3qdVqy7aVmOXNhaImqhH6CfazO31IodR16oV_u3CoMBXoETnFcoZyMHUf32ib0u_RdqFXnpxVGQgg8YWQD4XG41KaXPwl_35NUZPeTXh6D5mCvwqowmu5pV7VZlkRZa0HFciH0vTfTwEPjtt1T4Aokeal5uLU8UblCVZ1l0ilHkxwSdUyHRp8TEr6jfSBFRZscH5VTzsRdwIobtl9FB4wS-EKwX7LW22767S3AFxsIUNbw">
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="md:ml-72 mt-16 p-margin-mobile md:p-margin-desktop min-h-[calc(100vh-64px)] bg-background">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-gutter">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-xs">Equipment Operations Overview</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Unified visibility into equipment status, telemetry, maintenance plans, and failure logs.</p>
+</div>
+<div class="flex flex-wrap gap-sm">
+<button class="h-10 px-md flex items-center gap-xs rounded-lg border border-outline-variant text-on-surface bg-surface-container-lowest hover:bg-surface-container-low transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter View
+                </button>
+<button class="h-10 px-md flex items-center gap-xs rounded-lg bg-primary text-on-primary hover:opacity-90 transition-opacity shadow-sm text-label-md font-label-md">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Register Equipment
+                </button>
+</div>
+</div>
+<!-- KPI Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Average OEE</span>
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div class="flex items-baseline gap-sm">
+<span class="text-display-lg font-display-lg text-on-surface">87.4%</span>
+<span class="text-body-sm font-body-sm text-[#10B991] flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 2.1%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Online Equipment</span>
+<span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+</div>
+<div class="flex items-baseline gap-sm">
+<span class="text-display-lg font-display-lg text-on-surface">42</span>
+<span class="text-body-md font-body-md text-on-surface-variant">/ 45 Total</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Critical Alerts</span>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="flex items-baseline gap-sm">
+<span class="text-display-lg font-display-lg text-error">2</span>
+<span class="text-body-md font-body-md text-on-surface-variant">Requires attention</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Scheduled Maintenance</span>
+<span class="material-symbols-outlined text-primary">build</span>
+</div>
+<div class="flex items-baseline gap-sm">
+<span class="text-display-lg font-display-lg text-on-surface">14</span>
+<span class="text-body-md font-body-md text-on-surface-variant">Next 48 Hours</span>
+</div>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Left Panel: Live Asset Status (Bento Grid) -->
+<div class="xl:col-span-8 space-y-gutter">
+<h2 class="text-headline-sm font-headline-sm text-on-surface border-b border-outline-variant pb-xs">Equipment Live Grid</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-md">
+<!-- Machine Card 1: Running -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md hover:shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">CNC-Milling-01</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Zone A - Heavy Machining</p>
+</div>
+<span class="px-2 py-1 rounded bg-[#E6F4EA] text-[#137333] text-label-md font-label-md flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#137333]"></span> Running
+                            </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Spindle Temp</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface">62.4 °C</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Motor Load</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface">78%</span>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[78%]"></div>
+</div>
+</div>
+<!-- Machine Card 2: Warning -->
+<div class="bg-surface-container-lowest border border-[#F59E0B] rounded-xl p-md shadow-[0px_0px_10px_-2px_rgba(245,158,11,0.2)]">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Laser-Cutter-04</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Zone C · Precision Fabrication</p>
+</div>
+<span class="px-2 py-1 rounded bg-[#FEF3C7] text-[#B45309] text-label-md font-label-md flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#B45309] animate-pulse"></span> Warning
+                            </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-[#FEF3C7]/30 p-sm rounded-lg border border-[#F59E0B]/30">
+<span class="text-label-md font-label-md text-[#B45309] block mb-1">Coolant Pressure</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-[#B45309]">2.1 bar <span class="material-symbols-outlined text-[14px] align-middle">arrow_downward</span></span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Vibration</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface">0.4 mm/s</span>
+</div>
+</div>
+<div class="text-label-md font-label-md text-error flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                            Coolant pressure is below the standard threshold. Inspect promptly.
+                        </div>
+</div>
+<!-- Machine Card 3: Idle -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Robotic-Arm-Assembly-2</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Line B · Assembly Cell</p>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant text-label-md font-label-md flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Idle
+                            </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Average Joint Temp</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface-variant">31.0 °C</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Power Draw</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface-variant">0.5 kW</span>
+</div>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant italic">Awaiting material loading.</p>
+</div>
+<!-- Machine Card 4: Running -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md hover:shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Stamp-Press-09</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Zone D · Forming Press</p>
+</div>
+<span class="px-2 py-1 rounded bg-[#E6F4EA] text-[#137333] text-label-md font-label-md flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#137333]"></span> Running
+                            </span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Cycle Count</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface">12,450</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<span class="text-label-md font-label-md text-on-surface-variant block mb-1">Press Force</span>
+<span class="text-headline-sm font-headline-sm font-mono-data text-on-surface">240 kN</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Equipment Maintenance & Logs -->
+<div class="xl:col-span-4 space-y-gutter">
+<!-- Equipment Maintenance Plan Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col h-fit">
+<div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50 rounded-t-xl">
+<h2 class="text-headline-sm font-headline-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">calendar_clock</span>
+                            Equipment Maintenance Plan
+                        </h2>
+<button class="text-label-md font-label-md text-primary hover:underline">View All</button>
+</div>
+<div class="flex flex-col">
+<!-- List Item 1 -->
+<div class="p-md border-b border-outline-variant hover:bg-[#F8FAFC] transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-1">
+<span class="text-label-md font-label-md text-on-surface font-bold">Filter Replacement</span>
+<span class="text-label-md font-label-md text-[#B45309] bg-[#FEF3C7] px-2 rounded">Due Today</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-2">Laser-Cutter-04 • Zone C</p>
+<div class="flex items-center gap-sm">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Small avatar of a technician in a yellow hardhat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgdxRT-C2gc8mojJfhHekS9MGbk1Cc0OpwFOBGu4ernCB3hBZi1_cb0XwfxiGfcm3QhkDdslYuOHn90uZ8SOhXBITNcIoSW_42dKcyrOVIqi3ia07PQtMZyZWHoLE5qzELKk-KR3mTqmhdXftbn76QNE4rrnc6XWM_yBmrpRLNbVmopporFHHZcP3Hb0HELaN2PTsWHtfojmW3d0cgLGLcNHFqFrevsWj29YcCheYGuQBRvIyytGazTd-kVkZear7TllcNMBI4U74">
+<span class="text-label-md font-label-md text-on-surface-variant">Assigned to: Li Na</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="p-md border-b border-outline-variant hover:bg-[#F8FAFC] transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-1">
+<span class="text-label-md font-label-md text-on-surface font-bold">Spindle Lubrication</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Tomorrow</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-2">CNC-Milling-01 • Zone A</p>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">pending</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Unassigned</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="p-md hover:bg-[#F8FAFC] transition-colors cursor-pointer rounded-b-xl">
+<div class="flex justify-between items-start mb-1">
+<span class="text-label-md font-label-md text-on-surface font-bold">Q3 Calibration Check</span>
+<span class="text-label-md font-label-md text-on-surface-variant">In 3 Days</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-2">All Stamp Presses · Zone D</p>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">pending</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Unassigned</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Failure Records Snapshot -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+<h2 class="text-headline-sm font-headline-sm text-on-surface border-b border-outline-variant pb-xs mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-error">history</span>
+                        Recent Failure Logs
+                    </h2>
+<ul class="space-y-sm">
+<li class="flex gap-sm items-start text-body-sm font-body-sm text-on-surface">
+<span class="text-error font-mono-data mt-1">ERR-92</span>
+<div>
+<span class="block font-semibold">Conveyor-Belt-Main</span>
+<span class="text-on-surface-variant text-label-md font-label-md">Motor stall detected. Reset applied. (2 hrs ago)</span>
+</div>
+</li>
+<li class="flex gap-sm items-start text-body-sm font-body-sm text-on-surface">
+<span class="text-error font-mono-data mt-1">ERR-14</span>
+<div>
+<span class="block font-semibold">Weld-Robot-6</span>
+<span class="text-on-surface-variant text-label-md font-label-md">Arc failure. Gas line checked. (Yesterday)</span>
+</div>
+</li>
+</ul>
+<button class="w-full mt-md py-2 border border-outline-variant rounded-lg text-label-md font-label-md text-on-surface hover:bg-surface-container-low transition-colors">
+                        View Full Ledger
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+

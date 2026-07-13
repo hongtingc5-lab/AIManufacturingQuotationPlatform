@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html><html class="light" lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Industrial AI - 数据分析</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "primary": "#004ac6",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#191b23",
+                    "tertiary": "#943700",
+                    "surface-container": "#ededf9",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-variant": "#e1e2ed",
+                    "outline": "#737686",
+                    "surface-container-highest": "#e1e2ed",
+                    "surface-bright": "#faf8ff",
+                    "tertiary-container": "#bc4800",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f3fe",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#dae2fd",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-container-high": "#e7e7f3",
+                    "outline-variant": "#c3c6d7",
+                    "background": "#faf8ff",
+                    "on-tertiary-container": "#ffede6",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-primary-container": "#eeefff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-error": "#ffffff",
+                    "surface": "#faf8ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "secondary": "#565e74",
+                    "on-surface-variant": "#434655",
+                    "inverse-surface": "#2e3039",
+                    "surface-dim": "#d9d9e5",
+                    "secondary-container": "#dae2fd",
+                    "on-secondary-container": "#5c647a",
+                    "on-background": "#191b23",
+                    "surface-tint": "#0053db",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-container": "#2563eb",
+                    "on-primary-fixed": "#00174b"
+            },
+            "borderRadius": {
+                    "默认": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "margin": "24px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .chart-grid { background-image: radial-gradient(#E2E8F0 1px, transparent 1px); background-size: 20px 20px; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid #E2E8F0; }
+        .sidebar-active { background-color: #2563eb; color: #ffffff; }
+    </style>
+<link data-customer-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-customer-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-customer-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-customer-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-customer-shell-boot>
+document.documentElement.classList.add("customer-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("customer-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-customer-shell-boot>
+html.customer-shell-loading {
+  background: #f8fafc;
+}
+html.customer-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 ml-64 w-[calc(100%-16rem)] bg-surface-container-lowest shadow-sm border-b border-outline-variant h-16 flex items-center px-6">
+  <div class="flex-1 flex items-center justify-between gap-4">
+    <div class="relative w-full max-w-md">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+      <input type="text" placeholder="搜索数据、报价或模型..." class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary transition-all">
+    </div>
+
+    <div class="flex items-center gap-3 shrink-0">
+<a href="ai模型智能报价.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>开始智能报价</span>
+</a>
+<a href="报价模型上传页.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+<span>开始专业报价</span>
+</a>
+</button>
+      <button class="relative p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <div class="h-8 w-px bg-outline-variant mx-1"></div>
+      <div class="flex items-center gap-3">
+        <div class="text-right hidden sm:block">
+          <p class="text-label-md font-label-md font-bold text-on-surface">张伟</p>
+          <p class="text-label-sm font-label-sm text-secondary">高级工程师</p>
+        </div>
+        <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-40">
+  <div class="p-6 flex items-center gap-3">
+    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-sm">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+    </div>
+    <div>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">Industrial AI</h1>
+      <p class="text-label-sm font-label-sm text-secondary">智能报价工作台</p>
+    </div>
+  </div>
+  <nav class="flex-1 mt-4 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="用户系统首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">工作台</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="ai模型智能报价.html">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">智能工作台</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价模型上传页.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md">专业报价</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价订单中心.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">订单中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-primary text-on-primary font-bold shadow-sm" href="数据分析页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-md text-label-md">数据分析</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="模型中心.html">
+<span class="material-symbols-outlined">deployed_code</span>
+<span class="font-label-md text-label-md">模型中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="会员中心.html">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-label-md text-label-md">会员中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="消息中心.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md text-label-md">消息中心</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="账号中心.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">账号中心</span>
+</a>
+  </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container">
+      <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Workspace User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM"/>
+      <div class="overflow-hidden">
+        <p class="text-label-md font-label-md font-bold truncate text-on-surface">张伟</p>
+        <p class="text-label-sm font-label-sm text-secondary truncate">高级工程师</p>
+      </div>
+    </div>
+  </div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 p-8 min-h-screen">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-8">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">数据分析&nbsp;</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">通过实时数据监控您的报价与制造效率。</p>
+</div>
+<div class="flex items-center gap-3 bg-surface border border-outline-variant p-1 rounded-lg">
+<button class="px-4 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">7天</button>
+<button class="px-4 py-1.5 text-label-md font-label-md bg-primary-container text-on-primary-container rounded shadow-sm">近30天</button>
+<button class="px-4 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">90天</button>
+<div class="w-px h-4 bg-outline-variant mx-1"></div>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Quoting Data Visualization (Large) -->
+<div class="col-span-8 bg-white p-6 rounded-xl border border-outline-variant shadow-sm chart-grid">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">报价数据可视化</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-label-sm text-outline">报价数</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="text-label-sm text-outline">转化数</span>
+</div>
+</div>
+</div>
+<div class="h-80 w-full relative flex items-end justify-between gap-2 pt-4">
+<!-- Simulated Area Chart -->
+<div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<div class="flex-1 bg-primary/20 h-[60%] rounded-t-sm relative group cursor-help"><div class="hidden group-hover:block absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] py-1 px-2 rounded">420</div></div>
+<div class="flex-1 bg-primary/30 h-[75%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/25 h-[65%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/40 h-[85%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/35 h-[70%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/50 h-[90%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/45 h-[80%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/55 h-[95%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/40 h-[78%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/50 h-[88%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/60 h-[100%] rounded-t-sm relative group cursor-help"></div>
+<div class="flex-1 bg-primary/30 h-[60%] rounded-t-sm relative group cursor-help"></div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-label-sm text-outline">
+<span class="">第1周</span><span class="">第2周</span><span class="">第3周</span><span class="">第4周</span>
+</div>
+</div>
+<!-- AI识别统计 -->
+<div class="col-span-4 bg-primary text-on-primary p-6 rounded-xl border border-primary-container shadow-lg flex flex-col justify-between overflow-hidden relative">
+<div class="absolute -right-8 -top-8 opacity-20 rotate-12">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<h3 class="text-label-md font-label-md uppercase tracking-widest opacity-80">AI识别统计</h3>
+</div>
+<h2 class="text-[48px] font-bold leading-tight">99.8%</h2>
+<p class="text-body-sm opacity-90">本月共处理 12,450 个工业零件，模型分析准确率如下。</p>
+</div>
+<div class="mt-6 pt-6 border-t border-white/20">
+<div class="flex justify-between text-label-sm">
+<span class="">模型总数</span>
+<span class="font-bold">14,289</span>
+</div>
+<div class="flex justify-between text-label-sm mt-2">
+<span class="">平均处理时长</span>
+<span class="font-bold">1.2 秒</span>
+</div>
+</div>
+</div>
+<!-- Cost Breakdown -->
+<div class="col-span-4 bg-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-6">成本分析</h3>
+<div class="flex items-center justify-center h-48 relative">
+<!-- Semi-donut ring simulation -->
+<div class="w-40 h-40 rounded-full border-[16px] border-primary border-r-tertiary border-b-secondary-container"></div>
+<div class="absolute flex flex-col items-center">
+<span class="text-headline-md font-bold text-on-surface">¥42k</span>
+<span class="text-label-sm text-outline">平均成本</span>
+</div>
+</div>
+<div class="space-y-3 mt-6">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-body-sm text-on-surface">材料</span>
+</div>
+<span class="text-label-md font-bold">45%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-body-sm text-on-surface">加工</span>
+</div>
+<span class="text-label-md font-bold">38%</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="text-body-sm text-on-surface">表面处理</span>
+</div>
+<span class="text-label-md font-bold">17%</span>
+</div>
+</div>
+</div>
+<!-- 材料 Usage -->
+<div class="col-span-4 bg-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-6">材料数据</h3>
+<div class="space-y-5">
+<div>
+<div class="flex justify-between text-label-sm mb-1.5">
+<span class="text-on-surface font-medium">铝合金 6061-T6</span>
+<span class="text-outline">2.4 吨</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm mb-1.5">
+<span class="text-on-surface font-medium">不锈钢 316L</span>
+<span class="text-outline">1.8 吨</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm mb-1.5">
+<span class="text-on-surface font-medium">尼龙 PA12</span>
+<span class="text-outline">0.9 吨</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm mb-1.5">
+<span class="text-on-surface font-medium">1045 碳钢</span>
+<span class="text-outline">0.7 吨</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 32%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Process Distribution -->
+<div class="col-span-4 bg-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-6">工艺分布</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">precision_manufacturing</span>
+<span class="text-headline-sm font-bold">58%</span>
+<span class="text-label-sm text-outline">CNC铣削</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">layers</span>
+<span class="text-headline-sm font-bold">22%</span>
+<span class="text-label-sm text-outline">3D打印</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">view_in_ar</span>
+<span class="text-headline-sm font-bold">12%</span>
+<span class="text-label-sm text-outline">钣金</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">settings_input_component</span>
+<span class="text-headline-sm font-bold">8%</span>
+<span class="text-label-sm text-outline">其他</span>
+</div>
+</div>
+</div>
+<!-- Personal Procurement Visualization (Full Width Row) -->
+<div class="col-span-12 glass-card p-8 rounded-2xl">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface">个人采购数据</h3>
+<p class="text-body-sm text-outline">张伟的个人采购支出趋势与订单生命周期管理。</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-label-md">
+                        查看详细报告 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-4 gap-8">
+<div class="space-y-6">
+<div class="p-4 bg-white rounded-lg border border-outline-variant">
+<p class="text-label-sm text-outline mb-1">年度支出</p>
+<h4 class="text-headline-sm font-bold text-on-surface">¥1,248,000</h4>
+<div class="flex items-center gap-1 text-green-600 text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 较去年 +12.5%
+                            </div>
+</div>
+<div class="p-4 bg-white rounded-lg border border-outline-variant">
+<p class="text-label-sm text-outline mb-1">未结订单</p>
+<h4 class="text-headline-sm font-bold text-on-surface">24</h4>
+<div class="flex items-center gap-1 text-primary text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 本周有 8 个待交付
+                            </div>
+</div>
+</div>
+<div class="col-span-3 bg-white p-6 rounded-xl border border-outline-variant h-full">
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-md font-bold">月度支出周期</span>
+<div class="flex gap-2">
+<span class="text-[10px] py-0.5 px-2 bg-surface-container-high rounded">预测</span>
+<span class="text-[10px] py-0.5 px-2 bg-primary-container text-on-primary-container rounded">实际</span>
+</div>
+</div>
+<div class="flex items-end justify-between h-32 gap-3">
+<div class="flex-1 bg-surface-container-low h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container-low h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[90%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[82%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[68%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[95%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[100%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[88%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-outline">
+<span class="">Jan</span><span class="">Feb</span><span class="">Mar</span><span class="">Apr</span><span class="">May</span><span class="">Jun</span><span class="">Jul</span><span class="">Aug</span><span class="">Sep</span><span class="">Oct</span><span class="">Nov</span><span class="">Dec</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('brightness-110');
+            });
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('brightness-110');
+            });
+        });
+    </script>
+
+
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+

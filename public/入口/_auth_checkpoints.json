@@ -1,0 +1,23 @@
+{
+    "task":  "four-auth-portal-suites",
+    "mode":  "page-by-page-checkpoint",
+    "updated_at":  "2026-07-07T11:32:02",
+    "pages":  {
+                  "customer_login_zh":  "done",
+                  "customer_register_zh":  "done",
+                  "customer_login_en":  "done",
+                  "customer_register_en":  "done",
+                  "supplier_login_zh":  "done",
+                  "supplier_register_zh":  "done",
+                  "supplier_login_en":  "done",
+                  "supplier_register_en":  "done",
+                  "mes_login_zh":  "done",
+                  "mes_register_zh":  "done",
+                  "mes_login_en":  "done",
+                  "mes_register_en":  "done",
+                  "admin_login_zh":  "done",
+                  "admin_register_zh":  "done",
+                  "admin_login_en":  "done",
+                  "admin_register_en":  "done"
+              }
+}

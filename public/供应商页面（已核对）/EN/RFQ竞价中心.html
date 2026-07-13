@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RFQ Feedback | Supplier Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-background": "#191b23",
+                        "primary-fixed": "#dbe1ff",
+                        "primary": "#004ac6",
+                        "on-secondary-container": "#5c647a",
+                        "inverse-surface": "#2e3039",
+                        "surface-container-low": "#f3f3fe",
+                        "on-surface-variant": "#434655",
+                        "surface-dim": "#d9d9e5",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-tint": "#0053db",
+                        "primary-container": "#2563eb",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary-container": "#bc4800",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "tertiary-fixed": "#ffdbcd",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffede6",
+                        "tertiary": "#943700",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e7f3",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#dae2fd",
+                        "secondary": "#565e74",
+                        "secondary-fixed": "#dae2fd",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#faf8ff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-primary-container": "#eeefff",
+                        "surface-container": "#ededf9",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-variant": "#e1e2ed",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface-container-highest": "#e1e2ed",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "24px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+    </style>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+<div class="mb-8 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[22px]" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;">precision_manufacturing</span>
+</div>
+<div>
+<h1 class="text-[20px] leading-[24px] font-bold text-primary tracking-tight">ForgeAI</h1>
+<p class="text-[12px] leading-[16px] text-on-surface-variant opacity-70">Supplier Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="首页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">dashboard</span>
+<span class="text-[14px] leading-[20px] font-medium">Operations Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="企业入驻.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">business_center</span>
+<span class="text-[14px] leading-[20px] font-medium">Enterprise Onboarding</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary font-semibold rounded-lg shadow-sm transition-colors" href="RFQ竞价中心.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;">request_quote</span>
+<span class="text-[14px] leading-[20px] font-medium">RFQ Bidding Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="平台订单页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">shopping_cart</span>
+<span class="text-[14px] leading-[20px] font-medium">Platform Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="业务订单CRM页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">receipt_long</span>
+<span class="text-[14px] leading-[20px] font-medium">Business Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="企业中心页.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">domain</span>
+<span class="text-[14px] leading-[20px] font-medium">Enterprise Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="培训中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">school</span>
+<span class="text-[14px] leading-[20px] font-medium">Training Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="考核中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">assignment_turned_in</span>
+<span class="text-[14px] leading-[20px] font-medium">Assessment Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="消息中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">mail</span>
+<span class="text-[14px] leading-[20px] font-medium">Message Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="帮助中心页面.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">help</span>
+<span class="text-[14px] leading-[20px] font-medium">Help Center</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<div class="flex items-center gap-3 px-2">
+<img alt="Zhang Wei, Senior Supplier Administrator" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="Zhang Wei, Senior Supplier Administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGKvp7N7Yrahgq-j5XqPUK9Dbe0Lci6SbypGnSwsVydP2pgGPXCnaDYwuQF8oHg3Zoq6a6EShZweODuBtHoccLZqto7zFYBk7kNVeKfLV0TiqRbXxm1lkWP9Lr0LYc1ykDPWuoWfF68d6vZRxGfglxoBHQ9RRrbgD8umZ3Bh_hzoHFn5ZQ6FuaD4fAAJ8xf09ZoNHH1d4sz5s8DMrfOnBhtjDsuShoz5mSD2l77Kt0RZSY-BhwKscm4nGF8JOXg_p54__73Ib-Qk">
+<div class="overflow-hidden">
+<p class="text-[14px] leading-[20px] font-semibold text-on-surface truncate">Zhang Wei</p>
+<p class="text-[11px] leading-[16px] text-on-surface-variant truncate">Senior Supplier Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-[240px] min-h-screen flex flex-col bg-background">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-240px)] h-16 z-30 bg-surface border-b border-outline-variant shadow-sm flex justify-between items-center px-6">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-[14px] leading-[20px] outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="Search RFQs, quotes, or buyers..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2">
+<span class="text-[14px] leading-[20px] font-semibold text-primary">AI Machining Intelligent Cloud Platform</span>
+<span class="text-outline-variant">|</span>
+<span class="text-[14px] leading-[20px] text-on-surface-variant">Supplier Portal</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">settings</span>
+</button>
+<img alt="Zhang Wei, Senior Supplier Administrator" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Zhang Wei, Senior Supplier Administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyGKvp7N7Yrahgq-j5XqPUK9Dbe0Lci6SbypGnSwsVydP2pgGPXCnaDYwuQF8oHg3Zoq6a6EShZweODuBtHoccLZqto7zFYBk7kNVeKfLV0TiqRbXxm1lkWP9Lr0LYc1ykDPWuoWfF68d6vZRxGfglxoBHQ9RRrbgD8umZ3Bh_hzoHFn5ZQ6FuaD4fAAJ8xf09ZoNHH1d4sz5s8DMrfOnBhtjDsuShoz5mSD2l77Kt0RZSY-BhwKscm4nGF8JOXg_p54__73Ib-Qk">
+</div>
+</header>
+<!-- Content Area -->
+<section class="p-lg pt-20 flex-1">
+<div class="max-w-7xl mx-auto space-y-lg">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">RFQ Feedback</h2>
+<p class="font-body-sm text-body-sm text-outline mt-xs">Monitor and respond to technical queries and price revisions from buyers.</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-2 border border-outline text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-high transition-all flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                        </button>
+<button class="px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-container transition-all flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">export_notes</span> Export Report
+                        </button>
+</div>
+</div><div class="flex border-b border-outline-variant mb-lg">
+<button class="px-lg py-md font-label-md text-label-md text-primary border-b-2 border-primary font-bold transition-all" id="tab-feedback" onclick="switchTab('feedback')">RFQ Feedback</button>
+<button class="px-lg py-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" id="tab-abandoned" onclick="switchTab('abandoned')">Abandoned Records</button>
+</div>
+<!-- Summary Bento Grid -->
+<div class="space-y-lg" id="content-feedback">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="glass-card p-md rounded-xl shadow-sm border-l-4 border-primary">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Total Pending</p>
+<h3 class="text-headline-lg font-headline-lg text-primary mt-sm">24</h3>
+<p class="text-[12px] text-green-600 mt-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% from last week
+      </p>
+</div>
+<div class="glass-card p-md rounded-xl shadow-sm border-l-4 border-tertiary">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Needs Revision</p>
+<h3 class="text-headline-lg font-headline-lg text-tertiary mt-sm">08</h3>
+<p class="text-[12px] text-tertiary mt-xs font-medium">Critical Action Required</p>
+</div>
+<div class="glass-card p-md rounded-xl shadow-sm border-l-4 border-secondary">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Technical Queries</p>
+<h3 class="text-headline-lg font-headline-lg text-secondary mt-sm">15</h3>
+<p class="text-[12px] text-outline mt-xs">Awaiting engineering input</p>
+</div>
+<div class="glass-card p-md rounded-xl shadow-sm border-l-4 border-error">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Price Alerts</p>
+<h3 class="text-headline-lg font-headline-lg text-error mt-sm">03</h3>
+<p class="text-[12px] text-error mt-xs font-medium">Market mismatch detected</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+<div class="p-md border-b border-outline-variant bg-surface-container-low flex items-center justify-between">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Feedback History</h4>
+<div class="flex gap-md">
+<span class="flex items-center gap-xs text-[12px] text-outline"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Needs Revision</span>
+<span class="flex items-center gap-xs text-[12px] text-outline"><span class="w-2 h-2 rounded-full bg-secondary"></span> Technical Query</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant">
+<th class="px-lg py-md font-label-md text-label-md text-on-surface uppercase tracking-tight">RFQ ID</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface uppercase tracking-tight">Part Name</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface uppercase tracking-tight">Feedback Date</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface uppercase tracking-tight">Status</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface uppercase tracking-tight text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-lg py-md"><span class="font-label-md text-label-md text-primary font-bold">RFQ-2023-9921</span></td>
+<td class="px-lg py-md"><div class="flex items-center gap-md"><div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqjazU-rcFEuwBtTtBKSyxfiNzVqFjy-IywYkT5syjJ8UNfkbY8aMf3fLDIPwydWOA3JpMr9nu3bdYQozohZcHtH6T-0qJT0vACNNWXXRNoLtukb2E2yV535ECsVAUPoNObSPRV3nqCFoHWva1J2VQl7fzTELCDbpac6G3ri9ncqdQQ5jF-fzDjBerSIzi6GGJIJb-9qEjS0SmawA0DD9j2-TkfhTYzta4o94oB83ez3TQAeZeo2JBkE-kmLQG94AL5Nz6n1jl2y4"/></div><div><p class="font-label-md text-label-md font-semibold text-on-surface">Turbine Housing B-4</p><p class="text-[12px] text-outline">Material: Ti-6Al-4V</p></div></div></td>
+<td class="px-lg py-md font-body-sm text-body-sm text-on-surface-variant">2023-10-24</td>
+<td class="px-lg py-md"><span class="px-sm py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[11px] font-bold uppercase tracking-wider inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">edit_document</span> Needs Revision</span></td>
+<td class="px-lg py-md text-right"><button class="px-md py-1.5 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg hover:shadow-md transition-all group-hover:scale-105">View &amp; Reply</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="lg:col-span-2 glass-card p-lg rounded-xl flex flex-col gap-md relative overflow-hidden">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Recent Buyer Remarks</h4>
+<div class="space-y-md">
+<div class="flex gap-md"><div class="w-2 bg-tertiary rounded-full"></div><div><p class="text-body-sm font-body-sm text-on-surface">"The material specification for RFQ-2023-9921 seems inconsistent with the provided 3D model."</p><p class="text-[12px] text-outline mt-xs">Buyer: Global AeroSystems • 2 hours ago</p></div></div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-lg rounded-xl flex flex-col justify-between shadow-lg relative overflow-hidden">
+<div><h4 class="font-label-md text-label-md font-bold uppercase tracking-widest opacity-80">Pro Tip</h4><p class="font-headline-sm text-headline-sm font-bold mt-sm leading-tight">Response time matters.</p></div>
+<button class="mt-xl py-2 px-md bg-white text-primary rounded-lg font-bold text-label-md hover:bg-primary-fixed transition-all w-fit">Enable Mobile Alerts</button>
+</div>
+</div></div><div class="space-y-lg hidden" id="content-abandoned">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm relative overflow-hidden group">
+<p class="text-label-sm text-outline uppercase tracking-widest font-bold mb-xs">Total Abandoned</p>
+<div class="flex items-baseline gap-sm">
+<h3 class="text-[32px] font-bold text-on-surface leading-tight">142</h3>
+<span class="text-error text-label-sm flex items-center font-bold"><span class="material-symbols-outlined text-sm">trending_up</span> 12%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm relative overflow-hidden group">
+<p class="text-label-sm text-outline uppercase tracking-widest font-bold mb-xs">Primary Reason</p>
+<h3 class="text-[24px] font-bold text-on-surface leading-tight">Capacity Saturation</h3>
+<p class="text-label-md text-primary font-bold mt-sm">42% of all records</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm relative overflow-hidden group">
+<p class="text-label-sm text-outline uppercase tracking-widest font-bold mb-xs">Abandonment Trends</p>
+<div class="h-16 flex items-end gap-1 mb-sm">
+<div class="flex-1 bg-primary h-14 rounded-t"></div>
+<div class="flex-1 bg-surface-container h-10 rounded-t"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden flex flex-col">
+<div class="p-md bg-surface-container-low border-b border-outline-variant flex justify-between items-center">
+<div class="flex gap-md">
+<button class="px-md py-1.5 bg-primary text-white rounded-lg text-label-md font-bold flex items-center gap-xs"><span class="material-symbols-outlined text-sm">filter_list</span> Filter</button>
+<button class="px-md py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface-variant rounded-lg text-label-md font-bold flex items-center gap-xs"><span class="material-symbols-outlined text-sm">download</span> Export CSV</button>
+</div>
+<span class="text-label-sm text-outline">Showing 24 of 142 records</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-lg py-md text-label-sm font-bold text-outline uppercase tracking-widest">RFQ ID</th>
+<th class="px-lg py-md text-label-sm font-bold text-outline uppercase tracking-widest">Part Name</th>
+<th class="px-lg py-md text-label-sm font-bold text-outline uppercase tracking-widest">Abandoned Date</th>
+<th class="px-lg py-md text-label-sm font-bold text-outline uppercase tracking-widest">Primary Reason</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md font-label-md text-primary font-bold">RFQ-2024-00812</td>
+<td class="px-lg py-md"><span class="font-label-md font-bold text-on-surface">Turbine Housing V4</span></td>
+<td class="px-lg py-md font-body-sm text-on-surface-variant">2024-10-24</td>
+<td class="px-lg py-md"><span class="px-sm py-1 bg-error-container text-on-error-container rounded-full text-label-sm font-bold">Capacity Saturation</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Feedback Table Card -->
+<!-- Async Activity / Quick Guide Section -->
+</div>
+</section>
+<!-- Footer -->
+<footer class="p-lg bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-[12px] text-outline">© 2023 Industrial Supplier Portal. All Rights Reserved.</p>
+<div class="flex gap-lg">
+<a class="text-[12px] text-outline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-[12px] text-outline hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-[12px] text-outline hover:text-primary transition-colors" href="#">Technical Support</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- FAB (Suppressed as per rules for Details/Focused pages, but keeping since this is a Dashboard-like hub) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(4px)';
+                row.style.transition = 'transform 0.2s ease-out';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body></html>
+

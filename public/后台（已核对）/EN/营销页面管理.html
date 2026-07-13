@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marketing Pages - Industrial AI</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            font-feature-settings: 'liga';
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "tertiary": "#943700",
+                        "primary-container": "#2563eb",
+                        "on-surface": "#191b23",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "on-surface-variant": "#434655",
+                        "surface-tint": "#0053db",
+                        "surface-container-low": "#f3f3fe",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface": "#faf8ff",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-high": "#e7e7f3",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-bright": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary": "#565e74",
+                        "surface-container-highest": "#e1e2ed",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "on-background": "#191b23",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#bc4800",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#faf8ff",
+                        "inverse-surface": "#2e3039",
+                        "surface-variant": "#e1e2ed",
+                        "on-tertiary-container": "#ffede6",
+                        "outline": "#737686",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-container": "#5c647a",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-container": "#dae2fd",
+                        "outline-variant": "#c3c6d7",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-primary-fixed": "#00174b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container_max": "1440px",
+                        "unit": "4px",
+                        "sidebar_width": "260px",
+                        "margin_mobile": "16px",
+                        "padding_card": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "mono-data": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
+<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+<style data-mes-material-symbols>
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+}
+</style>
+<script data-mes-shell-boot>
+document.documentElement.classList.add("mes-shell-loading");
+window.addEventListener("DOMContentLoaded", function () {
+  var reveal = function () {
+    requestAnimationFrame(function () {
+      document.documentElement.classList.remove("mes-shell-loading");
+    });
+  };
+  var fontReady = (document.fonts && document.fonts.load)
+    ? Promise.race([
+        document.fonts.load('24px "Material Symbols Outlined"'),
+        new Promise(function (resolve) { setTimeout(resolve, 1200); })
+      ])
+    : Promise.resolve();
+  Promise.resolve(fontReady).catch(function () {}).then(reveal);
+});
+</script>
+<style data-mes-shell-boot>
+html.mes-shell-loading {
+  background: #f8fafc;
+}
+html.mes-shell-loading body {
+  visibility: hidden;
+}
+</style>
+</head>
+<body class="flex h-screen overflow-hidden bg-surface-bright text-on-surface font-body-md text-body-md antialiased">
+<!-- SideNavBar (Shared Component) -->
+<nav class="docked h-full w-72 left-0 top-0 flex flex-col h-screen py-md overflow-y-auto bg-surface-dim dark:bg-inverse-surface border-r border-outline-variant dark:border-outline hidden md:flex shrink-0">
+<div class="px-lg py-md flex items-center gap-sm mb-6 mt-4 px-6">
+<img alt="Industrial AI Logo" class="w-8 h-8 rounded" data-alt="Industrial AI Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlELFe2FAcOBczQoqRzgMg8es_Sz2BzrX5LIpZwqbdeASpWsrV0zTQ12ytoY06UjIje6M73Fi2g4WgpnWXSJCGC8FEPfpaoOBkzecMaqVBZp19orq1REISMSBnMgPH-WOPX4u23v93SWedbGaH0shQY-sybqVBBTYz8hHLcCYW2pQSKftE3V7S5T78TwzEyofL6KTZvMwbu2GBnQhbAB-mtAlAH0OXudfy43nZoKLhEUe69b4Eg3Vk049QE-C0NrRVRUgRDhdDmMg"/>
+<div>
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-on-primary-fixed">Industrial AI</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Management Platform</p>
+</div>
+</div>
+<ul class="flex-1 px-4 space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="后台首页.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="用户管理后台.html">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">User Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="客户管理页面.html">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-label-md text-label-md">Customer Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="供应商管理.html">
+<span class="material-symbols-outlined">factory</span>
+<span class="font-label-md text-label-md">Supplier Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="供应管理.html">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Supply Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="RFQ管理.html">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="font-label-md text-label-md">RFQ Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="ai管理页面.html">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">AI Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="知识库管理页面.html">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label-md text-label-md">Knowledge Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="MES监管.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md">MES Supervision</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="客服中心.html">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-label-md text-label-md">Service Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container rounded-lg mx-2 transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="营销页面管理.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-label-md text-label-md">Marketing Pages</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="平台权限中心.html">
+<span class="material-symbols-outlined">vpn_key</span>
+<span class="font-label-md text-label-md">Platform Permissions</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="财务管理页面.html">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Financial Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="数据分析页面.html">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Data Analysis</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant mx-2 rounded-lg transition-colors duration-200 ease-in-out scale-98 active:scale-95" href="系统设置.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">System Settings</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden bg-background relative">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full pl-6 pr-10 py-sm h-16 bg-surface-bright dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container dark:bg-inverse-surface rounded-full px-4 py-2 focus-within:ring-2 focus-within:ring-primary transition-colors duration-200 ease-in-out w-full max-w-md">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant w-full" placeholder="Search pages, campaigns, keywords, or channels..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-inverse-surface rounded-full transition-colors duration-200 ease-in-out relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface-bright"></span>
+</button>
+<button class="p-2 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-inverse-surface rounded-full transition-colors duration-200 ease-in-out">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-outline-variant dark:bg-outline mx-1"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="font-body-md text-body-md text-on-surface">Platform Administrator</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Admin</div>
+</div>
+<img alt="Administrator Headshot" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="Administrator Headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSuRSeCI0SHShf3MLuQ9CVRQe2ZsHfy6Wgt6cNtFTimaTsOwhvnLA8nF0cY6lt-bqmwlxUSk8xFTCpcAYiLsu8wUA9ZHY2SieoJERksz_ErW34_el9Y8PF5jK6KYgoEb4DG8ERMtmnGGMp2OR-lt8I3BKpyCmkMZOT92UmE4nR9I_m9ylkoji7Q-l_y-iJJC31yB2gxrGqOclBVkIJpYgjrKN3odRw-c-D7kBmqMGgwh8NZHRO7-fuNda55pmhzwn0GnHT_TN-niU"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-y-auto p-gutter pb-24">
+<div class="mb-6">
+<nav class="flex text-label-sm font-label-sm text-on-surface-variant mb-2">
+<ol class="flex items-center space-x-2">
+<li><a class="hover:text-primary transition-colors" href="后台首页.html">Home</a></li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+<li class="text-on-surface font-semibold">Marketing Pages</li>
+</ol>
+</nav>
+<div class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-4">
+<div>
+<h1 class="text-display-lg font-display-lg text-on-surface m-0">Marketing Pages</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Manage portal pages, industry landing pages, campaign pages, multilingual versions, and SEO / GEO / AI-experience publishing from one console.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="h-10 px-4 bg-surface-container-lowest border border-outline-variant rounded-lg text-title-sm font-title-sm text-on-surface flex items-center gap-2 hover:bg-surface-container transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">add_circle</span>Create Marketing Page</button>
+<button class="h-10 px-4 bg-primary text-on-primary rounded-lg text-title-sm font-title-sm flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">publish</span>Publishing Schedule</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">web</span></div><span class="inline-flex items-center text-label-sm font-label-sm text-primary bg-primary-fixed px-2 py-1 rounded-full">24 Live</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Published Pages</div><div class="text-display-lg font-display-lg text-on-surface leading-none">24</div><p class="text-body-md text-on-surface-variant mt-3">Includes portal home, quote pages, supplier recruitment pages, industry topics, and campaign microsites.</p></div>
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">language</span></div><span class="inline-flex items-center text-label-sm font-label-sm text-secondary bg-secondary-fixed px-2 py-1 rounded-full">CN + EN</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Multilingual Coverage</div><div class="text-display-lg font-display-lg text-on-surface leading-none">18</div><p class="text-body-md text-on-surface-variant mt-3">18 pages now keep Chinese and English versions aligned for domestic and overseas campaigns.</p></div>
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">person_search</span></div><span class="inline-flex items-center text-label-sm font-label-sm text-tertiary bg-tertiary-fixed px-2 py-1 rounded-full">+56 This Week</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Form Conversions</div><div class="text-display-lg font-display-lg text-on-surface leading-none">326</div><p class="text-body-md text-on-surface-variant mt-3">AI quote entry, supplier recruitment forms, and demo booking are the biggest conversion sources.</p></div>
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]"><div class="flex items-start justify-between mb-4"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined">experiment</span></div><span class="inline-flex items-center text-label-sm font-label-sm text-on-error-container bg-error-container px-2 py-1 rounded-full">7 Running</span></div><div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-1">A/B Experiments</div><div class="text-display-lg font-display-lg text-on-surface leading-none">7</div><p class="text-body-md text-on-surface-variant mt-3">Headlines, CTA labels, hero model demos, and industry copy are being tested in parallel.</p></div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 mb-8">
+<section class="xl:col-span-7 bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] p-6">
+<div class="flex items-center justify-between mb-5"><div><h3 class="text-title-sm font-title-sm text-on-surface">Page Matrix</h3><p class="text-body-md text-on-surface-variant mt-1">Manage portal pages, campaign pages, and industry topic pages by scenario, status, and goal.</p></div><button class="px-3 h-9 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-md text-on-surface hover:bg-surface-container transition-colors">View All Pages</button></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="rounded-xl bg-surface-container-low p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-3"><div class="font-semibold text-on-surface">Portal Homepage</div><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm">Live</span></div><div class="text-body-md text-on-surface-variant">Owns the brand story, AI experience entry, and platform capability showcase.</div><div class="mt-4 space-y-2 text-body-md"><div class="flex items-center justify-between"><span>SEO Score</span><span class="text-on-surface font-semibold">91</span></div><div class="flex items-center justify-between"><span>Weekly UV</span><span class="text-on-surface font-semibold">12,840</span></div><div class="flex items-center justify-between"><span>Conversion Goal</span><span class="text-on-surface font-semibold">Submit RFQ</span></div></div></div>
+<div class="rounded-xl bg-surface-container-low p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-3"><div class="font-semibold text-on-surface">AI Quote Landing Page</div><span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm">A/B Test</span></div><div class="text-body-md text-on-surface-variant">Focused on model upload, rapid quoting, and first-time visitor conversion.</div><div class="mt-4 space-y-2 text-body-md"><div class="flex items-center justify-between"><span>Conversion Rate</span><span class="text-on-surface font-semibold">14.8%</span></div><div class="flex items-center justify-between"><span>Main CTA</span><span class="text-on-surface font-semibold">Start Smart Quote</span></div><div class="flex items-center justify-between"><span>Test Variable</span><span class="text-on-surface font-semibold">Hero Copy</span></div></div></div>
+<div class="rounded-xl bg-surface-container-low p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-3"><div class="font-semibold text-on-surface">Supplier Recruitment Page</div><span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary text-label-sm">Pending Review</span></div><div class="text-body-md text-on-surface-variant">Collects applications from machining, sheet metal, finishing, and specialty-process suppliers.</div><div class="mt-4 space-y-2 text-body-md"><div class="flex items-center justify-between"><span>Pending Module</span><span class="text-on-surface font-semibold">Capability comparison</span></div><div class="flex items-center justify-between"><span>Form Completion</span><span class="text-on-surface font-semibold">63%</span></div><div class="flex items-center justify-between"><span>Owner</span><span class="text-on-surface font-semibold">Platform Operations</span></div></div></div>
+<div class="rounded-xl bg-surface-container-low p-5 border border-outline-variant/40"><div class="flex items-center justify-between mb-3"><div class="font-semibold text-on-surface">Industry Topic Page</div><span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-label-sm">Updating</span></div><div class="text-body-md text-on-surface-variant">Publishes cases and process capabilities for robotics, medical, and new-energy industries.</div><div class="mt-4 space-y-2 text-body-md"><div class="flex items-center justify-between"><span>Topic Count</span><span class="text-on-surface font-semibold">9</span></div><div class="flex items-center justify-between"><span>AI Summary Enabled</span><span class="text-on-surface font-semibold">6 Pages</span></div><div class="flex items-center justify-between"><span>Backlink Growth</span><span class="text-on-surface font-semibold">+22%</span></div></div></div>
+</div>
+</section>
+<section class="xl:col-span-5 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] p-6"><div class="flex items-center justify-between mb-4"><div><h3 class="text-title-sm font-title-sm text-on-surface">Publishing Workflow</h3><p class="text-body-md text-on-surface-variant mt-1">Keep content, design, operations, and legal review aligned before launch.</p></div><span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm">5 Scheduled This Week</span></div><div class="space-y-4 text-body-md"><div class="flex items-start gap-3"><span class="mt-0.5 material-symbols-outlined text-primary">edit_square</span><div><div class="text-on-surface font-medium">Draft Editing</div><div class="text-on-surface-variant">Maintain Chinese, English, SEO title, meta description, and AI summary together.</div></div></div><div class="flex items-start gap-3"><span class="mt-0.5 material-symbols-outlined text-primary">approval</span><div><div class="text-on-surface font-medium">Approval Passed</div><div class="text-on-surface-variant">Design rules, brand copy, legal disclaimers, and form fields are checked in one review step.</div></div></div><div class="flex items-start gap-3"><span class="mt-0.5 material-symbols-outlined text-primary">publish</span><div><div class="text-on-surface font-medium">Scheduled Publishing</div><div class="text-on-surface-variant">Supports timed launch, timed offline, grey release, and A/B traffic allocation.</div></div></div></div></div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] p-6"><div class="flex items-center justify-between mb-4"><h3 class="text-title-sm font-title-sm text-on-surface">SEO / GEO / AI Content Strategy</h3><span class="text-label-sm text-on-surface-variant">Last 7 Days</span></div><div class="space-y-4"><div><div class="flex items-center justify-between text-body-md mb-1"><span>Search Keyword Coverage</span><span class="font-semibold text-on-surface">78%</span></div><div class="h-2 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full w-[78%] bg-primary rounded-full"></div></div></div><div><div class="flex items-center justify-between text-body-md mb-1"><span>GEO Scenario Hit Rate</span><span class="font-semibold text-on-surface">64%</span></div><div class="h-2 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full w-[64%] bg-secondary rounded-full"></div></div></div><div><div class="flex items-center justify-between text-body-md mb-1"><span>AI Summary Citation Rate</span><span class="font-semibold text-on-surface">41%</span></div><div class="h-2 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full w-[41%] bg-tertiary rounded-full"></div></div></div><div class="rounded-xl bg-surface-container-low p-4 border border-outline-variant/40 text-body-md text-on-surface-variant">Prioritize structured FAQ coverage for the three highest-value page themes: CNC quoting, AI machining platform, and supplier onboarding.</div></div></div>
+</section>
+</div>
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] overflow-hidden mb-8"><div class="p-4 border-b border-outline-variant/50 flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-surface-bright"><div><h3 class="text-title-sm font-title-sm text-on-surface">Marketing Page Inventory</h3><p class="text-body-md text-on-surface-variant mt-1">Track language versions, campaign goals, latest updates, and conversion performance for each page.</p></div><div class="flex gap-2"><button class="p-2 text-on-surface-variant hover:bg-surface-container rounded transition-colors border border-outline-variant bg-surface-container-lowest"><span class="material-symbols-outlined text-[18px]">filter_list</span></button><button class="h-10 px-4 bg-primary text-on-primary rounded-lg text-title-sm font-title-sm flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">open_in_new</span>Open Page Editor</button></div></div><div class="overflow-x-auto w-full"><table class="w-full text-left border-collapse"><thead><tr class="bg-surface-container-low border-b border-outline-variant/50"><th class="px-6 py-3 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Page Name</th><th class="px-6 py-3 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Channel Goal</th><th class="px-6 py-3 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Language</th><th class="px-6 py-3 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Last Update</th><th class="px-6 py-3 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider text-right">Conversion</th><th class="px-6 py-3 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider text-center">Status</th></tr></thead><tbody class="divide-y divide-outline-variant/30 bg-surface-container-lowest"><tr class="hover:bg-surface-container/50 transition-colors"><td class="px-6 py-4"><div class="font-medium text-on-surface">Portal Homepage</div><div class="text-mono-data text-on-surface-variant text-[11px]">slug: /portal/home</div></td><td class="px-6 py-4 text-on-surface">Brand story / RFQ submission</td><td class="px-6 py-4 text-on-surface">CN / EN</td><td class="px-6 py-4 text-on-surface">Today 10:42</td><td class="px-6 py-4 text-right text-mono-data text-on-surface">8.6%</td><td class="px-6 py-4 text-center"><span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-medium">Live</span></td></tr><tr class="hover:bg-surface-container/50 transition-colors"><td class="px-6 py-4"><div class="font-medium text-on-surface">AI Quote Landing Page</div><div class="text-mono-data text-on-surface-variant text-[11px]">slug: /campaign/ai-quote</div></td><td class="px-6 py-4 text-on-surface">Paid traffic / first-order conversion</td><td class="px-6 py-4 text-on-surface">CN / EN</td><td class="px-6 py-4 text-on-surface">Today 09:18</td><td class="px-6 py-4 text-right text-mono-data text-on-surface">14.8%</td><td class="px-6 py-4 text-center"><span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-medium">A/B Test</span></td></tr><tr class="hover:bg-surface-container/50 transition-colors"><td class="px-6 py-4"><div class="font-medium text-on-surface">Supplier Recruitment Page</div><div class="text-mono-data text-on-surface-variant text-[11px]">slug: /supplier/join</div></td><td class="px-6 py-4 text-on-surface">Supplier onboarding / qualification capture</td><td class="px-6 py-4 text-on-surface">CN</td><td class="px-6 py-4 text-on-surface">Yesterday 16:05</td><td class="px-6 py-4 text-right text-mono-data text-on-surface">11.2%</td><td class="px-6 py-4 text-center"><span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary text-[11px] font-medium">Pending Review</span></td></tr></tbody></table></div></section>
+</main>
+</div>
+</body></html>
+
+
+
+
+
+
+
