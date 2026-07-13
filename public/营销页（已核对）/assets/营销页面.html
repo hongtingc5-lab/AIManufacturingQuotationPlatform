@@ -705,7 +705,10 @@
     }
 
     .stats-bar {
-      background: #ffffff;
+      background:
+        radial-gradient(circle at top left, rgba(221, 235, 252, 0.72), transparent 40%),
+        linear-gradient(180deg, rgba(247, 251, 255, 0.94), rgba(255, 255, 255, 0.98)),
+        #ffffff;
       border-bottom: 1px solid rgba(18, 24, 38, 0.06);
     }
 
@@ -874,185 +877,6 @@
       line-height: 1.8;
     }
 
-    #services .split-section {
-      grid-template-columns: 300px minmax(0, 1fr);
-      gap: clamp(30px, 4vw, 58px);
-      align-items: center;
-    }
-
-    #services .service-grid {
-      display: flex;
-      min-height: 430px;
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    #services .service-card {
-      position: relative;
-      flex: 1 1 0;
-      min-width: 0;
-      min-height: 430px;
-      overflow: hidden;
-      border-radius: 22px;
-      background: #ffffff;
-      transition:
-        flex 0.42s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-    }
-
-    #services .service-card:hover,
-    #services .service-card:focus-within {
-      flex: 2.35 1 0;
-      transform: translateY(-4px);
-      box-shadow: 0 30px 64px rgba(18, 24, 38, 0.18);
-    }
-
-    #services .service-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 430px;
-      object-fit: cover;
-      filter: saturate(0.92) contrast(1.02);
-      transition: transform 0.42s ease, filter 0.32s ease;
-    }
-
-    #services .service-card:hover img,
-    #services .service-card:focus-within img {
-      transform: scale(1.05);
-      filter: saturate(1) contrast(1.04);
-    }
-
-    #services .service-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8, 18, 32, 0.04), rgba(8, 18, 32, 0.76)),
-        linear-gradient(90deg, rgba(8, 18, 32, 0.28), rgba(8, 18, 32, 0));
-      pointer-events: none;
-      transition: opacity 0.32s ease;
-    }
-
-    #services .service-card:hover::after,
-    #services .service-card:focus-within::after {
-      opacity: 0.72;
-    }
-
-    #services .service-body {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      min-height: 132px;
-      padding: 22px;
-      color: #ffffff;
-      transition: transform 0.36s ease, opacity 0.28s ease;
-    }
-
-    #services .service-body h3 {
-      color: #ffffff;
-      font-size: 24px;
-    }
-
-    #services .service-body p {
-      max-width: 220px;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    #services .service-card:hover .service-body,
-    #services .service-card:focus-within .service-body {
-      transform: translateX(-12px);
-      opacity: 0.52;
-    }
-
-    .service-drawer {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      bottom: 16px;
-      z-index: 2;
-      width: min(320px, 54%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 22px;
-      color: var(--night);
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      border-radius: 18px;
-      box-shadow: 0 18px 42px rgba(15, 31, 55, 0.16);
-      backdrop-filter: blur(14px);
-      opacity: 0;
-      transform: translateX(calc(100% + 18px));
-      transition:
-        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.28s ease;
-      pointer-events: none;
-    }
-
-    #services .service-card:hover .service-drawer,
-    #services .service-card:focus-within .service-drawer {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
-    }
-
-    .service-drawer strong {
-      display: block;
-      color: var(--steel);
-      font-size: 13px;
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    .service-drawer h4 {
-      margin: 12px 0 0;
-      color: var(--night);
-      font-size: 24px;
-      line-height: 1.22;
-      font-weight: 900;
-    }
-
-    .service-drawer p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .service-drawer ul {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .service-drawer li {
-      position: relative;
-      padding-left: 18px;
-      color: #43546f;
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    .service-drawer li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.7em;
-      width: 6px;
-      height: 6px;
-      background: var(--action);
-      border-radius: 50%;
-      transform: translateY(-50%);
-    }
-
     .factory-layout,
     .quality-layout,
     .trust-layout,
@@ -1164,131 +988,6 @@
 
     .quality-layout {
       grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    }
-
-    .quality-deck {
-      position: relative;
-      height: 430px;
-      overflow: visible;
-      border-radius: 0;
-      box-shadow: none;
-      isolation: isolate;
-    }
-
-    .quality-card {
-      position: absolute;
-      inset: 0;
-      margin: 0;
-      overflow: hidden;
-      border: 1px solid rgba(32, 56, 93, 0.12);
-      border-radius: 30px;
-      background: #eef5ff;
-      box-shadow: 0 24px 58px rgba(18, 24, 38, 0.16);
-      opacity: 0;
-      pointer-events: none;
-      transform-origin: center;
-      transition:
-        transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.28s ease,
-        box-shadow 0.28s ease;
-      user-select: none;
-      will-change: transform, opacity;
-    }
-
-    .quality-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-      filter: saturate(0.92) contrast(1.04);
-    }
-
-    .quality-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 58%, rgba(8, 18, 32, 0.54));
-      opacity: 0;
-      transition: opacity 0.28s ease;
-      pointer-events: none;
-    }
-
-    .quality-card-label {
-      position: absolute;
-      left: 22px;
-      bottom: 20px;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 8px 14px;
-      color: #ffffff;
-      background: rgba(8, 18, 32, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 999px;
-      backdrop-filter: blur(10px);
-      font-size: 13px;
-      font-weight: 800;
-      line-height: 1;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.28s ease, transform 0.28s ease;
-      pointer-events: none;
-    }
-
-    .quality-card.is-active {
-      z-index: 4;
-      opacity: 1;
-      pointer-events: auto;
-      cursor: grab;
-      touch-action: none;
-      transform: translate(0, 0) rotate(0deg) scale(1);
-    }
-
-    .quality-card.is-active::after,
-    .quality-card.is-active .quality-card-label {
-      opacity: 1;
-    }
-
-    .quality-card.is-active .quality-card-label {
-      transform: translateY(0);
-    }
-
-    .quality-card.is-active:hover {
-      box-shadow: 0 30px 70px rgba(18, 24, 38, 0.2);
-    }
-
-    .quality-card.is-active.is-dragging {
-      cursor: grabbing;
-      transition: none;
-      transform: translate(var(--drag-x, 0), var(--drag-y, 0)) rotate(var(--drag-rotate, 0deg)) scale(1.01);
-    }
-
-    .quality-card.is-active.is-exiting {
-      opacity: 0;
-      pointer-events: none;
-      transition:
-        transform 0.26s ease,
-        opacity 0.22s ease;
-      transform: translate(var(--exit-x, 0), var(--exit-y, 0)) rotate(var(--exit-rotate, 0deg)) scale(0.96);
-    }
-
-    .quality-card.is-next {
-      z-index: 3;
-      opacity: 0.78;
-      transform: translate(24px, 18px) rotate(2.5deg) scale(0.96);
-    }
-
-    .quality-card.is-third {
-      z-index: 2;
-      opacity: 0.56;
-      transform: translate(-20px, 34px) rotate(-2.6deg) scale(0.92);
-    }
-
-    .quality-card.is-fourth {
-      z-index: 1;
-      opacity: 0.34;
-      transform: translate(44px, 48px) rotate(4deg) scale(0.88);
     }
 
     .feature-grid {
@@ -2572,19 +2271,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      #services .split-section {
-        grid-template-columns: 1fr;
-      }
-
-      #services .service-grid {
-        min-height: 390px;
-      }
-
-      #services .service-card,
-      #services .service-card img {
-        min-height: 390px;
-      }
-
       .process-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         row-gap: 20px;
@@ -2838,70 +2524,6 @@
         grid-template-columns: 1fr;
       }
 
-      #services .service-grid {
-        display: grid;
-        min-height: auto;
-        gap: 18px;
-      }
-
-      #services .service-card {
-        display: grid;
-        min-height: auto;
-        border-radius: 20px;
-        transform: none;
-      }
-
-      #services .service-card:hover,
-      #services .service-card:focus-within {
-        transform: none;
-      }
-
-      #services .service-card::after {
-        display: none;
-      }
-
-      #services .service-card img {
-        min-height: 0;
-        height: 220px;
-      }
-
-      #services .service-body {
-        position: static;
-        min-height: 0;
-        padding: 18px 18px 6px;
-        color: var(--text);
-        transform: none;
-        opacity: 1;
-      }
-
-      #services .service-card:hover .service-body,
-      #services .service-card:focus-within .service-body {
-        transform: none;
-        opacity: 1;
-      }
-
-      #services .service-body h3 {
-        color: var(--night);
-        font-size: 21px;
-      }
-
-      #services .service-body p {
-        max-width: none;
-        color: var(--muted);
-      }
-
-      #services .service-drawer {
-        position: static;
-        width: auto;
-        margin: 12px 18px 18px;
-        padding: 18px;
-        opacity: 1;
-        transform: none;
-        pointer-events: auto;
-        background: #f7fbff;
-        box-shadow: none;
-      }
-
       .stat-item,
       .metric {
         border-right: 0;
@@ -2940,36 +2562,6 @@
       .factory-image-large img,
       .quality-image img {
         height: 240px;
-      }
-
-      .quality-deck {
-        height: 320px;
-        margin-top: 8px;
-      }
-
-      .quality-deck .quality-card img {
-        height: 100%;
-      }
-
-      .quality-card {
-        border-radius: 22px;
-      }
-
-      .quality-card-label {
-        left: 14px;
-        bottom: 14px;
-      }
-
-      .quality-card.is-next {
-        transform: translate(12px, 12px) rotate(2deg) scale(0.96);
-      }
-
-      .quality-card.is-third {
-        transform: translate(-8px, 22px) rotate(-2deg) scale(0.92);
-      }
-
-      .quality-card.is-fourth {
-        transform: translate(20px, 30px) rotate(3deg) scale(0.88);
       }
 
       .nav-actions {
@@ -3249,36 +2841,12 @@
             <h3>精密加工</h3>
             <p>高精度 CNC 加工服务，覆盖复杂结构件与高标准尺寸控制。</p>
           </div>
-          <div class="service-drawer">
-            <div>
-              <strong>CNC MACHINING</strong>
-              <h4>复杂结构稳定成型</h4>
-              <p>覆盖铣削、车削与复合加工，适配小批验证到批量交付。</p>
-            </div>
-            <ul>
-              <li>铝合金、不锈钢、工程塑料等多材料加工</li>
-              <li>关键尺寸检测与首件确认同步推进</li>
-              <li>支持快速打样和多批次稳定复购</li>
-            </ul>
-          </div>
         </article>
         <article class="service-card">
           <img src="./precision/service-cnc.jpg" alt="钣金制造服务" loading="lazy">
           <div class="service-body">
             <h3>钣金制造</h3>
             <p>兼顾效率与一致性，适用于箱体、支架和结构件项目交付。</p>
-          </div>
-          <div class="service-drawer">
-            <div>
-              <strong>SHEET METAL</strong>
-              <h4>结构件快速落地</h4>
-              <p>从展开、折弯到焊接装配，兼顾外观、强度与装配精度。</p>
-            </div>
-            <ul>
-              <li>支持机箱、支架、外壳和连接结构</li>
-              <li>同步处理孔位、折弯半径与装配干涉</li>
-              <li>可衔接喷涂、氧化、拉丝等表面工艺</li>
-            </ul>
           </div>
         </article>
         <article class="service-card">
@@ -3287,36 +2855,12 @@
             <h3>表面处理</h3>
             <p>提供喷砂、阳极、精饰等工艺，提升外观与耐用性表现。</p>
           </div>
-          <div class="service-drawer">
-            <div>
-              <strong>SURFACE FINISHING</strong>
-              <h4>外观与性能同步提升</h4>
-              <p>根据材料、使用场景和外观要求组合匹配表面处理方案。</p>
-            </div>
-            <ul>
-              <li>喷砂、阳极氧化、电镀、喷涂等工艺组合</li>
-              <li>兼顾耐腐蚀、耐磨、绝缘和装饰效果</li>
-              <li>颜色、纹理与批次一致性可控</li>
-            </ul>
-          </div>
         </article>
         <article class="service-card">
           <img src="./precision/service-assembly.jpg" alt="装配与测试服务" loading="lazy">
           <div class="service-body">
             <h3>装配与测试</h3>
             <p>结合自动化产线和质量验证，支持整机装配与功能调试。</p>
-          </div>
-          <div class="service-drawer">
-            <div>
-              <strong>ASSEMBLY TEST</strong>
-              <h4>交付前完成验证</h4>
-              <p>把零件加工、部件装配和功能测试串联起来，减少交付后的返工。</p>
-            </div>
-            <ul>
-              <li>夹治具、结构组件与自动化单元装配</li>
-              <li>尺寸复核、外观检查和关键功能测试</li>
-              <li>支持包装、标签和交付资料整理</li>
-            </ul>
           </div>
         </article>
       </div>
@@ -3401,23 +2945,8 @@
           </div>
         </div>
       </div>
-      <div class="quality-image quality-deck" data-quality-deck aria-label="核心制造能力图片轮播">
-        <figure class="quality-card is-active" data-deck-card>
-          <img src="./precision/quality-process.jpg" alt="精密车削加工过程" loading="lazy">
-          <figcaption class="quality-card-label">精密车削加工</figcaption>
-        </figure>
-        <figure class="quality-card is-next" data-deck-card>
-          <img src="./precision/service-cnc.jpg" alt="CNC 加工冷却过程" loading="lazy">
-          <figcaption class="quality-card-label">CNC 批量加工</figcaption>
-        </figure>
-        <figure class="quality-card is-third" data-deck-card>
-          <img src="./precision/service-finishing.jpg" alt="金属零件精密加工" loading="lazy">
-          <figcaption class="quality-card-label">高精度金属加工</figcaption>
-        </figure>
-        <figure class="quality-card is-fourth" data-deck-card>
-          <img src="./precision/product-shaft.jpg" alt="轴类零件精密加工成品" loading="lazy">
-          <figcaption class="quality-card-label">轴类零件精加工</figcaption>
-        </figure>
+      <div class="quality-image">
+        <img src="./precision/quality-process.jpg" alt="精密加工过程" loading="lazy">
       </div>
     </div>
   </section>
@@ -3987,110 +3516,6 @@
       cats.forEach((cat) => {
         cat.addEventListener("mouseenter", () => setCapabilityMenu(cat.dataset.menuCategory));
         cat.addEventListener("focus", () => setCapabilityMenu(cat.dataset.menuCategory));
-      });
-    })();
-
-    (function () {
-      const decks = document.querySelectorAll("[data-quality-deck]");
-      if (!decks.length) return;
-
-      function clamp(value, min, max) {
-        return Math.min(Math.max(value, min), max);
-      }
-
-      decks.forEach((deck) => {
-        const cards = Array.from(deck.querySelectorAll("[data-deck-card]"));
-        if (cards.length < 2) return;
-
-        let activeIndex = 0;
-        let pointerId = null;
-        let startX = 0;
-        let startY = 0;
-        let dragX = 0;
-        let dragY = 0;
-
-        function clearMotion(card) {
-          card.style.removeProperty("--drag-x");
-          card.style.removeProperty("--drag-y");
-          card.style.removeProperty("--drag-rotate");
-          card.style.removeProperty("--exit-x");
-          card.style.removeProperty("--exit-y");
-          card.style.removeProperty("--exit-rotate");
-        }
-
-        function syncDeck() {
-          cards.forEach((card, index) => {
-            const offset = (index - activeIndex + cards.length) % cards.length;
-            card.classList.remove("is-active", "is-next", "is-third", "is-fourth", "is-dragging", "is-exiting");
-            card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
-            clearMotion(card);
-
-            if (offset === 0) card.classList.add("is-active");
-            if (offset === 1) card.classList.add("is-next");
-            if (offset === 2) card.classList.add("is-third");
-            if (offset === 3) card.classList.add("is-fourth");
-          });
-        }
-
-        function finishDrag(card, shouldSwitch) {
-          card.classList.remove("is-dragging");
-          deck.classList.remove("is-dragging");
-
-          if (!shouldSwitch) {
-            clearMotion(card);
-            return;
-          }
-
-          const exitX = (dragX || 1) * 1.9;
-          const exitY = dragY * 1.9;
-          card.style.setProperty("--exit-x", exitX + "px");
-          card.style.setProperty("--exit-y", exitY + "px");
-          card.style.setProperty("--exit-rotate", clamp(dragX * 0.04, -18, 18) + "deg");
-          card.classList.add("is-exiting");
-
-          window.setTimeout(() => {
-            activeIndex = (activeIndex + 1) % cards.length;
-            syncDeck();
-          }, 260);
-        }
-
-        cards.forEach((card) => {
-          card.addEventListener("pointerdown", (event) => {
-            if (!card.classList.contains("is-active")) return;
-            if (event.button && event.button !== 0) return;
-
-            pointerId = event.pointerId;
-            startX = event.clientX;
-            startY = event.clientY;
-            dragX = 0;
-            dragY = 0;
-
-            card.classList.add("is-dragging");
-            deck.classList.add("is-dragging");
-            card.setPointerCapture(event.pointerId);
-          });
-
-          card.addEventListener("pointermove", (event) => {
-            if (pointerId !== event.pointerId || !card.classList.contains("is-dragging")) return;
-            dragX = event.clientX - startX;
-            dragY = event.clientY - startY;
-            card.style.setProperty("--drag-x", dragX + "px");
-            card.style.setProperty("--drag-y", dragY + "px");
-            card.style.setProperty("--drag-rotate", clamp(dragX * 0.035, -14, 14) + "deg");
-          });
-
-          function releaseCard(event) {
-            if (pointerId !== event.pointerId || !card.classList.contains("is-dragging")) return;
-            const shouldSwitch = Math.hypot(dragX, dragY) > 90;
-            pointerId = null;
-            finishDrag(card, shouldSwitch);
-          }
-
-          card.addEventListener("pointerup", releaseCard);
-          card.addEventListener("pointercancel", releaseCard);
-        });
-
-        syncDeck();
       });
     })();
 
