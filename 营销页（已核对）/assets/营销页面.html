@@ -8,10 +8,10 @@
     :root {
       --ivory: #eef5ff;
       --powder: #8fabd4;
-      --steel: #20385d;
-      --steel-deep: #20385d;
+      --steel: #004Ac6;/*客服*/
+      --steel-deep: #b1cdf7;
       --ink: #000000;
-      --night: #121826;
+      --night: #121826;/*文字*/
       --text: #1f2937;
       --muted: #69758a;
       --line: rgba(32, 56, 93, 0.14);
@@ -19,9 +19,9 @@
       --panel-soft: #f7fbff;
       --shadow: 0 20px 48px rgba(18, 24, 38, 0.12);
       --radius: 26px;
-      --action: #3f72aa;
-      --action-hover: #4c82bb;
-      --dark-section-bg: linear-gradient(90deg, #20385d 0%, #21395f 52%, #253f68 100%);
+      --action: #004Ac6;
+      --action-hover: #004Ac6;
+      --dark-section-bg: #004Ac6;
       --hero-split-top: 55%;
       --hero-split-bottom: 45%;
     }
@@ -153,6 +153,17 @@
       content: none;
     }
 
+
+.hero-copy--first .hero-kicker,
+.hero-copy--first h1,
+.hero-copy--first p,
+.hero-copy--second .hero-kicker,
+.hero-copy--second h1,
+.hero-copy--second p {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+
     .site-header {
       position: fixed;
       left: 0;
@@ -207,7 +218,7 @@
     .site-header:hover .brand,
     .site-header:focus-within .brand,
     .site-header.is-light .brand {
-      color: #244a78;
+      color: #004Ac6;
     }
 
     .brand-symbol {
@@ -275,7 +286,7 @@
     .site-header:hover .nav-item,
     .site-header:focus-within .nav-item,
     .site-header.is-light .nav-item {
-      color: #244a78;
+      color: #1a3a6a;
     }
 
     .nav-item::after {
@@ -422,7 +433,7 @@
 
     .mega-grid a:hover,
     .mega-grid a:focus-visible {
-      color: #244a78;
+      color: #004Ac6;
       transform: translateX(3px);
     }
 
@@ -530,14 +541,14 @@
     .site-header:focus-within .lang-link,
     .site-header.is-light .login-link,
     .site-header.is-light .lang-link {
-      color: #244a78;
+      color:#1a3a6a;
     }
 
     .topbar .btn-primary {
       min-width: 118px;
       padding: 13px 22px;
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.18);
+      background: #004Ac6;
       border-color: rgba(255, 255, 255, 0.24);
       box-shadow: none;
     }
@@ -545,8 +556,8 @@
     .site-header:hover .topbar .btn-primary,
     .site-header:focus-within .topbar .btn-primary,
     .site-header.is-light .topbar .btn-primary {
-      color: #244a78;
-      background: #e8f0fa;
+      color: #ffffff;
+      background: #004Ac6;
       border-color: rgba(36, 74, 120, 0.18);
     }
 
@@ -600,12 +611,24 @@
       z-index: 1;
       display: flex;
       align-items: center;
-      background: linear-gradient(90deg, rgba(8, 18, 32, 0.92), rgba(8, 18, 32, 0.74));
-      transition:
+       background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  border-right: 1px solid rgba(255,255,255,.12);
+        transition:
         clip-path 0.95s cubic-bezier(0.65, 0, 0.35, 1),
         opacity 0.55s ease;
       will-change: clip-path, opacity;
     }
+
+    
 
     .hero-pane--first {
       clip-path: polygon(0 0, var(--hero-split-top) 0, var(--hero-split-bottom) 100%, 0 100%);
@@ -614,8 +637,16 @@
     .hero-pane--second {
       justify-content: flex-end;
       clip-path: polygon(var(--hero-split-bottom) 100%, 100% 100%, 100% 100%, var(--hero-split-bottom) 100%);
-      background: linear-gradient(90deg, rgba(8, 18, 32, 0.76), rgba(8, 18, 32, 0.94));
-      opacity: 0;
+     background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+        opacity: 0;
     }
 
     .hero.is-second .hero-pane--first {
@@ -795,7 +826,7 @@
 
     .partner-logos .siemens,
     .partner-logos .festo {
-      color: #6999c3;
+      color: #0c6fc6;
     }
 
     .partner-logos .abb {
@@ -1103,7 +1134,7 @@
 
     .factory-dark-section {
       padding: 0;
-      background: linear-gradient(135deg, #18385f 0%, #23456f 44%, #102943 100%);
+      background: #f4f8ff;
     }
 
     .factory-dark-section .container {
@@ -1112,9 +1143,10 @@
     }
 
     .factory-dark-section .factory-layout {
-      gap: 0;
-      align-items: start;
+      gap: clamp(22px, 3vw, 44px);
+      align-items: center;
       grid-template-columns: minmax(0, 1.28fr) minmax(330px, 0.72fr);
+      padding: clamp(56px, 6.4vw, 88px) clamp(22px, 4vw, 72px) clamp(58px, 7vh, 96px);
     }
 
     .factory-dark-section .factory-image-large {
@@ -1122,7 +1154,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-content: start;
       gap: clamp(18px, 2.4vw, 34px);
-      padding: clamp(56px, 6.4vw, 88px) clamp(18px, 3vw, 54px) clamp(58px, 7vh, 96px) clamp(22px, 4vw, 72px);
+      padding: 0;
       overflow: visible;
       border-radius: 0;
       box-shadow: none;
@@ -1133,17 +1165,17 @@
       height: clamp(310px, 26vw, 390px);
       min-height: 0;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(36, 74, 120, 0.12);
       border-radius: 10px;
       background: #13263d;
-      box-shadow: 0 28px 72px rgba(4, 13, 26, 0.36), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+      box-shadow: 0 22px 44px rgba(24, 54, 102, 0.12);
       isolation: isolate;
       transition: transform 0.32s ease, box-shadow 0.32s ease;
     }
 
     .factory-visual-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 34px 86px rgba(4, 13, 26, 0.42), 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+      box-shadow: 0 28px 58px rgba(24, 54, 102, 0.16);
     }
 
     .factory-visual-card::after {
@@ -1168,23 +1200,23 @@
       transform: scale(1.045);
     }
 
-    .factory-visual-caption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-      min-height: 38%;
-      padding: clamp(22px, 2.3vw, 34px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-      color: #ffffff;
-      background: linear-gradient(90deg, rgba(9, 16, 27, 0.86), rgba(9, 16, 27, 0.58));
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(14px);
-    }
+      .factory-visual-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        min-height: 38%;
+        padding: clamp(22px, 2.3vw, 34px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.10);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+      }
 
     .factory-visual-caption span {
       color: rgba(255, 255, 255, 0.68);
@@ -1212,10 +1244,10 @@
       justify-content: flex-start;
       padding: clamp(52px, 6vw, 92px);
       color: #ffffff;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      border-radius: 0;
+      background: #0b4fb5;
+      border: 1px solid rgba(0, 74, 198, 0.14);
+      box-shadow: 0 24px 52px rgba(0, 74, 198, 0.18);
+      border-radius: 8px;
     }
 
     .factory-dark-section .factory-card > * {
@@ -1410,87 +1442,283 @@
       line-height: 1.7;
     }
 
-    .process-band {
-      color: #ffffff;
-      background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 34%),
-        var(--dark-section-bg);
+.process-band {
+  color: var(--text);
+  background: #f4f8ff;
+}
+
+    .process-shell {
+      display: grid;
+      gap: 28px;
     }
 
     .process-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 36px;
-    }
-
-    .process-head .section-title,
-    .process-head .section-desc {
-      color: #ffffff;
-    }
-
-    .process-head .section-desc {
-      max-width: 580px;
-      opacity: 0.82;
-    }
-
-    .process-grid {
       display: grid;
-      grid-template-columns: repeat(7, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.55fr);
+      align-items: end;
+      gap: clamp(28px, 5vw, 72px);
     }
 
-    .process-item {
+    .process-head .section-title {
+      max-width: 620px;
+    }
+
+    .process-head .section-desc {
+      max-width: 520px;
+      margin-top: 0;
+    }
+
+    .process-board {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.42fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .process-visual {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 460px;
+      padding: 22px;
+      color: #ffffff;
+      background: #0b4fb5;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .process-visual-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .process-visual-top strong {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .process-visual-top span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      color: #0b4fb5;
+      background: #ffffff;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .process-photo {
       position: relative;
+      min-height: 240px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #072f76;
+    }
+
+    .process-photo img {
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.72;
+      filter: saturate(0.82) contrast(1.05);
+    }
+
+    .process-photo-mark {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 14px;
+      background: #ffffff;
+      border-radius: 8px;
+      color: var(--night);
+      box-shadow: 0 16px 34px rgba(5, 24, 58, 0.22);
+    }
+
+    .process-photo-mark span {
+      color: var(--steel);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .process-photo-mark strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .process-status {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .process-status-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .process-status-row:last-child {
+      border-bottom: 0;
+    }
+
+    .process-status-row span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .process-map {
+      position: relative;
+      min-height: 460px;
+      padding: clamp(22px, 3vw, 36px);
+      background: #ffffff;
+      border: 1px solid rgba(36, 74, 120, 0.12);
+      border-radius: 8px;
+      box-shadow: 0 22px 44px rgba(24, 54, 102, 0.08);
+      overflow: hidden;
+    }
+
+    .process-map-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .process-map-head h3 {
+      margin: 0;
+      color: var(--night);
+      font-size: clamp(22px, 2vw, 30px);
+      line-height: 1.22;
+      font-weight: 800;
+    }
+
+    .process-map-head span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 7px 12px;
+      color: var(--steel);
+      background: #edf4ff;
+      border: 1px solid rgba(0, 74, 198, 0.12);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .process-route {
+      position: relative;
+      height: 330px;
+      margin-top: 28px;
+    }
+
+    .process-route-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .process-route-lines polyline {
+      fill: none;
+      stroke: #c7d8f6;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .process-route-lines circle {
+      fill: #ffffff;
+      stroke: #c7d8f6;
+      stroke-width: 1.5;
+    }
+
+    .process-node {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
       display: grid;
       justify-items: center;
-      gap: 14px;
+      gap: 9px;
+      width: 92px;
+      transform: translate(-50%, -50%);
       text-align: center;
-      padding: 18px 10px 8px;
     }
 
-    .process-item::before {
-      content: "";
-      position: absolute;
-      top: 36px;
-      left: calc(50% + 34px);
-      width: calc(100% - 22px);
-      height: 1px;
-      background: rgba(255, 255, 255, 0.26);
-    }
-
-    .process-item:last-child::before {
-      display: none;
-    }
-
-    .process-icon {
-      position: relative;
-      z-index: 1;
-      width: 68px;
-      height: 68px;
+    .process-node .process-node-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 54px;
+      height: 54px;
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: var(--steel);
+      border: 6px solid #ffffff;
       border-radius: 50%;
-      backdrop-filter: blur(6px);
+      box-shadow: 0 12px 26px rgba(0, 74, 198, 0.22);
     }
 
-    .process-item h4 {
-      margin: 0;
-      font-size: 15px;
-      font-weight: 700;
+    .process-node strong {
+      display: block;
+      color: var(--night);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.25;
     }
 
-    .process-item span {
-      display: inline-block;
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 13px;
-      font-weight: 700;
+    .process-node > span:not(.process-node-icon) {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
       letter-spacing: 0.08em;
+    }
+
+    .process-node.is-key .process-node-icon {
+      background: #071f4d;
+    }
+
+    .process-deliverables {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+      margin-top: 8px;
+    }
+
+    .process-deliverables span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 8px 13px;
+      color: var(--steel);
+      font-size: 12px;
+      font-weight: 800;
+      background: #ffffff;
+      border: 1px solid rgba(0, 74, 198, 0.12);
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(24, 54, 102, 0.05);
     }
 
     #why-us {
@@ -1501,6 +1729,10 @@
       --mask-side: 20vw;
       --mask-radius: 8px;
       --image-scale: 1.03;
+      --intro-bg-x: 50%;
+      --intro-bg-y: 50%;
+      --intro-bg-size: 120%;
+      --intro-scale: 1;
       --overlay-opacity: 0;
       --overlay-y: 30px;
       --final-opacity: 0;
@@ -1530,20 +1762,36 @@
       display: grid;
       place-items: center;
       padding: 24px;
-      color: #5f6470;
       opacity: var(--intro-opacity);
-      transform: translateY(var(--intro-y));
+      transform: translateY(var(--intro-y)) scale(var(--intro-scale));
       pointer-events: none;
       will-change: opacity, transform;
     }
 
-    .why-intro h2 {
+    .why-intro h1 {
       margin: 0;
-      color: #5c626c;
-      font-size: clamp(24px, 2.5vw, 40px);
-      line-height: 1.2;
-      font-weight: 500;
+      max-width: min(44vw, 760px);
+      color: transparent;
+      background-image:
+        linear-gradient(rgba(7, 20, 42, 0.22), rgba(7, 20, 42, 0.22)),
+        url("./precision/quality-process.jpg");
+      background-position: center, var(--intro-bg-x) var(--intro-bg-y);
+      background-size: 100% 100%, var(--intro-bg-size) auto;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgba(12, 26, 48, 0.06);
+      filter: drop-shadow(0 14px 34px rgba(26, 48, 82, 0.14));
+      font-size: clamp(38px, 4.4vw, 76px);
+      line-height: 1.04;
+      font-weight: 900;
       letter-spacing: 0;
+      text-align: center;
+      white-space: nowrap;
+      transform-origin: center;
+      will-change: background-position, background-size;
     }
 
     .why-image-mask {
@@ -1660,7 +1908,7 @@
 
     .why-final-head h2 {
       margin: 0;
-      color: #122033;
+      color: #000000;
       font-size: clamp(34px, 4vw, 56px);
       line-height: 1.08;
       font-weight: 800;
@@ -1755,7 +2003,7 @@
 
     .why-metric strong {
       display: block;
-      color: #244a78;
+      color: #004Ac6;
       font-size: clamp(24px, 2.3vw, 34px);
       line-height: 1;
       font-weight: 800;
@@ -1791,13 +2039,12 @@
       box-shadow: none;
     }
 
-    .why-final-actions .btn-primary {
-      background: linear-gradient(135deg, #2d5f92, #4c83b5);
-      box-shadow: 0 12px 24px rgba(45, 95, 146, 0.18);
-    }
-
+/* .why-final-actions .btn-primary {
+  background: linear-gradient(135deg, #004Ac6, #2a7af0);
+  box-shadow: 0 12px 24px rgba(0, 74, 198, 0.25);
+} */
     .why-final-actions .btn-secondary {
-      color: #244a78;
+      color: #000000;
       background: #ffffff;
       border-color: rgba(36, 74, 120, 0.22);
       box-shadow: none;
@@ -2215,7 +2462,7 @@
     }
 
     .factory-dark-section {
-      background: var(--dark-section-bg);
+      background: #f4f8ff;
     }
 
     .factory-dark-section .section-title,
@@ -2500,7 +2747,7 @@
       justify-content: space-between;
       padding: 18px 20px;
       color: #ffffff;
-      background: linear-gradient(135deg, var(--steel), var(--steel-deep));
+      background: #004Ac6;
     }
 
     .ai-head-left {
@@ -2776,13 +3023,23 @@
         min-height: 390px;
       }
 
-      .process-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        row-gap: 20px;
+      .process-board {
+        grid-template-columns: 1fr;
       }
 
-      .process-item:nth-child(4)::before {
-        display: none;
+      .process-visual {
+        grid-template-columns: minmax(260px, 0.46fr) minmax(0, 1fr);
+        grid-template-rows: auto 1fr;
+        min-height: 0;
+      }
+
+      .process-photo {
+        grid-row: 1 / 3;
+        min-height: 300px;
+      }
+
+      .process-status {
+        align-self: end;
       }
 
       .footer-grid {
@@ -2863,7 +3120,7 @@
 
       .factory-dark-section .factory-image-large {
         gap: 18px;
-        padding: 0 32px 54px;
+        padding: 0;
       }
 
       .factory-visual-card {
@@ -2904,8 +3161,19 @@
         justify-content: stretch;
       }
 
+      .process-head {
+        grid-template-columns: 1fr;
+      }
+
+      .process-map {
+        min-height: 430px;
+      }
+
+      .process-route {
+        height: 300px;
+      }
+
       .cta-row,
-      .process-head,
       .case-section-head,
       .insight-head,
       .footer-bottom,
@@ -2946,6 +3214,13 @@
       .why-image-copy p {
         font-size: 16px;
         line-height: 1.75;
+      }
+
+      .why-intro h1 {
+        max-width: min(72vw, 460px);
+        font-size: clamp(34px, 10.5vw, 52px);
+        line-height: 1.12;
+        white-space: normal;
       }
 
       .why-image-tags {
@@ -3167,7 +3442,6 @@
       .service-grid,
       .card-grid,
       .insight-grid,
-      .process-grid,
       .trust-list,
       .feature-grid,
       .footer-grid,
@@ -3244,14 +3518,81 @@
         border-right: 0;
       }
 
-      .process-item::before {
+      .process-head {
+        gap: 20px;
+        margin-bottom: 26px;
+      }
+
+      .process-visual {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 18px;
+      }
+
+      .process-photo {
+        grid-row: auto;
+        min-height: 230px;
+      }
+
+      .process-map {
+        min-height: 0;
+        padding: 18px 18px 24px;
+      }
+
+      .process-map-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .process-route {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        height: auto;
+        margin-top: 22px;
+      }
+
+      .process-route-lines {
         display: none;
+      }
+
+      .process-node {
+        position: static;
+        width: auto;
+        grid-template-columns: 42px minmax(0, 1fr);
+        justify-items: start;
+        align-items: center;
+        gap: 10px;
+        min-height: 72px;
+        padding: 12px;
+        text-align: left;
+        background: #f7fbff;
+        border: 1px solid rgba(36, 74, 120, 0.1);
+        border-radius: 8px;
+        transform: none;
+      }
+
+      .process-node .process-node-icon {
+        grid-row: 1 / 3;
+        width: 42px;
+        height: 42px;
+        border-width: 0;
+        color: #ffffff;
+      }
+
+      .process-node strong {
+        font-size: 13px;
+      }
+
+      .process-node > span:not(.process-node-icon) {
+        align-self: start;
       }
 
       .factory-dark-section .factory-image-large {
         grid-template-columns: minmax(0, 1fr);
         gap: 12px;
-        padding: 0 14px 34px;
+        padding: 0;
       }
 
       .factory-visual-card {
@@ -3472,10 +3813,10 @@
 
     <div class="hero-media" aria-hidden="true">
       <div class="hero-slide hero-slide--first">
-        <img src="./precision/hero-factory.jpg" alt="">
+        <img src="./precision/factory-floor.jpg" alt="">
       </div>
       <div class="hero-slide hero-slide--second">
-        <img src="./precision/factory-floor.jpg" alt="">
+        <img src="./precision/hero-factory.jpg" alt="">
       </div>
     </div>
 
@@ -3808,85 +4149,147 @@
     </div>
   </section>
 
-  <section class="section-block process-band">
+  <section class="section-block process-band" id="process">
     <div class="container">
-      <div class="process-head">
-        <div>
-          <p class="eyebrow" style="color: rgba(255,255,255,0.78);">精密制造服务流程</p>
-          <h2 class="section-title">从需求到交付，全程无忧</h2>
+      <div class="process-shell">
+        <div class="process-head">
+          <div>
+            <p class="eyebrow">精密制造服务流程</p>
+            <h2 class="section-title">从需求到交付，全程无忧</h2>
+          </div>
+          <p class="section-desc">把 7 个节点收进同一张制造看板，需求、报价、生产、质检和交付状态一眼可见。</p>
         </div>
-        <p class="section-desc">以标准化流程缩短沟通成本，让方案评估、报价确认、生产制造和交付服务更顺畅衔接。</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6h16v9H8l-4 3V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <h4>需求沟通</h4>
-          <span>01</span>
-        </div>
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.8"/>
-              <path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <h4>方案评估</h4>
-          <span>02</span>
-        </div>
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 4h10v16H7z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <h4>报价确认</h4>
-          <span>03</span>
-        </div>
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 18V8l6-4 6 4v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M9 18v-4h6v4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <h4>生产制造</h4>
-          <span>04</span>
-        </div>
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 3 5 6v5c0 4.35 2.54 8.35 7 10 4.46-1.65 7-5.65 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="m9.5 12 1.8 1.8L15 10.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <h4>质量检测</h4>
-          <span>05</span>
-        </div>
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 8h12v7H3zM15 11h3l3 3v1h-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="1.8"/>
-              <circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </span>
-          <h4>物流交付</h4>
-          <span>06</span>
-        </div>
-        <div class="process-item">
-          <span class="process-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 10a6 6 0 1 1 12 0c0 2.2-1.2 4.1-3 5.13V19l-3-2-3 2v-3.87A5.96 5.96 0 0 1 6 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M10 10h4M12 8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <h4>售后服务</h4>
-          <span>07</span>
+
+        <div class="process-board" aria-label="精密制造服务流程">
+          <div class="process-visual">
+            <div class="process-visual-top">
+              <strong>制造流转看板</strong>
+              <span>LIVE FLOW</span>
+            </div>
+            <div class="process-photo">
+              <img src="./precision/quality-process.jpg" alt="精密加工过程" loading="lazy">
+              <div class="process-photo-mark">
+                <div>
+                  <span>PROCESS</span>
+                  <strong>CNC / 质检 / 交付</strong>
+                </div>
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 16.5V7.5L12 3l8 4.5v9L12 21l-8-4.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M4.5 7.8 12 12l7.5-4.2M12 12v8.5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="process-status" aria-label="流程状态">
+              <div class="process-status-row"><strong>DFM 审核</strong><span>READY</span></div>
+              <div class="process-status-row"><strong>生产排期</strong><span>TRACK</span></div>
+              <div class="process-status-row"><strong>质检放行</strong><span>TRACE</span></div>
+            </div>
+          </div>
+
+          <div class="process-map">
+            <div class="process-map-head">
+              <h3>7 个节点，按订单状态推进</h3>
+              <span>可视化闭环</span>
+            </div>
+
+            <div class="process-route">
+              <svg class="process-route-lines" viewBox="0 0 100 56" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="10,14 28,14 46,14 64,14 82,29 62,43 36,43"/>
+                <circle cx="10" cy="14" r="2.2"/>
+                <circle cx="28" cy="14" r="2.2"/>
+                <circle cx="46" cy="14" r="2.2"/>
+                <circle cx="64" cy="14" r="2.2"/>
+                <circle cx="82" cy="29" r="2.2"/>
+                <circle cx="62" cy="43" r="2.2"/>
+                <circle cx="36" cy="43" r="2.2"/>
+              </svg>
+
+              <div class="process-node" style="--x: 10%; --y: 25%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16v9H8l-4 3V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <strong>需求沟通</strong>
+                <span>01</span>
+              </div>
+
+              <div class="process-node" style="--x: 28%; --y: 25%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <strong>方案评估</strong>
+                <span>02</span>
+              </div>
+
+              <div class="process-node" style="--x: 46%; --y: 25%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 4h10v16H7z" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <strong>报价确认</strong>
+                <span>03</span>
+              </div>
+
+              <div class="process-node is-key" style="--x: 64%; --y: 25%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18V8l6-4 6 4v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M9 18v-4h6v4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <strong>生产制造</strong>
+                <span>04</span>
+              </div>
+
+              <div class="process-node is-key" style="--x: 82%; --y: 52%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3 5 6v5c0 4.35 2.54 8.35 7 10 4.46-1.65 7-5.65 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="m9.5 12 1.8 1.8L15 10.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <strong>质量检测</strong>
+                <span>05</span>
+              </div>
+
+              <div class="process-node" style="--x: 62%; --y: 78%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8h12v7H3zM15 11h3l3 3v1h-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <circle cx="7" cy="18" r="2" stroke="currentColor" stroke-width="1.8"/>
+                    <circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </span>
+                <strong>物流交付</strong>
+                <span>06</span>
+              </div>
+
+              <div class="process-node" style="--x: 36%; --y: 78%;">
+                <span class="process-node-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 10a6 6 0 1 1 12 0c0 2.2-1.2 4.1-3 5.13V19l-3-2-3 2v-3.87A5.96 5.96 0 0 1 6 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M10 10h4M12 8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <strong>售后服务</strong>
+                <span>07</span>
+              </div>
+            </div>
+
+            <div class="process-deliverables" aria-label="流程交付物">
+              <span>DFM建议</span>
+              <span>报价明细</span>
+              <span>生产排期</span>
+              <span>检测记录</span>
+              <span>物流追踪</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -3969,7 +4372,7 @@
   <section class="why-scroll-section" id="why-us" aria-label="为什么选择我们">
     <div class="why-scroll-viewport">
       <div class="why-intro" aria-hidden="true">
-        <h2>为什么选择我们？</h2>
+        <h1>为什么选择我们？</h1>
       </div>
 
       <div class="why-image-mask">
@@ -4743,17 +5146,22 @@
         const progress = clamp(-rect.top / scrollLength, 0, 1);
         document.body.classList.toggle("is-why-scroll-active", rect.top < window.innerHeight * 0.72 && rect.bottom > window.innerHeight * 0.28);
         const isCompact = window.innerWidth <= 760;
-        const introFade = smooth(progress, 0.04, 0.16);
-        const maskReveal = smooth(progress, 0.08, 0.18);
-        const expand = smooth(progress, 0.18, 0.55);
-        const overlayIn = smooth(progress, 0.56, 0.74);
-        const overlayOut = smooth(progress, 0.74, 0.84);
-        const finalIn = smooth(progress, 0.78, 0.9);
+        const introMotion = smooth(progress, 0.02, 0.22);
+        const introFade = smooth(progress, 0.18, 0.32);
+        const maskReveal = smooth(progress, 0.26, 0.36);
+        const expand = smooth(progress, 0.34, 0.62);
+        const overlayIn = smooth(progress, 0.62, 0.76);
+        const overlayOut = smooth(progress, 0.76, 0.86);
+        const finalIn = smooth(progress, 0.82, 0.93);
         const startTop = isCompact ? 30 : 24;
         const startSide = isCompact ? 8 : 20;
 
         section.style.setProperty("--intro-opacity", String(1 - introFade));
-        section.style.setProperty("--intro-y", lerp(0, -28, introFade).toFixed(2) + "px");
+        section.style.setProperty("--intro-y", lerp(0, -34, introFade).toFixed(2) + "px");
+        section.style.setProperty("--intro-scale", lerp(1, 1.035, introMotion).toFixed(3));
+        section.style.setProperty("--intro-bg-x", lerp(42, 64, introMotion).toFixed(2) + "%");
+        section.style.setProperty("--intro-bg-y", lerp(42, 58, introMotion).toFixed(2) + "%");
+        section.style.setProperty("--intro-bg-size", lerp(isCompact ? 250 : 150, isCompact ? 310 : 205, introMotion).toFixed(2) + "%");
         section.style.setProperty("--mask-opacity", String(maskReveal));
         section.style.setProperty("--mask-top", lerp(startTop, 0, expand).toFixed(2) + "vh");
         section.style.setProperty("--mask-side", lerp(startSide, 0, expand).toFixed(2) + "vw");

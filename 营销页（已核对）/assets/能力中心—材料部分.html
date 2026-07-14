@@ -7,28 +7,133 @@
   <link rel="stylesheet" href="./能力中心—页面样式.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="./营销页面.html" aria-label="精工制造首页">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 14h7v17c0 6.627 5.373 12 12 12s12-5.373 12-12V14h7" stroke="currentColor" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 10c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3Zm29 0c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3Z" fill="currentColor"/><path d="M18 21h12v9c0 3.314-2.686 6-6 6s-6-2.686-6-6v-9Z" stroke="currentColor" stroke-width="3.3" stroke-linejoin="round"/></svg></span>
-        <span class="brand-text"><strong>精工制造</strong><span>Precision Manufacturing</span></span>
-      </a>
-      <nav class="nav" aria-label="主导航">
-        <a class="active" href="./能力中心—材料部分.html">能力中心</a>
-        <a href="./营销页面.html#cases">案例中心</a>
-        <a href="./营销页面.html#contact">帮助中心</a>
-        <a href="./营销页面.html#insights">资讯中心</a>
-        <a href="./营销页面.html#why-us">会员中心</a>
-        <a href="./营销页面.html#services">模型中心</a>
-        <a href="./营销页面.html#about">智能体中心</a>
-        <a href="./营销页面.html#about">关于我们</a>
-      </nav>
-      <div class="header-actions">
-        <a class="subscribe-btn" href="./营销页面.html#contact">即刻订阅</a>
-        <a class="icon-btn" href="mailto:info@precision.com" aria-label="发送邮件"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="m5 7 7 6 7-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="./营销页面.html" aria-label="敏捷智造首页">
+      <svg class="brand-symbol" viewBox="0 0 56 58" aria-hidden="true" focusable="false">
+        <path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"/>
+        <path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"/>
+        <path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"/>
+      </svg>
+      <span class="brand-wordmark">
+        <strong>敏捷智造</strong>
+        <span>AGILE MANUFACTURING</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <!-- 能力中心 + 下拉菜单 -->
+      <div class="nav-capability">
+        <a class="nav-item nav-item--capability active" href="./能力中心—材料部分.html">能力中心</a>
+        <div class="capability-menu" aria-label="能力中心下拉菜单">
+          <div class="capability-cats" role="tablist" aria-label="能力分类">
+            <a class="capability-cat" href="./能力中心—工艺部分.html" data-menu-category="process" role="tab" aria-selected="false">
+              <span class="capability-cat-copy">
+                <strong>工艺</strong>
+                <span>加工、成型、扫描与报价服务</span>
+              </span>
+              <img src="./precision/service-cnc.jpg" alt="工艺能力预览" loading="lazy">
+            </a>
+            <a class="capability-cat is-active" href="./能力中心—材料部分.html" data-menu-category="material" role="tab" aria-selected="true">
+              <span class="capability-cat-copy">
+                <strong>材料</strong>
+                <span>金属、塑料与复合材料选择</span>
+              </span>
+              <img src="./precision/product-flange.jpg" alt="材料能力预览" loading="lazy">
+            </a>
+            <a class="capability-cat" href="./能力中心—表面处理部分.html" data-menu-category="finish" role="tab" aria-selected="false">
+              <span class="capability-cat-copy">
+                <strong>表面处理</strong>
+                <span>外观、耐腐蚀与功能增强工艺</span>
+              </span>
+              <img src="./precision/quality-process.jpg" alt="表面处理能力预览" loading="lazy">
+            </a>
+          </div>
+          <div class="capability-main">
+            <div class="capability-panel" data-menu-panel="process" role="tabpanel">
+              <ul class="mega-grid">
+                <li><a href="./能力中心—表面处理部分.html">表面处理</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">CNC精密加工</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">3D扫描服务</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">钣金折弯</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">即时报价</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">3D打印</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">金属3D打印</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">模具制作</a></li>
+                <li><a href="./能力中心—工艺部分子页面.html">精密车削</a></li>
+                <li><a href="./能力中心—表面处理部分.html">表面处理</a></li>
+              </ul>
+            </div>
+            <div class="capability-panel is-active" data-menu-panel="material" role="tabpanel">
+              <ul class="mega-grid">
+                <li><a href="./能力中心—材料部分子页面.html">铝合金</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">铜合金</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">特种材料</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">不锈钢</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">工程塑料</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">碳钢</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">钛合金</a></li>
+                <li><a href="./能力中心—材料部分子页面.html">复合材料</a></li>
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="finish" role="tabpanel">
+              <ul class="mega-grid">
+                <li><a href="./能力中心—表面处理部分子页面.html">阳极氧化</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">电镀</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">喷涂</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">粉末喷涂</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">钝化处理</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">热处理</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">激光打标</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">抛光</a></li>
+                <li><a href="./能力中心—表面处理部分子页面.html">发黑处理</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="capability-preview" aria-hidden="true">
+            <div class="capability-preview-card" data-menu-preview="process">
+              <img src="./precision/service-cnc.jpg" alt="">
+              <div class="capability-preview-content">
+                <h3>工艺能力中心</h3>
+                <p>CNC 精密加工、车削、3D 打印与快速报价，覆盖从原型到批量交付的制造流程。</p>
+                <a class="btn btn-secondary" href="./能力中心—工艺部分.html">进入工艺首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card is-active" data-menu-preview="material">
+              <img src="./precision/product-flange.jpg" alt="">
+              <div class="capability-preview-content">
+                <h3>材料能力中心</h3>
+                <p>覆盖金属、工程塑料与复合材料，按强度、重量、耐腐蚀和成本匹配制造方案。</p>
+                <a class="btn btn-secondary" href="./能力中心—材料部分.html">进入材料首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="finish">
+              <img src="./precision/quality-process.jpg" alt="">
+              <div class="capability-preview-content">
+                <h3>表面处理能力中心</h3>
+                <p>从阳极氧化、电镀到喷涂和热处理，提升零件外观、耐久性与功能表现。</p>
+                <a class="btn btn-secondary" href="./能力中心—表面处理部分.html">进入表面处理首页</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- 其他导航项 -->
+      <a class="nav-item" href="./营销页面.html#cases">案例中心</a>
+      <a class="nav-item" href="./营销页面.html#contact">帮助中心</a>
+      <a class="nav-item" href="./营销页面.html#insights">资源中心</a>
+      <a class="nav-item" href="./营销页面.html#why-us">会员中心</a>
+      <a class="nav-item" href="./营销页面.html#services">模型中心</a>
+      <a class="nav-item" href="./营销页面.html#contact">智能体中心</a>
+      <a class="nav-item" href="./营销页面.html#about">关于我们</a>
+      <a class="nav-item" href="./营销页面.html#contact">邮件订阅</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="login-link" href="./营销页面.html#contact">登录</a>
+      <a class="btn btn-primary" href="./营销页面.html#contact">联系我们</a>
+      <a class="lang-link" href="./营销页面.html">EN</a>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <section class="page-hero material">
@@ -142,5 +247,58 @@
       <div class="footer-bottom"><span>© 2024 精工制造 保留所有权利</span><span>隐私政策 ｜ 服务条款</span></div>
     </div>
   </footer>
+<script>
+  let activeCategory = 'material';
+
+  const tabs = document.querySelectorAll('.capability-cat');
+  const panels = document.querySelectorAll('.capability-panel');
+  const previews = document.querySelectorAll('.capability-preview-card');
+
+  function switchTo(category, isTemporary = false) {
+    tabs.forEach(t => t.classList.remove('is-active'));
+    const targetTab = document.querySelector(`.capability-cat[data-menu-category="${category}"]`);
+    if (targetTab) targetTab.classList.add('is-active');
+
+    panels.forEach(p => p.classList.remove('is-active'));
+    const targetPanel = document.querySelector(`.capability-panel[data-menu-panel="${category}"]`);
+    if (targetPanel) targetPanel.classList.add('is-active');
+
+    previews.forEach(p => p.classList.remove('is-active'));
+    const targetPreview = document.querySelector(`.capability-preview-card[data-menu-preview="${category}"]`);
+    if (targetPreview) targetPreview.classList.add('is-active');
+
+    if (!isTemporary) {
+      activeCategory = category;
+    }
+  }
+
+  // 点击 Tab → 正常跳转页面 + 切换内容
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      // 不阻止默认行为，让链接正常跳转
+      const category = this.dataset.menuCategory;
+      switchTo(category, false);
+      // 页面会正常跳转到 href
+    });
+  });
+
+  // 悬停 Tab → 临时切换（不跳转）
+  tabs.forEach(tab => {
+    tab.addEventListener('mouseenter', function(e) {
+      const category = this.dataset.menuCategory;
+      switchTo(category, true);
+    });
+  });
+
+  const menu = document.querySelector('.capability-menu');
+  if (menu) {
+    menu.addEventListener('mouseleave', function() {
+      switchTo(activeCategory, false);
+    });
+  }
+
+  // 初始化
+  switchTo(activeCategory, false);
+</script>
 </body>
 </html>
