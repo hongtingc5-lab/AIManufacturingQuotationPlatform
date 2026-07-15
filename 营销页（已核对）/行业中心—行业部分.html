@@ -136,42 +136,25 @@
 <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="./营销页面.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewBox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"/><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"/><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"/></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a><p>为客户提供高品质、高稳定性的精密制造服务。</p></div><div><h4>能力中心</h4><ul><li><a href="./能力中心—工艺部分.html">工艺</a></li><li><a href="./能力中心—材料部分.html">材料</a></li><li><a href="./能力中心—表面处理部分.html">表面处理</a></li></ul></div><div><h4>行业</h4><ul><li><a href="./行业中心—行业部分.html">行业首页</a></li><li><a href="./行业中心—航天子页面.html">航天</a></li><li><a href="./行业中心—医疗器械子页面.html">医疗器械</a></li><li><a href="./行业中心—汽车制造子页面.html">汽车</a></li><li><a href="./行业中心—新能源子页面.html">新能源</a></li></ul></div><div><h4>解决方案</h4><ul><li><a href="./解决方案中心—解决方案部分.html">解决方案首页</a></li><li><a href="./解决方案中心—智能报价子页面.html">智能报价</a></li><li><a href="./解决方案中心—快速原型子页面.html">快速原型</a></li><li><a href="./解决方案中心—DFM可制造性检查子页面.html">DFM检查</a></li></ul></div><div><h4>资源中心</h4><ul><li><a href="./资源中心—资源部分.html">资源首页</a></li><li><a href="./资源中心—工艺指南子页面.html">工艺指南</a></li><li><a href="./资源中心—材料手册子页面.html">材料手册</a></li><li><a href="./资源中心—设计规范子页面.html">设计规范</a></li><li><a href="./资源中心—帮助FAQ子页面.html">帮助FAQ</a></li></ul></div><div><h4>关于</h4><ul><li><a href="./关于我们—关于部分.html">关于我们</a></li><li><a href="./关于我们—公司介绍子页面.html">公司介绍</a></li><li><a href="./关于我们—质量保证子页面.html">质量保证</a></li><li><a href="./关于我们—隐私政策子页面.html">隐私政策</a></li><li><a href="./关于我们—服务条款子页面.html">服务条款</a></li></ul></div><div class="subscribe-box"><h4>订阅资讯</h4><p>获取制造知识和技术动态</p><form class="subscribe-form"><input type="email" placeholder="输入您的邮箱" aria-label="邮箱"><button type="button" aria-label="订阅">→</button></form></div></div><div class="footer-bottom"><span>© 2024 敏捷智造 保留所有权利</span><span><a href="./关于我们—隐私政策子页面.html">隐私政策</a> / <a href="./关于我们—服务条款子页面.html">服务条款</a></span></div></div></footer>
 
 <script>
-  let activeCategory = 'process';
-  const tabs = document.querySelectorAll('.capability-cat');
-  const panels = document.querySelectorAll('.capability-panel');
-  const previews = document.querySelectorAll('.capability-preview-card');
-
-  function switchTo(category, isTemporary = false) {
-    tabs.forEach((tab) => {
-      const active = tab.dataset.menuCategory === category;
-      tab.classList.toggle('is-active', active);
-      tab.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-    panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.menuPanel === category));
-    previews.forEach((preview) => preview.classList.toggle('is-active', preview.dataset.menuPreview === category));
-    if (!isTemporary) activeCategory = category;
+(function () {
+  function getCapabilityCategory() {
+    var fileName = decodeURIComponent((window.location.pathname.split("/").pop() || "").toLowerCase());
+    if (fileName.indexOf("能力中心—材料部分") === 0) return "material";
+    if (fileName.indexOf("能力中心—表面处理部分") === 0) return "finish";
+    if (fileName.indexOf("能力中心—工艺部分") === 0) return "process";
+    return null;
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('mouseenter', () => switchTo(tab.dataset.menuCategory, true));
-    tab.addEventListener('focus', () => switchTo(tab.dataset.menuCategory, true));
-    tab.addEventListener('click', () => switchTo(tab.dataset.menuCategory, false));
-  });
-
-  const menu = document.querySelector('.capability-menu');
-  if (menu) menu.addEventListener('mouseleave', () => switchTo(activeCategory, false));
-  switchTo(activeCategory, false);
-</script>
-<script>
-(function () {
   document.querySelectorAll(".capability-menu").forEach(function (menu) {
-    var tabs = menu.querySelectorAll(".capability-cat");
-    var panels = menu.querySelectorAll(".capability-panel");
-    var previews = menu.querySelectorAll(".capability-preview-card");
-    var activeCategory = "process";
-    function switchTo(category, temporary) {
+    var tabs = Array.from(menu.querySelectorAll(".capability-cat"));
+    var panels = Array.from(menu.querySelectorAll(".capability-panel"));
+    var previews = Array.from(menu.querySelectorAll(".capability-preview-card"));
+    var activeCategory = getCapabilityCategory();
+    var defaultCategory = activeCategory || "process";
+
+    function switchTo(category, keepTabActive) {
       tabs.forEach(function (tab) {
-        var active = tab.dataset.menuCategory === category;
+        var active = keepTabActive && tab.dataset.menuCategory === category;
         tab.classList.toggle("is-active", active);
         tab.setAttribute("aria-selected", active ? "true" : "false");
       });
@@ -181,18 +164,28 @@
       previews.forEach(function (preview) {
         preview.classList.toggle("is-active", preview.dataset.menuPreview === category);
       });
-      if (!temporary) activeCategory = category;
     }
+
+    function restoreCurrent() {
+      switchTo(defaultCategory, Boolean(activeCategory));
+    }
+
     tabs.forEach(function (tab) {
       tab.addEventListener("mouseenter", function () { switchTo(tab.dataset.menuCategory, true); });
       tab.addEventListener("focus", function () { switchTo(tab.dataset.menuCategory, true); });
-      tab.addEventListener("click", function () { switchTo(tab.dataset.menuCategory, false); });
+      tab.addEventListener("click", function () { activeCategory = tab.dataset.menuCategory; defaultCategory = activeCategory; switchTo(activeCategory, true); });
     });
-    menu.addEventListener("mouseleave", function () { switchTo(activeCategory, false); });
-    switchTo(activeCategory, false);
+
+    menu.addEventListener("mouseleave", restoreCurrent);
+    menu.addEventListener("focusout", function () {
+      window.setTimeout(function () {
+        if (!menu.contains(document.activeElement)) restoreCurrent();
+      }, 0);
+    });
+
+    restoreCurrent();
   });
 })();
 </script>
 </body>
 </html>
-

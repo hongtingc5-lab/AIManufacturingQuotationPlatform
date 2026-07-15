@@ -5106,33 +5106,61 @@
   </a>
   <script>
     (function () {
-      const cats = document.querySelectorAll("[data-menu-category]");
-      const panels = document.querySelectorAll("[data-menu-panel]");
-      const previews = document.querySelectorAll("[data-menu-preview]");
-      if (!cats.length || !panels.length) return;
-
-      function setCapabilityMenu(key) {
-        cats.forEach((cat) => {
-          const active = cat.dataset.menuCategory === key;
-          cat.classList.toggle("is-active", active);
-          cat.setAttribute("aria-selected", active ? "true" : "false");
-        });
-
-        panels.forEach((panel) => {
-          panel.classList.toggle("is-active", panel.dataset.menuPanel === key);
-        });
-
-        previews.forEach((preview) => {
-          preview.classList.toggle("is-active", preview.dataset.menuPreview === key);
-        });
+      function getCapabilityCategory() {
+        const fileName = decodeURIComponent((window.location.pathname.split("/").pop() || "").toLowerCase());
+        if (fileName.indexOf("能力中心—材料部分") === 0) return "material";
+        if (fileName.indexOf("能力中心—表面处理部分") === 0) return "finish";
+        if (fileName.indexOf("能力中心—工艺部分") === 0) return "process";
+        return null;
       }
 
-      cats.forEach((cat) => {
-        cat.addEventListener("mouseenter", () => setCapabilityMenu(cat.dataset.menuCategory));
-        cat.addEventListener("focus", () => setCapabilityMenu(cat.dataset.menuCategory));
+      document.querySelectorAll(".capability-menu").forEach((menu) => {
+        const cats = Array.from(menu.querySelectorAll("[data-menu-category]"));
+        const panels = Array.from(menu.querySelectorAll("[data-menu-panel]"));
+        const previews = Array.from(menu.querySelectorAll("[data-menu-preview]"));
+        let activeCategory = getCapabilityCategory();
+        let defaultCategory = activeCategory || "process";
+
+        function setCapabilityMenu(key, keepCatActive) {
+          cats.forEach((cat) => {
+            const active = keepCatActive && cat.dataset.menuCategory === key;
+            cat.classList.toggle("is-active", active);
+            cat.setAttribute("aria-selected", active ? "true" : "false");
+          });
+
+          panels.forEach((panel) => {
+            panel.classList.toggle("is-active", panel.dataset.menuPanel === key);
+          });
+
+          previews.forEach((preview) => {
+            preview.classList.toggle("is-active", preview.dataset.menuPreview === key);
+          });
+        }
+
+        function restoreCurrentMenu() {
+          setCapabilityMenu(defaultCategory, Boolean(activeCategory));
+        }
+
+        cats.forEach((cat) => {
+          cat.addEventListener("mouseenter", () => setCapabilityMenu(cat.dataset.menuCategory, true));
+          cat.addEventListener("focus", () => setCapabilityMenu(cat.dataset.menuCategory, true));
+          cat.addEventListener("click", () => {
+            activeCategory = cat.dataset.menuCategory;
+            defaultCategory = activeCategory;
+            setCapabilityMenu(activeCategory, true);
+          });
+        });
+
+        menu.addEventListener("mouseleave", restoreCurrentMenu);
+        menu.addEventListener("focusout", () => {
+          window.setTimeout(() => {
+            if (!menu.contains(document.activeElement)) restoreCurrentMenu();
+          }, 0);
+        });
+
+        restoreCurrentMenu();
       });
     })();
-
     (function () {
       const decks = document.querySelectorAll("[data-quality-deck]");
       if (!decks.length) return;
