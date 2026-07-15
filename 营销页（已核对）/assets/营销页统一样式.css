@@ -239,8 +239,8 @@ input {
   top: 100%;
   z-index: 10001;
   display: grid;
-  grid-template-columns: minmax(360px, 31vw) minmax(420px, 24vw) minmax(440px, 1fr);
-  min-height: 490px;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(360px, 0.92fr) minmax(360px, 1fr);
+  min-height: 338px;
   background: #ffffff;
   border-top: 1px solid rgba(36, 74, 120, 0.1);
   box-shadow: 0 32px 58px rgba(15, 31, 55, 0.16);
@@ -410,11 +410,11 @@ input {
 
 .capability-cat {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 140px;
+  grid-template-columns: minmax(0, 1fr) 108px;
   align-items: center;
-  gap: 26px;
-  min-height: 163px;
-  padding: 28px clamp(28px, 4.2vw, 82px);
+  gap: 18px;
+  min-height: 112px;
+  padding: 20px clamp(24px, 3.2vw, 54px);
   color: #263f64;
   border-bottom: 1px solid rgba(36, 74, 120, 0.08);
   transition: background 0.2s ease, color 0.2s ease;
@@ -422,12 +422,12 @@ input {
 
 .capability-cat-copy {
   display: grid;
-  gap: 10px;
+  gap: 7px;
   min-width: 0;
 }
 
 .capability-cat strong {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
   font-weight: 900;
 }
@@ -440,8 +440,8 @@ input {
 }
 
 .capability-cat img {
-  width: 140px;
-  height: 68px;
+  width: 108px;
+  height: 54px;
   object-fit: cover;
   border-radius: 6px;
   filter: saturate(0.88) contrast(1.04);
@@ -456,7 +456,7 @@ input {
 
 .capability-main {
   position: relative;
-  padding: 62px clamp(34px, 4vw, 58px);
+  padding: 38px clamp(28px, 3.2vw, 48px);
   background: #ffffff;
 }
 
@@ -474,7 +474,7 @@ input {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, minmax(130px, 1fr));
-  gap: 44px 52px;
+  gap: 24px 38px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -508,7 +508,7 @@ input {
   inset: 0;
   display: flex;
   align-items: center;
-  padding: 66px clamp(42px, 5vw, 82px);
+  padding: 42px clamp(32px, 4vw, 62px);
   color: #ffffff;
   opacity: 0;
   visibility: hidden;
@@ -540,27 +540,27 @@ input {
 .capability-preview-content {
   position: relative;
   z-index: 1;
-  max-width: 430px;
+  max-width: 360px;
 }
 
 .capability-preview-content h3 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(26px, 2.2vw, 38px);
+  font-size: clamp(23px, 1.9vw, 32px);
   line-height: 1.18;
   font-weight: 900;
 }
 
 .capability-preview-content p {
-  margin: 18px 0 0;
+  margin: 14px 0 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.7;
   font-weight: 700;
 }
 
 .capability-preview-content .btn-secondary {
-  margin-top: 24px;
+  margin-top: 18px;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.42);
   background: rgba(255, 255, 255, 0.05);
