@@ -1131,8 +1131,14 @@ tr:last-child td {
 .footer .brand,
 .footer .brand-text strong,
 .footer .brand-text span,
+.footer .brand-wordmark strong,
+.footer .brand-wordmark span,
 .footer .brand-mark {
   color: #ffffff;
+}
+
+.footer .brand-symbol-secondary {
+  fill: rgba(255, 255, 255, 0.72);
 }
 
 .footer-brand p {
