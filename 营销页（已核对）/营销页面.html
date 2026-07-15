@@ -2942,8 +2942,8 @@
     }
 
     .ai-panel {
-      width: 360px;
-      height: 520px;
+      width: min(520px, calc(100vw - 40px));
+      height: min(680px, calc(100vh - 56px));
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -3003,6 +3003,100 @@
       box-shadow: none;
     }
 
+    .ai-module-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding: 12px 14px 0;
+      background: #ffffff;
+    }
+
+    .ai-module-tab {
+      min-height: 66px;
+      padding: 10px;
+      text-align: left;
+      color: var(--night);
+      background: #f7faff;
+      border: 1px solid rgba(52, 87, 137, 0.12);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .ai-module-tab:hover {
+      transform: translateY(-1px);
+      border-color: rgba(0, 74, 198, 0.28);
+    }
+
+    .ai-module-tab.is-active {
+      color: #ffffff;
+      background: var(--action);
+      border-color: var(--action);
+      box-shadow: 0 10px 18px rgba(0, 74, 198, 0.18);
+    }
+
+    .ai-module-tab span,
+    .ai-module-tab small {
+      display: block;
+      line-height: 1.45;
+    }
+
+    .ai-module-tab span {
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .ai-module-tab small {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .ai-module-tab.is-active small {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .ai-context-strip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px 12px;
+      color: var(--muted);
+      background: #ffffff;
+      border-bottom: 1px solid rgba(18, 24, 38, 0.07);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .ai-context-strip strong {
+      color: var(--night);
+      font-weight: 900;
+    }
+
+    .ai-context-strip em {
+      margin-left: auto;
+      padding: 5px 8px;
+      color: #004AC6;
+      background: rgba(0, 74, 198, 0.08);
+      border-radius: 999px;
+      font-style: normal;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .ai-thread {
+      flex: 1;
+      min-height: 0;
+      display: none;
+      overflow: hidden;
+      background: #f3f6fb;
+    }
+
+    .ai-thread.is-active {
+      display: flex;
+    }
+
     .ai-messages {
       flex: 1;
       display: grid;
@@ -3011,6 +3105,7 @@
       overflow: auto;
       padding: 18px;
       background: #f3f6fb;
+      width: 100%;
     }
 
     .ai-message {
@@ -3055,7 +3150,7 @@
 
     .ai-analysis-card {
       width: 100%;
-      max-width: 278px;
+      max-width: 360px;
       padding: 12px;
       background: #ffffff;
       border: 1px solid rgba(18, 24, 38, 0.06);
@@ -3116,6 +3211,59 @@
       line-height: 1.4;
     }
 
+    .ai-generated-card {
+      width: 100%;
+      max-width: 360px;
+      padding: 14px;
+      color: var(--text);
+      background: #ffffff;
+      border: 1px solid rgba(18, 24, 38, 0.06);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(18, 24, 38, 0.05);
+    }
+
+    .ai-generated-card h4 {
+      margin: 0 0 10px;
+      color: var(--night);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .ai-generated-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .ai-result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .ai-result-grid div {
+      padding: 9px;
+      background: #f7faff;
+      border: 1px solid rgba(52, 87, 137, 0.08);
+      border-radius: 12px;
+    }
+
+    .ai-result-grid span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .ai-result-grid strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--night);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .ai-limit {
       justify-self: center;
       padding: 8px 14px;
@@ -3134,21 +3282,55 @@
       border-top: 1px solid rgba(18, 24, 38, 0.07);
     }
 
+    .ai-input-shell .ai-input-row {
+      margin-top: 0;
+    }
+
     .ai-login-overlay {
       position: absolute;
       inset: 0;
       z-index: 2;
       display: grid;
-      place-items: center;
+      align-content: center;
+      justify-items: center;
+      gap: 8px;
       padding: 14px;
       background: rgba(243, 246, 251, 0.94);
       backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      text-align: center;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .ai-login-overlay strong {
+      color: var(--night);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .ai-login-overlay span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
     }
 
     .ai-login-overlay .btn {
       width: 100%;
       min-width: 0;
       border-radius: 14px;
+    }
+
+    .ai-panel.is-locked .ai-login-overlay {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .ai-panel.is-locked .ai-input-row {
+      opacity: 0.28;
+      pointer-events: none;
     }
 
     .ai-fab {
@@ -3935,6 +4117,51 @@
       .nav-actions {
         min-width: auto;
         margin-left: auto;
+      }
+
+      .floating-ai {
+        right: 14px;
+        bottom: 14px;
+        display: block;
+        width: calc(100vw - 28px);
+        max-width: calc(100vw - 28px);
+      }
+
+      .ai-panel {
+        width: calc(100vw - 28px);
+        height: min(640px, calc(100vh - 36px));
+      }
+
+      .ai-fab {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .floating-ai:not(.is-collapsed) .ai-fab {
+        display: none;
+      }
+
+      .ai-module-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-module-tab {
+        min-height: 0;
+      }
+
+      .ai-context-strip {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .ai-context-strip em {
+        margin-left: 0;
+      }
+
+      .ai-result-grid,
+      .ai-analysis-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -4728,14 +4955,14 @@
     </div>
   </div>
   <div class="floating-ai is-collapsed" aria-label="AI 对话面板">
-    <div class="ai-bubble-hint">点击体验 AI 智能报价</div>
-    <div class="ai-panel" id="ai-chat-window">
+    <div class="ai-bubble-hint">点击体验 AI 制造助手</div>
+    <div class="ai-panel" id="ai-chat-window" data-guest-quota="3">
       <div class="ai-head">
         <div class="ai-head-left">
           <span class="support-avatar" aria-hidden="true">AI</span>
           <div class="ai-title">
             <strong>敏捷智造 AI 助手</strong>
-            <span class="ai-status">在线为您服务</span>
+            <span class="ai-status">游客体验剩余 3 轮</span>
           </div>
         </div>
         <button class="ai-close" id="close-chat" type="button" aria-label="收起 AI 助手">
@@ -4744,55 +4971,119 @@
           </svg>
         </button>
       </div>
-      <div class="ai-messages">
-        <div class="ai-message bot">
-          <span class="support-avatar" aria-hidden="true">AI</span>
-          <div class="ai-bubble">您好！我是您的智能制造顾问。您可以上传 3D 模型，我会协助进行工艺分析、报价预估与交期判断。</div>
-        </div>
-        <div class="ai-message user">
-          <div class="ai-bubble">分析一下这个壳体模型。</div>
-        </div>
-        <div class="ai-message bot">
-          <span class="support-avatar" aria-hidden="true">AI</span>
-          <div class="ai-analysis-card">
-            <div class="ai-file">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-              Gear_Housing_v2.step
-            </div>
-            <div class="ai-model-preview">
-              <img src="./precision/upload-model.jpg" alt="3D 模型智能分析预览" loading="lazy">
-            </div>
-            <div class="ai-analysis-grid">
-              <div>
-                <span>材质建议</span>
-                <strong>铝 6061 / 7075</strong>
+      <div class="ai-module-tabs" role="tablist" aria-label="AI 功能模块">
+        <button class="ai-module-tab is-active" type="button" role="tab" aria-selected="true" data-ai-module="process">
+          <span>工艺分析</span>
+          <small>模型与图纸识别</small>
+        </button>
+        <button class="ai-module-tab" type="button" role="tab" aria-selected="false" data-ai-module="quote">
+          <span>智能报价</span>
+          <small>成本与交期预估</small>
+        </button>
+        <button class="ai-module-tab" type="button" role="tab" aria-selected="false" data-ai-module="dfm">
+          <span>DFM 检查</span>
+          <small>制造风险建议</small>
+        </button>
+      </div>
+      <div class="ai-context-strip">
+        <span>独立上下文</span>
+        <strong data-ai-context-label>工艺分析对话</strong>
+        <em data-ai-quota-text>游客剩余 3 轮</em>
+      </div>
+      <div class="ai-thread is-active" data-ai-thread="process" role="tabpanel">
+        <div class="ai-messages">
+          <div class="ai-message bot">
+            <span class="support-avatar" aria-hidden="true">AI</span>
+            <div class="ai-bubble">这里用于模型、图纸和加工要求的工艺分析。该模块的对话会独立保存，不会混入报价或 DFM 检查结果。</div>
+          </div>
+          <div class="ai-message user">
+            <div class="ai-bubble">分析一下这个壳体模型。</div>
+          </div>
+          <div class="ai-message bot">
+            <span class="support-avatar" aria-hidden="true">AI</span>
+            <div class="ai-analysis-card">
+              <div class="ai-file">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+                Gear_Housing_v2.step
               </div>
-              <div>
-                <span>工艺预估</span>
-                <strong>CNC 精密加工</strong>
+              <div class="ai-model-preview">
+                <img src="./precision/upload-model.jpg" alt="3D 模型智能分析预览" loading="lazy">
               </div>
-              <div>
-                <span>尺寸公差</span>
-                <strong>±0.05 mm</strong>
-              </div>
-              <div>
-                <span>推荐工期</span>
-                <strong>3-5 工作日</strong>
+              <div class="ai-analysis-grid">
+                <div>
+                  <span>推荐工艺</span>
+                  <strong>CNC 精密加工</strong>
+                </div>
+                <div>
+                  <span>材料建议</span>
+                  <strong>铝 6061 / 7075</strong>
+                </div>
+                <div>
+                  <span>关键公差</span>
+                  <strong>±0.05 mm</strong>
+                </div>
+                <div>
+                  <span>工艺风险</span>
+                  <strong>薄壁变形需控制</strong>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="ai-limit">您已达到游客试用上限，请登录后继续</div>
+      </div>
+      <div class="ai-thread" data-ai-thread="quote" role="tabpanel" hidden>
+        <div class="ai-messages">
+          <div class="ai-message bot">
+            <span class="support-avatar" aria-hidden="true">AI</span>
+            <div class="ai-bubble">这里用于独立生成报价预估。请提供材料、数量、表面处理、交付时间或上传模型后的基础信息。</div>
+          </div>
+          <div class="ai-message bot">
+            <span class="support-avatar" aria-hidden="true">AI</span>
+            <div class="ai-generated-card">
+              <h4>报价预估样例</h4>
+              <div class="ai-result-grid">
+                <div><span>批量数量</span><strong>50 件</strong></div>
+                <div><span>加工成本</span><strong>约 180-240 元/件</strong></div>
+                <div><span>表面处理</span><strong>阳极氧化单独核价</strong></div>
+                <div><span>交付周期</span><strong>5-7 工作日</strong></div>
+              </div>
+              <p>正式报价需要结合图纸、三维模型和质量要求确认。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-thread" data-ai-thread="dfm" role="tabpanel" hidden>
+        <div class="ai-messages">
+          <div class="ai-message bot">
+            <span class="support-avatar" aria-hidden="true">AI</span>
+            <div class="ai-bubble">这里用于独立输出 DFM 可制造性建议，重点检查壁厚、孔位、倒角、装配间隙和后处理风险。</div>
+          </div>
+          <div class="ai-message bot">
+            <span class="support-avatar" aria-hidden="true">AI</span>
+            <div class="ai-generated-card">
+              <h4>DFM 检查样例</h4>
+              <div class="ai-result-grid">
+                <div><span>薄壁区域</span><strong>建议不低于 1.2 mm</strong></div>
+                <div><span>深腔结构</span><strong>需评估刀具伸出量</strong></div>
+                <div><span>装配面</span><strong>建议增加基准标注</strong></div>
+                <div><span>后处理</span><strong>阳极前需确认遮蔽区</strong></div>
+              </div>
+              <p>建议在提交正式生产前补充关键尺寸、公差等级和外观面定义。</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="ai-input-shell">
         <div class="ai-login-overlay">
+          <strong>游客体验额度已用完</strong>
+          <span>登录后可继续使用三个 AI 模块，并保留项目上下文。</span>
           <a class="btn btn-primary" href="#contact">登录后继续对话</a>
         </div>
         <div class="ai-input-row">
-          <input type="text" placeholder="输入您的问题..." aria-label="AI 输入框">
+          <input type="text" placeholder="描述零件结构、材料或加工要求..." aria-label="AI 输入框">
           <button class="ai-send" type="button" aria-label="发送给 AI">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -4952,6 +5243,36 @@
       const toggleBtn = document.getElementById("ai-toggle-btn");
       const closeBtn = document.getElementById("close-chat");
       const toggleIcon = document.getElementById("toggle-icon");
+      const aiPanel = document.getElementById("ai-chat-window");
+      const moduleTabs = aiPanel ? Array.from(aiPanel.querySelectorAll("[data-ai-module]")) : [];
+      const moduleThreads = aiPanel ? Array.from(aiPanel.querySelectorAll("[data-ai-thread]")) : [];
+      const aiInput = aiPanel ? aiPanel.querySelector(".ai-input-row input") : null;
+      const aiSend = aiPanel ? aiPanel.querySelector(".ai-send") : null;
+      const quotaText = aiPanel ? aiPanel.querySelector("[data-ai-quota-text]") : null;
+      const contextLabel = aiPanel ? aiPanel.querySelector("[data-ai-context-label]") : null;
+
+      const moduleMeta = {
+        process: {
+          label: "工艺分析对话",
+          placeholder: "描述零件结构、材料或加工要求...",
+          waiting: "正在读取工艺上下文并生成分析结果..."
+        },
+        quote: {
+          label: "智能报价对话",
+          placeholder: "输入数量、材料、表面处理和期望交期...",
+          waiting: "正在拆解成本、工序和交付周期..."
+        },
+        dfm: {
+          label: "DFM 检查对话",
+          placeholder: "描述薄壁、孔位、装配或外观面的疑问...",
+          waiting: "正在检查可制造性风险并整理建议..."
+        }
+      };
+
+      const guestQuota = Number(aiPanel?.dataset.guestQuota || 3);
+      const isLoggedIn = Boolean(window.AGILE_AI_USER && window.AGILE_AI_USER.loggedIn);
+      let activeModule = "process";
+      let remainingQuota = isLoggedIn ? Infinity : guestQuota;
 
       function clamp(value, min, max) {
         return Math.min(Math.max(value, min), max);
@@ -5017,6 +5338,153 @@
             : '<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
         }
       }
+
+      function syncQuota(lockNow = true) {
+        if (!aiPanel) return;
+
+        if (isLoggedIn) {
+          aiPanel.classList.remove("is-locked");
+          if (quotaText) quotaText.textContent = "已登录";
+          const status = aiPanel.querySelector(".ai-status");
+          if (status) status.textContent = "完整功能已开启";
+          return;
+        }
+
+        const quotaCopy = "游客剩余 " + Math.max(remainingQuota, 0) + " 轮";
+        if (quotaText) quotaText.textContent = quotaCopy;
+        const status = aiPanel.querySelector(".ai-status");
+        if (status) status.textContent = quotaCopy;
+        aiPanel.classList.toggle("is-locked", lockNow && remainingQuota <= 0);
+      }
+
+      function setActiveModule(moduleKey) {
+        if (!moduleMeta[moduleKey]) return;
+        activeModule = moduleKey;
+
+        moduleTabs.forEach((tab) => {
+          const active = tab.dataset.aiModule === moduleKey;
+          tab.classList.toggle("is-active", active);
+          tab.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        moduleThreads.forEach((thread) => {
+          const active = thread.dataset.aiThread === moduleKey;
+          thread.classList.toggle("is-active", active);
+          thread.toggleAttribute("hidden", !active);
+        });
+
+        if (contextLabel) contextLabel.textContent = moduleMeta[moduleKey].label;
+        if (aiInput) aiInput.placeholder = moduleMeta[moduleKey].placeholder;
+      }
+
+      function getActiveMessages(moduleKey) {
+        return aiPanel?.querySelector('[data-ai-thread="' + moduleKey + '"] .ai-messages');
+      }
+
+      function scrollThread(moduleKey) {
+        const messages = getActiveMessages(moduleKey);
+        if (messages) messages.scrollTop = messages.scrollHeight;
+      }
+
+      function appendTextMessage(moduleKey, role, text) {
+        const messages = getActiveMessages(moduleKey);
+        if (!messages) return null;
+
+        const message = document.createElement("div");
+        message.className = "ai-message " + role;
+
+        if (role === "bot") {
+          const avatar = document.createElement("span");
+          avatar.className = "support-avatar";
+          avatar.setAttribute("aria-hidden", "true");
+          avatar.textContent = "AI";
+          message.appendChild(avatar);
+        }
+
+        const bubble = document.createElement("div");
+        bubble.className = "ai-bubble";
+        bubble.textContent = text;
+        message.appendChild(bubble);
+        messages.appendChild(message);
+        scrollThread(moduleKey);
+        return message;
+      }
+
+      function appendHtmlMessage(moduleKey, html) {
+        const messages = getActiveMessages(moduleKey);
+        if (!messages) return;
+
+        const message = document.createElement("div");
+        message.className = "ai-message bot";
+        const avatar = document.createElement("span");
+        avatar.className = "support-avatar";
+        avatar.setAttribute("aria-hidden", "true");
+        avatar.textContent = "AI";
+        const card = document.createElement("div");
+        card.className = "ai-generated-card";
+        card.innerHTML = html;
+        message.appendChild(avatar);
+        message.appendChild(card);
+        messages.appendChild(message);
+        scrollThread(moduleKey);
+      }
+
+      function requestAiModule(moduleKey) {
+        const responses = {
+          process: '<h4>工艺分析结果</h4><div class="ai-result-grid"><div><span>推荐路线</span><strong>CNC 粗加工后精加工</strong></div><div><span>材料方向</span><strong>铝合金或不锈钢按强度选择</strong></div><div><span>风险控制</span><strong>薄壁与深腔需分步装夹</strong></div><div><span>交付判断</span><strong>样件 3-5 工作日</strong></div></div><p>当前结果来自工艺分析模块，只会写入该模块的上下文。</p>',
+          quote: '<h4>智能报价结果</h4><div class="ai-result-grid"><div><span>成本构成</span><strong>材料、机时、后处理、质检</strong></div><div><span>数量影响</span><strong>50 件以上单价更稳定</strong></div><div><span>交期预估</span><strong>常规 5-7 工作日</strong></div><div><span>需补充</span><strong>图纸公差与表面要求</strong></div></div><p>当前结果来自报价模块，后续可替换为真实报价接口返回。</p>',
+          dfm: '<h4>DFM 检查结果</h4><div class="ai-result-grid"><div><span>结构建议</span><strong>深孔与窄槽需确认刀具可达</strong></div><div><span>公差建议</span><strong>非关键面避免过严公差</strong></div><div><span>装配风险</span><strong>定位面建议增加基准说明</strong></div><div><span>外观风险</span><strong>喷砂前确认遮蔽区域</strong></div></div><p>当前结果来自 DFM 模块，可单独接入可制造性检查接口。</p>'
+        };
+
+        return new Promise((resolve) => {
+          window.setTimeout(() => resolve(responses[moduleKey] || responses.process), 520);
+        });
+      }
+
+      function handleAiSend() {
+        if (!aiPanel || !aiInput || !aiSend) return;
+        if (!isLoggedIn && remainingQuota <= 0) {
+          syncQuota(true);
+          return;
+        }
+
+        const text = aiInput.value.trim() || "请根据当前模块给出一版示例分析。";
+        const moduleKey = activeModule;
+        appendTextMessage(moduleKey, "user", text);
+        aiInput.value = "";
+
+        if (!isLoggedIn) {
+          remainingQuota -= 1;
+          syncQuota(false);
+        }
+
+        const thinking = appendTextMessage(moduleKey, "bot", moduleMeta[moduleKey].waiting);
+        requestAiModule(moduleKey, text).then((html) => {
+          if (thinking) thinking.remove();
+          appendHtmlMessage(moduleKey, html);
+          syncQuota(true);
+        });
+      }
+
+      moduleTabs.forEach((tab) => {
+        tab.addEventListener("click", () => setActiveModule(tab.dataset.aiModule));
+      });
+
+      if (aiSend) {
+        aiSend.addEventListener("click", handleAiSend);
+      }
+
+      if (aiInput) {
+        aiInput.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            handleAiSend();
+          }
+        });
+      }
+
+      setActiveModule(activeModule);
+      syncQuota(false);
 
       if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
