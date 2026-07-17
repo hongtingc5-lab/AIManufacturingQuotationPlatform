@@ -1,0 +1,136 @@
+<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>敏捷智造 - 会员中心</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      primary: "#004ac6", "primary-container": "#2563eb", "on-primary": "#ffffff",
+      secondary: "#565e74", background: "#faf8ff", surface: "#faf8ff",
+      "surface-container-lowest": "#ffffff", "surface-container-low": "#f3f3fe",
+      "surface-container": "#ededf9", "surface-container-high": "#e7e7f3",
+      "surface-container-highest": "#e1e2ed", "on-surface": "#191b23",
+      "on-surface-variant": "#434655", "outline-variant": "#c3c6d7",
+      outline: "#737686", error: "#ba1a1a", "secondary-container": "#dae2fd"
+    },
+    borderRadius: { lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+    fontFamily: { "body-sm": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"] },
+    fontSize: {
+      "label-sm": ["12px", {"lineHeight":"1","fontWeight":"500"}],
+      "label-md": ["14px", {"lineHeight":"1","fontWeight":"500"}],
+      "body-sm": ["14px", {"lineHeight":"1.5","fontWeight":"400"}],
+      "body-lg": ["16px", {"lineHeight":"1.6","fontWeight":"400"}],
+      "headline-sm": ["20px", {"lineHeight":"1.4","fontWeight":"600"}],
+      "headline-lg": ["32px", {"lineHeight":"1.2","fontWeight":"700"}]
+    }
+  }}
+}
+</script>
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #faf8ff; }
+.material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; vertical-align: middle; }
+.card-shadow { box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1); }
+</style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-40">
+  <div class="p-6 flex items-center gap-3">
+    <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm bg-white border border-outline-variant">
+      <svg class="w-8 h-8" viewBox="0 0 56 58" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z" fill="#7f8da0"/><path d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z" fill="#0759d5"/><path d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z" fill="#7f8da0"/></svg>
+    </div>
+    <div>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">敏捷智造</h1>
+      <p class="text-label-sm font-label-sm text-secondary">AGILE MANUFACTURING</p>
+    </div>
+  </div>
+  <nav class="flex-1 mt-4 px-4 space-y-1">
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="用户系统首页.html"><span class="material-symbols-outlined">dashboard</span><span class="font-label-md text-label-md">工作台</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="ai模型智能报价.html"><span class="material-symbols-outlined">auto_awesome</span><span class="font-label-md text-label-md">智能工作台</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价模型上传页.html"><span class="material-symbols-outlined">precision_manufacturing</span><span class="font-label-md text-label-md">专业报价</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价订单中心.html"><span class="material-symbols-outlined">shopping_cart</span><span class="font-label-md text-label-md">订单中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="数据分析页面.html"><span class="material-symbols-outlined">analytics</span><span class="font-label-md text-label-md">数据分析</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="模型中心.html"><span class="material-symbols-outlined">deployed_code</span><span class="font-label-md text-label-md">模型中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-primary text-on-primary font-bold shadow-sm" href="会员中心.html"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span><span class="font-label-md text-label-md">会员中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="消息中心.html"><span class="material-symbols-outlined">mail</span><span class="font-label-md text-label-md">消息中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="账号中心.html"><span class="material-symbols-outlined">person</span><span class="font-label-md text-label-md">账号中心</span></a>
+  </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container">
+      <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM">
+      <div class="overflow-hidden"><p class="text-label-md font-label-md font-bold truncate">张伟</p><p class="text-label-sm font-label-sm text-secondary truncate">高级工程师</p></div>
+    </div>
+  </div>
+</aside>
+<main class="ml-64 min-h-screen">
+  <header class="sticky top-0 z-50 bg-surface-container-lowest shadow-sm border-b border-outline-variant h-16 flex items-center px-6">
+    <div class="flex-1 flex items-center justify-between gap-4">
+      <div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span><input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary transition-all" placeholder="搜索会员权益、订单或额度..." type="text"></div>
+      <div class="flex items-center gap-3 shrink-0">
+        <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>开票记录</span></button>
+        <button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all shadow-sm"><span class="material-symbols-outlined text-[18px]">add_card</span><span>充值续费</span></button>
+      </div>
+    </div>
+  </header>
+  <section class="p-8 space-y-8">
+    <div class="flex items-start justify-between gap-6">
+      <div><h2 class="text-headline-lg font-headline-lg mb-2">会员中心</h2><p class="text-body-lg font-body-lg text-on-surface-variant">查看我的会员、额度使用、会员权益、套餐购买、充值与续费记录。</p></div>
+      <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary font-label-md"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>年会员</span>
+    </div>
+    <section class="bg-white rounded-xl border border-outline-variant p-6 card-shadow">
+      <div class="grid grid-cols-12 gap-6 items-center">
+        <div class="col-span-12 lg:col-span-5">
+          <p class="text-label-sm text-outline mb-2">当前套餐</p>
+          <h3 class="text-3xl font-bold mb-3">专业版年会员</h3>
+          <p class="text-body-sm text-on-surface-variant mb-5">有效期至 2027-07-17，包含 AI 报价额度、模型空间扩容、社区曝光和下载次数提升。</p>
+          <div class="flex gap-3"><button class="rounded-lg bg-primary px-4 py-3 text-white font-label-md">立即续费</button><button class="rounded-lg border border-outline-variant px-4 py-3 font-label-md">升级企业版</button></div>
+        </div>
+        <div class="col-span-12 lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-xl bg-surface-container-low p-4"><p class="text-label-sm text-outline mb-2">AI 额度</p><strong class="text-2xl">8,420</strong><p class="text-label-sm text-secondary mt-2">剩余额度</p></div>
+          <div class="rounded-xl bg-surface-container-low p-4"><p class="text-label-sm text-outline mb-2">模型空间</p><strong class="text-2xl">20GB</strong><p class="text-label-sm text-secondary mt-2">已用 68%</p></div>
+          <div class="rounded-xl bg-surface-container-low p-4"><p class="text-label-sm text-outline mb-2">下载次数</p><strong class="text-2xl">300</strong><p class="text-label-sm text-secondary mt-2">本月剩余</p></div>
+          <div class="rounded-xl bg-surface-container-low p-4"><p class="text-label-sm text-outline mb-2">社区曝光</p><strong class="text-2xl">3.2x</strong><p class="text-label-sm text-secondary mt-2">公开模型加权</p></div>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-12 gap-6">
+      <section class="col-span-12 xl:col-span-8 bg-white rounded-xl border border-outline-variant p-6 card-shadow">
+        <div class="flex items-center justify-between mb-5"><h3 class="text-headline-sm font-headline-sm">会员权益</h3><button class="text-primary font-label-md">权益配置详情</button></div>
+        <div class="grid grid-cols-12 gap-4">
+          <article class="col-span-12 md:col-span-6 rounded-xl border border-outline-variant p-5"><span class="material-symbols-outlined text-primary mb-4">auto_awesome</span><h4 class="font-semibold mb-2">AI 额度增加</h4><p class="text-body-sm text-on-surface-variant">智能报价、图生模型、文生模型共享额度池。</p></article>
+          <article class="col-span-12 md:col-span-6 rounded-xl border border-outline-variant p-5"><span class="material-symbols-outlined text-primary mb-4">deployed_code</span><h4 class="font-semibold mb-2">模型上传增加</h4><p class="text-body-sm text-on-surface-variant">提升单文件大小、版本数量和私有模型空间。</p></article>
+          <article class="col-span-12 md:col-span-6 rounded-xl border border-outline-variant p-5"><span class="material-symbols-outlined text-primary mb-4">campaign</span><h4 class="font-semibold mb-2">社区曝光增加</h4><p class="text-body-sm text-on-surface-variant">公开模型进入推荐、热门和精选模型池。</p></article>
+          <article class="col-span-12 md:col-span-6 rounded-xl border border-outline-variant p-5"><span class="material-symbols-outlined text-primary mb-4">workspace_premium</span><h4 class="font-semibold mb-2">专属徽章</h4><p class="text-body-sm text-on-surface-variant">身份标识展示在模型社区、报价协作和分享页面。</p></article>
+        </div>
+      </section>
+      <aside class="col-span-12 xl:col-span-4 bg-white rounded-xl border border-outline-variant p-6 card-shadow">
+        <h3 class="text-headline-sm font-headline-sm mb-5">额度使用</h3>
+        <div class="space-y-5">
+          <div><div class="flex justify-between text-label-md mb-2"><span>AI 报价额度</span><span>58%</span></div><div class="h-2 rounded-full bg-surface-container"><div class="h-2 rounded-full bg-primary w-[58%]"></div></div></div>
+          <div><div class="flex justify-between text-label-md mb-2"><span>模型空间</span><span>68%</span></div><div class="h-2 rounded-full bg-surface-container"><div class="h-2 rounded-full bg-primary w-[68%]"></div></div></div>
+          <div><div class="flex justify-between text-label-md mb-2"><span>下载次数</span><span>34%</span></div><div class="h-2 rounded-full bg-surface-container"><div class="h-2 rounded-full bg-primary w-[34%]"></div></div></div>
+        </div>
+      </aside>
+    </div>
+    <section class="grid grid-cols-12 gap-6">
+      <article class="col-span-12 md:col-span-4 bg-white rounded-xl border border-outline-variant p-6 card-shadow"><p class="text-label-sm text-outline mb-2">月会员</p><h3 class="text-3xl font-bold mb-2">¥99</h3><p class="text-body-sm text-on-surface-variant mb-5">适合短期项目报价和模型空间扩容。</p><button class="w-full rounded-lg border border-outline-variant py-3 font-label-md">选择套餐</button></article>
+      <article class="col-span-12 md:col-span-4 bg-primary text-white rounded-xl border border-primary p-6 card-shadow"><p class="text-label-sm opacity-80 mb-2">年会员</p><h3 class="text-3xl font-bold mb-2">¥899</h3><p class="text-body-sm opacity-90 mb-5">额度更高，包含社区曝光和专属徽章。</p><button class="w-full rounded-lg bg-white text-primary py-3 font-label-md">当前套餐</button></article>
+      <article class="col-span-12 md:col-span-4 bg-white rounded-xl border border-outline-variant p-6 card-shadow"><p class="text-label-sm text-outline mb-2">模型空间套餐</p><h3 class="text-3xl font-bold mb-2">+50GB</h3><p class="text-body-sm text-on-surface-variant mb-5">为企业共享模型库单独扩容。</p><button class="w-full rounded-lg border border-outline-variant py-3 font-label-md">购买扩容</button></article>
+    </section>
+    <section class="bg-white rounded-xl border border-outline-variant card-shadow overflow-hidden">
+      <div class="p-6 border-b border-outline-variant flex items-center justify-between"><h3 class="text-headline-sm font-headline-sm">充值与续费记录</h3><button class="text-primary font-label-md">导出</button></div>
+      <table class="w-full text-left">
+        <thead class="bg-surface-container text-label-sm text-on-surface-variant"><tr><th class="px-6 py-3">类型</th><th class="px-6 py-3">套餐</th><th class="px-6 py-3">金额</th><th class="px-6 py-3">时间</th><th class="px-6 py-3">状态</th></tr></thead>
+        <tbody class="divide-y divide-outline-variant text-body-sm">
+          <tr><td class="px-6 py-4">会员续费</td><td class="px-6 py-4">专业版年会员</td><td class="px-6 py-4">¥899.00</td><td class="px-6 py-4">2026-07-17</td><td class="px-6 py-4"><span class="text-primary font-label-md">已生效</span></td></tr>
+          <tr><td class="px-6 py-4">额度充值</td><td class="px-6 py-4">AI 额度包 5000</td><td class="px-6 py-4">¥199.00</td><td class="px-6 py-4">2026-06-28</td><td class="px-6 py-4"><span class="text-primary font-label-md">已完成</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+</main>
+</body></html>

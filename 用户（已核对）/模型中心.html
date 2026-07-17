@@ -1,0 +1,145 @@
+<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>敏捷智造 - 模型中心</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      primary: "#004ac6", "primary-container": "#2563eb", "on-primary": "#ffffff",
+      secondary: "#565e74", background: "#faf8ff", surface: "#faf8ff",
+      "surface-container-lowest": "#ffffff", "surface-container-low": "#f3f3fe",
+      "surface-container": "#ededf9", "surface-container-high": "#e7e7f3",
+      "surface-container-highest": "#e1e2ed", "on-surface": "#191b23",
+      "on-surface-variant": "#434655", "outline-variant": "#c3c6d7",
+      outline: "#737686", error: "#ba1a1a", "secondary-container": "#dae2fd"
+    },
+    borderRadius: { lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+    fontFamily: { "body-sm": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"] },
+    fontSize: {
+      "label-sm": ["12px", {"lineHeight":"1","fontWeight":"500"}],
+      "label-md": ["14px", {"lineHeight":"1","fontWeight":"500"}],
+      "body-sm": ["14px", {"lineHeight":"1.5","fontWeight":"400"}],
+      "body-lg": ["16px", {"lineHeight":"1.6","fontWeight":"400"}],
+      "headline-sm": ["20px", {"lineHeight":"1.4","fontWeight":"600"}],
+      "headline-lg": ["32px", {"lineHeight":"1.2","fontWeight":"700"}]
+    }
+  }}
+}
+</script>
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #faf8ff; }
+.material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; line-height: 1; vertical-align: middle; }
+.card-shadow { box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1); }
+</style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-40">
+  <div class="p-6 flex items-center gap-3">
+    <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm bg-white border border-outline-variant">
+      <svg class="w-8 h-8" viewBox="0 0 56 58" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z" fill="#7f8da0"/><path d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z" fill="#0759d5"/><path d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z" fill="#7f8da0"/></svg>
+    </div>
+    <div>
+      <h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">敏捷智造</h1>
+      <p class="text-label-sm font-label-sm text-secondary">AGILE MANUFACTURING</p>
+    </div>
+  </div>
+  <nav class="flex-1 mt-4 px-4 space-y-1">
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="用户系统首页.html"><span class="material-symbols-outlined">dashboard</span><span class="font-label-md text-label-md">工作台</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="ai模型智能报价.html"><span class="material-symbols-outlined">auto_awesome</span><span class="font-label-md text-label-md">智能工作台</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价模型上传页.html"><span class="material-symbols-outlined">precision_manufacturing</span><span class="font-label-md text-label-md">专业报价</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="报价订单中心.html"><span class="material-symbols-outlined">shopping_cart</span><span class="font-label-md text-label-md">订单中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="数据分析页面.html"><span class="material-symbols-outlined">analytics</span><span class="font-label-md text-label-md">数据分析</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all bg-primary text-on-primary font-bold shadow-sm" href="模型中心.html"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">deployed_code</span><span class="font-label-md text-label-md">模型中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="会员中心.html"><span class="material-symbols-outlined">workspace_premium</span><span class="font-label-md text-label-md">会员中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="消息中心.html"><span class="material-symbols-outlined">mail</span><span class="font-label-md text-label-md">消息中心</span></a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" href="账号中心.html"><span class="material-symbols-outlined">person</span><span class="font-label-md text-label-md">账号中心</span></a>
+  </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container">
+      <img alt="Workspace User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi3ZQKXYbcKTPa_yq86nHx-96RoSTdTSnp9geyyQMC3R7ltHbDqEIGko8z7AHxBPIfhMvmoJdzpRgmXIMbtwDJU61sqvFAIyFWJnuTEBW7vw0fbDy3sIL2rJoKSJklPwLijzQnrN-1egrp0pCFtmoVTsnAtcXBMZW0JAhBmuxRrP3QTYxGUvdylSp6vrLwFPXWz3J7lXJFuViFCJGLGktmZJPIsnOyKKvhaUYk-cIkaL2Y8pKxxeKXCk8jJ-h68oOKHkRpt0QtGYM">
+      <div class="overflow-hidden"><p class="text-label-md font-label-md font-bold truncate">张伟</p><p class="text-label-sm font-label-sm text-secondary truncate">高级工程师</p></div>
+    </div>
+  </div>
+</aside>
+<main class="ml-64 min-h-screen">
+  <header class="sticky top-0 z-50 bg-surface-container-lowest shadow-sm border-b border-outline-variant h-16 flex items-center px-6">
+    <div class="flex-1 flex items-center justify-between gap-4">
+      <div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span><input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary transition-all" placeholder="搜索模型、标签或文件格式..." type="text"></div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="ai图片转模型.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-[18px]">add_photo_alternate</span><span>图片生成模型</span></a>
+        <a href="ai文字转模型.html" class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all shadow-sm"><span class="material-symbols-outlined text-[18px]">upload_file</span><span>上传模型</span></a>
+      </div>
+    </div>
+  </header>
+  <section class="p-8 space-y-8">
+    <div class="flex items-start justify-between gap-6">
+      <div>
+        <h2 class="text-headline-lg font-headline-lg mb-2">模型中心</h2>
+        <p class="text-body-lg font-body-lg text-on-surface-variant">管理我的模型库、企业共享模型和模型社区资源，支持上传、收藏、下载、报价复用与公开分享。</p>
+      </div>
+      <button class="inline-flex items-center gap-2 rounded-lg border border-outline-variant bg-white px-4 py-3 text-label-md font-label-md hover:bg-surface-container-low"><span class="material-symbols-outlined">tune</span>筛选</button>
+    </div>
+    <div class="grid grid-cols-12 gap-6">
+      <article class="col-span-12 md:col-span-3 bg-white rounded-xl border border-outline-variant p-5 card-shadow"><p class="text-label-sm text-outline mb-2">我的模型</p><div class="flex items-end justify-between"><strong class="text-3xl">128</strong><span class="text-primary text-label-sm">+12 本月</span></div></article>
+      <article class="col-span-12 md:col-span-3 bg-white rounded-xl border border-outline-variant p-5 card-shadow"><p class="text-label-sm text-outline mb-2">企业共享</p><div class="flex items-end justify-between"><strong class="text-3xl">36</strong><span class="text-secondary text-label-sm">8 个项目组</span></div></article>
+      <article class="col-span-12 md:col-span-3 bg-white rounded-xl border border-outline-variant p-5 card-shadow"><p class="text-label-sm text-outline mb-2">社区收藏</p><div class="flex items-end justify-between"><strong class="text-3xl">54</strong><span class="text-primary text-label-sm">可下载 29</span></div></article>
+      <article class="col-span-12 md:col-span-3 bg-white rounded-xl border border-outline-variant p-5 card-shadow"><p class="text-label-sm text-outline mb-2">空间用量</p><div class="flex items-end justify-between"><strong class="text-3xl">68%</strong><span class="text-secondary text-label-sm">13.6 / 20GB</span></div></article>
+    </div>
+    <div class="grid grid-cols-12 gap-6">
+      <section class="col-span-12 xl:col-span-8 bg-white rounded-xl border border-outline-variant card-shadow overflow-hidden">
+        <div class="p-6 border-b border-outline-variant flex items-center justify-between gap-4">
+          <div><h3 class="text-headline-sm font-headline-sm">我的模型库</h3><p class="text-body-sm text-on-surface-variant mt-1">按私有、企业共享、公开模型进行版本管理和报价复用。</p></div>
+          <div class="inline-flex rounded-lg bg-surface-container-low p-1">
+            <button class="px-4 py-2 rounded-md bg-primary text-white text-label-md font-label-md">全部</button>
+            <button class="px-4 py-2 rounded-md text-on-surface-variant text-label-md font-label-md">私有</button>
+            <button class="px-4 py-2 rounded-md text-on-surface-variant text-label-md font-label-md">共享</button>
+            <button class="px-4 py-2 rounded-md text-on-surface-variant text-label-md font-label-md">公开</button>
+          </div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-surface-container text-label-sm text-on-surface-variant"><tr><th class="px-6 py-3">模型名称</th><th class="px-6 py-3">格式</th><th class="px-6 py-3">权限</th><th class="px-6 py-3">版本</th><th class="px-6 py-3">操作</th></tr></thead>
+            <tbody class="divide-y divide-outline-variant text-body-sm">
+              <tr><td class="px-6 py-4 font-semibold">轴承座-CNC-铝合金</td><td class="px-6 py-4">STEP</td><td class="px-6 py-4"><span class="rounded-full bg-secondary-container px-2 py-1 text-label-sm">企业共享</span></td><td class="px-6 py-4">v3.2</td><td class="px-6 py-4"><button class="text-primary font-label-md">去报价</button></td></tr>
+              <tr><td class="px-6 py-4 font-semibold">航空支架轻量化方案</td><td class="px-6 py-4">IGES</td><td class="px-6 py-4"><span class="rounded-full bg-surface-container px-2 py-1 text-label-sm">私有</span></td><td class="px-6 py-4">v1.8</td><td class="px-6 py-4"><button class="text-primary font-label-md">管理</button></td></tr>
+              <tr><td class="px-6 py-4 font-semibold">机器人末端夹具</td><td class="px-6 py-4">STL</td><td class="px-6 py-4"><span class="rounded-full bg-primary/10 px-2 py-1 text-primary text-label-sm">公开</span></td><td class="px-6 py-4">v2.0</td><td class="px-6 py-4"><button class="text-primary font-label-md">查看</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <aside class="col-span-12 xl:col-span-4 space-y-6">
+        <section class="bg-white rounded-xl border border-outline-variant p-6 card-shadow">
+          <h3 class="text-headline-sm font-headline-sm mb-4">快速操作</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <button class="rounded-lg border border-outline-variant p-4 text-left hover:bg-surface-container-low"><span class="material-symbols-outlined text-primary mb-3">upload_file</span><p class="font-label-md">上传模型</p></button>
+            <button class="rounded-lg border border-outline-variant p-4 text-left hover:bg-surface-container-low"><span class="material-symbols-outlined text-primary mb-3">share</span><p class="font-label-md">分享模型</p></button>
+            <button class="rounded-lg border border-outline-variant p-4 text-left hover:bg-surface-container-low"><span class="material-symbols-outlined text-primary mb-3">favorite</span><p class="font-label-md">收藏夹</p></button>
+            <button class="rounded-lg border border-outline-variant p-4 text-left hover:bg-surface-container-low"><span class="material-symbols-outlined text-primary mb-3">history</span><p class="font-label-md">版本记录</p></button>
+          </div>
+        </section>
+        <section class="bg-white rounded-xl border border-outline-variant p-6 card-shadow">
+          <h3 class="text-headline-sm font-headline-sm mb-4">热门模型排行</h3>
+          <ol class="space-y-4 text-body-sm">
+            <li class="flex items-center justify-between"><span>教学夹具模板</span><strong class="text-primary">1,284</strong></li>
+            <li class="flex items-center justify-between"><span>通用齿轮箱壳体</span><strong class="text-primary">976</strong></li>
+            <li class="flex items-center justify-between"><span>快拆支架组件</span><strong class="text-primary">842</strong></li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+    <section class="bg-white rounded-xl border border-outline-variant p-6 card-shadow">
+      <div class="flex items-center justify-between mb-5"><h3 class="text-headline-sm font-headline-sm">模型社区</h3><a class="text-primary font-label-md" href="#">查看全部</a></div>
+      <div class="grid grid-cols-12 gap-4">
+        <article class="col-span-12 md:col-span-4 rounded-xl border border-outline-variant overflow-hidden"><div class="h-32 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-primary">view_in_ar</span></div><div class="p-4"><div class="flex items-center justify-between"><h4 class="font-semibold">推荐模型</h4><span class="text-label-sm text-primary">精选</span></div><p class="text-body-sm text-on-surface-variant mt-2">适合 CNC 快速报价的标准治具、支架、外壳模板。</p></div></article>
+        <article class="col-span-12 md:col-span-4 rounded-xl border border-outline-variant overflow-hidden"><div class="h-32 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-primary">local_fire_department</span></div><div class="p-4"><div class="flex items-center justify-between"><h4 class="font-semibold">今日热门</h4><span class="text-label-sm text-primary">热度 +18%</span></div><p class="text-body-sm text-on-surface-variant mt-2">社区下载、收藏和报价复用增长最快的公开模型。</p></div></article>
+        <article class="col-span-12 md:col-span-4 rounded-xl border border-outline-variant overflow-hidden"><div class="h-32 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-primary">school</span></div><div class="p-4"><div class="flex items-center justify-between"><h4 class="font-semibold">教学模型</h4><span class="text-label-sm text-primary">入门</span></div><p class="text-body-sm text-on-surface-variant mt-2">用于学习模型精度、面数、格式转换和报价参数配置。</p></div></article>
+      </div>
+    </section>
+  </section>
+</main>
+</body></html>
