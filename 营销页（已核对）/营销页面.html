@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -169,14 +169,20 @@
       left: 0;
       right: 0;
       top: 0;
-      z-index: 3000;
+      z-index: 100000;
+      isolation: isolate;
       padding-top: 0;
       transition: transform 0.24s ease;
+      will-change: transform;
     }
 
     .site-header.is-hidden {
       transform: translateY(-100%);
       pointer-events: none;
+    }
+
+    .site-header.is-jump-hidden {
+      transition-duration: 0.08s;
     }
 
     .topbar {
@@ -320,7 +326,7 @@
       left: 0;
       right: 0;
       top: 100%;
-      z-index: 3001;
+      z-index: 100001;
       display: grid;
       grid-template-columns: minmax(360px, 31vw) minmax(420px, 24vw) minmax(440px, 1fr);
       min-height: 490px;
@@ -359,7 +365,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      z-index: 3001;
+      z-index: 100001;
       display: grid;
       grid-template-columns: minmax(280px, 0.72fr) minmax(360px, 0.9fr) minmax(360px, 1fr);
       min-height: 310px;
@@ -1108,29 +1114,26 @@
     }
 
     #services .service-grid {
-      display: flex;
-      min-height: 420px;
-      gap: 11px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
       align-items: stretch;
     }
 
     #services .service-card {
       position: relative;
-      flex: 1 1 0;
       min-width: 0;
-      min-height: 420px;
+      min-height: 320px;
       overflow: hidden;
       border-radius: 20px;
       background: #ffffff;
       transition:
-        flex 0.42s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.3s ease,
         transform 0.3s ease;
     }
 
     #services .service-card:hover,
     #services .service-card:focus-within {
-      flex: 3.15 1 0;
       transform: translateY(-4px);
       box-shadow: 0 30px 64px rgba(18, 24, 38, 0.18);
     }
@@ -1138,7 +1141,7 @@
     #services .service-card img {
       width: 100%;
       height: 100%;
-      min-height: 420px;
+      min-height: 320px;
       object-fit: cover;
       filter: saturate(0.98) contrast(1.02) brightness(1.04);
       transition: transform 0.42s ease, filter 0.32s ease;
@@ -1196,69 +1199,71 @@
 
     #services .service-card:hover .service-body,
     #services .service-card:focus-within .service-body {
-      transform: translateX(-12px);
-      opacity: 0.52;
+      transform: translateY(10px);
+      opacity: 0;
     }
 
     .service-drawer {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      bottom: 16px;
+      inset: 16px;
       z-index: 2;
-      width: min(300px, 72%);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
       padding: 18px;
       color: var(--night);
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.78);
       border-radius: 18px;
       box-shadow: 0 18px 42px rgba(15, 31, 55, 0.16);
       backdrop-filter: blur(14px);
+      overflow: auto;
       opacity: 0;
-      transform: translateX(calc(100% + 18px));
+      transform: translateY(14px);
       transition:
-        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.28s ease;
+        transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.24s ease;
       pointer-events: none;
+    }
+
+    .service-drawer::-webkit-scrollbar {
+      display: none;
     }
 
     #services .service-card:hover .service-drawer,
     #services .service-card:focus-within .service-drawer {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
       pointer-events: auto;
     }
 
     .service-drawer strong {
       display: block;
       color: var(--steel);
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1;
       font-weight: 900;
     }
 
     .service-drawer h4 {
-      margin: 12px 0 0;
+      margin: 10px 0 0;
       color: var(--night);
-      font-size: 24px;
-      line-height: 1.22;
+      font-size: 20px;
+      line-height: 1.26;
       font-weight: 900;
     }
 
     .service-drawer p {
-      margin: 14px 0 0;
+      margin: 12px 0 0;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 13px;
+      line-height: 1.62;
     }
 
     .service-drawer ul {
       display: grid;
-      gap: 10px;
+      gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -1268,8 +1273,8 @@
       position: relative;
       padding-left: 18px;
       color: #43546f;
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
     .service-drawer li::before {
@@ -1939,10 +1944,10 @@
       --intro-opacity: 1;
       --intro-y: 0px;
       --mask-opacity: 0;
-      --mask-top: 24vh;
-      --mask-side: 20vw;
+      --mask-top: 10vh;
+      --mask-side: 6vw;
       --mask-radius: 8px;
-      --image-scale: 1.03;
+      --image-scale: 1.015;
       --intro-bg-x: 50%;
       --intro-bg-y: 50%;
       --intro-bg-size: 120%;
@@ -1952,8 +1957,8 @@
       --final-opacity: 0;
       --final-y: 40px;
       position: relative;
-      height: 340vh;
-      min-height: 2200px;
+      height: 190vh;
+      min-height: 1180px;
       padding: 0;
       overflow: clip;
       background: #f6f7f9;
@@ -2365,6 +2370,210 @@
       color: #8a93a5;
       font-size: 13px;
       line-height: 1.5;
+    }
+
+    .insight-entry {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 14px;
+      color: var(--action);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+      background: rgba(10, 94, 221, 0.08);
+      border: 1px solid rgba(10, 94, 221, 0.18);
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .insight-entry:hover,
+    .insight-entry:focus-visible {
+      color: #ffffff;
+      background: var(--action);
+      transform: translateY(-1px);
+    }
+
+    .home-faq {
+      background:
+        linear-gradient(180deg, #f7fbff 0%, #ffffff 22%, #ffffff 58%, #f7fbff 100%);
+    }
+
+    .home-faq.section-block {
+      padding: 68px 0 56px;
+    }
+
+    .home-faq-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(240px, 310px) minmax(0, 700px);
+      gap: clamp(42px, 6vw, 72px);
+      align-items: start;
+      justify-content: center;
+      --faq-title-y: 28px;
+      --faq-line-y: 28px;
+      --faq-rail-x: 300px;
+      --faq-connector-w: 48px;
+      --faq-title-link-w: 18px;
+    }
+
+    .home-faq-connector {
+      position: absolute;
+      left: var(--faq-rail-x);
+      top: var(--faq-title-y);
+      width: var(--faq-connector-w);
+      height: calc(var(--faq-line-y) - var(--faq-title-y));
+      min-height: 0;
+      border-left: 2px solid rgba(0, 74, 198, 0.28);
+      border-bottom: 2px solid var(--action);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-1px);
+      transition: top 0.24s ease, height 0.24s ease, opacity 0.2s ease;
+    }
+
+    .home-faq-layout.has-open .home-faq-connector {
+      opacity: 1;
+    }
+
+    .home-faq-connector::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--faq-title-link-w) * -1);
+      top: -1px;
+      width: var(--faq-title-link-w);
+      height: 2px;
+      background: rgba(0, 74, 198, 0.28);
+    }
+
+    .home-faq-connector::after {
+      content: "";
+      position: absolute;
+      right: -4px;
+      bottom: -5px;
+      width: 8px;
+      height: 8px;
+      background: var(--action);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(0, 74, 198, 0.10);
+    }
+
+    .home-faq-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .home-faq-title {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      max-width: 300px;
+      letter-spacing: 0;
+    }
+
+    .home-faq-title-brand {
+      color: var(--action);
+      font-size: clamp(18px, 1.5vw, 22px);
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .home-faq-title-main {
+      color: var(--night);
+      font-size: clamp(34px, 3.2vw, 44px);
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    .home-faq-title-accent {
+      display: none;
+    }
+
+    .home-faq-list {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      z-index: 1;
+    }
+
+    .home-faq-item {
+      overflow: clip;
+      background: #ffffff;
+      border: 1px solid rgba(0, 74, 198, 0.10);
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(18, 24, 38, 0.035);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .home-faq-item.is-active {
+      border-color: rgba(0, 74, 198, 0.32);
+      box-shadow: 0 10px 24px rgba(0, 74, 198, 0.08);
+    }
+
+    .home-faq-question {
+      position: relative;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      padding: 16px 56px 16px 22px;
+      color: var(--night);
+      background: transparent;
+      border: 0;
+      font-size: clamp(16px, 1.2vw, 18px);
+      font-weight: 800;
+      line-height: 1.45;
+      text-align: left;
+      list-style: none;
+    }
+
+    .home-faq-question:focus-visible {
+      outline: 2px solid rgba(0, 74, 198, 0.28);
+      outline-offset: -4px;
+    }
+
+    .home-faq-question::after {
+      content: "";
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid var(--action);
+      border-bottom: 2px solid var(--action);
+      transform: translateY(-60%) rotate(45deg);
+      transition: transform 0.22s ease;
+    }
+
+    .home-faq-item.is-active .home-faq-question::after {
+      transform: translateY(-35%) rotate(225deg);
+    }
+
+    .home-faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition: grid-template-rows 0.24s ease, opacity 0.18s ease;
+    }
+
+    .home-faq-item.is-active .home-faq-answer {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .home-faq-answer-inner {
+      overflow: hidden;
+    }
+
+    .home-faq-answer p {
+      margin: 0;
+      padding: 0 22px 20px;
+      color: #5f6d7f;
+      font-size: 15px;
+      line-height: 1.82;
     }
 
     .cta-band {
@@ -3470,12 +3679,12 @@
       }
 
       #services .service-grid {
-        min-height: 390px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       #services .service-card,
       #services .service-card img {
-        min-height: 390px;
+        min-height: 300px;
       }
 
       .process-board {
@@ -3567,7 +3776,8 @@
       .quality-layout,
       .trust-layout,
       .quote-layout,
-      .insight-layout {
+      .insight-layout,
+      .home-faq-layout {
         grid-template-columns: 1fr;
       }
 
@@ -3657,9 +3867,56 @@
         padding: 58px 0;
       }
 
+      .home-faq.section-block {
+        padding: 52px 0 44px;
+      }
+
+      .home-faq-layout {
+        gap: 28px;
+      }
+
+      .home-faq-connector {
+        display: none;
+      }
+
+      .home-faq-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .home-faq-title {
+        max-width: 100%;
+      }
+
+      .home-faq-title-brand {
+        font-size: 18px;
+      }
+
+      .home-faq-title-main {
+        font-size: 34px;
+      }
+
+      .home-faq-title-accent {
+        width: 76px;
+      }
+
+      .home-faq-question {
+        padding: 15px 46px 15px 18px;
+        font-size: 16px;
+      }
+
+      .home-faq-question::after {
+        right: 18px;
+      }
+
+      .home-faq-answer p {
+        padding: 0 18px 18px;
+      }
+
       #why-us {
-        height: 360vh;
-        min-height: 2200px;
+        height: 210vh;
+        min-height: 1250px;
       }
 
       .why-scroll-viewport {
@@ -3991,6 +4248,7 @@
 
       #services .service-grid {
         display: grid;
+        grid-template-columns: 1fr;
         min-height: auto;
         gap: 18px;
       }
@@ -4499,6 +4757,26 @@
 
     .nav {
       gap: clamp(10px, 1.2vw, 22px);
+    }
+
+    .nav > .nav-capability {
+      order: 1;
+    }
+
+    .nav > .nav-dropdown:nth-of-type(2) {
+      order: 2;
+    }
+
+    .nav > .nav-dropdown:nth-of-type(3) {
+      order: 3;
+    }
+
+    .nav > .nav-dropdown:nth-of-type(4) {
+      order: 4;
+    }
+
+    .nav > .nav-dropdown:nth-of-type(5) {
+      order: 5;
     }
 
     .nav-item,
@@ -5039,7 +5317,7 @@
 
     .quality-card.is-fifth {
       opacity: 0.38;
-      transform: translate(-72px, 96px) rotate(-6.2deg) scale(0.8);
+      transform: translate(-72px, 96px) rotate(-2.2deg) scale(0.8);
     }
 
     @media (max-width: 760px) {
@@ -5406,21 +5684,347 @@
         margin: 0;
         transform: none;
       }
-    }  </style>
+    }  
+/* Unified four-category capability menu and linked homepage cards */
+.capability-cats .capability-cat{min-height:84px;padding:11px clamp(20px,2.5vw,42px);grid-template-columns:minmax(0,1fr) 82px;gap:14px}.capability-cats .capability-cat img{width:82px;height:42px}.capability-cats .capability-cat-copy{gap:4px}.capability-cats .capability-cat strong{font-size:16px}.capability-cats .capability-cat-copy span{font-size:11px;line-height:1.35}.mega-grid--process{grid-template-columns:repeat(3,minmax(88px,1fr));gap:15px 18px}.mega-grid--process a{font-size:13px}.mega-grid--service{gap:20px 28px}.mega-grid--service a{font-size:14px}.service-card[data-card-link],.case-card[data-card-link],.insight-card[data-card-link],.factory-visual-card[data-card-link]{cursor:pointer}.service-card[data-card-link]:focus-visible,.case-card[data-card-link]:focus-visible,.insight-card[data-card-link]:focus-visible,.factory-visual-card[data-card-link]:focus-visible{outline:3px solid rgba(0,74,198,.35);outline-offset:4px}.section-quote-cta{margin-top:22px}.quality-card-link{display:inline-flex;margin-top:8px;color:inherit;font-size:12px;font-weight:900;text-decoration:underline;text-underline-offset:3px}.capability-index a{display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 13px;color:var(--night);background:rgba(255,255,255,.76);border:1px solid rgba(0,74,198,.1);border-radius:14px;font-size:13px;font-weight:800;box-shadow:0 10px 24px rgba(24,54,102,.05)}.capability-index a:hover{color:#004AC6;transform:translateY(-2px)}@media(max-width:1180px){.mega-grid--process{grid-template-columns:repeat(2,minmax(110px,1fr))}}
+
+    /* Capability card detail action: keep card flip primary, make detail action explicit */
+    .quality-card.is-active { cursor: grab; }
+    .quality-card.is-active:active { cursor: grabbing; }
+    .quality-card-link {
+      position: relative;
+      z-index: 8;
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 7px;
+      min-height: 30px;
+      margin-top: 9px;
+      padding: 6px 11px;
+      color: #004AC6;
+      background: rgba(0, 74, 198, 0.07);
+      border: 1px solid rgba(0, 74, 198, 0.16);
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(0, 74, 198, 0.06);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .quality-card-link::after { content: "→"; font-size: 13px; transition: transform .2s ease; }
+    .quality-card-link:hover,
+    .quality-card-link:focus-visible {
+      color: #ffffff;
+      background: #004AC6;
+      border-color: #004AC6;
+      box-shadow: 0 10px 22px rgba(0, 74, 198, 0.22);
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .quality-card-link:hover::after,
+    .quality-card-link:focus-visible::after { transform: translateX(3px); }
+    .quality-card:not(.is-active) .quality-card-link { opacity: 0; pointer-events: none; }
+
+
+    /* Center the process-board quote action */
+    .process-map > .section-quote-cta {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 28px;
+    }
+    .process-map > .section-quote-cta .btn {
+      min-width: 168px;
+      justify-content: center;
+    }
+
+
+    /* Multi-case testimonial carousel */
+    .testimonial-carousel { position:relative; margin-top:28px; padding:0 68px 42px; }
+    .testimonial-stage { position:relative; min-height:330px; }
+    .testimonial-slide { position:absolute; inset:0; display:grid; grid-template-columns:270px minmax(0,1fr); gap:42px; align-items:center; opacity:0; visibility:hidden; transform:translateX(46px) scale(.985); pointer-events:none; transition:opacity .52s ease,transform .58s cubic-bezier(.22,.75,.2,1),visibility .52s ease; }
+    .testimonial-slide.is-active { position:relative; opacity:1; visibility:visible; transform:translateX(0) scale(1); pointer-events:auto; }
+    .testimonial-slide.is-leaving-left { transform:translateX(-46px) scale(.985); }
+    .testimonial-media { overflow:hidden; height:250px; border-radius:24px; background:#edf4ff; box-shadow:0 20px 46px rgba(31,61,105,.12); }
+    .testimonial-media img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+    .testimonial-slide.is-active .testimonial-media img { transform:scale(1.025); }
+    .testimonial-card { position:relative; min-height:250px; display:flex; flex-direction:column; justify-content:center; padding:38px 42px; background:#fff; border:1px solid rgba(0,74,198,.08); border-radius:28px; box-shadow:0 24px 56px rgba(31,61,105,.11); }
+    .testimonial-mark { position:absolute; top:24px; left:36px; color:#0759d5; font-size:48px; line-height:1; font-weight:900; }
+    .testimonial-card>p { margin:42px 0 26px; color:var(--muted); font-size:16px; line-height:1.9; font-weight:700; }
+    .testimonial-meta { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; }
+    .testimonial-stars { color:#e0a126; font-size:20px; letter-spacing:3px; }
+    .testimonial-author { display:grid; gap:7px; text-align:right; }
+    .testimonial-author strong { color:var(--night); font-size:15px; }
+    .testimonial-author span { color:var(--muted); font-size:13px; }
+    .testimonial-nav { position:absolute; top:50%; z-index:5; width:46px; height:46px; display:grid; place-items:center; color:#004AC6; background:rgba(255,255,255,.94); border:1px solid rgba(0,74,198,.16); border-radius:50%; box-shadow:0 12px 28px rgba(0,74,198,.14); cursor:pointer; transform:translateY(-70%); transition:color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease; }
+    .testimonial-nav:hover,.testimonial-nav:focus-visible { color:#fff; background:#004AC6; box-shadow:0 16px 32px rgba(0,74,198,.25); outline:none; }
+    .testimonial-nav:hover { transform:translateY(-70%) scale(1.06); }
+    .testimonial-nav--prev { left:0; }.testimonial-nav--next { right:0; }
+    .testimonial-dots { position:absolute; left:50%; bottom:4px; display:flex; gap:9px; transform:translateX(-50%); }
+    .testimonial-dot { width:9px; height:9px; padding:0; border:0; border-radius:999px; background:rgba(0,74,198,.2); cursor:pointer; transition:width .25s ease,background .25s ease; }
+    .testimonial-dot.is-active { width:30px; background:#004AC6; }
+    @media(max-width:900px){.testimonial-carousel{padding:0 54px 38px}.testimonial-slide{grid-template-columns:1fr;gap:20px}.testimonial-media{height:220px}.testimonial-card{min-height:240px}.testimonial-stage{min-height:500px}}
+    @media(max-width:620px){.testimonial-carousel{padding:0 0 42px}.testimonial-nav{top:auto;bottom:0;transform:none}.testimonial-nav:hover{transform:scale(1.05)}.testimonial-slide{gap:16px}.testimonial-card{padding:32px 24px}.testimonial-meta{align-items:flex-start;flex-direction:column}.testimonial-author{text-align:left}.testimonial-dots{bottom:17px}}
+
+
+/* Expanded footer navigation, support and share area */
+.footer-grid.footer-grid--expanded{grid-template-columns:minmax(210px,1.35fr) repeat(6,minmax(110px,1fr));gap:30px 26px;align-items:start}
+.footer-menu h4{margin-bottom:16px}.footer-menu a,.footer-bottom a,.footer-support-card a{color:rgba(255,255,255,.66);transition:color .2s ease,transform .2s ease}.footer-menu a:hover,.footer-menu a:focus-visible,.footer-bottom a:hover,.footer-support-card a:hover{color:#fff}
+.footer-socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.footer-social-link{width:38px;height:38px;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:12px;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}.footer-social-link:hover,.footer-social-link:focus-visible{color:#fff;background:#0759d5;border-color:#2878ec;box-shadow:0 10px 24px rgba(0,74,198,.25);transform:translateY(-3px);outline:none}.footer-social-link svg{width:19px;height:19px}
+.footer-support-grid{display:grid;grid-template-columns:1.1fr 1fr 1.25fr;gap:18px;margin-top:38px;padding-top:30px;border-top:1px solid rgba(255,255,255,.08)}.footer-support-card{min-height:150px;padding:22px 24px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:18px}.footer-support-card h4{margin-bottom:13px}.footer-support-card p,.footer-support-card li{margin:0;color:rgba(255,255,255,.62);font-size:13px;line-height:1.8}.footer-support-card ul{gap:7px}.footer-contact-line{display:flex;align-items:flex-start;gap:9px;margin-top:7px!important}.footer-contact-line b{min-width:58px;color:rgba(255,255,255,.86);font-weight:800}.footer-payment-note{margin-top:10px!important;color:rgba(255,255,255,.42)!important;font-size:11px!important}.footer-support-card .subscribe-form{margin-top:16px}.footer-policy-links{display:inline-flex;align-items:center;gap:10px}.footer-policy-links i{width:1px;height:12px;background:rgba(255,255,255,.2)}
+@media(max-width:1280px){.footer-grid.footer-grid--expanded{grid-template-columns:repeat(4,minmax(0,1fr))}.footer-brand{grid-column:span 2}}
+@media(max-width:900px){.footer-grid.footer-grid--expanded{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-support-grid{grid-template-columns:1fr 1fr}.footer-support-card--subscribe{grid-column:1/-1}}
+@media(max-width:620px){.footer-grid.footer-grid--expanded{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-brand{grid-column:1/-1}.footer-support-grid{grid-template-columns:1fr}.footer-support-card--subscribe{grid-column:auto}.footer-bottom{align-items:flex-start;flex-direction:column}}
+
+
+/* Footer contact details and visual payment methods */
+.footer-payment-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:4px}.footer-payment-method{display:grid;justify-items:center;align-content:start;gap:9px;min-height:88px;padding:13px 8px 10px;color:rgba(255,255,255,.76);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:14px;text-align:center;font-size:11px;line-height:1.35}.footer-payment-icon{width:42px;height:42px;display:grid;place-items:center;color:#8dbbff;background:rgba(0,74,198,.22);border:1px solid rgba(91,157,255,.22);border-radius:12px}.footer-payment-icon svg{width:23px;height:23px}.footer-payment-icon--tt{font-size:13px;font-weight:900;letter-spacing:.04em}.footer-contact-line a[href^="tel:"]{color:#9fc5ff;font-size:15px;font-weight:900;letter-spacing:.03em}.footer-address-pending{color:rgba(255,255,255,.48)!important}.footer-copyright{color:rgba(255,255,255,.58)}
+@media(max-width:420px){.footer-payment-methods{grid-template-columns:1fr}.footer-payment-method{grid-template-columns:42px 1fr;justify-items:start;align-items:center;min-height:0;text-align:left}}
+
+
+/* Branded payment logo wall */
+.footer-payment-brand-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:4px}.footer-payment-brand{min-width:0;min-height:54px;display:flex;align-items:center;justify-content:center;gap:7px;padding:8px 9px;color:#17243a;background:#fff;border:1px solid rgba(255,255,255,.18);border-radius:11px;box-shadow:0 7px 18px rgba(0,0,0,.12);font-size:10px;line-height:1.15;font-weight:900;text-align:left;transition:transform .2s ease,box-shadow .2s ease}.footer-payment-brand:hover{transform:translateY(-2px);box-shadow:0 11px 24px rgba(0,0,0,.18)}.footer-payment-brand svg{width:29px;height:29px;flex:0 0 auto}.footer-payment-brand--wechat{color:#168a48}.footer-payment-brand--alipay{color:#1677ff}.footer-payment-brand--unionpay{color:#164780}.footer-payment-brand--visa{color:#1434cb;font-size:16px;font-style:italic;letter-spacing:-.04em}.footer-payment-brand--mastercard{color:#303b4d}.footer-payment-brand--paypal{color:#003087;font-size:12px}.footer-payment-brand--bank{color:#6a4300}.footer-payment-note--brands{margin-top:11px!important;text-align:center}
+@media(max-width:1180px){.footer-payment-brand-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.footer-payment-brand-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-payment-brand{min-height:50px;padding:7px 5px;font-size:9px}.footer-payment-brand svg{width:25px;height:25px}}
+@media(max-width:390px){.footer-payment-brand-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
 </head>
 <body id="top">
   <section class="hero" id="home">
     <header class="site-header">
   <div class="topbar">
-    <a class="brand" href="./营销页面.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewBox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"/><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"/><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"/></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a>
+    <a class="brand" href="./%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewbox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"></path><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"></path><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"></path></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a>
     <nav class="nav" aria-label="主导航">
-      <div class="nav-capability"><a class="nav-item nav-item--capability" href="./能力中心—工艺部分.html">能力中心</a><div class="capability-menu" aria-label="能力中心下拉菜单"><div class="capability-cats" role="tablist" aria-label="能力分类"><a class="capability-cat is-active" href="./能力中心—工艺部分.html" data-menu-category="process" role="tab" aria-selected="true"><span class="capability-cat-copy"><strong>工艺</strong><span>加工、成型、扫描与报价服务</span></span><img src="./precision/service-cnc.jpg" alt="工艺能力预览" loading="lazy"></a><a class="capability-cat" href="./能力中心—材料部分.html" data-menu-category="material" role="tab" aria-selected="false"><span class="capability-cat-copy"><strong>材料</strong><span>金属、塑料与复合材料选择</span></span><img src="./precision/product-flange.jpg" alt="材料能力预览" loading="lazy"></a><a class="capability-cat" href="./能力中心—表面处理部分.html" data-menu-category="finish" role="tab" aria-selected="false"><span class="capability-cat-copy"><strong>表面处理</strong><span>外观、耐腐蚀与功能增强工艺</span></span><img src="./precision/quality-process.jpg" alt="表面处理能力预览" loading="lazy"></a></div><div class="capability-main"><div class="capability-panel is-active" data-menu-panel="process" role="tabpanel"><ul class="mega-grid"><li><a href="./能力中心—工艺部分子页面.html">CNC精密加工</a></li><li><a href="./能力中心—工艺部分子页面.html">精密车削</a></li><li><a href="./能力中心—工艺部分子页面.html">钣金折弯</a></li><li><a href="./能力中心—工艺部分子页面.html">金属3D打印</a></li><li><a href="./能力中心—工艺部分子页面.html">3D扫描服务</a></li><li><a href="./能力中心—工艺部分子页面.html">模具制作</a></li></ul></div><div class="capability-panel" data-menu-panel="material" role="tabpanel"><ul class="mega-grid"><li><a href="./能力中心—材料部分子页面.html">铝合金</a></li><li><a href="./能力中心—材料部分子页面.html">铜合金</a></li><li><a href="./能力中心—材料部分子页面.html">不锈钢</a></li><li><a href="./能力中心—材料部分子页面.html">钛合金</a></li><li><a href="./能力中心—材料部分子页面.html">工程塑料</a></li><li><a href="./能力中心—材料部分子页面.html">复合材料</a></li></ul></div><div class="capability-panel" data-menu-panel="finish" role="tabpanel"><ul class="mega-grid"><li><a href="./能力中心—表面处理部分子页面.html">阳极氧化</a></li><li><a href="./能力中心—表面处理部分子页面.html">电镀</a></li><li><a href="./能力中心—表面处理部分子页面.html">喷涂</a></li><li><a href="./能力中心—表面处理部分子页面.html">粉末喷涂</a></li><li><a href="./能力中心—表面处理部分子页面.html">钝化处理</a></li><li><a href="./能力中心—表面处理部分子页面.html">热处理</a></li></ul></div></div><div class="capability-preview" aria-hidden="true"><div class="capability-preview-card is-active" data-menu-preview="process"><img src="./precision/service-cnc.jpg" alt=""><div class="capability-preview-content"><h3>工艺能力中心</h3><p>CNC、车削、3D打印与快速报价，覆盖原型到批量交付。</p><a class="btn btn-secondary" href="./能力中心—工艺部分.html">进入工艺首页</a></div></div><div class="capability-preview-card" data-menu-preview="material"><img src="./precision/product-flange.jpg" alt=""><div class="capability-preview-content"><h3>材料能力中心</h3><p>按强度、重量、耐腐蚀和成本匹配材料。</p><a class="btn btn-secondary" href="./能力中心—材料部分.html">进入材料首页</a></div></div><div class="capability-preview-card" data-menu-preview="finish"><img src="./precision/quality-process.jpg" alt=""><div class="capability-preview-content"><h3>表面处理能力中心</h3><p>提升零件外观、耐久性与功能表现。</p><a class="btn btn-secondary" href="./能力中心—表面处理部分.html">进入表面处理首页</a></div></div></div></div></div>
-      <div class="nav-dropdown"><a class="nav-item" href="./行业中心—行业部分.html">行业</a><div class="nav-menu"><div class="nav-menu-intro"><strong>行业</strong><span>面向重点行业场景沉淀制造经验。</span></div><div class="nav-menu-links nav-menu-links--wide"><a href="./行业中心—行业部分.html">行业首页</a><a href="./行业中心—航天子页面.html">航天</a><a href="./行业中心—医疗器械子页面.html">医疗器械</a><a href="./行业中心—汽车制造子页面.html">汽车</a><a href="./行业中心—行业部分.html#robotics">机器人技术</a><a href="./行业中心—行业部分.html#electronics">电子</a><a href="./行业中心—行业部分.html#semiconductor">半导体</a><a href="./行业中心—新能源子页面.html">新能源</a></div><div class="nav-menu-preview" aria-hidden="true"><img src="./precision/case-aero.jpg" alt=""><div class="nav-menu-preview-copy"><strong>行业制造方案</strong><span>围绕场景组织材料、工艺和质量资料。</span></div></div></div></div>
-      <div class="nav-dropdown"><a class="nav-item" href="./解决方案中心—解决方案部分.html">解决方案</a><div class="nav-menu"><div class="nav-menu-intro"><strong>解决方案</strong><span>从需求输入、报价评估到交付跟踪。</span></div><div class="nav-menu-links nav-menu-links--wide"><a href="./解决方案中心—解决方案部分.html">解决方案首页</a><a href="./解决方案中心—智能报价子页面.html">智能报价</a><a href="./解决方案中心—快速原型子页面.html">快速原型</a><a href="./解决方案中心—DFM可制造性检查子页面.html">DFM可制造性检查</a><a href="./解决方案中心—智能报价子页面.html#start">快速报价</a><a href="./解决方案中心—解决方案部分.html#ai-model">图生模型</a><a href="./解决方案中心—解决方案部分.html#ai-model">文生模型</a></div><div class="nav-menu-preview" aria-hidden="true"><img src="./precision/upload-model.jpg" alt=""><div class="nav-menu-preview-copy"><strong>需求快速转方案</strong><span>让图纸、模型和文字需求更快进入制造评估。</span></div></div></div></div>
-      <div class="nav-dropdown"><a class="nav-item" href="./资源中心—资源部分.html">资源中心</a><div class="nav-menu"><div class="nav-menu-intro"><strong>资源中心</strong><span>制造知识、案例、指南与资料准备。</span></div><div class="nav-menu-links nav-menu-links--wide"><a href="./资源中心—资源部分.html">资源首页</a><a href="./资源中心—工艺指南子页面.html">工艺指南</a><a href="./资源中心—材料手册子页面.html">材料手册</a><a href="./资源中心—设计规范子页面.html">设计规范</a><a href="./资源中心—帮助FAQ子页面.html">帮助FAQ</a><a href="./资源中心—资源部分.html#downloads">下载中心</a><a href="./资源中心—资源部分.html#news">新闻动态</a></div><div class="nav-menu-preview" aria-hidden="true"><img src="./precision/insight-guide.jpg" alt=""><div class="nav-menu-preview-copy"><strong>知识与案例</strong><span>降低前期判断成本，提高项目沟通效率。</span></div></div></div></div>
-      <div class="nav-dropdown"><a class="nav-item" href="./关于我们—关于部分.html">关于</a><div class="nav-menu"><div class="nav-menu-intro"><strong>关于</strong><span>团队、质量体系与服务支持。</span></div><div class="nav-menu-links nav-menu-links--wide"><a href="./关于我们—关于部分.html">关于我们</a><a href="./关于我们—公司介绍子页面.html">公司介绍</a><a href="./关于我们—质量保证子页面.html">质量保证</a><a href="./关于我们—关于部分.html#service">服务支持</a><a href="./关于我们—隐私政策子页面.html">隐私政策</a><a href="./关于我们—服务条款子页面.html">服务条款</a><a href="./关于我们—关于部分.html#contact">联系我们</a></div><div class="nav-menu-preview" aria-hidden="true"><img src="./precision/factory-floor.png" alt=""><div class="nav-menu-preview-copy"><strong>可靠制造伙伴</strong><span>以过程透明和质量闭环支持长期合作。</span></div></div></div></div>
+      <div class="nav-capability"><a class="nav-item nav-item--capability"
+          href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html">能力中心</a>
+        <div class="capability-menu">
+          <div class="capability-cats"><a class="capability-cat is-active"
+              href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html"
+              data-menu-category="process"><span
+                class="capability-cat-copy"><strong>工艺</strong><span>加工、成型与增材制造能力</span></span><img
+                src="./precision/service-cnc.jpg" alt="工艺"></a><a class="capability-cat"
+              href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html"
+              data-menu-category="service"><span
+                class="capability-cat-copy"><strong>服务</strong><span>从单项加工到一站式交付</span></span><img
+                src="./precision/manufacturing-service.png" alt="服务"></a><a class="capability-cat"
+              href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86.html"
+              data-menu-category="material"><span
+                class="capability-cat-copy"><strong>材料</strong><span>金属、塑料与复合材料选择</span></span><img
+                src="./precision/product-flange.jpg" alt="材料"></a><a class="capability-cat"
+              href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86.html"
+              data-menu-category="finish"><span
+                class="capability-cat-copy"><strong>表面处理</strong><span>外观、耐腐蚀与功能增强</span></span><img
+                src="./precision/product-shaft.jpg" alt="表面处理"></a></div>
+          <div class="capability-main">
+            <div class="capability-panel is-active" data-menu-panel="process">
+              <ul class="mega-grid mega-grid--process">
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%96%84%E6%9D%BF%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">薄板加工</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B0%B4%E5%88%80%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">水刀切割</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B3%A8%E5%A1%91%E6%88%90%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">注塑成型</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">数控加工</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%81%9A%E6%B0%A8%E9%85%AF%E9%93%B8%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">聚氨酯铸造</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%BF%80%E5%85%89%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">激光切割</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BC%82%E5%BD%A2%E9%9B%B6%E4%BB%B6%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">异形零件加工</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BE%AE%E7%BA%B33D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">微纳3D打印</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E3D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属3D打印</a>
+                </li>
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="service">
+              <ul class="mega-grid mega-grid--service">
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94CNC%E5%8A%A0%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">CNC加工</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%A8%A1%E5%85%B7%E6%88%90%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">模具成型</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%AE%9A%E5%88%B6%E5%8A%A0%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">定制加工</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E%E5%86%B2%E5%8E%8B%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属冲压</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E%E9%93%B8%E9%80%A0%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属铸造</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E%E9%94%BB%E9%80%A0%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属锻造</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%943D%E6%89%93%E5%8D%B0%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">3D打印</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BF%AB%E9%80%9F%E6%89%8B%E6%9D%BF%E6%A8%A1%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">快速手板模型</a>
+                </li>   
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="material">
+              <ul class="mega-grid">
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">铝合金</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">铜合金</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">不锈钢</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">钛合金</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">工程塑料</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">复合材料</a>
+                </li>
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="finish">
+              <ul class="mega-grid">
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">阳极氧化</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">电镀</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">喷涂</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">粉末喷涂</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">钝化处理</a>
+                </li>
+                <li><a
+                    href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">热处理</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="capability-preview">
+            <div class="capability-preview-card is-active" data-menu-preview="process"><img
+                src="./precision/service-cnc.jpg" alt="">
+              <div class="capability-preview-content">
+                <h3>工艺能力中心</h3>
+                <p>覆盖切割、成型、精密加工与增材制造。</p><a class="btn btn-secondary"
+                  href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html">进入工艺首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="service"><img
+                src="./precision/manufacturing-service.png" alt="">
+              <div class="capability-preview-content">
+                <h3>制造服务中心</h3>
+                <p>组合加工、成型、质检与交付资源。</p><a class="btn btn-secondary"
+                  href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html">进入服务首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="material"><img src="./precision/product-flange.jpg"
+                alt="">
+              <div class="capability-preview-content">
+                <h3>材料能力中心</h3>
+                <p>按性能、成本与交期匹配材料。</p><a class="btn btn-secondary"
+                  href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86.html">进入材料首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="finish"><img src="./precision/product-shaft.jpg"
+                alt="">
+              <div class="capability-preview-content">
+                <h3>表面处理能力中心</h3>
+                <p>提升外观、耐久性与功能表现。</p><a class="btn btn-secondary"
+                  href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86.html">进入表面处理首页</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%83%A8%E5%88%86.html">解决方案</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>解决方案</strong><span>从需求输入、报价评估到交付跟踪。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">智能报价</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">快速原型</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94DFM%E5%8F%AF%E5%88%B6%E9%80%A0%E6%80%A7%E6%A3%80%E6%9F%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">DFM可制造性检查</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E5%BF%AB%E9%80%9F%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">快速报价</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E5%9B%BE%E7%94%9F3D%E6%A8%A1%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">图生3D模型</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%96%87%E7%94%9F3D%E6%A8%A1%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">文生3D模型</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%943D%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">3D格式转换</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%943D%E8%BD%AC2D%E5%B7%A5%E7%A8%8B%E5%9B%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">3D转2D工程图</a><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%942D%E6%B0%94%E6%B3%A1%E5%9B%BE%E6%A0%87%E6%B3%A8%E5%AD%90%E9%A1%B5%E9%9D%A2.html">2D气泡图标注</a></div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="./precision/solution-cad-cnc-part.png" alt="">
+            <div class="nav-menu-preview-copy"><strong>需求快速转方案</strong><span>让图纸、模型和文字需求更快进入制造评估。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">行业</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>行业</strong><span>面向重点行业场景沉淀制造经验。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">行业首页</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%88%AA%E5%A4%A9%E5%AD%90%E9%A1%B5%E9%9D%A2.html">航天</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">医疗器械</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%B1%BD%E8%BD%A6%E5%88%B6%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">汽车</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html#robotics">机器人技术</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html#electronics">电子</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html#semiconductor">半导体</a><a
+              href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%96%B0%E8%83%BD%E6%BA%90%E5%AD%90%E9%A1%B5%E9%9D%A2.html">新能源</a>
+          </div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="./precision/case-aero.jpg" alt="">
+            <div class="nav-menu-preview-copy"><strong>行业制造方案</strong><span>围绕场景组织材料、工艺和质量资料。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html">资源中心</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>资源中心</strong><span>制造知识、案例、指南与资料准备。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html">资源首页</a><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E6%8C%87%E5%8D%97%E5%AD%90%E9%A1%B5%E9%9D%A2.html">工艺指南</a><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E6%89%8B%E5%86%8C%E5%AD%90%E9%A1%B5%E9%9D%A2.html">材料手册</a><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%AD%90%E9%A1%B5%E9%9D%A2.html">设计规范</a><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B8%AE%E5%8A%A9FAQ%E5%AD%90%E9%A1%B5%E9%9D%A2.html">帮助FAQ</a><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html#downloads">下载中心</a><a
+              href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html#news">新闻动态</a>
+          </div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="./precision/insight-guide.jpg" alt="">
+            <div class="nav-menu-preview-copy"><strong>知识与案例</strong><span>降低前期判断成本，提高项目沟通效率。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html">关于</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>关于</strong><span>团队、质量体系与服务支持。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html">关于我们</a><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D%E5%AD%90%E9%A1%B5%E9%9D%A2.html">公司介绍</a><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E5%AD%90%E9%A1%B5%E9%9D%A2.html">质量保证</a><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html#service">服务支持</a><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E5%AD%90%E9%A1%B5%E9%9D%A2.html">隐私政策</a><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">服务条款</a><a
+              href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html#contact">联系我们</a>
+          </div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="./precision/factory-floor.png" alt="">
+            <div class="nav-menu-preview-copy"><strong>可靠制造伙伴</strong><span>以过程透明和质量闭环支持长期合作。</span></div>
+          </div>
+        </div>
+      </div>
     </nav>
-    <div class="nav-actions"><a class="login-link" href="./营销页面.html#contact">登录</a><a class="btn btn-primary" href="./解决方案中心—智能报价子页面.html">立即报价</a><a class="lang-link" href="./EN/index.html">EN</a></div>
+    <div class="nav-actions"><a class="login-link" href="../%E5%85%A5%E5%8F%A3/%E7%99%BB%E5%BD%95.html">登录</a><a class="btn btn-primary" href="../%E7%94%A8%E6%88%B7%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html">立即报价</a><a class="lang-link" href="./EN/index.html">EN</a></div>
   </div>
 </header>
     <div class="hero-media" aria-hidden="true">
@@ -5435,18 +6039,18 @@
       <div class="hero-inner">
         <div class="hero-copy hero-copy--first">
           <p class="hero-kicker">AGILE MANUFACTURING</p>
-          <h1>精密制造<br>驱动工业未来</h1>
-          <p>高精度机加工解决方案供应商<br>以匠心工艺和可靠交付，助力全球客户创新突破</p>
+          <h1>多种报价方式<br>让制造更快开始</h1>
+          <p>支持人工报价、对话报价与智能辅助报价<br>快速匹配不同需求，让成本评估更简单、更高效。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="./关于我们—质量保证子页面.html">
+            <a class="btn btn-primary" href="#quote">
               <span class="btn-icon" aria-hidden="true">
-                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 3v9M6.5 6.5 10 3l3.5 3.5M4 13.5h12v2.5H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewbox="0 0 20 20" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 3v9M6.5 6.5 10 3l3.5 3.5M4 13.5h12v2.5H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
-              上传3D模型获取报价
+              立即获取报价
             </a>
-            <a class="btn btn-secondary" href="./资源中心—工艺指南子页面.html">探索我们的服务</a>
+            <a class="btn btn-secondary" href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%83%A8%E5%88%86.html">了解报价方式</a>
           </div>
         </div>
       </div>
@@ -5455,18 +6059,18 @@
       <div class="hero-inner">
         <div class="hero-copy hero-copy--second">
           <p class="hero-kicker">DIGITAL MANUFACTURING</p>
-          <h1>智能协同<br>链接制造全流程</h1>
-          <p>从需求上传、工艺评估到报价交付，让制造资源高效流转，帮助项目更快进入生产。</p>
+          <h1>一句话或一张图<br>生成你的3D模型</h1>
+          <p>支持文字生成与图片生成，将创意快速转化为3D模型，并进一步衔接报价与制造。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="./关于我们—质量保证子页面.html">
+            <a class="btn btn-primary" href="#quote">
               <span class="btn-icon" aria-hidden="true">
-                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 3v9M6.5 6.5 10 3l3.5 3.5M4 13.5h12v2.5H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewbox="0 0 20 20" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 3v9M6.5 6.5 10 3l3.5 3.5M4 13.5h12v2.5H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
-              上传3D模型获取报价
+              点击开始创作您的3D模型
             </a>
-            <a class="btn btn-secondary" href="#capability">查看制造能力</a>
+            <a class="btn btn-secondary" href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%83%A8%E5%88%86.html">查看制造能力</a>
           </div>
         </div>
       </div>
@@ -5478,9 +6082,9 @@
       <div class="stats-grid">
         <div class="stat-item">
           <span class="icon-box" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 26V9h8v17M18 26V5h8v21M3 26h26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M10 13h2M10 17h2M22 10h2M22 14h2M22 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <svg viewbox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 26V9h8v17M18 26V5h8v21M3 26h26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M10 13h2M10 17h2M22 10h2M22 14h2M22 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
             </svg>
           </span>
           <div>
@@ -5490,10 +6094,10 @@
         </div>
         <div class="stat-item">
           <span class="icon-box" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-              <circle cx="22" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M6 24v-2c0-3.314 2.686-6 6-6M26 24v-2c0-3.314-2.686-6-6-6M12 24v-3c0-2.761 2.239-5 5-5h0c2.761 0 5 2.239 5 5v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <svg viewbox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle>
+              <circle cx="22" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle>
+              <path d="M6 24v-2c0-3.314 2.686-6 6-6M26 24v-2c0-3.314-2.686-6-6-6M12 24v-3c0-2.761 2.239-5 5-5h0c2.761 0 5 2.239 5 5v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
             </svg>
           </span>
           <div>
@@ -5503,11 +6107,11 @@
         </div>
         <div class="stat-item">
           <span class="icon-box" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="10" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-              <path d="M8 16h6M18 16h6M13 10V7h6v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="9" cy="23.5" r="1.5" fill="currentColor"/>
-              <circle cx="23" cy="23.5" r="1.5" fill="currentColor"/>
+            <svg viewbox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="10" width="24" height="12" rx="2" stroke="currentColor" stroke-width="2"></rect>
+              <path d="M8 16h6M18 16h6M13 10V7h6v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              <circle cx="9" cy="23.5" r="1.5" fill="currentColor"></circle>
+              <circle cx="23" cy="23.5" r="1.5" fill="currentColor"></circle>
             </svg>
           </span>
           <div>
@@ -5517,9 +6121,9 @@
         </div>
         <div class="stat-item">
           <span class="icon-box" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="2"/>
-              <path d="M5 16h22M16 5c3 3.5 4.5 7.167 4.5 11S19 23.5 16 27c-3-3.5-4.5-7.167-4.5-11S13 8.5 16 5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <svg viewbox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="2"></circle>
+              <path d="M5 16h22M16 5c3 3.5 4.5 7.167 4.5 11S19 23.5 16 27c-3-3.5-4.5-7.167-4.5-11S13 8.5 16 5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
             </svg>
           </span>
           <div>
@@ -5574,14 +6178,33 @@
         <h2 class="section-title">一站式精密制造解决方案</h2>
         <p class="section-desc">从原型开发到批量生产，提供全面的精密加工、装配协同与交付服务，让项目推进更稳定、更高效。</p>
         <div style="margin-top: 28px;">
-          <a class="btn btn-primary" href="#contact">探索更多</a>
+          <a class="btn btn-primary" href="#quote">立即报价</a>
         </div>
       </div>
       <div class="service-grid">
-        <article class="service-card">
+        <article class="service-card" data-card-link="./能力中心—3D打印服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—3D打印服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—3D打印服务子页面.html'}">
+          <img src="./precision/3dprint.png" alt="3d打印" loading="lazy">
+          <div class="service-body">
+            <h3>3D打印</h3>
+            <p>提供多种3D打印解决方案，适配异形结构和不同定制批量需求。</p>
+          </div>
+          <div class="service-drawer">
+            <div>
+              <strong>3D PRINTING SERVICES</strong>
+              <h4>复杂结构精准成型</h4>
+              <p>围绕打印材料、结构精度和使用工况定制工艺，保障复杂构件成型精度与完整性。</p>
+            </div>
+            <ul>
+              <li>支持多种材料与打印工艺路线</li>
+              <li>兼顾异形外观与镂空、内嵌复杂内部结构成型</li>
+              <li>可无缝衔接后处理、机加工及表面改性工艺</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service-card" data-card-link="./能力中心—CNC加工服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—CNC加工服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—CNC加工服务子页面.html'}">
           <img src="./precision/cnc-machining-service.png" alt="CNC加工服务" loading="lazy">
           <div class="service-body">
-            <h3>CNC加工服务</h3>
+            <h3>CNC加工</h3>
             <p>高精度铣削、车削与复合加工，覆盖原型验证到批量零件交付。</p>
           </div>
           <div class="service-drawer">
@@ -5597,10 +6220,29 @@
             </ul>
           </div>
         </article>
-        <article class="service-card">
-          <img src="./precision/molding-service.png" alt="成型服务" loading="lazy">
+        <article class="service-card" data-card-link="./能力中心—快速手板模型服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—快速手板模型服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—快速手板模型服务子页面.html'}">
+          <img src="./precision/cnc-machining-service.png" alt="快速手板模型" loading="lazy">
           <div class="service-body">
-            <h3>成型服务</h3>
+            <h3>快速手板模型</h3>
+            <p>提供CNC手板、3D打印手板和小批量试制服务，加快产品开发与验证。</p>
+          </div>
+          <div class="service-drawer">
+            <div>
+              <strong>RAPID PROTOTYPING</strong>
+              <h4>快速打样，精准成型</h4>
+              <p>根据产品结构和材料需求，快速完成手板模型制作。</p>
+            </div>
+            <ul>
+              <li>支持CNC加工与3D打印</li>
+              <li>支持外观手板和功能手板</li>
+              <li>支持表面处理与小批量生产</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service-card" data-card-link="./能力中心—模具成型服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—模具成型服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—模具成型服务子页面.html'}">
+          <img src="./precision/molding-service.png" alt="模具成型" loading="lazy">
+          <div class="service-body">
+            <h3>模具成型</h3>
             <p>覆盖注塑与多种成型工艺，支持复杂结构件快速稳定落地。</p>
           </div>
           <div class="service-drawer">
@@ -5616,10 +6258,10 @@
             </ul>
           </div>
         </article>
-        <article class="service-card">
-          <img src="./precision/manufacturing-service.png" alt="制造服务" loading="lazy">
+        <article class="service-card" data-card-link="./能力中心—定制加工服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—定制加工服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—定制加工服务子页面.html'}">
+          <img src="./precision/manufacturing-service.png" alt="定制加工" loading="lazy">
           <div class="service-body">
-            <h3>制造服务</h3>
+            <h3>定制加工</h3>
             <p>整合切割、钣金、加工与装配资源，完成多工序协同交付。</p>
           </div>
           <div class="service-drawer">
@@ -5635,10 +6277,10 @@
             </ul>
           </div>
         </article>
-        <article class="service-card">
-          <img src="./precision/stamping-service.png" alt="冲压服务" loading="lazy">
+        <article class="service-card" data-card-link="./能力中心—金属冲压服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—金属冲压服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—金属冲压服务子页面.html'}">
+          <img src="./precision/stamping-service.png" alt="金属冲压" loading="lazy">
           <div class="service-body">
-            <h3>冲压服务</h3>
+            <h3>金属冲压</h3>
             <p>面向薄板零件的高速冲压与连续生产，兼顾效率和一致性。</p>
           </div>
           <div class="service-drawer">
@@ -5654,10 +6296,10 @@
             </ul>
           </div>
         </article>
-        <article class="service-card">
-          <img src="./precision/casting-service.png" alt="铸造服务" loading="lazy">
+        <article class="service-card" data-card-link="./能力中心—金属铸造服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—金属铸造服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—金属铸造服务子页面.html'}">
+          <img src="./precision/casting-service.png" alt="金属铸造" loading="lazy">
           <div class="service-body">
-            <h3>铸造服务</h3>
+            <h3>金属铸造</h3>
             <p>提供多种铸造解决方案，适配复杂外形和不同批量需求。</p>
           </div>
           <div class="service-drawer">
@@ -5673,10 +6315,10 @@
             </ul>
           </div>
         </article>
-        <article class="service-card">
-          <img src="./precision/forging-service.png" alt="锻造服务" loading="lazy">
+        <article class="service-card" data-card-link="./能力中心—金属锻造服务子页面.html" role="link" tabindex="0" onclick="window.location.href='./能力中心—金属锻造服务子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./能力中心—金属锻造服务子页面.html'}">
+          <img src="./precision/forging-service.png" alt="金属锻造" loading="lazy">
           <div class="service-body">
-            <h3>锻造服务</h3>
+            <h3>金属锻造</h3>
             <p>通过热锻与精密锻造提升材料强度，服务高负载关键零件。</p>
           </div>
           <div class="service-drawer">
@@ -5699,28 +6341,28 @@
   <section class="section-block factory-dark-section" id="about">
     <div class="container factory-layout">
       <div class="factory-image-large">
-        <div class="factory-visual-card">
+        <div class="factory-visual-card" data-card-link="./关于我们—公司介绍子页面.html" role="link" tabindex="0" onclick="window.location.href='./关于我们—公司介绍子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./关于我们—公司介绍子页面.html'}">
           <img src="./precision/precision-machining-floor.png" alt="高精度加工现场" loading="lazy">
           <div class="factory-visual-caption">
             <span>01 / 智能产线</span>
             <strong>高精度加工现场</strong>
           </div>
         </div>
-        <div class="factory-visual-card">
+        <div class="factory-visual-card" data-card-link="./关于我们—公司介绍子页面.html" role="link" tabindex="0" onclick="window.location.href='./关于我们—公司介绍子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./关于我们—公司介绍子页面.html'}">
           <img src="./precision/standardized-warehouse-flow.png" alt="规范化仓储流转" loading="lazy">
           <div class="factory-visual-caption">
             <span>02 / 物料管理</span>
             <strong>规范化仓储流转</strong>
           </div>
         </div>
-        <div class="factory-visual-card">
+        <div class="factory-visual-card" data-card-link="./关于我们—公司介绍子页面.html" role="link" tabindex="0" onclick="window.location.href='./关于我们—公司介绍子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./关于我们—公司介绍子页面.html'}">
           <img src="./precision/stable-delivery-cadence.png" alt="稳定交付节拍" loading="lazy">
           <div class="factory-visual-caption">
             <span>03 / 制程协同</span>
             <strong>稳定交付节拍</strong>
           </div>
         </div>
-        <div class="factory-visual-card">
+        <div class="factory-visual-card" data-card-link="./关于我们—公司介绍子页面.html" role="link" tabindex="0" onclick="window.location.href='./关于我们—公司介绍子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./关于我们—公司介绍子页面.html'}">
           <img src="./precision/end-to-end-quality-tracking.png" alt="全流程质控追踪" loading="lazy">
           <div class="factory-visual-caption">
             <span>04 / 质量闭环</span>
@@ -5733,7 +6375,7 @@
         <h2 class="section-title">先进的生产基地</h2>
         <p class="section-desc">配套国际先进设备和高标准质控体系，严控工序节拍与制程稳定性，持续保障复杂零件的质量输出。</p>
         <div style="margin-top: 28px;">
-          <a class="btn btn-primary" href="#capability">了解我们的工厂</a>
+          <a class="btn btn-primary" href="#quote">立即报价</a>
         </div>
       </div>
     </div>
@@ -5743,20 +6385,13 @@
     <div class="container quality-layout">
       <div class="capability-copy">
         <p class="eyebrow">核心制造能力</p><h2 class="section-title">精密制造，卓越品质</h2>
-        <p class="section-desc">覆盖成型、切割、加工与材料供应，按项目需求整合工艺资源，在效率、稳定性与一致性之间实现更优平衡。</p>
-        <div class="capability-index" aria-label="核心制造能力列表"><span><b>01</b>薄板加工</span><span><b>02</b>水刀切割</span><span><b>03</b>注塑成型</span><span><b>04</b>数控加工</span><span><b>05</b>聚氨酯铸造</span><span><b>06</b>激光切割</span><span><b>07</b>材料供应</span></div>
+        <p class="section-desc">覆盖成型、切割、精密加工与增材制造，按项目需求整合工艺资源，在效率、稳定性与一致性之间实现更优平衡。</p>
+        <div class="capability-index" aria-label="核心制造能力列表"><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%96%84%E6%9D%BF%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>01</b>薄板加工</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B0%B4%E5%88%80%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>02</b>水刀切割</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B3%A8%E5%A1%91%E6%88%90%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>03</b>注塑成型</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>04</b>数控加工</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%81%9A%E6%B0%A8%E9%85%AF%E9%93%B8%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>05</b>聚氨酯铸造</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%BF%80%E5%85%89%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>06</b>激光切割</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BC%82%E5%BD%A2%E9%9B%B6%E4%BB%B6%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>07</b>异形零件加工</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BE%AE%E7%BA%B33D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>08</b>微纳3D打印</a><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E3D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html"><b>09</b>金属3D打印</a></div>
         
-      </div>
+      <div class="section-quote-cta"><a class="btn btn-primary" href="#quote">立即报价</a></div></div>
       <div class="quality-image quality-deck" data-quality-deck aria-label="核心制造能力图片轮播">
         
-        <figure class="quality-card is-active" data-deck-card tabindex="0" role="button" aria-label="薄板加工，点击查看下一项"><img src="./precision/sheet-metal-fabrication.png" alt="薄板加工" loading="lazy"><figcaption class="quality-card-label"><span>01 / CAPABILITY</span><strong>薄板加工</strong><p>精密折弯、切割与结构件制造</p></figcaption></figure>
-        <figure class="quality-card is-next" data-deck-card tabindex="-1" role="button" aria-label="水刀切割，点击查看下一项"><img src="./precision/waterjet-cutting.png" alt="水刀切割" loading="lazy"><figcaption class="quality-card-label"><span>02 / CAPABILITY</span><strong>水刀切割</strong><p>冷态切割，适配多种厚度与材料</p></figcaption></figure>
-        <figure class="quality-card is-third" data-deck-card tabindex="-1" role="button" aria-label="注塑成型，点击查看下一项"><img src="./precision/injection-molding.png" alt="注塑成型" loading="lazy"><figcaption class="quality-card-label"><span>03 / CAPABILITY</span><strong>注塑成型</strong><p>复杂塑胶零件快速稳定成型</p></figcaption></figure>
-        <figure class="quality-card is-fourth" data-deck-card tabindex="-1" role="button" aria-label="数控加工，点击查看下一项"><img src="./precision/cnc-machining.png" alt="数控加工" loading="lazy"><figcaption class="quality-card-label"><span>04 / CAPABILITY</span><strong>数控加工</strong><p>多轴铣削、车削与复杂结构加工</p></figcaption></figure>
-        <figure class="quality-card is-fifth" data-deck-card tabindex="-1" role="button" aria-label="聚氨酯铸造，点击查看下一项"><img src="./precision/urethane-casting.png" alt="聚氨酯铸造" loading="lazy"><figcaption class="quality-card-label"><span>05 / CAPABILITY</span><strong>聚氨酯铸造</strong><p>小批量弹性体与复模件制造</p></figcaption></figure>
-        <figure class="quality-card" data-deck-card tabindex="-1" role="button" aria-label="激光切割，点击查看下一项"><img src="./precision/laser-cutting.png" alt="激光切割" loading="lazy"><figcaption class="quality-card-label"><span>06 / CAPABILITY</span><strong>激光切割</strong><p>高速高精度板材轮廓加工</p></figcaption></figure>
-        <figure class="quality-card" data-deck-card tabindex="-1" role="button" aria-label="材料供应，点击查看下一项"><img src="./precision/material-supply.png" alt="材料供应" loading="lazy"><figcaption class="quality-card-label"><span>07 / CAPABILITY</span><strong>材料供应</strong><p>常用金属与工程塑料快速配套</p></figcaption></figure>
-      </div>
+        <figure class="quality-card is-active" data-deck-card tabindex="0" role="button"><img src="./precision/sheet-metal-fabrication.png" alt="薄板加工"><figcaption class="quality-card-label"><span>01 / CAPABILITY</span><strong>薄板加工</strong><p>精密切割、折弯与结构件协同制造</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%96%84%E6%9D%BF%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card is-next" data-deck-card tabindex="-1" role="button"><img src="./precision/waterjet-cutting.png" alt="水刀切割"><figcaption class="quality-card-label"><span>02 / CAPABILITY</span><strong>水刀切割</strong><p>低热影响的高适应性冷态切割</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B0%B4%E5%88%80%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card is-third" data-deck-card tabindex="-1" role="button"><img src="./precision/injection-molding.png" alt="注塑成型"><figcaption class="quality-card-label"><span>03 / CAPABILITY</span><strong>注塑成型</strong><p>复杂塑胶零件快速稳定成型</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B3%A8%E5%A1%91%E6%88%90%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card is-fourth" data-deck-card tabindex="-1" role="button"><img src="./precision/cnc-machining.png" alt="数控加工"><figcaption class="quality-card-label"><span>04 / CAPABILITY</span><strong>数控加工</strong><p>多轴铣削、车削与复杂结构加工</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card is-fifth" data-deck-card tabindex="-1" role="button"><img src="./precision/urethane-casting.png" alt="聚氨酯铸造"><figcaption class="quality-card-label"><span>05 / CAPABILITY</span><strong>聚氨酯铸造</strong><p>小批量弹性体与复模件制造</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%81%9A%E6%B0%A8%E9%85%AF%E9%93%B8%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card" data-deck-card tabindex="-1" role="button"><img src="./precision/laser-cutting.png" alt="激光切割"><figcaption class="quality-card-label"><span>06 / CAPABILITY</span><strong>激光切割</strong><p>高速高精度板材轮廓加工</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%BF%80%E5%85%89%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card" data-deck-card tabindex="-1" role="button"><img src="./precision/factory-floor3.png" alt="异形零件加工"><figcaption class="quality-card-label"><span>07 / CAPABILITY</span><strong>异形零件加工</strong><p>面向复杂曲面与异形结构的复合加工</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BC%82%E5%BD%A2%E9%9B%B6%E4%BB%B6%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card" data-deck-card tabindex="-1" role="button"><img src="./precision/3dprint.png" alt="微纳3D打印"><figcaption class="quality-card-label"><span>08 / CAPABILITY</span><strong>微纳3D打印</strong><p>微细结构与高分辨率增材制造</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BE%AE%E7%BA%B33D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure><figure class="quality-card" data-deck-card tabindex="-1" role="button"><img src="./precision/3dprint.png" alt="金属3D打印"><figcaption class="quality-card-label"><span>09 / CAPABILITY</span><strong>金属3D打印</strong><p>复杂金属结构快速增材成型</p><a class="quality-card-link" href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E3D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看工艺详情</a></figcaption></figure></div>
     </div>
   </section>
   <section class="section-block process-band" id="process">
@@ -5765,7 +6400,7 @@
       <div class="process-board" aria-label="精密制造服务流程">
         <div class="process-visual">
           <div class="process-visual-top"><strong>制造流转看板</strong><span>LIVE FLOW</span></div>
-          <div class="process-photo"><img src="./precision/manufacturing-process-flow.png" alt="精密加工过程" loading="lazy"><div class="process-photo-mark"><div><span>PROCESS</span><strong>CNC / 质检 / 交付</strong></div><svg viewBox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true"><path d="M4 16.5V7.5L12 3l8 4.5v9L12 21l-8-4.5Z" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 7.8 12 12l7.5-4.2M12 12v8.5" stroke="currentColor" stroke-width="1.8"/></svg></div></div>
+          <div class="process-photo"><img src="./precision/manufacturing-process-flow.png" alt="精密加工过程" loading="lazy"><div class="process-photo-mark"><div><span>PROCESS</span><strong>CNC / 质检 / 交付</strong></div><svg viewbox="0 0 24 24" width="28" height="28" fill="none" aria-hidden="true"><path d="M4 16.5V7.5L12 3l8 4.5v9L12 21l-8-4.5Z" stroke="currentColor" stroke-width="1.8"></path><path d="M4.5 7.8 12 12l7.5-4.2M12 12v8.5" stroke="currentColor" stroke-width="1.8"></path></svg></div></div>
           <div class="process-status"><div class="process-status-row"><strong>DFM 审核</strong><span>READY</span></div><div class="process-status-row"><strong>生产排期</strong><span>TRACK</span></div><div class="process-status-row"><strong>质检放行</strong><span>TRACE</span></div></div>
         </div>
         <div class="process-map">
@@ -5779,7 +6414,7 @@
             <article class="process-step-card"><span class="process-step-tag">STEP 6</span><strong class="process-step-number">06</strong><span class="process-step-icon">▣</span><h4>安全防护</h4><p>专业防震包材，精密件独立防护</p></article>
             <article class="process-step-card"><span class="process-step-tag">STEP 7</span><strong class="process-step-number">07</strong><span class="process-step-icon">⌖</span><h4>全程可追</h4><p>全程物流追踪，准时送达确认</p></article>
           </div>
-        </div>
+        <div class="section-quote-cta"><a class="btn btn-primary" href="#quote">立即报价</a></div></div>
       </div>
     </div></div>
   </section>
@@ -5791,7 +6426,7 @@
       <div class="quote-box-container" data-mode="quick">
         <div class="quote-header"><p class="eyebrow">快速报价</p><h2>上传3D模型，快速获取报价</h2><p>支持 STEP / IGES / STL 等3D文件与图纸格式</p></div>
         <div class="quote-quick-panel" data-quote-panel="quick">
-          <div class="quote-upload-area"><div class="upload-box" id="quick-upload-box"><div class="upload-icon"><svg viewBox="0 0 24 24" width="30" height="30" fill="none"><path d="M12 3v9M6.5 6.5 12 3l5.5 3.5M4 13.5h12v2.5H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>点击或拖拽文件到此处上传</h3><p>支持单个文件上传或批量导入</p><span class="upload-status" data-upload-status>尚未选择文件</span><input type="file" id="quote-file-input" accept=".step,.iges,.stl,.igs" multiple></div></div>
+          <div class="quote-upload-area"><div class="upload-box" id="quick-upload-box"><div class="upload-icon"><svg viewbox="0 0 24 24" width="30" height="30" fill="none"><path d="M12 3v9M6.5 6.5 12 3l5.5 3.5M4 13.5h12v2.5H4z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><h3>点击或拖拽文件到此处上传</h3><p>支持单个文件上传或批量导入</p><span class="upload-status" data-upload-status>尚未选择文件</span><input type="file" id="quote-file-input" accept=".step,.iges,.stl,.igs" multiple></div></div>
           <div class="quote-features"><div class="quote-feature"><strong>实时报价</strong><span>分钟级返回</span></div><div class="quote-feature"><strong>DFM 设计分析</strong><span>给出优化建议</span></div><div class="quote-feature"><strong>交期评估</strong><span>同步工期风险</span></div><div class="quote-feature"><strong>一键下单</strong><span>快速推进项目</span></div></div>
         </div>
         <div class="quote-ai-showcase" data-quote-panel="ai" hidden><div class="quote-ai-copy"><span class="quote-ai-badge" data-showcase-badge>AI 智能能力</span><h3 data-showcase-title></h3><p data-showcase-description></p><ul class="quote-ai-benefits" data-showcase-benefits></ul><button class="btn btn-primary quote-ai-launch" type="button" data-open-quote-ai>打开 AI 智能助手</button></div><div class="quote-ai-visual"><div class="quote-ai-demo-window"><div class="quote-ai-demo-head"><i></i><i></i><i></i><span data-showcase-window-label>AI 工作区</span></div><div class="quote-ai-prompt" data-showcase-prompt></div><div class="quote-ai-output" data-showcase-output></div></div></div></div>
@@ -5862,8 +6497,8 @@
               </div>
             </div>
             <div class="why-final-actions">
-              <a class="btn btn-primary" href="./解决方案中心—智能报价子页面.html">上传模型评估</a>
-              <a class="btn btn-secondary" href="./行业中心—行业部分.html">查看行业案例</a>
+              <a class="btn btn-primary" href="#quote">立即报价</a>
+              <a class="btn btn-secondary" href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">查看行业案例</a>
             </div>
           </div>
         </div>
@@ -5878,33 +6513,33 @@
         <h2 class="section-title">助力各行业创新突破</h2>
         <p class="section-desc">为不同行业提供更贴合应用场景的精密制造方案，在性能、效率和量产稳定性之间找到更优解。</p>
         <div style="margin-top: 28px;">
-          <a class="btn btn-primary" href="#contact">探索案例</a>
+          <a class="btn btn-primary" href="#quote">立即报价</a>
         </div>
       </div>
       <div class="card-grid">
-        <article class="case-card">
-          <img src="./precision/service-assembly.jpg" alt="工业自动化案例" loading="lazy">
+        <article class="case-card" data-card-link="./行业中心—行业部分.html#robotics" role="link" tabindex="0" onclick="window.location.href='./行业中心—行业部分.html#robotics'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./行业中心—行业部分.html#robotics'}">
+          <img src="./precision/Industrial_Automation.jpg" alt="工业自动化案例" loading="lazy">
           <div class="case-body">
             <h3>工业自动化</h3>
             <p>围绕夹治具、结构组件与自动化单元，提升设备集成效率。</p>
           </div>
         </article>
-        <article class="case-card">
-          <img src="./precision/case-medical.jpg" alt="医疗器械案例" loading="lazy">
+        <article class="case-card" data-card-link="./行业中心—医疗器械子页面.html" role="link" tabindex="0" onclick="window.location.href='./行业中心—医疗器械子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./行业中心—医疗器械子页面.html'}">
+          <img src="./precision/Medical_devices.jpg" alt="医疗器械案例" loading="lazy">
           <div class="case-body">
             <h3>医疗器械</h3>
             <p>支持高洁净度部件与精密结构件的稳定批量制造。</p>
           </div>
         </article>
-        <article class="case-card">
-          <img src="./precision/case-aero.jpg" alt="航空航天案例" loading="lazy">
+        <article class="case-card" data-card-link="./行业中心—航天子页面.html" role="link" tabindex="0" onclick="window.location.href='./行业中心—航天子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./行业中心—航天子页面.html'}">
+          <img src="./precision/Aerospace.jpg" alt="航空航天案例" loading="lazy">
           <div class="case-body">
             <h3>航空航天</h3>
             <p>满足轻量化结构件对复杂曲面与一致性的严苛要求。</p>
           </div>
         </article>
-        <article class="case-card">
-          <img src="./precision/case-parts.jpg" alt="新能源案例" loading="lazy">
+        <article class="case-card" data-card-link="./行业中心—新能源子页面.html" role="link" tabindex="0" onclick="window.location.href='./行业中心—新能源子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./行业中心—新能源子页面.html'}">
+          <img src="./precision/new_energy.jpg" alt="新能源案例" loading="lazy">
           <div class="case-body">
             <h3>新能源</h3>
             <p>覆盖轴类、齿轮与连接件，服务高性能传动与储能项目。</p>
@@ -5914,7 +6549,7 @@
     </div>
   </section>
 
-  <section class="section-block">
+  <section class="section-block" id="testimonials">
     <div class="container">
       <div class="case-section-head">
         <div>
@@ -5922,23 +6557,7 @@
           <h2 class="section-title">客户的信任与认可</h2>
         </div>
       </div>
-      <div class="quote-layout">
-        <div class="quote-thumb">
-          <img src="./precision/service-cnc.jpg" alt="客户评价配图" loading="lazy">
-        </div>
-        <div class="quote-box">
-          <span class="quote-mark">“</span>
-          <p>从打样阶段到批量交付，团队在沟通效率、工艺建议和交期把控上都非常稳定。复杂零件的良率和一致性达到了我们的预期，也让后续项目复用更省心。</p>
-          <div class="quote-meta">
-            <div class="stars">★★★★☆</div>
-            <div class="quote-author">
-              <strong>蔡先生</strong>
-              <span>广东自动化设备企业 / 采购总监</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="testimonial-carousel" data-testimonial-carousel><button class="testimonial-nav testimonial-nav--prev" type="button" data-testimonial-prev aria-label="上一条客户评价">←</button><div class="testimonial-stage" aria-live="polite"><article class="testimonial-slide is-active" data-testimonial-slide aria-hidden="false"><div class="testimonial-media"><img src="./precision/Customer.png" alt="蔡先生" loading="lazy"></div><div class="testimonial-card"><span class="testimonial-mark">“</span><p>从打样阶段到批量交付，团队在沟通效率、工艺建议和交期把控上都非常稳定。复杂零件的良率和一致性达到了我们的预期，也让后续项目推进更省心。</p><div class="testimonial-meta"><div class="testimonial-stars" aria-label="5 stars">★★★★★</div><div class="testimonial-author"><strong>蔡先生</strong><span>广东自动化设备企业 / 采购总监</span></div></div></div></article><article class="testimonial-slide" data-testimonial-slide aria-hidden="true"><div class="testimonial-media"><img src="./precision/Customer1.png" alt="林女士" loading="lazy"></div><div class="testimonial-card"><span class="testimonial-mark">“</span><p>医疗结构件对洁净度、尺寸一致性和资料完整性要求很高。项目团队提前识别了加工与检测风险，验证批次通过后，后续量产衔接非常顺畅。</p><div class="testimonial-meta"><div class="testimonial-stars" aria-label="5 stars">★★★★★</div><div class="testimonial-author"><strong>林女士</strong><span>医疗器械企业 / 项目负责人</span></div></div></div></article><article class="testimonial-slide" data-testimonial-slide aria-hidden="true"><div class="testimonial-media"><img src="./precision/Customer2.jpg" alt="周先生" loading="lazy"></div><div class="testimonial-card"><span class="testimonial-mark">“</span><p>从图纸评审、DFM建议到样件交付，反馈速度一直很快。关键尺寸问题在投产前就完成确认，明显减少了新能源设备项目的反复修改。</p><div class="testimonial-meta"><div class="testimonial-stars" aria-label="5 stars">★★★★★</div><div class="testimonial-author"><strong>周先生</strong><span>新能源装备企业 / 研发经理</span></div></div></div></article><article class="testimonial-slide" data-testimonial-slide aria-hidden="true"><div class="testimonial-media"><img src="./precision/Customer3.png" alt="王先生" loading="lazy"></div><div class="testimonial-card"><span class="testimonial-mark">“</span><p>复杂曲面与轻量化结构的检测记录清晰完整，每个批次都能快速追溯。质量沟通透明，让我们在高要求项目上更有信心。</p><div class="testimonial-meta"><div class="testimonial-stars" aria-label="5 stars">★★★★★</div><div class="testimonial-author"><strong>王先生</strong><span>航空零部件企业 / 质量经理</span></div></div></div></article></div><button class="testimonial-nav testimonial-nav--next" type="button" data-testimonial-next aria-label="下一条客户评价">→</button><div class="testimonial-dots" role="tablist"><button class="testimonial-dot is-active" type="button" data-testimonial-dot aria-label="切换到第 1 条客户评价" aria-current="true"></button><button class="testimonial-dot" type="button" data-testimonial-dot aria-label="切换到第 2 条客户评价" aria-current="false"></button><button class="testimonial-dot" type="button" data-testimonial-dot aria-label="切换到第 3 条客户评价" aria-current="false"></button><button class="testimonial-dot" type="button" data-testimonial-dot aria-label="切换到第 4 条客户评价" aria-current="false"></button></div></div></div>
   </section>
 
   <section class="section-block section-soft" id="insights">
@@ -5948,51 +6567,112 @@
         <h2 class="section-title">专业知识，行业洞察</h2>
         <p class="section-desc">分享精密制造前沿知识，帮助你更快判断材料、工艺和结构设计中的关键决策点。</p>
         <div style="margin-top: 28px;">
-          <a class="btn btn-primary" href="#contact">探索更多</a>
+          <a class="btn btn-primary" href="#quote">立即报价</a>
         </div>
       </div>
       <div class="insight-grid">
-        <article class="insight-card">
-          <img src="./precision/insight-guide.jpg" alt="精密加工工艺指南" loading="lazy">
+        <article class="insight-card" data-card-link="./资源中心—工艺指南子页面.html" role="link" tabindex="0" onclick="window.location.href='./资源中心—工艺指南子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./资源中心—工艺指南子页面.html'}">
+          <img src="./precision/Precision-Machining-Process-Guide.jpg" alt="精密加工工艺指南" loading="lazy">
           <div class="insight-body">
             <h3>精密加工工艺指南</h3>
             <p>了解典型结构件从工艺规划到加工实现的关键考量。</p>
             <div class="insight-meta">
               <span>白皮书</span>
+              <a class="insight-entry" href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E6%8C%87%E5%8D%97%E5%AD%90%E9%A1%B5%E9%9D%A2.html">阅读全文</a>
               <span>今日</span>
             </div>
           </div>
         </article>
-        <article class="insight-card">
-          <img src="./precision/insight-material.jpg" alt="材料性能指南" loading="lazy">
+        <article class="insight-card" data-card-link="./资源中心—材料手册子页面.html" role="link" tabindex="0" onclick="window.location.href='./资源中心—材料手册子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./资源中心—材料手册子页面.html'}">
+          <img src="./precision/Material-Performance-Guide.jpg" alt="材料性能指南" loading="lazy">
           <div class="insight-body">
             <h3>材料性能指南</h3>
             <p>不同金属材料的加工性、强度与表面表现如何平衡。</p>
             <div class="insight-meta">
               <span>材料</span>
+              <a class="insight-entry" href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E6%89%8B%E5%86%8C%E5%AD%90%E9%A1%B5%E9%9D%A2.html">阅读全文</a>
               <span>专题</span>
             </div>
           </div>
         </article>
-        <article class="insight-card">
-          <img src="./precision/insight-device.jpg" alt="设备与技术介绍" loading="lazy">
+        <article class="insight-card" data-card-link="./资源中心—设计规范子页面.html" role="link" tabindex="0" onclick="window.location.href='./资源中心—设计规范子页面.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./资源中心—设计规范子页面.html'}">
+          <img src="./precision/Equipment-Technology-Introduction.jpg" alt="设备与技术介绍" loading="lazy">
           <div class="insight-body">
             <h3>设备与技术介绍</h3>
             <p>从设备能力到检测体系，拆解高稳定性交付背后的基础设施。</p>
             <div class="insight-meta">
               <span>设备</span>
+              <a class="insight-entry" href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%AD%90%E9%A1%B5%E9%9D%A2.html">阅读全文</a>
               <span>技术</span>
             </div>
           </div>
         </article>
-        <article class="insight-card">
-          <img src="./precision/insight-knowledge.jpg" alt="行业趋势分析" loading="lazy">
+        <article class="insight-card" data-card-link="./资源中心—资源部分.html#news" role="link" tabindex="0" onclick="window.location.href='./资源中心—资源部分.html#news'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='./资源中心—资源部分.html#news'}">
+          <img src="./precision/Industry-Trend-Analysis.jpg" alt="行业趋势分析" loading="lazy">
           <div class="insight-body">
             <h3>行业趋势分析</h3>
             <p>从零件形态变化看精密制造在自动化和高端装备中的新机会。</p>
             <div class="insight-meta">
               <span>洞察</span>
+              <a class="insight-entry" href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html#news">阅读全文</a>
               <span>报告</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block home-faq" id="faq">
+    <div class="container home-faq-layout">
+      <div class="home-faq-copy">
+        <div class="home-faq-title-row">
+          <h2 class="home-faq-title">
+            <span class="home-faq-title-brand">敏捷智造</span>
+            <span class="home-faq-title-main">常见问题解答</span>
+          </h2>
+          <span class="home-faq-title-accent" aria-hidden="true"></span>
+        </div>
+      </div>
+      <span class="home-faq-connector" aria-hidden="true"></span>
+      <div class="home-faq-list">
+        <article class="home-faq-item">
+          <button class="home-faq-question" type="button" aria-expanded="false">图纸或模型提交后，你们会先评估哪些制造风险？</button>
+          <div class="home-faq-answer" role="region">
+            <div class="home-faq-answer-inner">
+              <p>工程团队会结合结构、材料、关键尺寸和后处理要求做初步工艺判断，重点查看薄壁、深腔、孔位、公差、装夹和外观面风险。若有影响加工稳定性或成本的点，会在报价或投产前与你确认调整建议。</p>
+            </div>
+          </div>
+        </article>
+        <article class="home-faq-item">
+          <button class="home-faq-question" type="button" aria-expanded="false">想快速拿到报价，需要准备哪些信息？</button>
+          <div class="home-faq-answer" role="region">
+            <div class="home-faq-answer-inner">
+              <p>建议提供 3D 文件、2D 图纸、材料牌号、数量、表面处理、检测标准和期望交期。如果部分要求还没有确定，也可以先说明用途和装配环境，我们会协助补齐报价判断所需的信息。</p>
+            </div>
+          </div>
+        </article>
+        <article class="home-faq-item">
+          <button class="home-faq-question" type="button" aria-expanded="false">样件和批量订单的交期通常怎么确认？</button>
+          <div class="home-faq-answer" role="region">
+            <div class="home-faq-answer-inner">
+              <p>交期会根据工艺路线、材料到料、加工难度、数量、检测项目和排产情况综合确认。急件项目可单独评估加急方案，最终时间以双方确认的报价单或订单排期为准。</p>
+            </div>
+          </div>
+        </article>
+        <article class="home-faq-item">
+          <button class="home-faq-question" type="button" aria-expanded="false">材料、表面处理和检测资料可以一起配套吗？</button>
+          <div class="home-faq-answer" role="region">
+            <div class="home-faq-answer-inner">
+              <p>可以。我们可按项目需求匹配常用金属、工程塑料及对应后处理，并配合提供材料证明、尺寸检测记录或指定项目的测试资料。若涉及 RoHS、REACH 等合规要求，请在下单前明确标准范围。</p>
+            </div>
+          </div>
+        </article>
+        <article class="home-faq-item">
+          <button class="home-faq-question" type="button" aria-expanded="false">收到零件后发现尺寸或外观异常，怎么处理？</button>
+          <div class="home-faq-answer" role="region">
+            <div class="home-faq-answer-inner">
+              <p>请保留问题照片、检测数据和对应订单信息，我们会按图纸、验收标准和生产记录复核原因。确认处理方式后，可根据实际情况安排返工、重做、补发或其他售后方案。</p>
             </div>
           </div>
         </article>
@@ -6006,12 +6686,33 @@
         <h2>准备好开始您的项目了吗？</h2>
         <p>联系我们的专家团队，获取专业的解决方案和报价支持。</p>
       </div>
-      <a class="btn btn-light" href="mailto:info@precision.com">立即联系</a>
+      <a class="btn btn-light" href="#quote">立即报价</a>
     </div>
   </section>
 
-  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="./营销页面.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewBox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"/><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"/><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"/></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a><p>为客户提供高品质、高稳定性的精密制造服务。</p></div><div><h4>能力中心</h4><ul><li><a href="./能力中心—工艺部分.html">工艺</a></li><li><a href="./能力中心—材料部分.html">材料</a></li><li><a href="./能力中心—表面处理部分.html">表面处理</a></li></ul></div><div><h4>行业</h4><ul><li><a href="./行业中心—行业部分.html">行业首页</a></li><li><a href="./行业中心—航天子页面.html">航天</a></li><li><a href="./行业中心—医疗器械子页面.html">医疗器械</a></li><li><a href="./行业中心—汽车制造子页面.html">汽车</a></li><li><a href="./行业中心—新能源子页面.html">新能源</a></li></ul></div><div><h4>解决方案</h4><ul><li><a href="./解决方案中心—解决方案部分.html">解决方案首页</a></li><li><a href="./解决方案中心—智能报价子页面.html">智能报价</a></li><li><a href="./解决方案中心—快速原型子页面.html">快速原型</a></li><li><a href="./解决方案中心—DFM可制造性检查子页面.html">DFM检查</a></li></ul></div><div><h4>资源中心</h4><ul><li><a href="./资源中心—资源部分.html">资源首页</a></li><li><a href="./资源中心—工艺指南子页面.html">工艺指南</a></li><li><a href="./资源中心—材料手册子页面.html">材料手册</a></li><li><a href="./资源中心—设计规范子页面.html">设计规范</a></li><li><a href="./资源中心—帮助FAQ子页面.html">帮助FAQ</a></li></ul></div><div><h4>关于</h4><ul><li><a href="./关于我们—关于部分.html">关于我们</a></li><li><a href="./关于我们—公司介绍子页面.html">公司介绍</a></li><li><a href="./关于我们—质量保证子页面.html">质量保证</a></li><li><a href="./关于我们—隐私政策子页面.html">隐私政策</a></li><li><a href="./关于我们—服务条款子页面.html">服务条款</a></li></ul></div><div class="subscribe-box"><h4>订阅资讯</h4><p>获取制造知识和技术动态</p><form class="subscribe-form"><input type="email" placeholder="输入您的邮箱" aria-label="邮箱"><button type="button" aria-label="订阅">→</button></form></div></div><div class="footer-bottom"><span>© 2024 敏捷智造 保留所有权利</span><span><a href="./关于我们—隐私政策子页面.html">隐私政策</a> / <a href="./关于我们—服务条款子页面.html">服务条款</a></span></div></div></footer>
-  <div class="floating-support is-collapsed" aria-label="在线客服对话面板">
+  <footer class="footer"><div class="container"><div class="footer-grid footer-grid--expanded"><div class="footer-brand"><a class="brand" href="./%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewbox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"></path><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"></path><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"></path></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a><p>为客户提供高品质、高稳定性的精密制造服务。</p><div class="footer-socials" aria-label="Share and contact apps">
+  <a class="footer-social-link" href="weixin://" aria-label="WeChat" title="WeChat"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.4 5C5.9 5 3 7.2 3 10c0 1.6.9 3 2.3 4l-.6 2.2 2.5-1.3c.7.2 1.4.3 2.2.3 3.5 0 6.4-2.3 6.4-5.1C15.8 7.2 13 5 9.4 5Z" stroke="currentColor" stroke-width="1.6"></path><path d="M14.7 9.1c3.4 0 6.3 2.1 6.3 4.8 0 1.5-.8 2.8-2.2 3.8l.5 2-2.3-1.2c-.7.2-1.5.3-2.3.3-2.8 0-5.2-1.4-6-3.5" stroke="currentColor" stroke-width="1.6"></path><circle cx="7.4" cy="9.2" r=".8" fill="currentColor"></circle><circle cx="11.5" cy="9.2" r=".8" fill="currentColor"></circle><circle cx="13" cy="13.3" r=".8" fill="currentColor"></circle><circle cx="17.1" cy="13.3" r=".8" fill="currentColor"></circle></svg></a>
+  <a class="footer-social-link" href="https://wa.me/?text=ProMakeHub%20precision%20manufacturing" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.7 7.1L4 20l1.2-4.1A8 8 0 1 1 20 11.8Z" stroke="currentColor" stroke-width="1.7"></path><path d="M9 8.1c.3-.5.7-.5 1-.1l1 1.5c.2.3.1.6-.2.9l-.6.6c.7 1.5 1.8 2.6 3.4 3.3l.6-.7c.3-.3.6-.4.9-.2l1.5.8c.5.3.5.7.2 1.1-.5.8-1.3 1.2-2.2 1.1-3.6-.5-6.4-3.2-7-6.7-.1-.6.2-1.2.4-1.6Z" fill="currentColor"></path></svg></a>
+  <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="9" width="3.2" height="10" fill="currentColor"></rect><circle cx="5.6" cy="5.7" r="1.8" fill="currentColor"></circle><path d="M10 19V9h3v1.5c.8-1.1 2-1.8 3.6-1.8 2.6 0 4.4 1.7 4.4 5.2V19h-3.2v-4.6c0-1.8-.7-2.8-2.2-2.8-1.6 0-2.4 1.1-2.4 3V19H10Z" fill="currentColor"></path></svg></a>
+  <a class="footer-social-link" href="mailto:info@precision.com?subject=Precision%20manufacturing%20inquiry" aria-label="Email" title="Email"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"></rect><path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg></a>
+</div>
+</div><div class="footer-menu"><h4>能力中心</h4><ul><li><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html">工艺</a></li><li><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html">服务</a></li><li><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86.html">材料</a></li><li><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86.html">表面处理</a></li></ul></div><div class="footer-menu"><h4>快速链接</h4><ul><li><a href="./%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html">首页</a></li><li><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">立即报价</a></li><li><a href="./%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html">定制加工</a></li><li><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D%E5%AD%90%E9%A1%B5%E9%9D%A2.html">公司介绍</a></li><li><a href="./%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html#contact">联系我们</a></li></ul></div><div class="footer-menu"><h4>行业</h4><ul><li><a href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">行业首页</a></li><li><a href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%88%AA%E5%A4%A9%E5%AD%90%E9%A1%B5%E9%9D%A2.html">航天</a></li><li><a href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">医疗器械</a></li><li><a href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%B1%BD%E8%BD%A6%E5%88%B6%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">汽车</a></li><li><a href="./%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%96%B0%E8%83%BD%E6%BA%90%E5%AD%90%E9%A1%B5%E9%9D%A2.html">新能源</a></li></ul></div><div class="footer-menu"><h4>解决方案</h4><ul><li><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%83%A8%E5%88%86.html">解决方案首页</a></li><li><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">智能报价</a></li><li><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">快速原型</a></li><li><a href="./%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94DFM%E5%8F%AF%E5%88%B6%E9%80%A0%E6%80%A7%E6%A3%80%E6%9F%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">DFM检查</a></li></ul></div><div class="footer-menu"><h4>资源中心</h4><ul><li><a href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html">资源首页</a></li><li><a href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E6%8C%87%E5%8D%97%E5%AD%90%E9%A1%B5%E9%9D%A2.html">工艺指南</a></li><li><a href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E6%89%8B%E5%86%8C%E5%AD%90%E9%A1%B5%E9%9D%A2.html">材料手册</a></li><li><a href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%AD%90%E9%A1%B5%E9%9D%A2.html">设计规范</a></li><li><a href="./%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B8%AE%E5%8A%A9FAQ%E5%AD%90%E9%A1%B5%E9%9D%A2.html">帮助FAQ</a></li></ul></div><div class="footer-menu"><h4>关于</h4><ul><li><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html">关于我们</a></li><li><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D%E5%AD%90%E9%A1%B5%E9%9D%A2.html">公司介绍</a></li><li><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E5%AD%90%E9%A1%B5%E9%9D%A2.html">质量保证</a></li><li><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E5%AD%90%E9%A1%B5%E9%9D%A2.html">隐私政策</a></li><li><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">服务条款</a></li></ul></div></div><div class="footer-support-grid"><section class="footer-support-card"><h4>联系与支持</h4><div class="footer-contact-details">
+  <p class="footer-contact-line"><b>联系人</b><span>张工</span></p>
+  <p class="footer-contact-line"><b>联系电话</b><a href="tel:18682088681">18682088681</a></p>
+  <p class="footer-contact-line"><b>邮箱</b><a href="mailto:info@precision.com">info@precision.com</a></p>
+  <p class="footer-contact-line"><b>公司地址</b><span class="footer-address-pending">深圳市宝安区福海街道智美汇园区 B1 栋 320</span></p>
+  <p class="footer-contact-line"><b>在线支持</b><a href="./%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html#contact">联系在线客服</a></p>
+</div>
+</section><section class="footer-support-card"><h4>付款方式</h4><div class="footer-payment-brand-grid" aria-label="Supported payment methods">
+  <div class="footer-payment-brand footer-payment-brand--wechat" title="WeChat Pay"><svg viewbox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#07C160"></rect><path d="M13.1 8.2c-4.2 0-7.6 2.7-7.6 6.1 0 1.9 1 3.6 2.8 4.8l-.7 2.6 3-1.5c.8.2 1.7.3 2.5.3 4.2 0 7.6-2.7 7.6-6.1s-3.4-6.2-7.6-6.2Z" fill="#fff"></path><path d="M20.1 13.1c3.6 0 6.5 2.3 6.5 5.2 0 1.6-.9 3.1-2.4 4.1l.6 2.2-2.6-1.3c-.7.2-1.4.3-2.1.3-3.6 0-6.5-2.3-6.5-5.2s2.9-5.3 6.5-5.3Z" fill="#fff" stroke="#07C160" stroke-width="1"></path><circle cx="10.7" cy="13.7" r="1" fill="#07C160"></circle><circle cx="15.3" cy="13.7" r="1" fill="#07C160"></circle></svg><span>微信支付</span></div>
+  <div class="footer-payment-brand footer-payment-brand--alipay" title="Alipay"><svg viewbox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1677FF"></rect><path d="M8 10h16M16 6v14M10 15c2.5 3.2 6.4 5.4 12 6.8M22 13c-1.5 5.5-5.2 9.1-12 11" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg><span>支付宝</span></div>
+  <div class="footer-payment-brand footer-payment-brand--unionpay" title="UnionPay"><svg viewbox="0 0 40 28" aria-hidden="true"><path d="M3 3h15l-5 22H0L3 3Z" fill="#D81E35"></path><path d="M15 3h14l-5 22H11l4-22Z" fill="#1676B8"></path><path d="M27 3h13l-4 22H23l4-22Z" fill="#14956C"></path><path d="M7 9h25M5 14h25M4 19h24" stroke="#fff" stroke-width="1.5"></path></svg><span>银联</span></div>
+  <div class="footer-payment-brand footer-payment-brand--visa" title="Visa"><span>VISA</span></div>
+  <div class="footer-payment-brand footer-payment-brand--mastercard" title="Mastercard"><svg viewbox="0 0 42 28" aria-hidden="true"><circle cx="16" cy="14" r="10" fill="#EB001B"></circle><circle cx="26" cy="14" r="10" fill="#F79E1B"></circle><path d="M21 6.3a10 10 0 0 1 0 15.4 10 10 0 0 1 0-15.4Z" fill="#FF5F00"></path></svg><span>Mastercard</span></div>
+  <div class="footer-payment-brand footer-payment-brand--paypal" title="PayPal"><svg viewbox="0 0 32 32" aria-hidden="true"><path d="M10 4h10.2c5 0 7.2 2.7 6.2 7-1.1 4.7-4.1 7-9 7h-3l-1.7 9H7L10 4Z" fill="#003087"></path><path d="M13.3 8h8c4.4 0 6.1 2.5 5 6.3-1 3.8-3.6 5.7-7.6 5.7h-3.2l-1.3 7H9.5l3.8-19Z" fill="#009CDE" opacity=".9"></path></svg><span>PayPal</span></div>
+  <div class="footer-payment-brand footer-payment-brand--bank" title="Bank Transfer"><svg viewbox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#F4B528"></rect><path d="M6 13h20M8 13v9m5-9v9m6-9v9m5-9v9M6 24h20M16 6l10 5H6l10-5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"></path></svg><span>银行转账</span></div>
+</div>
+<p class="footer-payment-note footer-payment-note--brands">支持方式、币种及收款账户以正式订单和合同为准。</p></section><section class="footer-support-card footer-support-card--subscribe"><h4>订阅资讯</h4><p>获取制造知识、行业趋势和技术动态。</p><form class="subscribe-form"><input type="email" placeholder="输入您的邮箱" aria-label="邮箱"><button type="button" aria-label="订阅">→</button></form></section></div><div class="footer-bottom"><span class="footer-copyright">版权所有 © 2026 敏捷智造</span><span class="footer-policy-links"><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E5%AD%90%E9%A1%B5%E9%9D%A2.html">隐私政策</a><i aria-hidden="true"></i><a href="./%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">服务条款</a></span></div></div></footer><div class="floating-support is-collapsed" aria-label="在线客服对话面板">
     <div class="support-bubble-hint">在线客服 · 点击咨询</div>
     <div class="support-card" id="support-chat-window">
       <div class="support-head">
@@ -6021,8 +6722,8 @@
           <span>ChatGPT 4o / 实时响应</span>
         </div>
         <button class="support-close" id="support-close-btn" type="button" aria-label="收起在线客服">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg viewbox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
           </svg>
         </button>
       </div>
@@ -6030,16 +6731,16 @@
       <div class="support-input">
         <input type="text" placeholder="输入问题..." aria-label="客服输入框">
         <button class="support-send" type="button" aria-label="发送给客服">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewbox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </button>
       </div>
     </div>
     <button class="support-fab" id="support-toggle-btn" type="button" aria-label="打开在线客服" aria-expanded="false">
-      <svg id="support-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 6.5h14v9H9l-4 3v-12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M9 10h6M9 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <svg id="support-toggle-icon" viewbox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 6.5h14v9H9l-4 3v-12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+        <path d="M9 10h6M9 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
       </svg>
     </button>
   </div>
@@ -6055,8 +6756,8 @@
           </div>
         </div>
         <button class="ai-close" id="close-chat" type="button" aria-label="收起 AI 助手">
-          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg viewbox="0 0 24 24" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
           </svg>
         </button>
       </div>
@@ -6079,9 +6780,9 @@
             <span class="support-avatar" aria-hidden="true">AI</span>
             <div class="ai-analysis-card">
               <div class="ai-file">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                  <path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <svg viewbox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+                  <path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
                 </svg>
                 Gear_Housing_v2.step
               </div>
@@ -6162,31 +6863,50 @@
         <div class="ai-input-row">
           <input type="text" placeholder="描述零件结构、材料或加工要求..." aria-label="AI 输入框">
           <button class="ai-send" type="button" aria-label="发送给 AI">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg viewbox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </button>
         </div>
       </div>
     </div>
     <button class="ai-fab" id="ai-toggle-btn" type="button" aria-label="打开 AI 助手快捷入口">
-      <svg id="toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3.5 13.8 9l5.7 1.2-5.7 1.2L12 17l-1.8-5.6-5.7-1.2L10.2 9 12 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M18 15.5 18.8 18l2.7.5-2.7.6-.8 2.4-.8-2.4-2.7-.6 2.7-.5.8-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <svg id="toggle-icon" viewbox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3.5 13.8 9l5.7 1.2-5.7 1.2L12 17l-1.8-5.6-5.7-1.2L10.2 9 12 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+        <path d="M18 15.5 18.8 18l2.7.5-2.7.6-.8 2.4-.8-2.4-2.7-.6 2.7-.5.8-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
       </svg>
     </button>
   </div>
   <a class="back-top" href="#top" aria-label="返回顶部">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="m6 14 6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg viewbox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="m6 14 6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
   </a>
   <script>
     (function () {
+      const header = document.querySelector(".site-header");
+      const hero = document.querySelector(".hero");
+      if (header && hero && header.parentElement !== document.body) {
+        document.body.insertBefore(header, hero);
+      }
+
+      document.querySelectorAll('a[href="#quote"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          if (!header) return;
+          header.classList.add("is-hidden", "is-jump-hidden");
+          window.setTimeout(() => {
+            header.classList.remove("is-jump-hidden");
+          }, 420);
+        });
+      });
+    })();
+
+    (function () {
       function getCapabilityCategory() {
         const fileName = decodeURIComponent((window.location.pathname.split("/").pop() || "").toLowerCase());
-        if (fileName.indexOf("能力中心—材料部分") === 0) return "material";
-        if (fileName.indexOf("能力中心—表面处理部分") === 0) return "finish";
+        if (fileName.indexOf("能力中心—服务部分") === 0 || fileName.indexOf("服务子页面") !== -1) return "service";
+    if (fileName.indexOf("能力中心—材料部分") === 0 || fileName.indexOf("材料子页面") !== -1) return "material";
+        if (fileName.indexOf("能力中心—表面处理部分") === 0 || fileName.indexOf("表面处理子页面") !== -1) return "finish";
         if (fileName.indexOf("能力中心—工艺部分") === 0) return "process";
         return null;
       }
@@ -6290,6 +7010,7 @@
 
         cards.forEach((card) => {
           card.addEventListener("pointerdown", (event) => {
+            if (event.target.closest(".quality-card-link")) return;
             if (!card.classList.contains("is-active") || (event.button && event.button !== 0)) return;
             pointerId = event.pointerId; startX = event.clientX; startY = event.clientY; dragX = 0; dragY = 0;
             card.classList.add("is-dragging"); deck.classList.add("is-dragging"); card.setPointerCapture(event.pointerId);
@@ -6304,7 +7025,7 @@
             const distance = Math.hypot(dragX, dragY); const clicked = distance < 10; pointerId = null; finish(card, distance > 82 || clicked, clicked);
           });
           card.addEventListener("pointercancel", (event) => { if (pointerId !== event.pointerId) return; pointerId = null; finish(card, false, false); });
-          card.addEventListener("keydown", (event) => { if (event.key !== "Enter" && event.key !== " ") return; event.preventDefault(); flip(card); });
+          card.addEventListener("keydown", (event) => { if (event.target.closest(".quality-card-link")) return; if (event.key !== "Enter" && event.key !== " ") return; event.preventDefault(); flip(card); });
         });
         syncDeck();
       });
@@ -6738,6 +7459,66 @@
     })();
 
     (function () {
+      const layout = document.querySelector(".home-faq-layout");
+      if (!layout) return;
+
+      const title = layout.querySelector(".home-faq-title-row");
+      const list = layout.querySelector(".home-faq-list");
+      const items = Array.from(layout.querySelectorAll(".home-faq-item"));
+      if (!title || !list || !items.length) return;
+
+      function syncFaqConnector() {
+        const activeItem = items.find((item) => item.classList.contains("is-active"));
+        layout.classList.toggle("has-open", Boolean(activeItem));
+        if (!activeItem) return;
+
+        const question = activeItem.querySelector(".home-faq-question");
+        if (!question) return;
+
+        const layoutRect = layout.getBoundingClientRect();
+        const titleRect = title.getBoundingClientRect();
+        const listRect = list.getBoundingClientRect();
+        const questionRect = question.getBoundingClientRect();
+        const titleY = titleRect.top + titleRect.height / 2 - layoutRect.top;
+        const activeY = questionRect.top + questionRect.height / 2 - layoutRect.top;
+        const railX = titleRect.right + 20 - layoutRect.left;
+        const connectorEnd = listRect.left - 14 - layoutRect.left;
+        const connectorWidth = Math.max(connectorEnd - railX, 20);
+
+        layout.style.setProperty("--faq-title-y", titleY.toFixed(2) + "px");
+        layout.style.setProperty("--faq-line-y", activeY.toFixed(2) + "px");
+        layout.style.setProperty("--faq-rail-x", railX.toFixed(2) + "px");
+        layout.style.setProperty("--faq-connector-w", connectorWidth.toFixed(2) + "px");
+      }
+
+      function animateFaqConnector(duration) {
+        const startedAt = performance.now();
+        function tick(now) {
+          syncFaqConnector();
+          if (now - startedAt < duration) window.requestAnimationFrame(tick);
+        }
+        window.requestAnimationFrame(tick);
+      }
+
+      items.forEach((item) => {
+        const question = item.querySelector(".home-faq-question");
+        question?.addEventListener("click", () => {
+          const shouldOpen = !item.classList.contains("is-active");
+          items.forEach((other) => {
+            const active = shouldOpen && other === item;
+            other.classList.toggle("is-active", active);
+            other.querySelector(".home-faq-question")?.setAttribute("aria-expanded", active ? "true" : "false");
+          });
+          animateFaqConnector(280);
+        });
+      });
+
+      window.addEventListener("resize", syncFaqConnector);
+      window.addEventListener("load", syncFaqConnector);
+      syncFaqConnector();
+    })();
+
+    (function () {
       const section = document.getElementById("why-us");
       if (!section) return;
 
@@ -6766,15 +7547,15 @@
         const progress = clamp(-rect.top / scrollLength, 0, 1);
         document.body.classList.toggle("is-why-scroll-active", rect.top < window.innerHeight * 0.72 && rect.bottom > window.innerHeight * 0.28);
         const isCompact = window.innerWidth <= 760;
-        const introMotion = smooth(progress, 0.02, 0.18);
-        const introFade = smooth(progress, 0.14, 0.26);
-        const maskReveal = smooth(progress, 0.20, 0.30);
-        const expand = smooth(progress, 0.28, 0.52);
-        const overlayIn = smooth(progress, 0.52, 0.64);
-        const overlayOut = smooth(progress, 0.80, 0.90);
-        const finalIn = smooth(progress, 0.84, 0.92);
-        const startTop = isCompact ? 30 : 24;
-        const startSide = isCompact ? 8 : 20;
+        const introMotion = smooth(progress, 0.01, 0.12);
+        const introFade = smooth(progress, 0.08, 0.18);
+        const maskReveal = smooth(progress, 0.10, 0.15);
+        const expand = smooth(progress, 0.13, 0.24);
+        const overlayIn = smooth(progress, 0.24, 0.34);
+        const overlayOut = smooth(progress, 0.48, 0.56);
+        const finalIn = smooth(progress, 0.56, 0.66);
+        const startTop = isCompact ? 16 : 10;
+        const startSide = isCompact ? 4 : 6;
 
         section.style.setProperty("--intro-opacity", String(1 - introFade));
         section.style.setProperty("--intro-y", lerp(0, -34, introFade).toFixed(2) + "px");
@@ -6786,7 +7567,7 @@
         section.style.setProperty("--mask-top", lerp(startTop, 0, expand).toFixed(2) + "vh");
         section.style.setProperty("--mask-side", lerp(startSide, 0, expand).toFixed(2) + "vw");
         section.style.setProperty("--mask-radius", lerp(8, 0, expand).toFixed(2) + "px");
-        section.style.setProperty("--image-scale", lerp(1.03, 1.11, expand).toFixed(3));
+        section.style.setProperty("--image-scale", lerp(1.015, 1.045, expand).toFixed(3));
         section.style.setProperty("--overlay-opacity", String(overlayIn * (1 - overlayOut)));
         section.style.setProperty("--overlay-y", lerp(34, 0, overlayIn).toFixed(2) + "px");
         section.style.setProperty("--final-opacity", String(finalIn));
@@ -6814,21 +7595,59 @@
       if (!hero) return;
 
       let heroStage = hero.classList.contains("is-second") ? 1 : 0;
-      let locked = false;
+      let rotationTimer = null;
+      let transitionLocked = false;
       let touchStartY = null;
+      const rotationDelay = 6200;
 
       function setHeroStage(nextStage) {
+        if (nextStage === heroStage) return;
         heroStage = nextStage;
         hero.classList.toggle("is-second", heroStage === 1);
-        locked = true;
+        transitionLocked = true;
         window.setTimeout(() => {
-          locked = false;
+          transitionLocked = false;
         }, 980);
+      }
+
+      function stopAutoRotation() {
+        window.clearTimeout(rotationTimer);
+        rotationTimer = null;
+      }
+
+      function startAutoRotation() {
+        stopAutoRotation();
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.hidden) return;
+        rotationTimer = window.setTimeout(() => {
+          setHeroStage(heroStage === 0 ? 1 : 0);
+          startAutoRotation();
+        }, rotationDelay);
       }
 
       function canControlHero() {
         const rect = hero.getBoundingClientRect();
         return rect.top <= 2 && rect.bottom > window.innerHeight * 0.58;
+      }
+
+      function handleDirection(deltaY, event) {
+        if (!canControlHero()) return false;
+        if (transitionLocked) {
+          event.preventDefault();
+          return true;
+        }
+        if (deltaY > 0 && heroStage === 0) {
+          event.preventDefault();
+          setHeroStage(1);
+          startAutoRotation();
+          return true;
+        }
+        if (deltaY < 0 && heroStage === 1 && window.scrollY <= hero.offsetTop + 6) {
+          event.preventDefault();
+          setHeroStage(0);
+          startAutoRotation();
+          return true;
+        }
+        return false;
       }
 
       function syncHeaderVisibility() {
@@ -6837,48 +7656,86 @@
         header.classList.toggle("is-hidden", rect.bottom <= 96);
       }
 
-      function handleDirection(deltaY, event) {
-        if (!canControlHero()) return false;
-
-        if (locked) {
-          event.preventDefault();
-          return true;
-        }
-
-        if (deltaY > 0 && heroStage === 0) {
-          event.preventDefault();
-          setHeroStage(1);
-          return true;
-        }
-
-        if (deltaY < 0 && heroStage === 1 && window.scrollY <= hero.offsetTop + 6) {
-          event.preventDefault();
-          setHeroStage(0);
-          return true;
-        }
-
-        return false;
-      }
-
+      hero.addEventListener("focusin", stopAutoRotation);
+      hero.addEventListener("focusout", startAutoRotation);
       window.addEventListener("wheel", (event) => {
         handleDirection(event.deltaY, event);
       }, { passive: false });
-
       window.addEventListener("touchstart", (event) => {
-        touchStartY = event.touches[0] ? event.touches[0].clientY : null;
+        touchStartY = event.touches[0]?.clientY ?? null;
       }, { passive: true });
-
       window.addEventListener("touchmove", (event) => {
         if (touchStartY === null || !event.touches[0]) return;
         const deltaY = touchStartY - event.touches[0].clientY;
         if (Math.abs(deltaY) < 24) return;
-        handleDirection(deltaY, event);
+        if (handleDirection(deltaY, event)) touchStartY = event.touches[0].clientY;
       }, { passive: false });
-
+      window.addEventListener("touchend", () => {
+        touchStartY = null;
+      }, { passive: true });
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopAutoRotation();
+        else startAutoRotation();
+      });
       window.addEventListener("scroll", syncHeaderVisibility, { passive: true });
       window.addEventListener("resize", syncHeaderVisibility);
       syncHeaderVisibility();
+      startAutoRotation();
     })();
-  </script>
+  
+
+    (function () {
+      document.querySelectorAll("[data-testimonial-carousel]").forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll("[data-testimonial-slide]"));
+        const dots = Array.from(carousel.querySelectorAll("[data-testimonial-dot]"));
+        const prev = carousel.querySelector("[data-testimonial-prev]");
+        const next = carousel.querySelector("[data-testimonial-next]");
+        if (slides.length < 2) return;
+        let active = 0;
+        let timer = null;
+        let touchX = null;
+        function show(index, direction) {
+          const old = active;
+          active = (index + slides.length) % slides.length;
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("is-active", i === active);
+            slide.classList.toggle("is-leaving-left", i === old && i !== active && direction > 0);
+            slide.setAttribute("aria-hidden", String(i !== active));
+          });
+          dots.forEach((dot, i) => { dot.classList.toggle("is-active", i === active); dot.setAttribute("aria-current", i === active ? "true" : "false"); });
+          window.setTimeout(() => slides.forEach((slide) => slide.classList.remove("is-leaving-left")), 620);
+        }
+        function start() { window.clearInterval(timer); timer = window.setInterval(() => show(active + 1, 1), 6500); }
+        prev?.addEventListener("click", () => { show(active - 1, -1); start(); });
+        next?.addEventListener("click", () => { show(active + 1, 1); start(); });
+        dots.forEach((dot, i) => dot.addEventListener("click", () => { show(i, i >= active ? 1 : -1); start(); }));
+        carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
+        carousel.addEventListener("mouseleave", start);
+        carousel.addEventListener("focusin", () => window.clearInterval(timer));
+        carousel.addEventListener("focusout", start);
+        carousel.addEventListener("touchstart", (event) => { touchX = event.touches[0]?.clientX ?? null; }, { passive:true });
+        carousel.addEventListener("touchend", (event) => { if (touchX === null) return; const end = event.changedTouches[0]?.clientX ?? touchX; const delta = end - touchX; touchX = null; if (Math.abs(delta) > 45) { show(active + (delta < 0 ? 1 : -1), delta < 0 ? 1 : -1); start(); } }, { passive:true });
+        show(0, 1); start();
+      });
+    })();
+
+    (function () {
+      const resourcesTrigger = Array.from(document.querySelectorAll(".nav-dropdown > .nav-item"))
+        .find((item) => item.textContent.trim() === "资源中心");
+      const resourceLinks = resourcesTrigger?.nextElementSibling?.querySelector(".nav-menu-links");
+      if (!resourceLinks) return;
+      const hasModelCommunity = Array.from(resourceLinks.children)
+        .some((link) => link.textContent.trim() === "模型社区");
+      if (hasModelCommunity) return;
+      const modelCommunity = document.createElement("a");
+      modelCommunity.href = "../%E7%94%A8%E6%88%B7%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html";
+      modelCommunity.textContent = "模型社区";
+      resourceLinks.insertBefore(modelCommunity, resourceLinks.children[1] || null);
+    })();
+</script>
+<script src="../用户（已核对）/quote-linkage.js"></script>
 </body>
 </html>
+
+
+

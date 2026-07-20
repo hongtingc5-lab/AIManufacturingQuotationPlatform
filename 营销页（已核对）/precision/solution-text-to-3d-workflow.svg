@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-label="文字需求生成3D结构方向流程">
+  <rect width="1200" height="680" fill="#f6f9fd"/>
+  <rect x="90" y="72" width="1020" height="536" rx="18" fill="#ffffff" stroke="#d9e4f2"/>
+  <rect x="136" y="128" width="414" height="424" rx="16" fill="#f7fbff" stroke="#dbe7f5"/>
+  <text x="176" y="186" fill="#13233b" font-size="30" font-weight="900">文字需求</text>
+  <rect x="176" y="228" width="290" height="48" rx="9" fill="#ffffff" stroke="#d9e4f2"/>
+  <text x="198" y="260" fill="#536173" font-size="18" font-weight="700">固定支架，承重 20kg</text>
+  <rect x="176" y="304" width="330" height="48" rx="9" fill="#ffffff" stroke="#d9e4f2"/>
+  <text x="198" y="336" fill="#536173" font-size="18" font-weight="700">需要两个安装孔和加强筋</text>
+  <rect x="176" y="380" width="250" height="48" rx="9" fill="#ffffff" stroke="#d9e4f2"/>
+  <text x="198" y="412" fill="#536173" font-size="18" font-weight="700">材料：PAHT-CF</text>
+  <path d="M590 340h88" stroke="#004ac6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M654 312l42 28-42 28" fill="none" stroke="#004ac6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="742" y="128" width="322" height="424" rx="16" fill="#13233b"/>
+  <path d="M824 410h170v-112h-48v-62h-74v62h-48z" fill="#8eb8ff"/>
+  <path d="M858 348h102M858 380h102" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <text x="790" y="190" fill="#ffffff" font-size="30" font-weight="900">3D 结构方向</text>
+  <text x="790" y="236" fill="#b7c7dd" font-size="19" font-weight="700">把功能、尺寸与接口整理成初步模型方案</text>
+  <text x="790" y="500" fill="#ffffff" font-size="22" font-weight="900">用于早期沟通和工程评审</text>
+</svg>
