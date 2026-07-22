@@ -721,6 +721,39 @@ html.customer-shell-loading body {
     </script>
 
 
+<script>
+        (function () {
+            function readDraft() {
+                try {
+                    return JSON.parse(window.sessionStorage.getItem('agileGuestSolutionDraft') || 'null');
+                } catch (error) {
+                    return null;
+                }
+            }
+            function showRestoredDraft(draft) {
+                if (!draft || draft.target && decodeURIComponent(draft.target).indexOf('ai模型智能报价.html') === -1) return;
+                if (draft.primaryName) {
+                    const fileLabel = document.querySelector('.p-3.bg-surface-container-highest .text-label-sm');
+                    if (fileLabel) fileLabel.textContent = draft.primaryName;
+                    const modelName = document.getElementById('quoteModelName');
+                    if (modelName) modelName.textContent = draft.primaryName.replace(/\.[^.]+$/, '');
+                }
+                const notice = document.createElement('div');
+                notice.className = 'fixed top-20 left-1/2 z-[80] w-[min(520px,calc(100vw-32px))] -translate-x-1/2 rounded-2xl border border-primary/15 bg-white px-5 py-4 shadow-xl transition-opacity duration-500';
+                const title = document.createElement('p');
+                title.className = 'text-body-sm font-bold text-on-surface';
+                title.textContent = '已接入' + (draft.modeLabel || '过渡页') + '需求';
+                const body = document.createElement('p');
+                body.className = 'mt-1 text-[12px] leading-5 text-on-surface-variant';
+                body.textContent = [draft.primaryName ? '文件：' + draft.primaryName : '', draft.text ? '需求：' + draft.text : ''].filter(Boolean).join('；') || '已恢复前一步暂存的需求信息。';
+                notice.append(title, body);
+                document.body.appendChild(notice);
+                setTimeout(function () { notice.style.opacity = '0'; }, 6200);
+                setTimeout(function () { notice.remove(); }, 6800);
+            }
+            showRestoredDraft(readDraft());
+        })();
+    </script>
 </body></html>
 
 

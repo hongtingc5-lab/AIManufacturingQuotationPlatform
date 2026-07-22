@@ -1,336 +1,87 @@
-<!DOCTYPE html><html class="light" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Customer Login | Agile Manufacturing</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-bright": "#faf8ff",
-                    "error-container": "#ffdad6",
-                    "on-secondary-fixed": "#131b2e",
-                    "primary-container": "#2563eb",
-                    "surface-container-highest": "#e1e2ed",
-                    "on-tertiary-fixed": "#360f00",
-                    "outline": "#737686",
-                    "on-error": "#ffffff",
-                    "primary-fixed-dim": "#b4c5ff",
-                    "tertiary-fixed-dim": "#ffb596",
-                    "secondary": "#565e74",
-                    "background": "#faf8ff",
-                    "inverse-primary": "#b4c5ff",
-                    "on-tertiary": "#ffffff",
-                    "surface-dim": "#d9d9e5",
-                    "on-primary-fixed": "#00174b",
-                    "outline-variant": "#c3c6d7",
-                    "on-tertiary-fixed-variant": "#7d2d00",
-                    "primary": "#004ac6",
-                    "surface-container": "#ededf9",
-                    "inverse-surface": "#2e3039",
-                    "on-secondary-fixed-variant": "#3f465c",
-                    "on-primary-fixed-variant": "#003ea8",
-                    "surface-variant": "#e1e2ed",
-                    "on-primary": "#ffffff",
-                    "tertiary": "#943700",
-                    "primary-fixed": "#dbe1ff",
-                    "surface-container-high": "#e7e7f3",
-                    "surface": "#faf8ff",
-                    "on-primary-container": "#eeefff",
-                    "secondary-fixed-dim": "#bec6e0",
-                    "on-secondary-container": "#5c647a",
-                    "tertiary-fixed": "#ffdbcd",
-                    "tertiary-container": "#bc4800",
-                    "surface-container-low": "#f3f3fe",
-                    "on-surface": "#191b23",
-                    "inverse-on-surface": "#f0f0fb",
-                    "error": "#ba1a1a",
-                    "surface-container-lowest": "#ffffff",
-                    "on-surface-variant": "#434655",
-                    "on-error-container": "#93000a",
-                    "on-background": "#191b23",
-                    "secondary-container": "#dae2fd",
-                    "on-tertiary-container": "#ffede6",
-                    "surface-tint": "#0053db",
-                    "on-secondary": "#ffffff",
-                    "secondary-fixed": "#dae2fd"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "md": "16px",
-                    "xl": "32px",
-                    "margin": "24px",
-                    "base": "4px",
-                    "sm": "8px",
-                    "gutter": "16px",
-                    "xs": "4px",
-                    "lg": "24px"
-            },
-            "fontFamily": {
-                    "headline-md": ["Inter"],
-                    "headline-lg-mobile": ["Inter"],
-                    "headline-sm": ["Inter"],
-                    "label-md": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "body-sm": ["Inter"],
-                    "headline-lg": ["Inter"]
-            },
-            "fontSize": {
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
-                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
-                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .login-transition {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .form-glow:focus-within {
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-        }
-    </style>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login | AgileMakeAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../auth.css">
 </head>
-<body class="bg-background text-on-background font-body-lg text-body-lg min-h-screen overflow-x-hidden">
-<!-- Split Screen Container -->
-<main class="flex min-h-screen w-full flex-col md:flex-row">
-<!-- Left Side: Industrial Hero -->
-<section class="relative hidden md:flex md:w-1/2 lg:w-[60%] flex-col justify-end p-xl overflow-hidden bg-inverse-surface">
-<!-- Background Image with Overlay -->
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
-<div class="h-full w-full bg-cover bg-center scale-105 transform hover:scale-100 transition-transform duration-[10s]" data-alt="A high-resolution, professional photograph of a sophisticated robotic arm operating on a high-precision CNC machining floor. The lighting is cinematic, featuring cool blue industrial tones with sharp highlights on metallic surfaces. The atmosphere is clean, technically advanced, and evokes a sense of high-efficiency industrial manufacturing. Sparse sparks and subtle lens flares emphasize the precision of the machinery in a modern factory setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAahMR0bpb-ySe0whskfbPqW5rBqdw0LxsUhiKC_U4VIuBlXDSeqgX0skW4D838wm-22eOdtn7EWfP31KpXSTTKeRaVkyC5IF-5T_VpwzbV6DM4nAEjRIl3vnLOhttefpg0gZf6FZGt2V1w5IJxEjRnqHU7nbYi7_FmKkJmFXYQRNBonbuSq2Ml-UGX5-UGWBt7ok3e0erusPHdE4irS8RWslC6tfjxFEOA-Dk2c3m0jZt_5MRLu98jcLvCUbrbkSG2hWB0OZSd9wg')"></div>
-</div>
-<!-- Content Anchor -->
-<div class="relative z-20 mb-12 max-w-2xl">
-<div class="mb-6 inline-flex items-center gap-2 px-3 py-1 bg-primary-container text-white rounded-full">
-<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
-<span class="font-label-sm text-label-sm tracking-wider uppercase">Customer Login</span>
-</div>
-<h1 class="font-headline-lg text-headline-lg text-white mb-4 tracking-tight leading-tight">
-                    Customer Collaboration, <br>
-<span class="text-primary-fixed-dim">Customer Login / Phone-First</span>
-</h1>
-<p class="text-on-primary-container opacity-80 max-w-lg font-body-lg text-body-lg">
-                    The current system still keeps the simple account-and-password flow, while the next stage will connect email code sign-in, Google / Gmail, LinkedIn, Facebook, WeChat, and phone access. No matter which route is used, the phone number remains the primary identity anchor and final SMS verification is always required.
-                </p>
-</div>
-<!-- Subtle Grid Pattern Overlay -->
-<div class="absolute inset-0 z-[5] opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0); background-size: 40px 40px;"></div>
-</section>
-<!-- Right Side: Login Canvas -->
-<section class="flex-1 flex flex-col justify-center items-center px-6 py-12 md:px-margin lg:px-xl bg-surface-container-lowest">
-<div class="w-full max-w-[440px] flex flex-col items-center">
-<!-- Brand Identity -->
-<div class="mb-10 text-center">
-<div class="mb-4 inline-flex items-center justify-center gap-3">
-<span class="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-outline-variant bg-white shadow-sm" aria-hidden="true"><svg class="h-9 w-9" viewBox="0 0 56 58" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z" fill="#7f8da0"/><path d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z" fill="#0759d5"/><path d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z" fill="#7f8da0"/></svg></span>
-<span class="text-left"><strong class="block text-[18px] leading-5 text-on-surface">Agile Manufacturing</strong><small class="block text-[10px] tracking-[0.18em] text-on-surface-variant">AGILE MANUFACTURING</small></span>
-</div>
-<h2 class="font-headline-md text-headline-md text-on-surface">Customer Login</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Customer portal access for your industrial intelligence workspace</p>
-</div>
-<!-- Login Card -->
-<div class="w-full bg-white rounded-xl p-0 transition-all duration-300">
-<!-- Tabs -->
-<div class="flex border-b border-outline-variant mb-8">
-<button class="flex-1 pb-4 font-label-md text-label-md text-primary border-b-2 border-primary login-transition" id="accountTab" onclick="switchLogin('account')">
-                            Account / Email Login
-                        </button>
-<button class="flex-1 pb-4 font-label-md text-label-md text-on-surface-variant border-b-2 border-transparent hover:text-on-surface login-transition" id="smsTab" onclick="switchLogin('sms')">
-                            Phone Login
-                        </button>
-</div>
-<!-- Form Content -->
-<form class="space-y-6" id="loginForm" onsubmit="window.location.href='../../用户（已核对）/EN/用户系统首页.html'; return false;">
-<!-- Account Login Fields -->
-<div class="space-y-5" id="accountFields">
-<div class="group">
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="identifier">Phone / Email / Legacy Account</label>
-<div class="relative form-glow rounded-lg">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">alternate_email</span>
-<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="identifier" name="identifier" placeholder="Enter your registered phone, email, or legacy account" type="text">
-</div>
-</div>
-<div class="group">
-<div class="flex justify-between mb-2">
-<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
-<a class="font-label-md text-label-md text-primary hover:underline" href="./forgot-password.html">Forgot Password?</a>
-</div>
-<div class="relative form-glow rounded-lg">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">lock</span>
-<input class="w-full pl-10 pr-12 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="password" name="password" placeholder="Enter your password" type="password">
-<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
-<span class="material-symbols-outlined text-[20px]">visibility</span>
-</button>
-</div>
-</div>
-<div class="rounded-lg bg-surface-container-low px-4 py-3 text-[13px] leading-6 text-on-surface-variant">
-                            The current product still keeps the simple account-and-password flow. Email and Gmail code sign-in will be added next, and first-time email users must still bind a phone number and receive an SMS code.
-                        </div>
-</div>
-<!-- SMS Login Fields (Hidden by default) -->
-<div class="hidden space-y-5" id="smsFields">
-<div class="group">
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="phone">Phone Number</label>
-<div class="flex gap-2">
-<div class="relative flex-1 form-glow rounded-lg">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">smartphone</span>
-<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="phone" name="phone" placeholder="Enter your phone number" type="tel">
-</div>
-<button class="px-4 py-2 border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary-container hover:text-white transition-colors whitespace-nowrap" type="button">
-                                        Send Code
-                                    </button>
-</div>
-</div>
-<div class="group">
-<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="code">SMS Verification Code</label>
-<div class="relative form-glow rounded-lg">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">verified_user</span>
-<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm focus:border-primary focus:ring-0 transition-colors" id="code" name="code" placeholder="Enter the 6-digit SMS code" type="text">
-</div>
-</div>
-<div class="rounded-lg bg-secondary-container/50 px-4 py-3 text-[13px] leading-6 text-on-surface-variant">
-                            The phone number is the primary sign-in method and can also serve as the primary registration route. No matter which entry route is used, phone verification is always the final step.
-                        </div>
-</div>
-<!-- Remember Me -->
-<div class="flex items-center">
-<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="remember" type="checkbox">
-<label class="ml-2 font-body-sm text-body-sm text-on-surface-variant" for="remember">Remember me for 30 days</label>
-</div>
-<!-- Submit CTA -->
-<button class="w-full py-4 bg-primary-container text-white font-label-md text-label-md rounded-lg shadow-md hover:shadow-lg hover:bg-primary transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
-<span>Log In to Workspace</span>
-<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</form>
-<div class="mt-6 rounded-xl border border-outline-variant bg-surface-container-low p-4 text-left">
-<h3 class="font-label-md text-label-md text-on-surface mb-2">Upcoming Login Expansion</h3>
-<ul class="space-y-2 text-body-sm text-on-surface-variant leading-6">
-<li>Email and Gmail sign-in must support email verification codes, and successful entry still leads to phone binding plus SMS verification.</li>
-<li>Google / Gmail, LinkedIn, Facebook, and WeChat are all reserved as QR-based sign-in routes, and each one still returns to phone verification.</li>
-<li>Users who register by phone can later bind email and third-party app accounts in the personal profile page.</li>
-</ul>
-</div>
-<!-- Divider -->
-<div class="relative my-8 text-center">
-<div class="absolute inset-0 flex items-center">
-<div class="w-full border-t border-outline-variant"></div>
-</div>
-<span class="relative px-4 bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm">Or use upcoming access routes</span>
-</div>
-<!-- Social Logins -->
-<div class="grid grid-cols-2 gap-4">
-<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
-<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#EA4335]/10 text-[#EA4335] font-semibold">G</span>
-<span class="font-label-sm text-label-sm">Google / Gmail</span>
-</button>
-<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
-<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#0A66C2]/10 text-[#0A66C2] font-semibold">in</span>
-<span class="font-label-sm text-label-sm">LinkedIn</span>
-</button>
-<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
-<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2]/10 text-[#1877F2] font-semibold">f</span>
-<span class="font-label-sm text-label-sm">Facebook</span>
-</button>
-<button class="flex items-center justify-center gap-2 py-3 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">
-<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#07C160]/10 text-[#07C160] font-semibold">W</span>
-<span class="font-label-sm text-label-sm">WeChat</span>
-</button>
-</div>
-<p class="mt-4 text-center text-[12px] leading-5 text-on-surface-variant">
-                            Third-party apps are reserved as QR-based sign-in routes, and first-time usage must bind a phone number and complete SMS verification.
-                        </p>
-<div class="mt-6 rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4 text-left">
-<h3 class="font-label-md text-label-md text-on-surface mb-2">Guest Experience</h3>
-<p class="text-body-sm text-on-surface-variant leading-6">
-                            Visitors can explore the basic dashboard, sample quoting flows, and product browsing without registering immediately. When they need to save progress, submit inquiries, or bind email and third-party apps, they can upgrade to a formal phone-based customer account.
-                        </p>
-<button class="mt-3 inline-flex items-center gap-2 rounded-lg bg-primary-container px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">travel_explore</span>
-<span>Enter Guest Experience</span>
-</button>
-</div>
-<!-- Footer Links -->
-<div class="mt-10 text-center">
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-                            Don't have an account?
-                            <a class="text-primary font-label-md text-label-md ml-1 hover:underline" href="./register.html">Register Now</a>
-</p>
-<p class="mt-3 text-[12px] leading-5 text-on-surface-variant">
-                            After a phone-based registration succeeds, the user can continue binding email, Google / Gmail, LinkedIn, Facebook, WeChat, and other accounts in the personal profile page.
-                        </p>
-</div>
-</div>
-<!-- Footer Legal (Mini) -->
-<div class="mt-auto pt-12 pb-6 text-center text-outline text-[11px] font-label-sm">
-<p>© 2024 Agile Manufacturing. All rights reserved.</p>
-<div class="mt-2 flex gap-4 justify-center">
-<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
-<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-<script>
-        function switchLogin(mode) {
-            const accountFields = document.getElementById('accountFields');
-            const smsFields = document.getElementById('smsFields');
-            const accountTab = document.getElementById('accountTab');
-            const smsTab = document.getElementById('smsTab');
+<body>
+  <main class="auth-shell">
+    <section class="auth-visual" aria-label="AgileMakeAI customer workspace entry">
+      <div class="visual-inner">
+        <a class="brand" href="../../营销页（已核对）/EN/index.html" aria-label="AgileMakeAI home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 56 58" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z" fill="#7f8da0"/><path d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z" fill="#0759d5"/><path d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z" fill="#7f8da0"/></svg>
+          </span>
+          <span class="brand-copy"><strong>AgileMakeAI</strong><small>AGILE MANUFACTURING CLOUD</small></span>
+        </a>
+        <div class="visual-copy">
+          <p class="eyebrow"><span class="material-symbols-outlined">precision_manufacturing</span> Customer Workspace</p>
+          <h1>Log in to the customer workspace</h1>
+          <p>Review quotes, orders, models, delivery progress, and engineering collaboration, then return quickly to active RFQs and project updates.</p>
+          <div class="visual-stats" aria-label="Platform capabilities">
+            <div class="visual-stat"><strong>RFQ</strong><span>Quote and inquiry collaboration</span></div>
+            <div class="visual-stat"><strong>DFM</strong><span>Model parsing and manufacturability review</span></div>
+            <div class="visual-stat"><strong>MES</strong><span>Order progress and delivery tracking</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            if (mode === 'account') {
-                accountFields.classList.remove('hidden');
-                smsFields.classList.add('hidden');
-                
-                accountTab.classList.add('text-primary', 'border-primary');
-                accountTab.classList.remove('text-on-surface-variant', 'border-transparent');
-                
-                smsTab.classList.add('text-on-surface-variant', 'border-transparent');
-                smsTab.classList.remove('text-primary', 'border-primary');
-            } else {
-                accountFields.classList.add('hidden');
-                smsFields.classList.remove('hidden');
-                
-                smsTab.classList.add('text-primary', 'border-primary');
-                smsTab.classList.remove('text-on-surface-variant', 'border-transparent');
-                
-                accountTab.classList.add('text-on-surface-variant', 'border-transparent');
-                accountTab.classList.remove('text-primary', 'border-primary');
-            }
-        }
+    <section class="auth-main">
+      <a class="brand mobile-brand" href="../../营销页（已核对）/EN/index.html" aria-label="AgileMakeAI home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 56 58" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z" fill="#7f8da0"/><path d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z" fill="#0759d5"/><path d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z" fill="#7f8da0"/></svg>
+        </span>
+        <span class="brand-copy"><strong>AgileMakeAI</strong><small>AGILE MANUFACTURING CLOUD</small></span>
+      </a>
 
-        // Add some subtle interaction animations
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentElement.classList.add('shadow-sm');
-            });
-            input.addEventListener('blur', () => {
-                input.parentElement.classList.remove('shadow-sm');
-            });
-        });
-    </script>
-</body></html>
+      <section class="auth-card" data-auth-root>
+        <div class="auth-head">
+          <div>
+            <h2>Account Login</h2>
+            <p>Choose password login or SMS verification to enter the customer workspace.</p>
+          </div>
+          <div class="auth-switch">No account? <a href="./register.html">Register</a></div>
+        </div>
+
+        <div class="tabs" data-auth-tabs>
+          <button class="tab-button is-active" type="button" data-auth-tab="account">Account / Email</button>
+          <button class="tab-button" type="button" data-auth-tab="sms">Phone</button>
+        </div>
+
+        <form data-demo-submit data-redirect="../../用户（已核对）/EN/用户系统首页.html">
+          <div class="field-group" data-auth-fields="account">
+            <div class="field"><label for="identifier">Phone / Email / Legacy Account</label><div class="control"><span class="material-symbols-outlined">alternate_email</span><input id="identifier" name="identifier" type="text" autocomplete="username" placeholder="Enter phone, email, or legacy account"></div></div>
+            <div class="field"><div class="field-line"><label for="password">Password</label><a class="auth-switch" href="./forgot-password.html">Forgot password?</a></div><div class="control"><span class="material-symbols-outlined">lock</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter password"></div></div>
+          </div>
+          <div class="field-group" data-auth-fields="sms" hidden>
+            <div class="field"><label for="phone">Phone Number</label><div class="control"><span class="material-symbols-outlined">smartphone</span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Enter phone number"></div></div>
+            <div class="field"><label for="sms-code">SMS Code</label><div class="inline-field"><div class="control"><span class="material-symbols-outlined">verified_user</span><input id="sms-code" name="sms-code" type="text" inputmode="numeric" placeholder="6-digit code"></div><button class="secondary-button" type="button" data-send-code>Send Code</button></div></div>
+          </div>
+          <label class="remember"><input type="checkbox" name="remember">Remember this account for 30 days</label>
+          <button class="primary-button" type="submit">Log In to Workspace</button>
+        </form>
+
+        <div class="divider"><span>Or use another access route</span></div>
+        <div class="social-grid">
+          <button class="social-button" type="button"><span class="social-mark google">G</span>Google / Gmail</button>
+          <button class="social-button" type="button"><span class="social-mark linkedin">in</span>LinkedIn</button>
+          <button class="social-button" type="button"><span class="social-mark facebook">f</span>Facebook</button>
+          <button class="social-button" type="button"><span class="social-mark wechat">W</span>WeChat</button>
+        </div>
+        <div class="guest-strip"><strong>Guest preview</strong> You can browse sample workspace and quoting flows first. Saving quotes, adding models, or submitting orders requires login or registration.</div>
+      </section>
+      <footer class="auth-footer"><a href="../../营销页（已核对）/EN/index.html">Back to Home</a><span> · </span><a href="#">Terms of Service</a><span> · </span><a href="#">Privacy Policy</a></footer>
+    </section>
+  </main>
+  <script src="../auth.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang='zh-CN'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>开发文档 · NovaAPI</title><link rel='stylesheet' href='styles.css'></head><body>
+<header class='topbar'><div class='container nav'><a class='brand' href='index.html'><span class='brand-mark'></span>NovaAPI</a><nav class='nav-links'><a href='index.html'>首页</a><a href='index.html#models'>模型</a><a href='index.html#pricing'>套餐</a><a class='active' href='docs.html'>文档</a></nav><a class='btn btn-primary' href='console.html'>进入控制台</a></div></header>
+<main class='container'><section class='page-hero'><span class='pill'>DEVELOPER DOCS</span><h1>接入文档</h1><p>使用 OpenAI 或 Anthropic 官方 SDK 接入统一网关。以下域名是演示占位，部署时替换为你的正式 API 域名。</p></section><div class='docs-layout'><aside class='docs-nav'><a href='#quickstart'>快速开始</a><a href='#auth'>鉴权方式</a><a href='#openai'>OpenAI 协议</a><a href='#anthropic'>Anthropic 协议</a><a href='#models'>模型映射</a><a href='#billing'>计费规则</a></aside><article>
+<section class='doc-section' id='quickstart'><h2>快速开始</h2><p>在控制台创建 API Key，然后将请求地址指向统一网关。</p><div class='code-box'><button class='copy-btn'>复制</button><pre>curl https://api.yourdomain.com/v1/chat/completions -H 'Authorization: Bearer sk-nova-your-key'</pre></div></section>
+<section class='doc-section' id='auth'><h2>鉴权方式</h2><p>所有请求通过 Bearer Token 鉴权。密钥只在创建时完整显示一次，请勿写入前端代码或公开仓库。</p><div class='code-box'><button class='copy-btn'>复制</button><pre>Authorization: Bearer sk-nova-your-key</pre></div></section>
+<section class='doc-section' id='openai'><h2>OpenAI 兼容协议</h2><p>现有 OpenAI SDK 只需替换 baseURL 和密钥。</p><div class='code-box'><button class='copy-btn'>复制</button><pre>import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: process.env.NOVA_API_KEY,
+  baseURL: 'https://api.yourdomain.com/v1'
+});
+
+const result = await client.chat.completions.create({
+  model: 'deepseek-v3',
+  messages: [{ role: 'user', content: '写一个产品标题' }]
+});</pre></div></section>
+<section class='doc-section' id='anthropic'><h2>Anthropic 兼容协议</h2><p>支持 Messages API 和流式 SSE，可用于 Claude Code 等兼容客户端。</p><div class='code-box'><button class='copy-btn'>复制</button><pre>export ANTHROPIC_BASE_URL=https://api.yourdomain.com
+export ANTHROPIC_AUTH_TOKEN=sk-nova-your-key
+claude</pre></div></section><section class='doc-section' id='models'><h2>模型映射</h2><p>gpt-4.1、claude-sonnet-4、gemini-2.5-pro、deepseek-v3。后台可配置模型别名。</p></section><section class='doc-section' id='billing'><h2>计费规则</h2><p>每次请求分别统计输入、缓存命中和输出 Token。先扣套餐赠送额度，额度用完后从余额按模型单价扣除；请求失败不收取模型费用。</p></section>
+</article></div></main><div class='toast' id='toast'></div><script src='app.js'></script></body></html>

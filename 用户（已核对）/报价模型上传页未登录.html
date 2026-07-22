@@ -1,315 +1,1939 @@
-﻿<!DOCTYPE html><html class="light" lang="zh-CN"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>访客报价 - 敏捷智造</title>
-<!-- BEGIN: External Resources -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<!-- END: External Resources -->
-<!-- BEGIN: Tailwind Configuration -->
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "outline": "#737686",
-            "surface-container-low": "#f3f3fe",
-            "on-background": "#191b23",
-            "surface-tint": "#0053db",
-            "secondary-container": "#dae2fd",
-            "primary": "#2563eb", /* Based on Industrial Precision Design System */
-            "error": "#ba1a1a",
-            "on-surface": "#191b23",
-            "surface-variant": "#e1e2ed",
-            "surface-container-high": "#e7e7f3",
-            "inverse-primary": "#b4c5ff",
-            "on-primary-fixed": "#00174b",
-            "error-container": "#ffdad6",
-            "on-secondary": "#ffffff",
-            "inverse-surface": "#2e3039",
-            "on-error-container": "#93000a",
-            "on-tertiary-fixed-variant": "#7d2d00",
-            "on-secondary-fixed": "#131b2e",
-            "tertiary": "#943700",
-            "background": "#faf8ff",
-            "tertiary-container": "#bc4800",
-            "on-tertiary-container": "#ffede6",
-            "surface": "#faf8ff",
-            "inverse-on-surface": "#f0f0fb",
-            "surface-container-lowest": "#ffffff",
-            "primary-fixed": "#dbe1ff",
-            "on-primary-container": "#eeefff",
-            "outline-variant": "#c3c6d7",
-            "primary-fixed-dim": "#b4c5ff",
-            "secondary-fixed-dim": "#bec6e0",
-            "secondary-fixed": "#dae2fd",
-            "on-tertiary-fixed": "#360f00",
-            "primary-container": "#2563eb",
-            "on-secondary-container": "#5c647a",
-            "on-error": "#ffffff",
-            "on-primary-fixed-variant": "#003ea8",
-            "on-secondary-fixed-variant": "#3f465c",
-            "secondary": "#565e74",
-            "tertiary-fixed-dim": "#ffb596",
-            "on-surface-variant": "#434655",
-            "tertiary-fixed": "#ffdbcd",
-            "surface-container-highest": "#e1e2ed",
-            "on-primary": "#ffffff",
-            "surface-dim": "#d9d9e5",
-            "surface-bright": "#faf8ff",
-            "on-tertiary": "#ffffff",
-            "surface-container": "#ededf9"
-          },
-          "borderRadius": {
-            "默认": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "sm": "8px",
-            "margin": "24px",
-            "gutter": "16px",
-            "xs": "4px",
-            "base": "4px",
-            "xl": "32px",
-            "md": "16px",
-            "lg": "24px"
-          },
-          "fontFamily": {
-            "label-md": ["Inter"],
-            "headline-lg": ["Inter"],
-            "label-sm": ["Inter"],
-            "headline-md": ["Inter"],
-            "headline-sm": ["Inter"],
-            "body-sm": ["Inter"],
-            "body-lg": ["Inter"]
-          },
-          "fontSize": {
-            "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
-            "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-            "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
-            "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-            "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
-            "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-            "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
-          }
-        },
-      },
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>立即报价上传 | 敏捷智造</title>
+  <link rel="stylesheet" href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E7%BB%9F%E4%B8%80%E6%A0%B7%E5%BC%8F.css">
+  <style>
+    .quote-guest-page {
+      background: #ffffff;
     }
-  </script>
-<!-- END: Tailwind Configuration -->
-<!-- BEGIN: Custom Styles -->
-<style data-purpose="custom-layout">
-    body { font-family: 'Inter', sans-serif; background-color: #faf8ff; }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+    .guest-quote-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 148px 0 78px;
+      background:
+        radial-gradient(circle at 55% 28%, rgba(36, 104, 190, 0.34), transparent 38%),
+        linear-gradient(90deg, rgba(3, 23, 58, 0.96) 0%, rgba(8, 47, 104, 0.88) 46%, rgba(31, 83, 145, 0.82) 100%),
+        url('../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/precision-machining-floor.png') center/cover no-repeat;
+      color: #ffffff;
     }
-    .upload-dashed {
-      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%232563EBFF' stroke-width='2' stroke-dasharray='8%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-      border-radius: 12px;
+
+    .guest-quote-hero .container {
+      max-width: 1440px;
     }
-    .animate-fade-in {
-      animation: fadeIn 0.8s ease-out forwards;
+
+    .guest-entry-bar {
+      margin-bottom: clamp(30px, 4vw, 54px);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    .guest-quote-layout {
+      display: grid;
+      grid-template-columns: minmax(560px, 0.95fr) minmax(680px, 1.05fr);
+      gap: clamp(34px, 4vw, 64px);
+      align-items: center;
+    }
+
+    .guest-quote-copy .template-kicker {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .guest-quote-copy h1 {
+      margin: 16px 0 0;
+      max-width: 700px;
+      font-size: clamp(38px, 4.6vw, 66px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: #ffffff;
+    }
+
+    .guest-quote-copy p {
+      margin: 22px 0 0;
+      max-width: 640px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .guest-quote-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 600px;
+    }
+
+    .guest-quote-points span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.10);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .guest-upload-card {
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text);
+      box-shadow: 0 26px 70px rgba(0, 18, 52, 0.28);
+      padding: clamp(24px, 3vw, 34px);
+    }
+
+    .guest-upload-card.is-chat-mode {
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(12px, 2vw, 24px) 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-upload-head {
+      display: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-drop-zone {
+      display: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-lite-chat {
+      margin-top: 0;
+      width: min(100%, 880px);
+      min-height: 560px;
+      margin-inline: auto;
+    }
+
+    .guest-upload-card.is-chat-mode .quote-choice-strip {
+      display: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-message {
+      display: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-status,
+    .guest-upload-card.is-chat-mode .guest-login-actions {
+      display: none !important;
+    }
+
+    .guest-upload-card.is-upload-mode .guest-lite-chat {
+      display: none;
+    }
+
+    .guest-mode-switch {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      gap: 8px;
+      width: min(100%, 1320px);
+      margin: 0 auto;
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: 0 22px 60px rgba(0, 18, 52, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .guest-mode-option {
+      min-height: 40px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .guest-mode-option.is-active {
+      background: #ffffff;
+      color: #ffffff;
+      color: var(--blue);
+      box-shadow: 0 14px 30px rgba(0, 18, 52, 0.22);
+    }
+
+    .guest-upload-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .guest-upload-head h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 26px;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    .guest-upload-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .guest-upload-badge {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #eef5ff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .guest-drop-zone {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 300px;
+      padding: 34px;
+      border: 2px dashed rgba(0, 74, 198, 0.30);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
+    }
+
+    .guest-drop-zone:hover,
+    .guest-drop-zone.is-dragover {
+      border-color: var(--blue);
+      background: #f1f6ff;
+      transform: translateY(-2px);
+    }
+
+    .guest-upload-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #eaf2ff;
+      color: var(--blue);
+    }
+
+    .guest-upload-icon svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .guest-drop-zone h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .guest-drop-zone p {
+      margin: 10px auto 22px;
+      max-width: 440px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .guest-file-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 132px;
+      height: 44px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .guest-file-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(0, 74, 198, 0.22);
+    }
+
+    .guest-lite-chat {
+      margin-top: 16px;
+      display: grid;
+      gap: 12px;
+      flex: 1;
+      grid-template-rows: auto minmax(0, 1fr) auto auto;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-lite-chat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .guest-chat-quota {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(0, 74, 198, 0.10);
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-quota {
+      order: 4;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      width: fit-content;
+      margin: -2px auto 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-quota strong {
+      display: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-quota span {
+      color: rgba(255, 255, 255, 0.60);
+      font-size: 12px;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-quota-pill {
+      min-width: 52px;
+      min-height: 26px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .guest-chat-quota strong {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .guest-chat-quota span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .guest-quota-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 64px;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 8px;
+      background: #e8f1ff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .guest-chat-board {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 360px;
+      max-height: none;
+      overflow: auto;
+      padding: 12px 4px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-board {
+      order: 1;
+      min-height: 230px;
+      max-height: 320px;
+      justify-content: flex-end;
+      padding: 0 12px;
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .guest-chat-prompt {
+      max-width: 720px;
+      margin: auto auto 6px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .guest-chat-prompt span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .guest-chat-prompt strong {
+      display: block;
+      margin-top: 18px;
+      color: #ffffff;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .guest-chat-prompt p {
+      margin: 14px auto 0;
+      max-width: 560px;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .guest-chat-message {
+      padding: 13px 14px;
+      border-radius: 8px;
+      background: #f5f8ff;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .guest-chat-bubble {
+      position: relative;
+      max-width: 100%;
+      min-height: 36px;
+      padding: 4px 8px 4px 48px;
+      border-radius: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text);
+      background: transparent;
+    }
+
+    .guest-chat-bubble::before {
+      content: "AI";
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #edf4ff;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .guest-chat-bubble.is-user {
+      align-self: flex-end;
+      max-width: 86%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: #eef3fb;
+      color: var(--ink);
+    }
+
+    .guest-chat-bubble.is-user::before {
+      content: none;
+    }
+
+    .guest-chat-bubble.is-system {
+      max-width: 100%;
+      align-self: stretch;
+      padding: 11px 14px;
+      border: 1px solid rgba(0, 74, 198, 0.12);
+      border-radius: 8px;
+      background: #f8fbff;
+      color: var(--muted);
+    }
+
+    .guest-chat-bubble.is-system::before {
+      content: none;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-bubble {
+      max-width: 74%;
+      padding: 10px 14px 10px 50px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(10px);
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-bubble::before {
+      left: 14px;
+      top: 10px;
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-bubble.is-user {
+      padding: 12px 16px;
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-bubble.is-system {
+      max-width: 100%;
+      background: rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .guest-chat-message strong {
+      color: var(--ink);
+    }
+
+    .guest-need-input {
+      width: 100%;
+      min-height: 82px;
+      resize: vertical;
+      border: 1px solid rgba(0, 74, 198, 0.16);
+      border-radius: 8px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: #ffffff;
+      font: inherit;
+      line-height: 1.6;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .guest-need-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(0, 74, 198, 0.10);
+    }
+
+    .guest-chat-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .guest-composer {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: end;
+      padding: 10px 10px 10px 12px;
+      border: 1px solid rgba(16, 24, 40, 0.14);
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 18px 46px rgba(20, 34, 52, 0.12);
+    }
+
+    .guest-upload-card.is-chat-mode .guest-composer {
+      order: 2;
+      width: min(100%, 820px);
+      margin: 0 auto;
+      padding: 12px 12px 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 28px 80px rgba(0, 18, 52, 0.34);
+    }
+
+    .guest-composer .guest-need-input {
+      min-height: 54px;
+      max-height: 120px;
+      border: 0;
+      padding: 8px 4px;
+      box-shadow: none;
+    }
+
+    .guest-composer .guest-need-input:focus {
+      box-shadow: none;
+    }
+
+    .guest-icon-action {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: #f1f5fb;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .guest-icon-action:hover {
+      background: #e8f1ff;
+      color: var(--blue);
+    }
+
+    .guest-icon-action svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .guest-quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-chat-actions {
+      order: 3;
+      justify-content: center;
+      width: min(100%, 820px);
+      margin: 0 auto;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-quick-chips {
+      justify-content: center;
+    }
+
+    .guest-upload-card.is-chat-mode .guest-quick-chip {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      backdrop-filter: blur(10px);
+    }
+
+    .guest-upload-card.is-chat-mode #continue-workbench {
+      min-height: 34px;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      box-shadow: none;
+    }
+
+    .guest-quick-chip {
+      min-height: 32px;
+      padding: 0 11px;
+      border: 1px solid rgba(0, 74, 198, 0.16);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .guest-primary-action {
+      min-height: 40px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(0, 74, 198, 0.18);
+    }
+
+    .guest-send-action {
+      width: 46px;
+      min-width: 46px;
+      height: 46px;
+      min-height: 46px;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+    }
+
+    .guest-send-action svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .guest-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(0, 74, 198, 0.14);
+      border-radius: 8px;
+      background: #f7fbff;
+      color: var(--ink);
+    }
+
+    .guest-status strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .guest-status span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .guest-login-actions {
+      display: none !important;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .guest-login-actions a {
+      flex: 1 1 150px;
+      min-height: 44px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    .guest-login-actions .btn-light {
+      color: var(--blue);
+      box-shadow: none;
+    }
+
+    .quote-choice-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(0, 74, 198, 0.12);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(20, 34, 52, 0.06);
+    }
+
+    .quote-choice-copy {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .quote-choice-icon {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #eef5ff;
+      color: var(--blue);
+    }
+
+    .quote-choice-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .quote-choice-copy a {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .quote-choice-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quote-choice-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 74, 198, 0.18);
+      color: var(--blue);
+      background: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    .quote-choice-actions a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(0, 74, 198, 0.12);
+    }
+
+    .quote-choice-actions a:last-child {
+      color: #ffffff;
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .quote-workflow-section {
+      padding: 58px 0 72px;
+    }
+
+    .quote-workflow-head {
+      margin-bottom: 22px;
+    }
+
+    .quote-workflow-head h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .quote-workflow-head p {
+      margin: 10px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .quote-workflow-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 18px 42px rgba(20, 34, 52, 0.08);
+    }
+
+    .quote-workflow-step {
+      position: relative;
+      min-height: 166px;
+      padding: 28px 28px 26px 34px;
+      background: #ffffff;
+    }
+
+    .quote-workflow-step + .quote-workflow-step {
+      border-left: 1px solid var(--line);
+    }
+
+    .quote-workflow-step b {
+      color: var(--blue);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .quote-workflow-step h3 {
+      margin: 10px 0 8px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .quote-workflow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .quote-workflow-step::after {
+      content: "";
+      position: absolute;
+      right: -13px;
+      top: 50%;
+      z-index: 2;
+      width: 26px;
+      height: 26px;
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .quote-workflow-step:last-child::after {
+      content: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 1180px) {
+      .guest-quote-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .guest-upload-card {
+        max-width: none;
+      }
+
+      .guest-mode-switch {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .guest-quote-hero {
+        padding: 170px 0 56px;
+      }
+
+      .guest-quote-points,
+      .guest-mode-switch,
+      .quote-workflow-track {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-choice-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-choice-actions {
+        align-items: stretch;
+      }
+
+      .quote-choice-actions a {
+        flex: 1 1 0;
+      }
+
+      .guest-upload-head {
+        display: block;
+      }
+
+      .guest-upload-badge {
+        display: inline-flex;
+        margin-top: 14px;
+      }
+
+      .guest-drop-zone {
+        min-height: 250px;
+        padding: 24px 18px;
+      }
+
+      .quote-workflow-step + .quote-workflow-step {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .quote-workflow-step::after {
+        content: none;
+      }
     }
   </style>
-<!-- END: Custom Styles -->
-<link data-mes-preconnect="googleapis" href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" data-mes-preconnect="gstatic" href="https://fonts.gstatic.com" rel="preconnect">
-<link data-mes-material-symbols href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
-<style data-mes-material-symbols>
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-  vertical-align: middle;
-}
-</style>
-<script data-mes-shell-boot>
-document.documentElement.classList.add("mes-shell-loading");
-window.addEventListener("DOMContentLoaded", function () {
-  var reveal = function () {
-    requestAnimationFrame(function () {
-      document.documentElement.classList.remove("mes-shell-loading");
-    });
-  };
-  var fontReady = (document.fonts && document.fonts.load)
-    ? Promise.race([
-        document.fonts.load('24px "Material Symbols Outlined"'),
-        new Promise(function (resolve) { setTimeout(resolve, 1200); })
-      ])
-    : Promise.resolve();
-  Promise.resolve(fontReady).catch(function () {}).then(reveal);
-});
-</script>
-<style data-mes-shell-boot>
-html.mes-shell-loading {
-  background: #f8fafc;
-}
-html.mes-shell-loading body {
-  visibility: hidden;
-}
-</style>
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col">
-<!-- BEGIN: MainHeader -->
-<header class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-surface-container-lowest shadow-sm border-b border-outline-variant">
-<!-- Brand Logo -->
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white" data-purpose="logo-icon">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
-</div>
-<h1 class="text-headline-sm font-bold text-primary">敏捷智造</h1>
-</div>
-<!-- Navigation Actions -->
-<div class="flex items-center gap-4">
-<button class="px-4 py-2 text-label-md font-medium text-primary hover:bg-surface-container-low transition-colors duration-200 rounded-lg">
-        登录
-      </button>
-<button class="px-6 py-2 bg-primary text-on-primary text-label-md font-semibold rounded-lg shadow-sm hover:brightness-110 active:scale-95 transition-all">
-        获取报价
-      </button>
-</div>
+<body class="quote-guest-page">
+<header class="site-header">
+  <div class="topbar">
+    <a class="brand" href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewbox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"></path><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"></path><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"></path></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a>
+    <nav class="nav" aria-label="主导航">
+      <div class="nav-capability"><a class="nav-item nav-item--capability"
+          href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E9%83%A8%E5%88%86.html">能力中心</a>
+        <div class="capability-menu">
+          <div class="capability-cats"><a class="capability-cat is-active"
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html"
+              data-menu-category="process"><span
+                class="capability-cat-copy"><strong>工艺</strong><span>加工、成型与增材制造能力</span></span><img
+                src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/service-cnc.jpg" alt="工艺"></a><a class="capability-cat"
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html"
+              data-menu-category="service"><span
+                class="capability-cat-copy"><strong>服务</strong><span>从单项加工到一站式交付</span></span><img
+                src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/manufacturing-service.png" alt="服务"></a><a class="capability-cat"
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86.html"
+              data-menu-category="material"><span
+                class="capability-cat-copy"><strong>材料</strong><span>金属、塑料与复合材料选择</span></span><img
+                src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/product-flange.jpg" alt="材料"></a><a class="capability-cat"
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86.html"
+              data-menu-category="finish"><span
+                class="capability-cat-copy"><strong>表面处理</strong><span>外观、耐腐蚀与功能增强</span></span><img
+                src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/quality-process.jpg" alt="表面处理"></a></div>
+          <div class="capability-main">
+            <div class="capability-panel is-active" data-menu-panel="process">
+              <ul class="mega-grid mega-grid--process">
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%96%84%E6%9D%BF%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">薄板加工</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B0%B4%E5%88%80%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">水刀切割</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%B3%A8%E5%A1%91%E6%88%90%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">注塑成型</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">数控加工</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%81%9A%E6%B0%A8%E9%85%AF%E9%93%B8%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">聚氨酯铸造</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%BF%80%E5%85%89%E5%88%87%E5%89%B2%E5%AD%90%E9%A1%B5%E9%9D%A2.html">激光切割</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BC%82%E5%BD%A2%E9%9B%B6%E4%BB%B6%E5%8A%A0%E5%B7%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">异形零件加工</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BE%AE%E7%BA%B33D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">微纳3D打印</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E3D%E6%89%93%E5%8D%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属3D打印</a>
+                </li>
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="service">
+              <ul class="mega-grid mega-grid--service">
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94CNC%E5%8A%A0%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">CNC加工</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%A8%A1%E5%85%B7%E6%88%90%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">模具成型</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%AE%9A%E5%88%B6%E5%8A%A0%E5%B7%A5%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">定制加工</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E%E5%86%B2%E5%8E%8B%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属冲压</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E%E9%93%B8%E9%80%A0%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属铸造</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E9%87%91%E5%B1%9E%E9%94%BB%E9%80%A0%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">金属锻造</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%943D%E6%89%93%E5%8D%B0%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">3D打印</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%BF%AB%E9%80%9F%E6%89%8B%E6%9D%BF%E6%A8%A1%E5%9E%8B%E6%9C%8D%E5%8A%A1%E5%AD%90%E9%A1%B5%E9%9D%A2.html">快速手板模型</a>
+                </li>   
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="material">
+              <ul class="mega-grid">
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">铝合金</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">铜合金</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">不锈钢</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">钛合金</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">工程塑料</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">复合材料</a>
+                </li>
+              </ul>
+            </div>
+            <div class="capability-panel" data-menu-panel="finish">
+              <ul class="mega-grid">
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">阳极氧化</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">电镀</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">喷涂</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">粉末喷涂</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">钝化处理</a>
+                </li>
+                <li><a
+                    href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86%E5%AD%90%E9%A1%B5%E9%9D%A2.html">热处理</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="capability-preview">
+            <div class="capability-preview-card is-active" data-menu-preview="process"><img
+                src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/service-cnc.jpg" alt="">
+              <div class="capability-preview-content">
+                <h3>工艺能力中心</h3>
+                <p>覆盖切割、成型、精密加工与增材制造。</p><a class="btn btn-secondary"
+                  href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html">进入工艺首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="service"><img
+                src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/manufacturing-service.png" alt="">
+              <div class="capability-preview-content">
+                <h3>制造服务中心</h3>
+                <p>组合加工、成型、质检与交付资源。</p><a class="btn btn-secondary"
+                  href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html">进入服务首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="material"><img src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/product-flange.jpg"
+                alt="">
+              <div class="capability-preview-content">
+                <h3>材料能力中心</h3>
+                <p>按性能、成本与交期匹配材料。</p><a class="btn btn-secondary"
+                  href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86.html">进入材料首页</a>
+              </div>
+            </div>
+            <div class="capability-preview-card" data-menu-preview="finish"><img src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/quality-process.jpg"
+                alt="">
+              <div class="capability-preview-content">
+                <h3>表面处理能力中心</h3>
+                <p>提升外观、耐久性与功能表现。</p><a class="btn btn-secondary"
+                  href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86.html">进入表面处理首页</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item" href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%83%A8%E5%88%86.html">解决方案</a><div class="nav-menu"><div class="nav-menu-intro"><strong>解决方案</strong><span>从需求输入、报价评估到交付跟踪。</span></div><div class="nav-menu-links nav-menu-links--wide"><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=smartQuote#quote-upload">智能报价</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=rapidPrototype#quote-upload">快速原型</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=dfm#quote-upload">DFM可制造性检查</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=quickQuote#quote-upload">快速报价</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=imageTo3d#quote-upload">图生3D模型</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=textTo3d#quote-upload">文生3D模型</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=formatConvert#quote-upload">3D格式转换</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=threeToTwo#quote-upload">3D转2D工程图</a><a href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=bubble#quote-upload">2D气泡图标注</a></div><div class="nav-menu-preview" aria-hidden="true"><img src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/solution-cad-cnc-part.png" alt=""><div class="nav-menu-preview-copy"><strong>需求快速转方案</strong><span>让图纸、模型和文字需求更快进入制造评估。</span></div></div></div></div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">行业</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>行业</strong><span>面向重点行业场景沉淀制造经验。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">行业首页</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%88%AA%E5%A4%A9%E5%AD%90%E9%A1%B5%E9%9D%A2.html">航天</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">医疗器械</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%B1%BD%E8%BD%A6%E5%88%B6%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">汽车</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html#robotics">机器人技术</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html#electronics">电子</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html#semiconductor">半导体</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%96%B0%E8%83%BD%E6%BA%90%E5%AD%90%E9%A1%B5%E9%9D%A2.html">新能源</a>
+          </div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/case-aero.jpg" alt="">
+            <div class="nav-menu-preview-copy"><strong>行业制造方案</strong><span>围绕场景组织材料、工艺和质量资料。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html">资源中心</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>资源中心</strong><span>制造知识、案例、指南与资料准备。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E6%8C%87%E5%8D%97%E5%AD%90%E9%A1%B5%E9%9D%A2.html">工艺指南</a><a href="./%E6%A8%A1%E5%9E%8B%E4%B8%AD%E5%BF%83.html">模型社区</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E6%89%8B%E5%86%8C%E5%AD%90%E9%A1%B5%E9%9D%A2.html">材料手册</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%AD%90%E9%A1%B5%E9%9D%A2.html">设计规范</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B8%AE%E5%8A%A9FAQ%E5%AD%90%E9%A1%B5%E9%9D%A2.html">帮助FAQ</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html#downloads">下载中心</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html#news">新闻动态</a>
+          </div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/insight-guide.jpg" alt="">
+            <div class="nav-menu-preview-copy"><strong>知识与案例</strong><span>降低前期判断成本，提高项目沟通效率。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dropdown"><a class="nav-item"
+          href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html">关于</a>
+        <div class="nav-menu">
+          <div class="nav-menu-intro"><strong>关于</strong><span>团队、质量体系与服务支持。</span></div>
+          <div class="nav-menu-links nav-menu-links--wide"><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html">关于我们</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D%E5%AD%90%E9%A1%B5%E9%9D%A2.html">公司介绍</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E5%AD%90%E9%A1%B5%E9%9D%A2.html">质量保证</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html#service">服务支持</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E5%AD%90%E9%A1%B5%E9%9D%A2.html">隐私政策</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">服务条款</a><a
+              href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html#contact">联系我们</a>
+          </div>
+          <div class="nav-menu-preview" aria-hidden="true"><img src="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/precision/factory-floor.png" alt="">
+            <div class="nav-menu-preview-copy"><strong>可靠制造伙伴</strong><span>以过程透明和质量闭环支持长期合作。</span></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions"><a class="login-link" href="../%E5%85%A5%E5%8F%A3/%E7%99%BB%E5%BD%95.html">登录</a><a class="btn btn-primary" href="./%E6%8A%A5%E4%BB%B7%E6%A8%A1%E5%9E%8B%E4%B8%8A%E4%BC%A0%E9%A1%B5%E6%9C%AA%E7%99%BB%E5%BD%95.html?mode=quickQuote#quote-upload">立即报价</a><a class="lang-link" href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/EN/index.html">EN</a></div>
+  </div>
 </header>
-<!-- END: MainHeader -->
-<!-- BEGIN: MainContent -->
-<main class="flex-grow relative flex flex-col items-center justify-center px-margin py-xl overflow-hidden">
-<!-- Hero Section -->
-<div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center">
-<!-- Tagline and Title -->
-<div class="mb-xl animate-fade-in">
-<span class="inline-block py-1 px-3 mb-4 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm uppercase tracking-wider">
-          AI 驱动精密报价
-        </span>
-<h2 class="text-headline-lg font-bold text-on-surface mb-md max-w-2xl mx-auto">
-          上传 3D 模型获取即时报价
-        </h2>
-<p class="text-body-lg text-on-surface-variant max-w-lg mx-auto">
-          智能引擎可在数秒内分析几何结构与材料需求，提供企业级精密报价。
-        </p>
-</div>
-<!-- Upload Container -->
-<div class="w-full bg-surface-container-lowest p-lg rounded-xl shadow-md border border-outline-variant/30 backdrop-blur-md">
-<div class="upload-dashed group w-full min-h-[320px] flex flex-col items-center justify-center cursor-pointer transition-all hover:bg-primary/5 p-xl" data-purpose="upload-dropzone" id="drop-zone">
-<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary mb-md group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined text-[40px]">cloud_upload</span>
-</div>
-<h3 class="text-headline-sm font-semibold text-on-surface mb-xs">拖拽上传您的 3D 文件</h3>
-<p class="text-body-sm text-on-surface-variant mb-lg">
-            支持 .STEP、.STL、.DWG、.DXF、.PDF 格式，单文件最大 100MB
-          </p>
-<button class="flex items-center gap-2 px-lg py-md bg-primary text-on-primary rounded-lg font-label-md transition-all hover:shadow-lg active:scale-95">
-<span class="material-symbols-outlined">folder_open</span>
-            浏览文件
-          </button>
-<input class="hidden" id="file-input" multiple="" type="file">
-</div>
-<!-- Hidden Progress Area (for potential upload simulation) -->
-<div class="hidden mt-lg pt-lg border-t border-outline-variant" id="status-area">
-<div class="flex items-center justify-between mb-sm">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">description</span>
-<span class="text-label-md font-medium text-on-surface">mechanical_part_v2.step</span>
-</div>
-<span class="text-label-sm font-semibold text-primary">85%</span>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full w-[85%] transition-all duration-300"></div>
-</div>
-</div>
-</div>
-<!-- Informational Banner -->
-<div class="mt-lg flex items-center gap-3 bg-surface-container-high/50 px-lg py-md rounded-lg border border-outline-variant/20">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">info</span>
-<p class="text-body-sm text-on-surface-variant text-left">
-          现在上传模型，我们会 <span class="font-semibold text-on-surface">保存您的进度</span> 待您登录或注册后继续。
-        </p>
-</div>
-</div>
-<!-- Features/Benefits Section -->
-<div class="relative z-10 w-full max-w-5xl mt-xl grid grid-cols-1 md:grid-cols-3 gap-lg">
-<!-- Benefit 1 -->
-<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant/30 flex flex-col items-start gap-3 transition-transform hover:-translate-y-1">
-<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">bolt</span>
-</div>
-<h4 class="text-label-md font-bold text-on-surface">即时分析</h4>
-<p class="text-body-sm text-on-surface-variant">毫秒级识别模型特征与公差要求。</p>
-</div>
-<!-- Benefit 2 -->
-<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant/30 flex flex-col items-start gap-3 transition-transform hover:-translate-y-1">
-<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">security</span>
-</div>
-<h4 class="text-label-md font-bold text-on-surface">IP 保护</h4>
-<p class="text-body-sm text-on-surface-variant">对所有上传的工程数据提供企业级加密保护。</p>
-</div>
-<!-- Benefit 3 -->
-<div class="bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant/30 flex flex-col items-start gap-3 transition-transform hover:-translate-y-1">
-<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">inventory_2</span>
-</div>
-<h4 class="text-label-md font-bold text-on-surface">实时库存</h4>
-<p class="text-body-sm text-on-surface-variant">实时校验全球供应网络中的材料可用性。</p>
-</div>
-</div>
-<!-- Decorative Background Asset -->
-<div class="fixed bottom-0 right-0 w-1/3 h-2/3 pointer-events-none opacity-[0.07] z-0">
-<div class="w-full h-full bg-contain bg-no-repeat bg-right-bottom" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-4_T09SflnkF3LtWKUaswCtYwTKoyL5BVcove-KiDyCiUzUUqWISVqrmtvi8WNfq9oyWgmri6_lt_ROVazA_lnqt7jNDcnK-fzT-v0Wv5nyP-pAthC6QSBRpI6P1NVIIskIHzw3_8KHxLGgnOpWlKFrm_OY4ONoivYTUa6UyNPGrYDL6rqq4ORd6D1MlEv8ZdMM97f9PigoO4jw8RT5lVFBfvnJTDX2wspbaMctHs3_XxqXH_8iYWvvCGh4Ja4HTkBU8J0SvHXq8')"></div>
-</div>
+<main>
+  <section class="guest-quote-hero" id="quote-upload">
+    <div class="container guest-entry-bar">
+      <div class="guest-mode-switch" aria-label="解决方案入口">
+        <button class="guest-mode-option is-active" type="button" data-mode-option="quickQuote">快速报价</button>
+        <button class="guest-mode-option" type="button" data-mode-option="smartQuote">智能报价</button>
+        <button class="guest-mode-option" type="button" data-mode-option="rapidPrototype">快速原型</button>
+        <button class="guest-mode-option" type="button" data-mode-option="dfm">DFM检查</button>
+        <button class="guest-mode-option" type="button" data-mode-option="imageTo3d">图生3D模型</button>
+        <button class="guest-mode-option" type="button" data-mode-option="textTo3d">文生3D模型</button>
+        <button class="guest-mode-option" type="button" data-mode-option="formatConvert">3D格式转换</button>
+        <button class="guest-mode-option" type="button" data-mode-option="threeToTwo">3D转2D工程图</button>
+        <button class="guest-mode-option" type="button" data-mode-option="bubble">2D气泡图标注</button>
+      </div>
+    </div>
+    <div class="container guest-quote-layout">
+      <div class="guest-quote-copy">
+        <span class="template-kicker" data-mode-kicker>INSTANT QUOTE</span>
+        <h1 data-mode-title>上传模型，快速获取制造报价</h1>
+        <p data-mode-description>提交 3D 模型、2D 图纸或 PDF 资料后，我们会围绕材料、工艺、数量、交期和表面处理要求进行报价评估，帮助您更快判断项目成本与制造路径。</p>
+        <div class="guest-quote-points" aria-label="报价入口优势">
+          <span data-mode-point="0">多格式上传</span>
+          <span data-mode-point="1">DFM 初步评估</span>
+          <span data-mode-point="2">人工报价可选</span>
+        </div>
+      </div>
+      <div class="guest-upload-card is-upload-mode" id="guest-panel">
+        <div class="guest-upload-head">
+          <div>
+            <h2 data-card-title>上传报价文件</h2>
+            <p data-card-description>支持单个零件或多个工程文件，模型与图纸可一起提交。</p>
+          </div>
+          <span class="guest-upload-badge" data-card-badge>快速报价入口</span>
+        </div>
+        <div class="guest-drop-zone" id="drop-zone">
+          <div>
+            <div class="guest-upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" role="img">
+                <path d="M12 15V4m0 0 4 4m-4-4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5 14v3.5A2.5 2.5 0 0 0 7.5 20h9a2.5 2.5 0 0 0 2.5-2.5V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3 data-drop-title>拖拽文件到这里，或点击选择文件</h3>
+            <p data-drop-detail>支持 .STEP、.STP、.STL、.IGES、.OBJ、.DWG、.DXF、.PDF，单文件建议不超过 100MB。</p>
+            <button class="guest-file-button" type="button" data-file-button>浏览文件</button>
+            <input id="file-input" type="file" multiple accept=".step,.stp,.stl,.iges,.igs,.obj,.dwg,.dxf,.pdf" hidden>
+          </div>
+        </div>
+        <div class="guest-lite-chat">
+          <div class="guest-chat-quota">
+            <div>
+              <strong>游客对话</strong>
+              <span data-quota-copy>游客模式剩余 3 次轻量对话</span>
+            </div>
+            <span class="guest-quota-pill" data-quota-pill>0 / 3</span>
+          </div>
+          <div class="guest-chat-board" data-chat-board>
+            <div class="guest-chat-bubble" data-chat-welcome>可以先描述零件、图片或模型目标，我会帮你整理下一步需要进入的工作台。</div>
+          </div>
+          <div class="guest-chat-message" data-chat-answer><strong>AgileMakeAI：</strong>可以先上传资料，也可以用一句话补充材料、数量、交期或应用场景。</div>
+          <div class="guest-composer">
+            <button class="guest-icon-action" id="chat-upload-trigger" type="button" aria-label="上传附件">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path>
+              </svg>
+            </button>
+            <textarea class="guest-need-input" id="guest-need-input" maxlength="240" placeholder="描述需求、材料、数量、交期或模型生成目标..."></textarea>
+            <button class="guest-primary-action guest-send-action" id="send-guest-message" type="button" aria-label="发送">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h13m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="guest-chat-actions">
+            <div class="guest-quick-chips">
+              <button class="guest-quick-chip" type="button" data-quick-chip="材料：铝合金 6061-T6；数量：50 件；交期：10 天。">报价参数</button>
+              <button class="guest-quick-chip" type="button" data-quick-chip="需要先检查结构可制造性，并标出加工风险。">DFM 风险</button>
+              <button class="guest-quick-chip" type="button" data-quick-chip="希望生成可进一步评估的 3D 模型方向。">模型生成</button>
+            </div>
+            <button class="guest-primary-action" id="continue-workbench" type="button">进入工作台</button>
+          </div>
+        </div>
+        <div class="guest-status hidden" id="status-area" aria-live="polite">
+          <div>
+            <strong data-status-title>文件已接收</strong>
+            <span data-status-detail>下一步可继续补充报价所需的材料、数量和交期信息。</span>
+          </div>
+          <span data-status-percent>已暂存</span>
+        </div>
+        <div class="quote-choice-strip" aria-label="报价方式选择">
+          <div class="quote-choice-copy">
+            <span class="quote-choice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3 5 6v5c0 4.5 2.8 8.1 7 10 4.2-1.9 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path>
+                <path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span data-choice-copy>工程资料仅用于报价评估；复杂项目、批量采购或无法上传模型时，可直接发起人工报价。</span>
+          </div>
+          <div class="quote-choice-actions">
+            <a data-choice-primary href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">查看样例</a>
+            <a data-choice-secondary href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html#contact">人工报价 / RFQ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container quote-workflow-section" aria-label="报价工作流">
+    <div class="quote-workflow-head">
+      <h2 data-workflow-title>报价流程介绍</h2>
+      <p data-workflow-description>为了让您在提交资料前更清楚后续步骤，我们将从文件上传到报价确认的关键环节整理如下，便于提前准备材料、数量、交期和质量要求。</p>
+    </div>
+    <div class="quote-workflow-track">
+      <article class="quote-workflow-step"><b>01</b><h3 data-workflow-step-title="0">上传零件资料</h3><p data-workflow-step-copy="0">提交 3D 模型、2D 图纸、PDF 说明或关键加工要求。</p></article>
+      <article class="quote-workflow-step"><b>02</b><h3 data-workflow-step-title="1">补充报价参数</h3><p data-workflow-step-copy="1">确认材料、数量、表面处理、公差重点和目标交期。</p></article>
+      <article class="quote-workflow-step"><b>03</b><h3 data-workflow-step-title="2">工程评估报价</h3><p data-workflow-step-copy="2">进行 DFM 检查、工艺路径判断、成本拆分和风险提示。</p></article>
+      <article class="quote-workflow-step"><b>04</b><h3 data-workflow-step-title="3">确认订单交付</h3><p data-workflow-step-copy="3">确认报价后进入生产排期、质检跟踪与交付协同。</p></article>
+    </div>
+  </section>
 </main>
-<!-- END: MainContent -->
-<!-- BEGIN: Interactive Logic -->
-<script data-purpose="upload-interactivity">
-    const dropZone = document.getElementById('drop-zone');
-    const fileInput = document.getElementById('file-input');
-
-    // Trigger file dialog
-    dropZone.addEventListener('click', () => fileInput.click());
-
-    // Drag-over styling
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('bg-primary/10');
+<footer class="footer"><div class="container"><div class="footer-grid footer-grid--expanded"><div class="footer-brand"><a class="brand" href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html" aria-label="敏捷智造首页"><svg class="brand-symbol" viewbox="0 0 56 58" aria-hidden="true" focusable="false"><path class="brand-symbol-secondary" d="M28 3 4 17l9.8 5.7L28 14.5l14.2 8.2L52 17 28 3Z"></path><path class="brand-symbol-primary" d="M2 20.8 28 36l26-15.2v29.4l-9.8 5.7V37.7L28 47 11.8 37.7v18.2L2 50.2V20.8Z"></path><path class="brand-symbol-secondary" d="M17 42.7 28 49l11-6.3v8.8L28 58l-11-6.5v-8.8Z"></path></svg><span class="brand-wordmark"><strong>敏捷智造</strong><span>AGILE MANUFACTURING</span></span></a><p>为客户提供高品质、高稳定性的精密制造服务。</p><div class="footer-socials" aria-label="Share and contact apps">
+  <a class="footer-social-link" href="weixin://" aria-label="WeChat" title="WeChat"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.4 5C5.9 5 3 7.2 3 10c0 1.6.9 3 2.3 4l-.6 2.2 2.5-1.3c.7.2 1.4.3 2.2.3 3.5 0 6.4-2.3 6.4-5.1C15.8 7.2 13 5 9.4 5Z" stroke="currentColor" stroke-width="1.6"></path><path d="M14.7 9.1c3.4 0 6.3 2.1 6.3 4.8 0 1.5-.8 2.8-2.2 3.8l.5 2-2.3-1.2c-.7.2-1.5.3-2.3.3-2.8 0-5.2-1.4-6-3.5" stroke="currentColor" stroke-width="1.6"></path><circle cx="7.4" cy="9.2" r=".8" fill="currentColor"></circle><circle cx="11.5" cy="9.2" r=".8" fill="currentColor"></circle><circle cx="13" cy="13.3" r=".8" fill="currentColor"></circle><circle cx="17.1" cy="13.3" r=".8" fill="currentColor"></circle></svg></a>
+  <a class="footer-social-link" href="https://wa.me/?text=ProMakeHub%20precision%20manufacturing" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.8a8 8 0 0 1-11.7 7.1L4 20l1.2-4.1A8 8 0 1 1 20 11.8Z" stroke="currentColor" stroke-width="1.7"></path><path d="M9 8.1c.3-.5.7-.5 1-.1l1 1.5c.2.3.1.6-.2.9l-.6.6c.7 1.5 1.8 2.6 3.4 3.3l.6-.7c.3-.3.6-.4.9-.2l1.5.8c.5.3.5.7.2 1.1-.5.8-1.3 1.2-2.2 1.1-3.6-.5-6.4-3.2-7-6.7-.1-.6.2-1.2.4-1.6Z" fill="currentColor"></path></svg></a>
+  <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="9" width="3.2" height="10" fill="currentColor"></rect><circle cx="5.6" cy="5.7" r="1.8" fill="currentColor"></circle><path d="M10 19V9h3v1.5c.8-1.1 2-1.8 3.6-1.8 2.6 0 4.4 1.7 4.4 5.2V19h-3.2v-4.6c0-1.8-.7-2.8-2.2-2.8-1.6 0-2.4 1.1-2.4 3V19H10Z" fill="currentColor"></path></svg></a>
+  <a class="footer-social-link" href="mailto:info@precision.com?subject=Precision%20manufacturing%20inquiry" aria-label="Email" title="Email"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"></rect><path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg></a>
+</div>
+</div><div class="footer-menu"><h4>能力中心</h4><ul><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E9%83%A8%E5%88%86.html">工艺</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html">服务</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E9%83%A8%E5%88%86.html">材料</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%A8%E9%9D%A2%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86.html">表面处理</a></li></ul></div><div class="footer-menu"><h4>快速链接</h4><ul><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html">首页</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">立即报价</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%83%BD%E5%8A%9B%E4%B8%AD%E5%BF%83%E2%80%94%E6%9C%8D%E5%8A%A1%E9%83%A8%E5%88%86.html">定制加工</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D%E5%AD%90%E9%A1%B5%E9%9D%A2.html">公司介绍</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html#contact">联系我们</a></li></ul></div><div class="footer-menu"><h4>行业</h4><ul><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%A1%8C%E4%B8%9A%E9%83%A8%E5%88%86.html">行业首页</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E8%88%AA%E5%A4%A9%E5%AD%90%E9%A1%B5%E9%9D%A2.html">航天</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">医疗器械</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%B1%BD%E8%BD%A6%E5%88%B6%E9%80%A0%E5%AD%90%E9%A1%B5%E9%9D%A2.html">汽车</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A1%8C%E4%B8%9A%E4%B8%AD%E5%BF%83%E2%80%94%E6%96%B0%E8%83%BD%E6%BA%90%E5%AD%90%E9%A1%B5%E9%9D%A2.html">新能源</a></li></ul></div><div class="footer-menu"><h4>解决方案</h4><ul><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E9%83%A8%E5%88%86.html">解决方案首页</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E6%99%BA%E8%83%BD%E6%8A%A5%E4%BB%B7%E5%AD%90%E9%A1%B5%E9%9D%A2.html">智能报价</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94%E5%BF%AB%E9%80%9F%E5%8E%9F%E5%9E%8B%E5%AD%90%E9%A1%B5%E9%9D%A2.html">快速原型</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%AD%E5%BF%83%E2%80%94DFM%E5%8F%AF%E5%88%B6%E9%80%A0%E6%80%A7%E6%A3%80%E6%9F%A5%E5%AD%90%E9%A1%B5%E9%9D%A2.html">DFM检查</a></li></ul></div><div class="footer-menu"><h4>资源中心</h4><ul><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%B5%84%E6%BA%90%E9%83%A8%E5%88%86.html">资源首页</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B7%A5%E8%89%BA%E6%8C%87%E5%8D%97%E5%AD%90%E9%A1%B5%E9%9D%A2.html">工艺指南</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E6%9D%90%E6%96%99%E6%89%8B%E5%86%8C%E5%AD%90%E9%A1%B5%E9%9D%A2.html">材料手册</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83%E5%AD%90%E9%A1%B5%E9%9D%A2.html">设计规范</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%B5%84%E6%BA%90%E4%B8%AD%E5%BF%83%E2%80%94%E5%B8%AE%E5%8A%A9FAQ%E5%AD%90%E9%A1%B5%E9%9D%A2.html">帮助FAQ</a></li></ul></div><div class="footer-menu"><h4>关于</h4><ul><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%B3%E4%BA%8E%E9%83%A8%E5%88%86.html">关于我们</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D%E5%AD%90%E9%A1%B5%E9%9D%A2.html">公司介绍</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E5%AD%90%E9%A1%B5%E9%9D%A2.html">质量保证</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E5%AD%90%E9%A1%B5%E9%9D%A2.html">隐私政策</a></li><li><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">服务条款</a></li></ul></div></div><div class="footer-support-grid"><section class="footer-support-card"><h4>联系与支持</h4><div class="footer-contact-details">
+  <p class="footer-contact-line"><b>联系人</b><span>张工</span></p>
+  <p class="footer-contact-line"><b>联系电话</b><a href="tel:18682088681">18682088681</a></p>
+  <p class="footer-contact-line"><b>邮箱</b><a href="mailto:info@precision.com">info@precision.com</a></p>
+  <p class="footer-contact-line"><b>公司地址</b><span class="footer-address-pending">深圳市宝安区福海街道智美汇园区 B1 栋 320</span></p>
+  <p class="footer-contact-line"><b>在线支持</b><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E8%90%A5%E9%94%80%E9%A1%B5%E9%9D%A2.html#contact">联系在线客服</a></p>
+</div>
+</section><section class="footer-support-card"><h4>付款方式</h4><div class="footer-payment-brand-grid" aria-label="Supported payment methods">
+  <div class="footer-payment-brand footer-payment-brand--wechat" title="WeChat Pay"><svg viewbox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#07C160"></rect><path d="M13.1 8.2c-4.2 0-7.6 2.7-7.6 6.1 0 1.9 1 3.6 2.8 4.8l-.7 2.6 3-1.5c.8.2 1.7.3 2.5.3 4.2 0 7.6-2.7 7.6-6.1s-3.4-6.2-7.6-6.2Z" fill="#fff"></path><path d="M20.1 13.1c3.6 0 6.5 2.3 6.5 5.2 0 1.6-.9 3.1-2.4 4.1l.6 2.2-2.6-1.3c-.7.2-1.4.3-2.1.3-3.6 0-6.5-2.3-6.5-5.2s2.9-5.3 6.5-5.3Z" fill="#fff" stroke="#07C160" stroke-width="1"></path><circle cx="10.7" cy="13.7" r="1" fill="#07C160"></circle><circle cx="15.3" cy="13.7" r="1" fill="#07C160"></circle></svg><span>微信支付</span></div>
+  <div class="footer-payment-brand footer-payment-brand--alipay" title="Alipay"><svg viewbox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1677FF"></rect><path d="M8 10h16M16 6v14M10 15c2.5 3.2 6.4 5.4 12 6.8M22 13c-1.5 5.5-5.2 9.1-12 11" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg><span>支付宝</span></div>
+  <div class="footer-payment-brand footer-payment-brand--unionpay" title="UnionPay"><svg viewbox="0 0 40 28" aria-hidden="true"><path d="M3 3h15l-5 22H0L3 3Z" fill="#D81E35"></path><path d="M15 3h14l-5 22H11l4-22Z" fill="#1676B8"></path><path d="M27 3h13l-4 22H23l4-22Z" fill="#14956C"></path><path d="M7 9h25M5 14h25M4 19h24" stroke="#fff" stroke-width="1.5"></path></svg><span>银联</span></div>
+  <div class="footer-payment-brand footer-payment-brand--visa" title="Visa"><span>VISA</span></div>
+  <div class="footer-payment-brand footer-payment-brand--mastercard" title="Mastercard"><svg viewbox="0 0 42 28" aria-hidden="true"><circle cx="16" cy="14" r="10" fill="#EB001B"></circle><circle cx="26" cy="14" r="10" fill="#F79E1B"></circle><path d="M21 6.3a10 10 0 0 1 0 15.4 10 10 0 0 1 0-15.4Z" fill="#FF5F00"></path></svg><span>Mastercard</span></div>
+  <div class="footer-payment-brand footer-payment-brand--paypal" title="PayPal"><svg viewbox="0 0 32 32" aria-hidden="true"><path d="M10 4h10.2c5 0 7.2 2.7 6.2 7-1.1 4.7-4.1 7-9 7h-3l-1.7 9H7L10 4Z" fill="#003087"></path><path d="M13.3 8h8c4.4 0 6.1 2.5 5 6.3-1 3.8-3.6 5.7-7.6 5.7h-3.2l-1.3 7H9.5l3.8-19Z" fill="#009CDE" opacity=".9"></path></svg><span>PayPal</span></div>
+  <div class="footer-payment-brand footer-payment-brand--bank" title="Bank Transfer"><svg viewbox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#F4B528"></rect><path d="M6 13h20M8 13v9m5-9v9m6-9v9m5-9v9M6 24h20M16 6l10 5H6l10-5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"></path></svg><span>银行转账</span></div>
+</div>
+<p class="footer-payment-note footer-payment-note--brands">支持方式、币种及收款账户以正式订单和合同为准。</p></section><section class="footer-support-card footer-support-card--subscribe"><h4>订阅资讯</h4><p>获取制造知识、行业趋势和技术动态。</p><form class="subscribe-form"><input type="email" placeholder="输入您的邮箱" aria-label="邮箱"><button type="button" aria-label="订阅">→</button></form></section></div><div class="footer-bottom"><span class="footer-copyright">版权所有 © 2026 敏捷智造</span><span class="footer-policy-links"><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96%E5%AD%90%E9%A1%B5%E9%9D%A2.html">隐私政策</a><i aria-hidden="true"></i><a href="../%E8%90%A5%E9%94%80%E9%A1%B5%EF%BC%88%E5%B7%B2%E6%A0%B8%E5%AF%B9%EF%BC%89/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E2%80%94%E6%9C%8D%E5%8A%A1%E6%9D%A1%E6%AC%BE%E5%AD%90%E9%A1%B5%E9%9D%A2.html">服务条款</a></span></div></div></footer>
+<script>
+(function () {
+  document.querySelectorAll('.capability-menu').forEach(function (menu) {
+    var tabs = Array.from(menu.querySelectorAll('.capability-cat'));
+    var panels = Array.from(menu.querySelectorAll('.capability-panel'));
+    var previews = Array.from(menu.querySelectorAll('.capability-preview-card'));
+    function switchTo(category) {
+      tabs.forEach(function (tab) {
+        var active = tab.dataset.menuCategory === category;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function (panel) {
+        panel.classList.toggle('is-active', panel.dataset.menuPanel === category);
+      });
+      previews.forEach(function (preview) {
+        preview.classList.toggle('is-active', preview.dataset.menuPreview === category);
+      });
+    }
+    tabs.forEach(function (tab) {
+      tab.addEventListener('mouseenter', function () { switchTo(tab.dataset.menuCategory); });
+      tab.addEventListener('focus', function () { switchTo(tab.dataset.menuCategory); });
     });
+    menu.addEventListener('mouseleave', function () { switchTo('process'); });
+    switchTo('process');
+  });
 
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('bg-primary/10');
+  var dropZone = document.getElementById('drop-zone');
+  var fileInput = document.getElementById('file-input');
+  var statusArea = document.getElementById('status-area');
+  var actions = document.getElementById('guest-login-actions');
+  var title = document.querySelector('[data-status-title]');
+  var detail = document.querySelector('[data-status-detail]');
+  var percent = document.querySelector('[data-status-percent]');
+  var needInput = document.getElementById('guest-need-input');
+  var continueButton = document.getElementById('continue-workbench');
+  var sendGuestMessage = document.getElementById('send-guest-message');
+  var chatUploadTrigger = document.getElementById('chat-upload-trigger');
+  var guestPanel = document.getElementById('guest-panel');
+  var chatBoard = document.querySelector('[data-chat-board]');
+  var quotaPill = document.querySelector('[data-quota-pill]');
+  var quotaCopy = document.querySelector('[data-quota-copy]');
+  var loginContinue = document.getElementById('login-continue');
+  var registerContinue = document.getElementById('register-continue');
+  var selectedFiles = [];
+  var guestMessages = [];
+  var guestMessageCount = 0;
+  var guestLimit = 3;
+  var currentMode = 'quickQuote';
+  var modelFileTypes = ['step', 'stp', 'stl', 'iges', 'igs', 'obj', 'dwg', 'dxf', 'pdf'];
+  var imageFileTypes = ['jpg', 'jpeg', 'png', 'webp', 'pdf'];
+  var drawingFileTypes = ['dwg', 'dxf', 'pdf', 'png', 'jpg', 'jpeg'];
+  var workspaceTargets = {
+    quote: './ai模型智能报价.html',
+    text: './ai文字转模型.html',
+    image: './ai图片转模型.html'
+  };
+  var modeConfigs = {
+    quickQuote: {
+      label: '快速报价',
+      layout: 'upload',
+      kicker: 'QUICK QUOTE',
+      title: '上传资料，进入制造报价',
+      description: '提交 3D 模型、2D 图纸或 PDF 资料后，可在登录后继续完善材料、数量、交期和表面处理要求。',
+      points: ['多格式上传', '报价参数补充', '工作台续接'],
+      cardTitle: '上传报价文件',
+      cardDescription: '支持单个零件或多个工程文件，模型与图纸可一起提交。',
+      badge: '快速报价入口',
+      dropTitle: '拖拽文件到这里，或点击选择文件',
+      dropDetail: '支持 .STEP、.STP、.STL、.IGES、.OBJ、.DWG、.DXF、.PDF，单文件建议不超过 100MB。',
+      fileButton: '浏览文件',
+      allowed: modelFileTypes,
+      accept: '.step,.stp,.stl,.iges,.igs,.obj,.dwg,.dxf,.pdf',
+      target: workspaceTargets.quote,
+      choice: '工程资料仅用于报价评估；复杂项目、批量采购或无法上传模型时，可直接发起人工报价。',
+      workflowTitle: '报价流程介绍',
+      workflowDescription: '从资料提交到订单确认，先在当前页面完成轻量暂存，登录后进入工作台继续处理。',
+      steps: [
+        ['上传零件资料', '提交 3D 模型、2D 图纸、PDF 说明或关键加工要求。'],
+        ['补充报价参数', '确认材料、数量、表面处理、公差重点和目标交期。'],
+        ['工程评估报价', '进行 DFM 检查、工艺路径判断、成本拆分和风险提示。'],
+        ['确认订单交付', '确认报价后进入生产排期、质检跟踪与交付协同。']
+      ]
+    },
+    smartQuote: {
+      label: '智能报价',
+      layout: 'chat',
+      kicker: 'AI QUOTE',
+      title: '用模型和需求生成智能报价',
+      description: '面向结构件、批量件和多工艺项目，先收集模型、图纸和关键报价需求。',
+      points: ['模型识别', '需求对话', '报价拆分'],
+      cardTitle: '和 AI 说明报价需求',
+      cardDescription: '游客模式可先进行少量需求沟通；上传模型或进入估算时会转入工作台继续。',
+      badge: '智能报价入口',
+      chatPrompt: '今天想评估哪类零件报价？',
+      chatWelcome: '一句话说清零件用途、材料、数量或交期即可；需要识别模型时可上传资料。',
+      dropTitle: '上传模型、图纸或说明文件',
+      dropDetail: '支持 STEP、STL、IGES、OBJ、DWG、DXF、PDF 等文件。',
+      fileButton: '选择资料',
+      allowed: modelFileTypes,
+      accept: '.step,.stp,.stl,.iges,.igs,.obj,.dwg,.dxf,.pdf',
+      target: workspaceTargets.quote,
+      choice: '当前入口会把文件和需求一起带入智能报价工作台，登录后可继续补充工艺、材料和交期。',
+      workflowTitle: '智能报价流程',
+      workflowDescription: '先整理资料与需求，进入工作台后再完成模型识别、报价估算和订单动作。',
+      steps: [
+        ['输入需求', '上传模型、图纸，或用文字补充项目目标。'],
+        ['确认参数', '补充材料、数量、表面处理和交期。'],
+        ['生成报价', '工作台完成 AI 估算、风险提示和价格拆分。'],
+        ['进入订单', '确认方案后进入下单、客服跟进或人工复核。']
+      ]
+    },
+    rapidPrototype: {
+      label: '快速原型',
+      layout: 'chat',
+      kicker: 'PROTOTYPE',
+      title: '把原型需求带入评估工作台',
+      description: '适合样件试制、小批量验证和结构迭代，先明确验证目标与制造约束。',
+      points: ['样件试制', '工艺建议', '交期判断'],
+      cardTitle: '和 AI 梳理原型需求',
+      cardDescription: '先说明样件目标、材料方向和验证场景，上传资料后转入工作台继续评估。',
+      badge: '快速原型入口',
+      chatPrompt: '要先验证哪一个原型想法？',
+      chatWelcome: '先描述样件用途、验证目标、数量和期望交期，资料可以稍后补充。',
+      dropTitle: '上传模型或原型说明',
+      dropDetail: '支持 3D 模型、2D 图纸、PDF 说明和图片资料。',
+      fileButton: '选择资料',
+      allowed: modelFileTypes.concat(imageFileTypes),
+      accept: '.step,.stp,.stl,.iges,.igs,.obj,.dwg,.dxf,.pdf,.jpg,.jpeg,.png,.webp',
+      target: workspaceTargets.quote,
+      choice: '原型项目会带入智能报价工作台，登录后可继续确认材料、工艺和验证重点。',
+      workflowTitle: '原型评估流程',
+      workflowDescription: '先明确样件目标，再进入工作台完成制造路径与报价判断。',
+      steps: [
+        ['提交原型资料', '上传模型、图片、图纸或需求说明。'],
+        ['说明验证目标', '补充外观、强度、装配或功能验证重点。'],
+        ['选择制造路径', '根据数量、材料和交期判断加工或打印方式。'],
+        ['输出原型方案', '形成可继续报价、下单或人工跟进的方案。']
+      ]
+    },
+    dfm: {
+      label: 'DFM检查',
+      layout: 'chat',
+      kicker: 'DFM REVIEW',
+      title: '提交资料，检查制造可行性',
+      description: '用于提前识别结构、材料、工艺和装配风险，减少后续返工。',
+      points: ['结构检查', '工艺风险', '修改建议'],
+      cardTitle: '和 AI 梳理 DFM 关注点',
+      cardDescription: '先说明结构、加工或装配风险，上传模型后进入工作台继续完整检查。',
+      badge: 'DFM 检查入口',
+      chatPrompt: '你想先检查哪类制造风险？',
+      chatWelcome: '可以先说明加工、装配、公差、薄壁或孔位风险，模型可作为附件补充。',
+      dropTitle: '上传模型或图纸',
+      dropDetail: '支持 STEP、STL、IGES、OBJ、DWG、DXF、PDF 等工程资料。',
+      fileButton: '选择资料',
+      allowed: modelFileTypes,
+      accept: '.step,.stp,.stl,.iges,.igs,.obj,.dwg,.dxf,.pdf',
+      target: workspaceTargets.quote,
+      choice: 'DFM 资料会带入智能报价工作台，登录后继续查看制造风险、材料建议和成本影响。',
+      workflowTitle: 'DFM 检查流程',
+      workflowDescription: '先保存结构资料和关注点，登录后进入工作台做完整工程分析。',
+      steps: [
+        ['上传结构资料', '提交模型、图纸或关键尺寸说明。'],
+        ['标记关注点', '说明公差、装配、薄壁、孔位或表面要求。'],
+        ['工程检查', '识别加工风险、成本影响和返工可能。'],
+        ['生成建议', '输出修改方向、工艺建议和后续报价路径。']
+      ]
+    },
+    imageTo3d: {
+      label: '图生3D模型',
+      layout: 'chat',
+      kicker: 'IMAGE TO 3D',
+      title: '用图片开启 3D 模型生成',
+      description: '从产品图片、草图或参考图开始，补充尺寸和结构目标后继续生成。',
+      points: ['图片输入', '结构补充', '模型生成'],
+      cardTitle: '和 AI 描述图片建模需求',
+      cardDescription: '先说明图片来源、尺寸和结构目标，上传图片后进入图片转模型工作台。',
+      badge: '图生 3D 入口',
+      chatPrompt: '想把哪张参考图变成模型？',
+      chatWelcome: '先说明图片里的产品、结构重点、尺寸参考和期望输出格式。',
+      dropTitle: '上传参考图片或 PDF',
+      dropDetail: '支持 JPG、PNG、WEBP、PDF，可在下方补充尺寸与结构描述。',
+      fileButton: '选择图片',
+      allowed: imageFileTypes,
+      accept: '.jpg,.jpeg,.png,.webp,.pdf',
+      target: workspaceTargets.image,
+      choice: '图片会带入图片转模型工作台，登录后继续补充尺寸、视角和输出格式。',
+      workflowTitle: '图生 3D 流程',
+      workflowDescription: '先保留图片与文字说明，真正的模型生成在工作台完成。',
+      steps: [
+        ['上传参考图', '提交产品图片、草图、局部细节或 PDF。'],
+        ['补充结构信息', '说明尺寸、材料、功能和关键比例。'],
+        ['进入生成工作台', '登录后继续生成、调整和确认模型方向。'],
+        ['输出模型资料', '导出可评估或可报价的模型文件。']
+      ]
+    },
+    textTo3d: {
+      label: '文生3D模型',
+      layout: 'chat',
+      kicker: 'TEXT TO 3D',
+      title: '用文字描述开启模型生成',
+      description: '用自然语言描述产品结构、功能、尺寸和外观目标，形成模型生成方向。',
+      points: ['文字需求', '参数补充', '模型草案'],
+      cardTitle: '描述模型需求',
+      cardDescription: '可以不上传文件，先用文字说明产品结构、尺寸、材料、约束和输出目标。',
+      badge: '文生 3D 入口',
+      chatPrompt: '想生成什么样的 3D 模型？',
+      chatWelcome: '直接描述结构、功能、尺寸、材质和应用场景即可，越具体越容易生成。',
+      dropTitle: '可选上传参考图或说明文件',
+      dropDetail: '支持 JPG、PNG、WEBP、PDF；也可以只在下方输入文字需求。',
+      fileButton: '选择参考资料',
+      allowed: imageFileTypes,
+      accept: '.jpg,.jpeg,.png,.webp,.pdf',
+      target: workspaceTargets.text,
+      choice: '文字需求会带入文字转模型工作台，登录后继续生成模型、补充参数和确认输出格式。',
+      workflowTitle: '文生 3D 流程',
+      workflowDescription: '游客模式先记录简要需求，模型生成与版本迭代在工作台继续。',
+      steps: [
+        ['描述需求', '输入结构、功能、尺寸、材质或应用场景。'],
+        ['补充参考', '可上传图片、PDF 或草图作为辅助资料。'],
+        ['进入生成工作台', '登录后继续生成模型草案并调整参数。'],
+        ['形成可评估模型', '输出可继续报价、评审或下载的模型资料。']
+      ]
+    },
+    formatConvert: {
+      label: '3D格式转换',
+      layout: 'chat',
+      kicker: 'FORMAT CONVERT',
+      title: '上传模型，准备格式转换',
+      description: '用于 STEP、STL、OBJ、IGES 等格式之间的转换，先确认源文件和目标格式。',
+      points: ['格式识别', '转换目标', '文件续接'],
+      cardTitle: '和 AI 确认格式转换需求',
+      cardDescription: '先说明源格式、目标格式和使用软件，上传模型后进入工作台处理。',
+      badge: '格式转换入口',
+      chatPrompt: '要把模型转换成什么格式？',
+      chatWelcome: '说明源格式、目标格式、单位和后续软件环境，模型可作为附件补充。',
+      dropTitle: '上传 3D 模型文件',
+      dropDetail: '支持 STEP、STP、STL、IGES、OBJ 等常见 3D 格式。',
+      fileButton: '选择模型',
+      allowed: ['step', 'stp', 'stl', 'iges', 'igs', 'obj'],
+      accept: '.step,.stp,.stl,.iges,.igs,.obj',
+      target: workspaceTargets.quote,
+      choice: '转换需求会先暂存，登录后进入工作台确认目标格式并继续处理。',
+      workflowTitle: '格式转换流程',
+      workflowDescription: '先保存源文件和目标格式，登录后在工作台继续转换、确认和下载。',
+      steps: [
+        ['上传源模型', '提交需要转换的 3D 文件。'],
+        ['选择目标格式', '说明目标格式、精度、单位或软件环境。'],
+        ['进入工作台', '登录后继续转换并检查模型可用性。'],
+        ['下载或报价', '获得转换结果后可继续报价或工程评估。']
+      ]
+    },
+    threeToTwo: {
+      label: '3D转2D工程图',
+      layout: 'chat',
+      kicker: '3D TO 2D',
+      title: '由 3D 模型生成工程图',
+      description: '由 3D 模型整理工程图要求，明确视图、标注、公差和输出格式。',
+      points: ['模型输入', '图纸要求', '工程图输出'],
+      cardTitle: '和 AI 确认工程图要求',
+      cardDescription: '先说明视图、尺寸标注、公差和输出格式，上传模型后进入工作台生成。',
+      badge: '工程图入口',
+      chatPrompt: '需要生成哪类工程图？',
+      chatWelcome: '先说明三视图、剖视、关键尺寸、公差或标题栏要求。',
+      dropTitle: '上传待出图模型',
+      dropDetail: '支持 STEP、STP、STL、IGES、OBJ，可补充 PDF 或说明。',
+      fileButton: '选择模型',
+      allowed: modelFileTypes,
+      accept: '.step,.stp,.stl,.iges,.igs,.obj,.dwg,.dxf,.pdf',
+      target: workspaceTargets.quote,
+      choice: '工程图需求会带入工作台，登录后继续确认视图、标注和输出格式。',
+      workflowTitle: '工程图生成流程',
+      workflowDescription: '当前页面保存模型和出图要求，工作台承担视图生成与工程参数确认。',
+      steps: [
+        ['上传模型', '提交待转换的 3D 模型文件。'],
+        ['补充出图要求', '说明三视图、剖视、尺寸、公差和标题栏。'],
+        ['进入工作台', '登录后继续生成和检查工程图。'],
+        ['输出图纸', '导出 DWG、DXF、PDF 或进入报价流程。']
+      ]
+    },
+    bubble: {
+      label: '2D气泡图标注',
+      layout: 'chat',
+      kicker: '2D BUBBLE',
+      title: '提交图纸，生成气泡标注',
+      description: '面向检验和质量协同，先确认编号规则、关键尺寸和图纸格式。',
+      points: ['图纸输入', '编号规则', '质检协同'],
+      cardTitle: '和 AI 确认气泡标注规则',
+      cardDescription: '先说明编号规则、检验重点和图纸格式，上传图纸后进入工作台继续标注。',
+      badge: '气泡图入口',
+      chatPrompt: '这张图纸要怎样标注？',
+      chatWelcome: '说明编号规则、检验项、关键尺寸和图纸格式即可。',
+      dropTitle: '上传图纸或 PDF',
+      dropDetail: '支持 DWG、DXF、PDF、JPG、PNG 等图纸和图片格式。',
+      fileButton: '选择图纸',
+      allowed: drawingFileTypes,
+      accept: '.dwg,.dxf,.pdf,.jpg,.jpeg,.png',
+      target: workspaceTargets.quote,
+      choice: '标注资料会带入工作台，登录后继续确认编号规则、关键尺寸和检验项。',
+      workflowTitle: '气泡图标注流程',
+      workflowDescription: '先保存图纸和标注规则，登录后继续完成编号、检查项和质量文件协同。',
+      steps: [
+        ['上传图纸', '提交 DWG、DXF、PDF 或图片图纸。'],
+        ['说明规则', '补充编号方式、检验项和关键尺寸。'],
+        ['进入工作台', '登录后继续标注、检查和调整。'],
+        ['输出质检资料', '生成可用于检验、采购或报价的标注结果。']
+      ]
+    }
+  };
+
+  function setText(selector, value) {
+    var element = document.querySelector(selector);
+    if (element) element.textContent = value;
+  }
+
+  function getLoginUrl(target) {
+    return '../%E5%85%A5%E5%8F%A3/%E7%99%BB%E5%BD%95.html?redirect=' + encodeURIComponent(getLoginRedirectTarget(target));
+  }
+
+  function getRegisterUrl(target) {
+    return '../%E5%85%A5%E5%8F%A3/%E6%B3%A8%E5%86%8C%E9%A1%B5.html?redirect=' + encodeURIComponent(getLoginRedirectTarget(target));
+  }
+
+  function getLoginRedirectTarget(target) {
+    var localTarget = target || workspaceTargets.quote;
+    return '../用户（已核对）/' + localTarget.replace('./', '');
+  }
+
+  function updateAuthLinks() {
+    var config = modeConfigs[currentMode] || modeConfigs.quickQuote;
+    if (loginContinue) loginContinue.href = getLoginUrl(config.target);
+    if (registerContinue) registerContinue.href = getRegisterUrl(config.target);
+  }
+
+  function persistDraft(reason) {
+    var config = modeConfigs[currentMode] || modeConfigs.quickQuote;
+    var primaryFile = selectedFiles[0] || null;
+    var draft = {
+      source: 'marketing-guest-solution',
+      mode: currentMode,
+      modeLabel: config.label,
+      primaryName: primaryFile ? primaryFile.name : '',
+      fileCount: selectedFiles.length,
+      text: needInput ? needInput.value.trim() : '',
+      messages: guestMessages.slice(-8),
+      guestMessageCount: guestMessageCount,
+      target: config.target,
+      reason: reason,
+      createdAt: new Date().toISOString()
+    };
+    window.sessionStorage.setItem('agileGuestSolutionDraft', JSON.stringify(draft));
+    window.sessionStorage.setItem('agileLoginRedirect', getLoginRedirectTarget(config.target));
+    window.sessionStorage.setItem('agileGuestQuoteDraft', JSON.stringify({
+      source: 'marketing-guest-upload',
+      mode: currentMode,
+      modeLabel: config.label,
+      primaryName: draft.primaryName,
+      fileCount: draft.fileCount,
+      text: draft.text,
+      messages: draft.messages,
+      target: draft.target,
+      createdAt: draft.createdAt
+    }));
+    return draft;
+  }
+
+  function updateQuota() {
+    var remaining = Math.max(0, guestLimit - guestMessageCount);
+    if (quotaPill) quotaPill.textContent = remaining + ' / ' + guestLimit;
+    if (quotaCopy) {
+      quotaCopy.textContent = remaining > 0 ? '游客模式剩余 ' + remaining + ' 次轻量对话' : '游客对话已暂存';
+    }
+  }
+
+  function resetChatBoard(config) {
+    guestMessages = [];
+    guestMessageCount = 0;
+    if (chatBoard) {
+      chatBoard.innerHTML = '';
+      var prompt = document.createElement('div');
+      prompt.className = 'guest-chat-prompt';
+      var promptTitle = config.chatPrompt || '今天想先评估什么制造需求？';
+      var promptCopy = config.chatWelcome || '可以先描述你的需求，我会帮你整理进入工作台前需要的信息。';
+      prompt.innerHTML = '<span>' + config.label + '</span><strong>' + promptTitle + '</strong><p>' + promptCopy + '</p>';
+      chatBoard.appendChild(prompt);
+    }
+    updateQuota();
+  }
+
+  function appendChatBubble(text, type, record) {
+    if (!chatBoard) return;
+    if (type === 'user') {
+      var prompt = chatBoard.querySelector('.guest-chat-prompt');
+      if (prompt) prompt.remove();
+    }
+    var bubble = document.createElement('div');
+    bubble.className = 'guest-chat-bubble' + (type === 'user' ? ' is-user' : '') + (type === 'system' ? ' is-system' : '');
+    bubble.textContent = text;
+    chatBoard.appendChild(bubble);
+    chatBoard.scrollTop = chatBoard.scrollHeight;
+    if (record !== false) {
+      guestMessages.push({ role: type === 'user' ? 'user' : 'assistant', content: text });
+    }
+  }
+
+  function buildAssistantReply(config, userText) {
+    if (guestMessageCount >= guestLimit) {
+      return '已暂存当前需求。';
+    }
+    if (currentMode === 'smartQuote') {
+      return '已记录。可以继续补充材料、数量、交期，或上传模型。';
+    }
+    if (currentMode === 'imageTo3d') {
+      return '已记录图片建模目标。可以上传参考图补充细节。';
+    }
+    if (currentMode === 'textTo3d') {
+      return '已记录模型描述。可以继续补充尺寸、结构约束或使用场景。';
+    }
+    if (currentMode === 'dfm') {
+      return '已记录检查关注点。可以上传模型补充结构信息。';
+    }
+    return '已记录。可以继续补充关键要求或上传资料。';
+  }
+
+  function showStatus(summary, message) {
+    if (title) title.textContent = summary;
+    if (detail) detail.textContent = message;
+    if (percent) percent.textContent = '已暂存';
+    if (statusArea) statusArea.classList.remove('hidden');
+    if (actions) actions.classList.remove('hidden');
+  }
+
+  function setMode(mode) {
+    currentMode = modeConfigs[mode] ? mode : 'quickQuote';
+    var config = modeConfigs[currentMode];
+    document.querySelectorAll('[data-mode-option]').forEach(function (button) {
+      button.classList.toggle('is-active', button.dataset.modeOption === currentMode);
     });
+    setText('[data-mode-kicker]', config.kicker);
+    setText('[data-mode-title]', config.title);
+    setText('[data-mode-description]', config.description);
+    config.points.forEach(function (point, index) {
+      setText('[data-mode-point="' + index + '"]', point);
+    });
+    setText('[data-card-title]', config.cardTitle);
+    setText('[data-card-description]', config.cardDescription);
+    setText('[data-card-badge]', config.badge);
+    setText('[data-drop-title]', config.dropTitle);
+    setText('[data-drop-detail]', config.dropDetail);
+    setText('[data-file-button]', config.fileButton);
+    setText('[data-choice-copy]', config.choice);
+    setText('[data-workflow-title]', config.workflowTitle);
+    setText('[data-workflow-description]', config.workflowDescription);
+    config.steps.forEach(function (step, index) {
+      setText('[data-workflow-step-title="' + index + '"]', step[0]);
+      setText('[data-workflow-step-copy="' + index + '"]', step[1]);
+    });
+    if (fileInput) {
+      fileInput.accept = config.accept;
+      fileInput.value = '';
+    }
+    if (needInput) {
+      needInput.value = '';
+      needInput.placeholder = config.layout === 'upload'
+        ? '补充材料、数量、交期、公差或表面处理...'
+        : '输入一句需求，或点击左侧 + 上传资料进入工作台...';
+    }
+    selectedFiles = [];
+    if (guestPanel) {
+      guestPanel.classList.toggle('is-upload-mode', config.layout === 'upload');
+      guestPanel.classList.toggle('is-chat-mode', config.layout !== 'upload');
+    }
+    if (statusArea) statusArea.classList.add('hidden');
+    if (actions) actions.classList.add('hidden');
+    var chatAnswer = document.querySelector('[data-chat-answer]');
+    if (chatAnswer) chatAnswer.innerHTML = '<strong>AgileMakeAI：</strong>' + (config.layout === 'upload' ? '上传资料后可登录继续完善报价。' : '可以先聊清楚需求；一旦上传资料或进入生成，将转到工作台继续。');
+    if (continueButton) continueButton.textContent = config.layout === 'upload' ? '登录并进入工作台' : '进入工作台';
+    if (sendGuestMessage) sendGuestMessage.disabled = config.layout === 'upload';
+    resetChatBoard(config);
+    updateAuthLinks();
+  }
 
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('bg-primary/10');
-      const files = e.dataTransfer.files;
-      if (files.length > 0) {
-        console.log('Files dropped:', files);
-        // Status area could be toggled here for UX
+  function validFiles(files) {
+    var config = modeConfigs[currentMode] || modeConfigs.quickQuote;
+    return Array.from(files || []).filter(function (file) {
+      var extension = (file.name.split('.').pop() || '').toLowerCase();
+      return config.allowed.indexOf(extension) !== -1;
+    });
+  }
+
+  function handleFiles(files) {
+    var config = modeConfigs[currentMode] || modeConfigs.quickQuote;
+    var selected = validFiles(files);
+    if (!selected.length) {
+      window.alert('请上传当前入口支持的文件格式。');
+      return;
+    }
+    selectedFiles = selected;
+    var summary = selected.length > 1 ? selected[0].name + ' 等 ' + selected.length + ' 个文件' : selected[0].name;
+    persistDraft('file-upload');
+    if (config.layout !== 'upload') {
+      appendChatBubble('已上传：' + summary, 'user');
+      appendChatBubble('资料已保存，接下来进入工作台继续处理。', 'system');
+      window.location.href = getLoginUrl(config.target);
+      return;
+    }
+    showStatus(summary, config.label + '资料已保存，登录后会继续带入对应工作台。');
+    var chatAnswer = document.querySelector('[data-chat-answer]');
+    if (chatAnswer) chatAnswer.innerHTML = '<strong>AgileMakeAI：</strong>已收到 ' + summary + '。可继续补充需求，或登录进入工作台。';
+  }
+
+  function submitGuestMessage() {
+    var config = modeConfigs[currentMode] || modeConfigs.quickQuote;
+    if (config.layout === 'upload') {
+      persistDraft('continue');
+      window.location.href = getLoginUrl(config.target);
+      return;
+    }
+    var text = needInput ? needInput.value.trim() : '';
+    if (!text) {
+      appendChatBubble('可以先输入一句需求，或点击附件上传资料进入工作台。', 'system', false);
+      return;
+    }
+    if (guestMessageCount >= guestLimit) {
+      persistDraft('guest-limit');
+      showStatus(config.label + '对话已暂存', '当前需求已保留。');
+      return;
+    }
+    appendChatBubble(text, 'user');
+    guestMessageCount += 1;
+    if (needInput) needInput.value = '';
+    appendChatBubble(buildAssistantReply(config, text), 'assistant');
+    updateQuota();
+    persistDraft('guest-chat');
+    if (guestMessageCount >= guestLimit) {
+      showStatus(config.label + '对话已暂存', '当前需求已保留。');
+    }
+  }
+
+  document.querySelectorAll('[data-mode-option]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      setMode(button.dataset.modeOption);
+      history.replaceState(null, '', location.pathname + '?mode=' + currentMode + '#quote-upload');
+    });
+  });
+
+  document.querySelectorAll('[data-quick-chip]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      if (!needInput) return;
+      var current = needInput.value.trim();
+      needInput.value = current ? current + '\n' + button.dataset.quickChip : button.dataset.quickChip;
+      persistDraft('text-input');
+    });
+  });
+
+  if (needInput) {
+    needInput.addEventListener('input', function () {
+      persistDraft('text-input');
+    });
+  }
+
+  if (continueButton) {
+    continueButton.addEventListener('click', function () {
+      var config = modeConfigs[currentMode] || modeConfigs.quickQuote;
+      var draft = persistDraft('continue');
+      if (!draft.primaryName && !draft.text) {
+        showStatus(config.label + '需求待补充', config.layout === 'upload' ? '请先上传资料，再登录进入工作台。' : '可以先聊一句需求，或上传资料进入工作台。');
+        return;
+      }
+      window.location.href = getLoginUrl(config.target);
+    });
+  }
+
+  if (sendGuestMessage) {
+    sendGuestMessage.addEventListener('click', submitGuestMessage);
+  }
+
+  if (needInput) {
+    needInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        submitGuestMessage();
       }
     });
+  }
 
-    fileInput.addEventListener('change', (e) => {
-      if (e.target.files.length > 0) {
-        console.log('Files selected via browser:', e.target.files);
-      }
+  if (chatUploadTrigger && fileInput) {
+    chatUploadTrigger.addEventListener('click', function () {
+      fileInput.click();
     });
-  </script>
-<!-- END: Interactive Logic -->
-</body></html>
+  }
 
+  if (dropZone && fileInput) {
+    dropZone.addEventListener('click', function (event) {
+      if (event.target !== fileInput) fileInput.click();
+    });
+    dropZone.addEventListener('dragover', function (event) {
+      event.preventDefault();
+      dropZone.classList.add('is-dragover');
+    });
+    dropZone.addEventListener('dragleave', function () {
+      dropZone.classList.remove('is-dragover');
+    });
+    dropZone.addEventListener('drop', function (event) {
+      event.preventDefault();
+      dropZone.classList.remove('is-dragover');
+      handleFiles(event.dataTransfer.files);
+    });
+    fileInput.addEventListener('change', function (event) {
+      handleFiles(event.target.files);
+    });
+  }
+
+  var initialMode = new URLSearchParams(window.location.search).get('mode') || window.location.hash.replace('#', '');
+  setMode(initialMode || 'quickQuote');
+})();
+</script>
+</body>
+</html>
 
 

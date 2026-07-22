@@ -1057,6 +1057,33 @@ AI驱动分析
             syncSummary();
         })();
     </script>
+<script>
+        (function () {
+            function readDraft() {
+                try {
+                    return JSON.parse(window.sessionStorage.getItem('agileGuestSolutionDraft') || 'null');
+                } catch (error) {
+                    return null;
+                }
+            }
+            function showRestoredDraft(draft) {
+                if (!draft || draft.target && decodeURIComponent(draft.target).indexOf('ai文字转模型.html') === -1) return;
+                const notice = document.createElement('div');
+                notice.className = 'fixed top-20 left-1/2 z-[80] w-[min(520px,calc(100vw-32px))] -translate-x-1/2 rounded-2xl border border-primary/15 bg-white px-5 py-4 shadow-xl transition-opacity duration-500';
+                const title = document.createElement('p');
+                title.className = 'text-body-sm font-bold text-on-surface';
+                title.textContent = '已接入' + (draft.modeLabel || '文生模型') + '需求';
+                const body = document.createElement('p');
+                body.className = 'mt-1 text-[12px] leading-5 text-on-surface-variant';
+                body.textContent = [draft.primaryName ? '参考资料：' + draft.primaryName : '', draft.text ? '需求：' + draft.text : ''].filter(Boolean).join('；') || '已恢复前一步暂存的文字需求。';
+                notice.append(title, body);
+                document.body.appendChild(notice);
+                setTimeout(function () { notice.style.opacity = '0'; }, 6200);
+                setTimeout(function () { notice.remove(); }, 6800);
+            }
+            showRestoredDraft(readDraft());
+        })();
+    </script>
 </body></html>
 
 
