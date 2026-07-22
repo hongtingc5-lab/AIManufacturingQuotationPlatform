@@ -1,0 +1,144 @@
+{
+  "docTitle": "Powder Coating | ProMakeHub",
+  "heroTitle": "Powder Coating",
+  "heroDesc": "A durable coating route for batch sheet-metal and cosmetic structural parts.",
+  "heroStats": [
+    {
+      "value": "Metals",
+      "label": "Material fit"
+    },
+    {
+      "value": "about 60-120μm",
+      "label": "Typical thickness"
+    },
+    {
+      "value": "Bake cure",
+      "label": "Curing condition"
+    },
+    {
+      "value": "Masking",
+      "label": "Critical faces"
+    }
+  ],
+  "mediaImg": "/precision/sheet-metal-part-02.png",
+  "bodyTitle": "Process Focus",
+  "bodyDesc": "Good for metal housings, brackets and sheet-metal parts with thicker coating, weather resistance and stable colors. Actual results depend on material grade, pre-treatment, geometry, thickness, masking and acceptance criteria, so these details should be confirmed during quoting.",
+  "pills": [
+    "Drawing-based",
+    "Masking notes",
+    "Sample review",
+    "Batch records"
+  ],
+  "panels": [
+    {
+      "title": "Drawing input",
+      "subtitle": "Material + finish notes",
+      "body": "State color, thickness, masked faces, cosmetic level and inspection standard."
+    },
+    {
+      "title": "Quality check",
+      "subtitle": "Appearance / size / adhesion",
+      "body": "Appearance, thickness, hardness or corrosion test can be confirmed by process type."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review boundaries first",
+      "body": "Deep holes, sharp edges, thin walls, threads and precision fits need early review."
+    }
+  ],
+  "tableTitle": "Application and Design Notes",
+  "tableRows": [
+    [
+      "Item",
+      "Description",
+      "Notes"
+    ],
+    [
+      "Use case",
+      "Enclosures, brackets and sheet-metal housings",
+      "Durable appearance, not ideal for precision fit faces."
+    ],
+    [
+      "Control points",
+      "Thickness, masking and edge coverage",
+      "Bake curing may affect some materials or assemblies."
+    ],
+    [
+      "Appearance",
+      "Matte, semi-gloss, texture and color codes",
+      "Batch color should be checked by sample or color card."
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Material fit",
+      "value": "Metals"
+    },
+    {
+      "label": "Main goal",
+      "value": "Weather-resistant coating and consistent color on metal housings or brackets."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / finish notes"
+    },
+    {
+      "label": "Confirmation",
+      "value": "Drawing, sample or inspection standard"
+    }
+  ],
+  "asideCta": {
+    "title": "Need finishing advice?",
+    "body": "Share material, appearance, function and masking requirements so engineering can match a suitable process.",
+    "button": "Discuss Process"
+  },
+  "related": {
+    "title": "Related Finishes",
+    "desc": "Finishes differ in appearance, thickness, corrosion behavior, wear behavior and cost, so they should be compared against part use.",
+    "items": [
+      {
+        "img": "/precision/aluminum-flashlight-housing-01.png",
+        "title": "Anodizing",
+        "body": "A common aluminum finish that improves corrosion resistance, wear behavior and appearance options such as clear or black.",
+        "href": "/capabilities/finish/anodizing",
+        "link": "View process"
+      },
+      {
+        "img": "/precision/precision-shaft-04.png",
+        "title": "Electroplating",
+        "body": "Zinc, nickel, chrome, tin and other plating routes improve corrosion resistance, conductivity, wear or appearance.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      },
+      {
+        "img": "/precision/sheet-metal-part-01.png",
+        "title": "Painting",
+        "body": "Supports color, gloss, insulating protection and masked areas on metal and selected plastic parts.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Powder Coating FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Powder Coating suitable for?",
+        "a": "Powder Coating is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Powder Coating quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Powder Coating?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

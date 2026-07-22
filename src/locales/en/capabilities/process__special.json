@@ -1,0 +1,176 @@
+{
+  "docTitle": "Complex Part Machining | ProMakeHub",
+  "heroTitle": "Complex Part Machining",
+  "heroDesc": "Integrated machining for irregular and complex geometry",
+  "heroStats": [
+    {
+      "value": "Hybrid Route",
+      "label": "CNC / EDM / Fixtures"
+    },
+    {
+      "value": "±0.02-0.05mm",
+      "label": "Local Reference"
+    },
+    {
+      "value": "Multi-Datum",
+      "label": "Fixture Planning"
+    },
+    {
+      "value": "CMM",
+      "label": "Inspection Support"
+    }
+  ],
+  "mediaImg": "/precision/factory-floor3.png",
+  "bodyTitle": "Complex Part Machining with multi-datum process planning",
+  "bodyDesc": "Complex parts may include freeform surfaces, angled holes, thin walls, deep cavities, local undercuts or multiple processes, so they cannot be evaluated by a single process label. Engineering review focuses on datum strategy, machining sequence, deformation risk, inspection access and finishing allowance.",
+  "pills": [
+    "Freeform Surfaces",
+    "Thin Walls",
+    "Deep Cavities",
+    "Angled Holes",
+    "Fixtures"
+  ],
+  "panels": [
+    {
+      "title": "Process Route",
+      "subtitle": "Step-by-step Review",
+      "body": "Combine CNC, EDM, wire cutting, 3D printing or post-machining as needed."
+    },
+    {
+      "title": "Risk Control",
+      "subtitle": "Deformation First",
+      "body": "Thin walls, long overhangs and repeated setups affect stability."
+    },
+    {
+      "title": "Inspection",
+      "subtitle": "Datum Alignment",
+      "body": "Critical features need measurable datums and fixture planning."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Local Tolerance",
+      "±0.02-0.05mm reviewable",
+      "Locating holes, mating faces, key slots",
+      "Depends on material, fixture and part rigidity"
+    ],
+    [
+      "Surface Machining",
+      "Ball-end finishing / 5-axis",
+      "Impellers, curved housings, guide surfaces",
+      "Tool access must be reviewed"
+    ],
+    [
+      "Thin-Wall Control",
+      "Prefer rib or machining allowance",
+      "Housings, brackets, thermal structures",
+      "May require stress relief or forming correction"
+    ],
+    [
+      "Inspection Plan",
+      "CMM / Fixture / Template",
+      "Multi-datum and complex profiles",
+      "Inspection datum should be defined on drawing"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Geometry breakdown",
+      "body": "Identify surfaces, undercuts, deep cavities, thin walls and key datums."
+    },
+    {
+      "index": "02",
+      "title": "Process route planning",
+      "body": "Define process, setup order, allowance and inspection points."
+    },
+    {
+      "index": "03",
+      "title": "Trial and verification",
+      "body": "Validate high-risk geometry and critical dimensions first."
+    },
+    {
+      "index": "04",
+      "title": "Batch replication",
+      "body": "Scale after fixtures, programs and inspection methods are stable."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Metals / Engineering Plastics"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "1-3000 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "STEP / 2D / Fixture Drawing"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "CMM / FAI Report"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC Machining",
+        "body": "Supports multi-axis milling, turning and datum machining.",
+        "href": "/capabilities/process/cnc",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/3dprint.png",
+        "title": "Metal 3D Printing",
+        "body": "Useful for internal channels difficult to machine subtractively.",
+        "href": "/capabilities/process/metal-3d",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC machining",
+        "body": "Precision parts and complex surfaces.",
+        "href": "/capabilities/process/cnc",
+        "link": "View process details"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Complex Part Machining FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Complex Part Machining suitable for?",
+        "a": "Complex Part Machining is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Complex Part Machining quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Complex Part Machining?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

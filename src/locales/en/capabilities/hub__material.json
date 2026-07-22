@@ -1,0 +1,153 @@
+{
+  "docTitle": "Materials Center | ProMakeHub",
+  "heroTitle": "Materials",
+  "heroDesc": "Select materials by strength, weight, corrosion resistance, conductivity, insulation, finishing needs and manufacturing route.",
+  "heroStats": [],
+  "searchPlaceholder": "Search material, grade or application",
+  "sectionTitle": "Material Categories",
+  "sectionDesc": "Common materials are organized around lightweight structures, corrosion resistance, conductivity, high-load parts and insulating wear needs, so material, process, finishing and cost choices can be evaluated together early.",
+  "filterAria": "Filter by material selection goal",
+  "filterEyebrow": "Selection Filter",
+  "filterTitle": "Narrow by part requirement",
+  "chips": [
+    {
+      "key": "all",
+      "label": "All Materials"
+    },
+    {
+      "key": "lightweight",
+      "label": "Lightweight"
+    },
+    {
+      "key": "corrosion",
+      "label": "Corrosion"
+    },
+    {
+      "key": "conductive",
+      "label": "Conductive"
+    },
+    {
+      "key": "strength",
+      "label": "High Strength"
+    },
+    {
+      "key": "insulation",
+      "label": "Insulating Wear"
+    }
+  ],
+  "cards": [
+    {
+      "id": "aluminum",
+      "tags": [
+        "lightweight",
+        "corrosion",
+        "finishing",
+        "strength"
+      ],
+      "title": "Aluminum Alloys",
+      "grades": "6061, 7075, 5052, 6082",
+      "body": "Low density and stable machinability for housings, brackets, fixtures and lightweight structures.",
+      "img": "/precision/product-flange.jpg",
+      "href": "/capabilities/material/aluminum"
+    },
+    {
+      "id": "stainless",
+      "tags": [
+        "corrosion",
+        "strength",
+        "wear"
+      ],
+      "title": "Stainless Steel",
+      "grades": "304, 316, 17-4PH",
+      "body": "Good corrosion resistance and durability for equipment parts, shafts, fluid-contact and clean environments.",
+      "img": "/precision/product-shaft.jpg",
+      "href": "/capabilities/material/stainless"
+    },
+    {
+      "id": "carbon",
+      "tags": [
+        "strength",
+        "wear"
+      ],
+      "title": "Carbon Steel",
+      "grades": "Q235, 45#, 40Cr",
+      "body": "Balanced strength and cost for load structures, bases, shafts and mechanical connectors.",
+      "img": "/precision/product-bracket.jpg",
+      "href": "/capabilities/material/carbon"
+    },
+    {
+      "id": "copper",
+      "tags": [
+        "conductive",
+        "corrosion",
+        "wear"
+      ],
+      "title": "Copper Alloys",
+      "grades": "Pure copper, H62, C36000, tin bronze",
+      "body": "Strong electrical and thermal conductivity for contacts, heat-transfer parts, bushings and wear pairs.",
+      "img": "/precision/cnc-turned-part-02.png",
+      "href": "/capabilities/material/copper"
+    },
+    {
+      "id": "plastic",
+      "tags": [
+        "lightweight",
+        "insulation",
+        "wear",
+        "corrosion"
+      ],
+      "title": "Engineering Plastics",
+      "grades": "POM, PA, PC, PEEK, ABS",
+      "body": "Lightweight, insulating, wear-resistant or chemical-resistant options for prototypes and lower-load structures.",
+      "img": "/precision/urethane-casting.png",
+      "href": "/capabilities/material/plastic"
+    },
+    {
+      "id": "titanium",
+      "tags": [
+        "lightweight",
+        "corrosion",
+        "strength"
+      ],
+      "title": "Titanium Alloys",
+      "grades": "TC4, TA2, Ti-6Al-4V",
+      "body": "High specific strength and corrosion resistance for demanding lightweight structures and special environments.",
+      "img": "/precision/cnc-five-axis-part-03.png",
+      "href": "/capabilities/material/titanium"
+    },
+    {
+      "id": "composite",
+      "tags": [
+        "lightweight",
+        "insulation",
+        "strength"
+      ],
+      "title": "Composites",
+      "grades": "Carbon fiber sheet, fiberglass sheet, G10/FR4",
+      "body": "Suitable for lightweight, insulating, laminated structures and directional stiffness needs.",
+      "img": "/precision/timing-pulley-gear-06.png",
+      "href": "/capabilities/material/composite"
+    }
+  ],
+  "faq": {
+    "title": "Materials FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Materials suitable for?",
+        "a": "Materials is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Materials quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Materials?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need material substitution or selection advice?",
+  "ctaDesc": "Share the part use, environment, load requirements and target cost so the material can be reviewed together with process and finishing needs.",
+  "ctaButton": "Discuss Materials"
+}

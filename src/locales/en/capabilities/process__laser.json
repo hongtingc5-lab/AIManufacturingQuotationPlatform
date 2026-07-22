@@ -1,0 +1,176 @@
+{
+  "docTitle": "Laser Cutting | ProMakeHub",
+  "heroTitle": "Laser Cutting",
+  "heroDesc": "Fast and accurate sheet profile cutting",
+  "heroStats": [
+    {
+      "value": "0.5-20mm",
+      "label": "Reviewable Thickness"
+    },
+    {
+      "value": "±0.1-0.2mm",
+      "label": "Typical Reference"
+    },
+    {
+      "value": "Thermal Cut",
+      "label": "Heat Control Needed"
+    },
+    {
+      "value": "DXF / DWG",
+      "label": "Profile Files"
+    }
+  ],
+  "mediaImg": "/precision/laser-cutting.png",
+  "bodyTitle": "Laser Cutting for fast metal sheet profiling",
+  "bodyDesc": "Laser cutting is suitable for 2D profiles, holes and slots in metal sheet. It provides fast cutting and consistent contours, and is often combined with bending, inserts, welding and finishing. Actual edge quality depends on material, thickness, assist gas, heat input and hole-size ratio.",
+  "pills": [
+    "Carbon Steel",
+    "Stainless Steel",
+    "Aluminum Sheet",
+    "Copper Sheet",
+    "Sheet Parts"
+  ],
+  "panels": [
+    {
+      "title": "Efficiency",
+      "subtitle": "Fast Nesting",
+      "body": "Good for varied sheet profiles and small to medium batches."
+    },
+    {
+      "title": "Quality Focus",
+      "subtitle": "Heat / Burr",
+      "body": "Thick plate and small holes require attention to taper, dross and heat distortion."
+    },
+    {
+      "title": "Process Pairing",
+      "subtitle": "Bend / Weld",
+      "body": "Can continue to bending, inserts, welding and coating after cutting."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Thickness",
+      "0.5-20mm reviewable",
+      "Sheet metal, panels, brackets",
+      "Capability depends on material and machine power"
+    ],
+    [
+      "Profile Tolerance",
+      "About ±0.1-0.2mm",
+      "Holes, outlines, slots",
+      "Thick stock and long edges may vary more"
+    ],
+    [
+      "Minimum Hole",
+      "Preferably no smaller than thickness",
+      "Vent holes, mounting holes",
+      "Small holes may be affected by piercing"
+    ],
+    [
+      "Edge Treatment",
+      "Deburr / Chamfer",
+      "Assembly and cosmetic edges",
+      "Sharp edge or chamfer should be specified"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Drawing and material check",
+      "body": "Confirm material, thickness, grain direction, hole size and cosmetic face."
+    },
+    {
+      "index": "02",
+      "title": "Nesting and path planning",
+      "body": "Optimize nesting, lead-in points and heat distortion control."
+    },
+    {
+      "index": "03",
+      "title": "Cutting and deburring",
+      "body": "Cut profiles and remove dross and sharp edges."
+    },
+    {
+      "index": "04",
+      "title": "Bending or finishing",
+      "body": "Continue to bending, welding, coating or packaging as required."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Metal Sheet"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "1-10000 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "DXF / DWG / STEP"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "FAI / Dimensional Report"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/sheet-metal-fabrication.png",
+        "title": "Sheet Metal Fabrication",
+        "body": "Cut blanks can be bent into structural parts.",
+        "href": "/capabilities/process/sheet-metal",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC machining",
+        "body": "Precision parts and complex surfaces.",
+        "href": "/capabilities/process/cnc",
+        "link": "View process details"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Surface Finishing",
+        "body": "Improves appearance and corrosion resistance.",
+        "href": "/capabilities/finish",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Laser Cutting FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Laser Cutting suitable for?",
+        "a": "Laser Cutting is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Laser Cutting quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Laser Cutting?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

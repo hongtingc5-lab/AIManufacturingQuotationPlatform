@@ -1,0 +1,176 @@
+{
+  "docTitle": "CNC Machining Service | ProMakeHub",
+  "heroTitle": "CNC Machining Service",
+  "heroDesc": "Precision machining service for prototypes, low-volume parts and functional components",
+  "heroStats": [
+    {
+      "value": "STEP / 2D",
+      "label": "Drawing Input"
+    },
+    {
+      "value": "DFM",
+      "label": "Machining Review"
+    },
+    {
+      "value": "FAI / CMM",
+      "label": "Inspection Support"
+    },
+    {
+      "value": "Low Volume",
+      "label": "Flexible Scheduling"
+    }
+  ],
+  "mediaImg": "/precision/cnc-machining-service.png",
+  "bodyTitle": "CNC Machining Service from drawing review to first article",
+  "bodyDesc": "CNC machining service focuses on dimensions, assembly and material performance for functional parts. Engineers review datums, tolerances, material, heat treatment and surface requirements before selecting milling, turning or mill-turn routes. Final accuracy, lead time and cost depend on part geometry and drawing review.",
+  "pills": [
+    "Aluminum",
+    "Stainless Steel",
+    "Copper Alloys",
+    "Titanium",
+    "Engineering Plastics"
+  ],
+  "panels": [
+    {
+      "title": "Service Focus",
+      "subtitle": "Dimension and Fit",
+      "body": "Machining and inspection plans are built around holes, datums, threads and mating faces."
+    },
+    {
+      "title": "Process Choice",
+      "subtitle": "Milling / Turning",
+      "body": "Route selection depends on shape, hole patterns, rotational features and fixturing risk."
+    },
+    {
+      "title": "Documents",
+      "subtitle": "Order-Based",
+      "body": "FAI, dimensional, material or finishing records can be provided as required."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Drawing Review",
+      "Check material, tolerance, datum and finish requirements",
+      "Functional parts, fixtures, structures",
+      "Critical dimensions should be confirmed when 2D tolerances are missing"
+    ],
+    [
+      "Process Route",
+      "3/4/5-axis, turning or mill-turn",
+      "Hole patterns, cavities, surfaces, shafts",
+      "Complex parts may require multiple setups"
+    ],
+    [
+      "Inspection",
+      "Caliper, height gauge, CMM or custom gauge",
+      "Assembly datums and critical dimensions",
+      "Inspection scope follows drawing and order agreement"
+    ],
+    [
+      "Finishing Link",
+      "Deburring, cleaning, anodizing, passivation, blasting",
+      "Cosmetic and corrosion-resistant parts",
+      "Dimensional change after finishing should be reviewed"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Submit drawings",
+      "body": "Provide 3D model, 2D tolerances, material, quantity and finish requirements."
+    },
+    {
+      "index": "02",
+      "title": "Engineering review",
+      "body": "Check fixturing, tool access, tolerance risk and inspection method."
+    },
+    {
+      "index": "03",
+      "title": "Machining and first article",
+      "body": "Start stable machining and in-process checks after first-article confirmation."
+    },
+    {
+      "index": "04",
+      "title": "Clean and deliver",
+      "body": "Complete deburring, cleaning, packaging and agreed quality documents."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "STEP, 2D drawing, material grade"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Prototype, low-volume, functional parts"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Parts, inspection records, finishing"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Datums, tolerances, fixturing distortion"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/stamping-service.png",
+        "title": "Metal Stamping Service",
+        "body": "Single-stage or progressive stamping for brackets, springs, housings and connectors.",
+        "href": "/capabilities/service/stamping",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "CNC Machining Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is CNC Machining Service suitable for?",
+        "a": "CNC Machining Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a CNC Machining Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for CNC Machining Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

@@ -1,0 +1,176 @@
+{
+  "docTitle": "Metal Casting Service | ProMakeHub",
+  "heroTitle": "Metal Casting Service",
+  "heroDesc": "Casting service for complex metal blanks and production structures",
+  "heroStats": [
+    {
+      "value": "Al / Steel / Copper",
+      "label": "Material Review"
+    },
+    {
+      "value": "Blank",
+      "label": "Near-Net Shape"
+    },
+    {
+      "value": "CNC",
+      "label": "Critical Faces"
+    },
+    {
+      "value": "Inspection",
+      "label": "Defect Control"
+    }
+  ],
+  "mediaImg": "/precision/casting-service.png",
+  "bodyTitle": "Metal Casting Service from casting plan to post-machined delivery",
+  "bodyDesc": "Metal casting is suitable for complex outer geometry, internal cavities and volume metal blanks, often combined with CNC finishing, heat treatment and surface finishing. Review focuses on alloy grade, wall thickness, draft, shrinkage allowance, post-machining of holes and defect inspection requirements.",
+  "pills": [
+    "Sand Casting",
+    "Gravity Casting",
+    "Die Casting Review",
+    "Aluminum Alloys",
+    "Cast Steel"
+  ],
+  "panels": [
+    {
+      "title": "Process Match",
+      "subtitle": "By Volume and Geometry",
+      "body": "Sand, gravity or die casting routes depend on volume and size."
+    },
+    {
+      "title": "Dimension Control",
+      "subtitle": "Machining Allowance",
+      "body": "Mounting holes, sealing faces and datums usually need post-machining."
+    },
+    {
+      "title": "Quality Focus",
+      "subtitle": "Shrinkage / Porosity",
+      "body": "Critical load-bearing parts need clear inspection criteria."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Process Choice",
+      "Sand, gravity, die casting and more",
+      "Housings, brackets, cavity parts",
+      "Selected by volume, size and material"
+    ],
+    [
+      "Design Needs",
+      "Wall, radius, draft, gating and risers",
+      "Cast blanks",
+      "Sharp corners and abrupt thickness changes may cause defects"
+    ],
+    [
+      "Post-Machining",
+      "CNC finishing, drilling, tapping, sealing faces",
+      "Assembly and functional parts",
+      "Machining allowance is required"
+    ],
+    [
+      "Quality Check",
+      "Appearance, dimensions, NDT if required",
+      "Load-bearing and sealing parts",
+      "Inspection items follow order agreement"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Casting feasibility review",
+      "body": "Confirm material, size, wall thickness, volume and machined faces."
+    },
+    {
+      "index": "02",
+      "title": "Tooling or mold plan",
+      "body": "Define parting, gating, risers and shrinkage allowance."
+    },
+    {
+      "index": "03",
+      "title": "Casting and cleaning",
+      "body": "Pour, cool, shake out, cut risers and clean."
+    },
+    {
+      "index": "04",
+      "title": "Post-machining and inspection",
+      "body": "Machine critical faces and complete dimensional, visual or agreed inspections."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "Alloy grade, 3D/2D drawing"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Complex metal blanks, housings, brackets"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Castings, machined parts, inspection records"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Shrinkage, defects, machining allowance"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/process/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Metal Casting Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Metal Casting Service suitable for?",
+        "a": "Metal Casting Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Metal Casting Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Metal Casting Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

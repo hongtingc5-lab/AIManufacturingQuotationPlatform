@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.vite/
+__pycache__/
+scripts/_extract_report.txt
+scripts/_extracted_media.json

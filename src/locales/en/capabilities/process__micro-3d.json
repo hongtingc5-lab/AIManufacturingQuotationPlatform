@@ -1,0 +1,176 @@
+{
+  "docTitle": "Micro 3D Printing | ProMakeHub",
+  "heroTitle": "Micro 3D Printing",
+  "heroDesc": "High-resolution additive manufacturing for micro features",
+  "heroStats": [
+    {
+      "value": "10-50µm",
+      "label": "Layer Reference"
+    },
+    {
+      "value": "Micron Scale",
+      "label": "Feature Review"
+    },
+    {
+      "value": "STL / STEP",
+      "label": "Model Input"
+    },
+    {
+      "value": "Microscopy",
+      "label": "Quality Check"
+    }
+  ],
+  "mediaImg": "/precision/3dprint.png",
+  "bodyTitle": "Micro 3D Printing for microstructures, microchannels and precision prototypes",
+  "bodyDesc": "Micro 3D printing is used for fine structures that are difficult for CNC or standard 3D printing, such as microchannels, hole arrays, miniature fixtures, optical features and sensor-related structures. Feasible feature size depends on machine resolution, material system, support strategy and post-cure deformation, so sample validation is recommended.",
+  "pills": [
+    "Photopolymer",
+    "Ceramic Composite",
+    "Microchannels",
+    "Micro Hole Arrays",
+    "R&D Samples"
+  ],
+  "panels": [
+    {
+      "title": "Design Focus",
+      "subtitle": "Feature Size",
+      "body": "Fine posts, thin walls and micro holes need material and support review."
+    },
+    {
+      "title": "Dimension Validation",
+      "subtitle": "Prototype First",
+      "body": "Microstructures often require microscopic inspection and functional testing."
+    },
+    {
+      "title": "Post-Processing",
+      "subtitle": "Cleaning / Curing",
+      "body": "Residual resin, support removal and cure shrinkage affect detail."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Layer Reference",
+      "10-50µm common",
+      "Microstructure prototypes, precision samples",
+      "Subject to machine and material"
+    ],
+    [
+      "Minimum Feature",
+      "About 50-125µm reviewable",
+      "Micro holes, slots, fine posts",
+      "Smaller features need dedicated validation"
+    ],
+    [
+      "Material Types",
+      "Photopolymer / Ceramic composite",
+      "Microfluidics, fixtures, R&D samples",
+      "Strength and heat resistance depend on material"
+    ],
+    [
+      "Inspection",
+      "Microscope / Optical measurement",
+      "Fine dimensions and surface defects",
+      "Functional testing may be required"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Printability review",
+      "body": "Check minimum features, wall thickness, supports and cleaning paths."
+    },
+    {
+      "index": "02",
+      "title": "Orientation and support planning",
+      "body": "Balance precision, surface quality and support-removal risk."
+    },
+    {
+      "index": "03",
+      "title": "Printing and post-cure",
+      "body": "Print, clean, cure and remove supports as needed."
+    },
+    {
+      "index": "04",
+      "title": "Microscopic inspection",
+      "body": "Check critical microstructures, clogging risk and function."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Resin / Ceramic Composite"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "1-500 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "STL / STEP"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "Microscope Image / Dimension Record"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/3dprint.png",
+        "title": "Metal 3D Printing",
+        "body": "For complex metal structures and internal channels.",
+        "href": "/capabilities/process/metal-3d",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC Machining",
+        "body": "Can post-machine assembly datums.",
+        "href": "/capabilities/process/cnc",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/urethane-casting.png",
+        "title": "Urethane Casting",
+        "body": "Can replicate selected prototype geometry in low volume.",
+        "href": "/capabilities/process/polyurethane",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Micro 3D Printing FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Micro 3D Printing suitable for?",
+        "a": "Micro 3D Printing is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Micro 3D Printing quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Micro 3D Printing?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

@@ -1,0 +1,943 @@
+{
+  "meta": {
+    "title": "ProMakeHub | Online Precision Manufacturing and Quoting",
+    "brand": "ProMakeHub",
+    "brandEn": "AGILE MANUFACTURING",
+    "homeAria": "ProMakeHub home"
+  },
+  "nav": {
+    "capabilities": "Capabilities",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "resources": "Resources",
+    "about": "About",
+    "login": "Log In",
+    "quote": "Get a Quote",
+    "lang": "中文",
+    "langAria": "切换到中文",
+    "mainAria": "Primary navigation"
+  },
+  "mega": {
+    "process": "Processes",
+    "processDesc": "Machining, forming and additive manufacturing",
+    "service": "Services",
+    "serviceDesc": "From single processes to one-stop delivery",
+    "material": "Materials",
+    "materialDesc": "Metals, plastics and composites",
+    "finish": "Finishing",
+    "finishDesc": "Appearance, corrosion resistance and function",
+    "processItems": [
+      "Sheet metal",
+      "Injection molding",
+      "CNC machining",
+      "Urethane casting",
+      "Laser cutting",
+      "Complex parts",
+      "Micro 3D printing",
+      "Metal 3D printing"
+    ],
+    "serviceItems": [
+      "CNC machining",
+      "Molding",
+      "Custom manufacturing",
+      "Metal stamping",
+      "Metal casting",
+      "Metal forging",
+      "3D printing",
+      "Rapid prototypes"
+    ],
+    "materialItems": [
+      "Aluminum alloys",
+      "Copper alloys",
+      "Stainless steel",
+      "Titanium alloys",
+      "Engineering plastics",
+      "Composites"
+    ],
+    "finishItems": [
+      "Anodizing",
+      "Electroplating",
+      "Painting",
+      "Powder coating",
+      "Passivation",
+      "Heat treatment"
+    ],
+    "previews": [
+      {
+        "h3": "Process capability center",
+        "p": "Cutting, forming, precision machining and additive manufacturing.",
+        "a": "Process hub"
+      },
+      {
+        "h3": "Manufacturing services",
+        "p": "Machining, forming, inspection and delivery in one flow.",
+        "a": "Services hub"
+      },
+      {
+        "h3": "Materials center",
+        "p": "Match materials by performance, cost and lead time.",
+        "a": "Materials hub"
+      },
+      {
+        "h3": "Surface finishing center",
+        "p": "Improve appearance, durability and functional performance.",
+        "a": "Finishing hub"
+      }
+    ]
+  },
+  "navMenus": {
+    "intros": [
+      {
+        "strong": "Solutions",
+        "span": "From requirements and quoting to delivery tracking."
+      },
+      {
+        "strong": "Industries",
+        "span": "Manufacturing experience for key industry scenarios."
+      },
+      {
+        "strong": "Resources",
+        "span": "Knowledge, cases, guides and downloadable resources."
+      },
+      {
+        "strong": "About",
+        "span": "Team, quality systems and service support."
+      }
+    ],
+    "solutions": [
+      "Instant quoting",
+      "Rapid prototyping",
+      "DFM manufacturability check",
+      "Quick quote",
+      "Image to 3D",
+      "Text to 3D",
+      "3D format conversion",
+      "3D to 2D drawings",
+      "2D bubble annotation"
+    ],
+    "industries": [
+      "Industries home",
+      "Aerospace",
+      "Medical devices",
+      "Automotive",
+      "Robotics",
+      "Electronics",
+      "Semiconductor",
+      "New energy"
+    ],
+    "resources": [
+      "Process guide",
+      "Model community",
+      "Material handbook",
+      "Design guidelines",
+      "Help FAQ",
+      "Downloads",
+      "News"
+    ],
+    "about": [
+      "About us",
+      "Company",
+      "Quality assurance",
+      "Service support",
+      "Privacy policy",
+      "Terms of service",
+      "Contact us"
+    ],
+    "previews": [
+      {
+        "strong": "From need to plan faster",
+        "span": "Move drawings, models and text requirements into manufacturing review sooner."
+      },
+      {
+        "strong": "Industry manufacturing programs",
+        "span": "Organize materials, processes and quality docs around scenarios."
+      },
+      {
+        "strong": "Knowledge and cases",
+        "span": "Lower early decision cost and speed up project communication."
+      },
+      {
+        "strong": "A reliable manufacturing partner",
+        "span": "Transparent process and closed-loop quality for long-term work."
+      }
+    ]
+  },
+  "hero": {
+    "kicker1": "PROMAKEHUB",
+    "title1": "Precision Manufacturing<br>Driving Industry Forward",
+    "desc1": "High precision machining solution provider<br>Helping global customers make innovative breakthroughs with ingenious craftsmanship and reliable delivery",
+    "cta1": "Upload a 3D model to get a quote",
+    "cta1b": "Explore our services",
+    "kicker2": "DIGITAL MANUFACTURING",
+    "title2": "Intelligent Collaboration<br>Across the Manufacturing Workflow",
+    "desc2": "Turn a sentence or an image into a 3D model, then connect quoting and manufacturing in one workflow.",
+    "cta2": "Start creating your 3D model",
+    "cta2b": "View manufacturing capabilities"
+  },
+  "stats": {
+    "years": "year<br>Industry experience",
+    "customers": "global customers",
+    "equipment": "Advanced equipment",
+    "regions": "Countries and regions covered"
+  },
+  "partners": "Partners",
+  "partnersAria": "Partner companies",
+  "common": {
+    "quote": "Get a quote"
+  },
+  "services": {
+    "eyebrow": "Our services",
+    "title": "One-stop precision manufacturing",
+    "desc": "From prototyping to production, we deliver machining, assembly coordination and reliable fulfillment.",
+    "cards": [
+      {
+        "h3": "3D printing",
+        "body": "Multiple additive routes for complex geometries and custom batch sizes.",
+        "h4": "Accurate forming of complex structures",
+        "drawer": "Process choices based on material, accuracy and operating conditions to keep integrity and precision.",
+        "lis": [
+          "Multiple materials and print process routes",
+          "Irregular exteriors plus lattice and embedded internals",
+          "Seamless handoff to post-processing, machining and surface treatment"
+        ]
+      },
+      {
+        "h3": "CNC machining",
+        "body": "High-precision milling, turning and multi-process machining from prototype to production.",
+        "h4": "Precision machining for complex parts",
+        "drawer": "From quick samples to stable production with controlled tolerance, finish and lead time.",
+        "lis": [
+          "Multi-axis milling, turning and mill-turn",
+          "Aluminum, stainless and engineering plastics",
+          "First-article inspection and lot consistency"
+        ]
+      },
+      {
+        "h3": "Rapid prototypes",
+        "body": "CNC and 3D printed prototypes plus low-volume trials to speed development.",
+        "h4": "Fast sampling with accurate form",
+        "drawer": "Build prototypes quickly based on structure and material needs.",
+        "lis": [
+          "CNC and additive prototyping",
+          "Cosmetic and functional prototypes",
+          "Finishing and low-volume production support"
+        ]
+      },
+      {
+        "h3": "Molding",
+        "body": "Injection and related molding processes for complex parts with stable ramp-up.",
+        "h4": "Efficient molding of complex parts",
+        "drawer": "Match process to material and geometry for appearance, strength and throughput.",
+        "lis": [
+          "Injection, urethane and related molding",
+          "Tooling and process co-optimization",
+          "From sample validation to stable production"
+        ]
+      },
+      {
+        "h3": "Custom manufacturing",
+        "body": "Cutting, sheet metal, machining and assembly coordinated in one delivery flow.",
+        "h4": "Multi-process manufacturing in one place",
+        "drawer": "Unify parts, finishing and assembly to reduce cross-supplier overhead.",
+        "lis": [
+          "Sheet metal, machining and structural coordination",
+          "Multi-material, multi-operation project control",
+          "Quality, schedule and delivery documentation tracked end to end"
+        ]
+      },
+      {
+        "h3": "Metal stamping",
+        "body": "High-speed stamping and progressive production for sheet parts with consistent quality.",
+        "h4": "Efficient high-volume stamping",
+        "drawer": "Optimize tooling and stages for thin-sheet parts to control size, burrs and form.",
+        "lis": [
+          "Single, compound and progressive stamping",
+          "Brackets, terminals and structural stampings",
+          "Built for mid-to-high volume continuous runs"
+        ]
+      },
+      {
+        "h3": "Metal casting",
+        "body": "Casting options for complex shapes across different volume needs.",
+        "h4": "Stable pours for complex geometry",
+        "drawer": "Process plans around material, wall thickness and secondary machining.",
+        "lis": [
+          "Multiple alloys and casting routes",
+          "Complex exteriors and internal features",
+          "Ready for machining and surface finishing"
+        ]
+      },
+      {
+        "h3": "Metal forging",
+        "body": "Hot and precision forging to raise strength for high-load critical parts.",
+        "h4": "High-strength critical part forming",
+        "drawer": "Control material flow and forming to improve strength and fatigue life.",
+        "lis": [
+          "Hot, die and precision forging options",
+          "High-load and high-reliability parts",
+          "Follow-on heat treatment and finishing"
+        ]
+      }
+    ]
+  },
+  "factory": {
+    "eyebrow": "Our factory",
+    "title": "Advanced production base",
+    "desc": "International equipment and quality systems keep takt time and process stability under control.",
+    "captions": [
+      {
+        "span": "01 / Smart line",
+        "strong": "High-precision machining floor"
+      },
+      {
+        "span": "02 / Material control",
+        "strong": "Standardized warehouse flow"
+      },
+      {
+        "span": "03 / Process sync",
+        "strong": "Stable delivery cadence"
+      },
+      {
+        "span": "04 / Quality loop",
+        "strong": "End-to-end quality tracking"
+      }
+    ]
+  },
+  "capability": {
+    "eyebrow": "Core capabilities",
+    "title": "Precision manufacturing, consistent quality",
+    "desc": "Forming, cutting, machining and additive manufacturing combined for efficiency, stability and consistency.",
+    "index": [
+      "Sheet metal",
+      "Injection molding",
+      "CNC machining",
+      "Urethane casting",
+      "Laser cutting",
+      "Complex parts",
+      "Micro 3D printing",
+      "Metal 3D printing"
+    ],
+    "cards": [
+      {
+        "span": "01 / CAPABILITY",
+        "strong": "Sheet metal",
+        "p": "Precision cutting, bending and structural fabrication"
+      },
+      {
+        "span": "02 / CAPABILITY",
+        "strong": "Injection molding",
+        "p": "Fast, stable molding for complex plastic parts"
+      },
+      {
+        "span": "03 / CAPABILITY",
+        "strong": "CNC machining",
+        "p": "Multi-axis milling, turning and complex geometries"
+      },
+      {
+        "span": "04 / CAPABILITY",
+        "strong": "Urethane casting",
+        "p": "Low-volume elastomer and bridge tooling parts"
+      },
+      {
+        "span": "05 / CAPABILITY",
+        "strong": "Laser cutting",
+        "p": "High-speed, high-accuracy sheet contouring"
+      },
+      {
+        "span": "06 / CAPABILITY",
+        "strong": "Complex parts",
+        "p": "Hybrid machining for freeform and irregular structures"
+      },
+      {
+        "span": "07 / CAPABILITY",
+        "strong": "Micro 3D printing",
+        "p": "High-resolution additive for fine features"
+      },
+      {
+        "span": "08 / CAPABILITY",
+        "strong": "Metal 3D printing",
+        "p": "Rapid additive forming of complex metal structures"
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Manufacturing workflow",
+    "title": "From requirement to delivery",
+    "board": "Manufacturing flow board",
+    "mark": "CNC / QC / Delivery",
+    "status": [
+      "DFM review",
+      "Production schedule",
+      "QC release"
+    ],
+    "mapHead": "7-step transparent workflow",
+    "steps": [
+      {
+        "h4": "Upload files",
+        "p": "Supports STEP / IGES / STL and other common formats"
+      },
+      {
+        "h4": "AI analysis",
+        "p": "Detect process features and recommend the best route"
+      },
+      {
+        "h4": "Transparent pricing",
+        "p": "Confirm process parameters online and place the order"
+      },
+      {
+        "h4": "Live visibility",
+        "p": "Production follows the confirmed process parameters"
+      },
+      {
+        "h4": "ISO 9001 inspection",
+        "p": "CMM / optical measurement with inspection reports"
+      },
+      {
+        "h4": "Secure packaging",
+        "p": "Shock-resistant packing with dedicated protection for precision parts"
+      },
+      {
+        "h4": "Full traceability",
+        "p": "End-to-end logistics tracking with on-time delivery confirmation"
+      }
+    ]
+  },
+  "quote": {
+    "quick": "Upload 3D model for a quick quote",
+    "image": "Image to 3D",
+    "text": "Text to 3D",
+    "smart": "Smart quote",
+    "eyebrow": "Quick quote",
+    "title": "Upload a 3D model for a fast quote",
+    "desc": "Supports STEP / IGES / STL and common drawing formats",
+    "uploadTitle": "Click or drag files here to upload",
+    "uploadDesc": "Single-file upload or batch import",
+    "uploadStatus": "No file selected",
+    "features": [
+      {
+        "strong": "Live quoting",
+        "span": "Minutes to respond"
+      },
+      {
+        "strong": "DFM analysis",
+        "span": "Optimization suggestions"
+      },
+      {
+        "strong": "Lead-time estimate",
+        "span": "Schedule risk in view"
+      },
+      {
+        "strong": "One-click order",
+        "span": "Move projects forward fast"
+      }
+    ]
+  },
+  "why": {
+    "intro": "Why choose us?",
+    "imageTitle": "Make complex manufacturing more predictable",
+    "imageDesc": "From drawing review and process breakdown to quality checkpoints and delivery feedback, we reduce project risk early.",
+    "tags": [
+      "Engineering first",
+      "Visible process",
+      "Quality loop",
+      "Flexible delivery"
+    ],
+    "finalEyebrow": "Why choose us?",
+    "finalTitle": "Turn uncertainty into executable manufacturing checkpoints",
+    "finalDesc": "Engineering, production and QC move together from first article to lot inspection so design intent becomes stable parts faster.",
+    "reasons": [
+      {
+        "strong": "Engineering first",
+        "span": "DFM, material and finishing advice up front to cut redraw loops."
+      },
+      {
+        "strong": "Visible process",
+        "span": "Critical nodes sync progress, exceptions and schedule changes."
+      },
+      {
+        "strong": "Quality loop",
+        "span": "Dimensional, cosmetic and performance checks through production."
+      },
+      {
+        "strong": "Flexible delivery",
+        "span": "Fast prototypes, low-volume trials and scalable production."
+      }
+    ],
+    "metrics": [
+      "On-time delivery",
+      "Defect rate",
+      "Repeat order rate",
+      "Fast response"
+    ],
+    "secondary": "View industry cases"
+  },
+  "cases": {
+    "eyebrow": "Industry solutions & cases",
+    "title": "Helping industries innovate",
+    "desc": "Precision manufacturing programs matched to application scenarios across performance, efficiency and scale-up.",
+    "items": [
+      {
+        "h3": "Industrial automation",
+        "p": "Fixtures, structural components and automation cells that raise integration efficiency."
+      },
+      {
+        "h3": "Medical devices",
+        "p": "Stable production of high-cleanliness and precision structural parts."
+      },
+      {
+        "h3": "Aerospace",
+        "p": "Meet strict demands for lightweight freeform structures and consistency."
+      },
+      {
+        "h3": "New energy",
+        "p": "Shafts, gears and connectors for high-performance drivetrain and storage projects."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Trusted by engineering teams",
+    "items": [
+      {
+        "quote": "From prototyping to production, communication, process advice and schedule control stayed consistently strong. Yield and consistency met expectations and made follow-on projects easier.",
+        "name": "Mr. Cai",
+        "role": "Guangdong automation equipment company / Procurement Director"
+      },
+      {
+        "quote": "Medical structural parts need cleanliness, dimensional consistency and complete documentation. The team flagged machining and inspection risks early, and production ramp-up was smooth after validation.",
+        "name": "Ms. Lin",
+        "role": "Medical device company / Project Lead"
+      },
+      {
+        "quote": "From drawing review and DFM advice to sample delivery, feedback was fast. Critical dimensions were locked before launch, cutting rework on our new-energy equipment project.",
+        "name": "Mr. Zhou",
+        "role": "New-energy equipment company / R&D Manager"
+      },
+      {
+        "quote": "Inspection records for freeform and lightweight structures were clear and complete, with fast lot traceability. Transparent quality communication gave us confidence on demanding programs.",
+        "name": "Mr. Wang",
+        "role": "Aerospace components company / Quality Manager"
+      }
+    ]
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "title": "Knowledge and industry perspective",
+    "desc": "Practical guidance on materials, processes and design decisions for precision parts.",
+    "readMore": "Read more",
+    "items": [
+      {
+        "h3": "Precision machining process guide",
+        "p": "Key considerations from process planning to machining of typical structural parts."
+      },
+      {
+        "h3": "Material performance guide",
+        "p": "Balance machinability, strength and surface results across metals."
+      },
+      {
+        "h3": "Equipment and technology overview",
+        "p": "From machine capability to inspection systems behind stable delivery."
+      },
+      {
+        "h3": "Industry trend analysis",
+        "p": "How part form changes open opportunities in automation and advanced equipment."
+      }
+    ],
+    "metas": [
+      [
+        "White paper",
+        "Today"
+      ],
+      [
+        "Materials",
+        "Special"
+      ],
+      [
+        "Equipment",
+        "Tech"
+      ],
+      [
+        "Insight",
+        "Report"
+      ]
+    ]
+  },
+  "faq": {
+    "brand": "ProMakeHub",
+    "title": "Frequently Asked Questions",
+    "q1": "What manufacturing risks do you review after drawings or models are submitted?",
+    "a1": "Our engineers review structure, material, critical dimensions and finishing needs first, focusing on thin walls, deep cavities, holes, tolerances, fixturing and cosmetic faces. If something affects stability or cost, we confirm adjustments before quoting or production.",
+    "q2": "What information is needed for a fast quote?",
+    "a2": "Provide 3D files, 2D drawings, material grade, quantity, finishing, inspection standards and target lead time. If some requirements are still open, share the use case and assembly context and we will help complete the quote inputs.",
+    "q3": "How are prototype and production lead times confirmed?",
+    "a3": "Lead time depends on process route, material availability, complexity, quantity, inspection scope and scheduling. Rush options can be evaluated separately; the confirmed quote or order schedule is final.",
+    "q4": "Can materials, finishing and inspection documents be packaged together?",
+    "a4": "Yes. We can match common metals and engineering plastics with related finishing, and provide material certificates, dimensional records or project-specific test documents. State RoHS/REACH scope before ordering when needed.",
+    "q5": "What if dimensional or cosmetic issues are found after delivery?",
+    "a5": "Keep photos, inspection data and order details. We will review drawings, acceptance criteria and production records, then arrange rework, remake, replacement or another agreed remedy."
+  },
+  "cta": {
+    "title": "Ready to start your project?",
+    "desc": "Talk with our team for a practical manufacturing plan and quote support.",
+    "button": "Get a quote"
+  },
+  "footer": {
+    "tagline": "High-quality, stable precision manufacturing for engineering teams.",
+    "copyright": "© 2026 ProMakeHub. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "menus": [
+      {
+        "h4": "Capabilities",
+        "links": [
+          "Processes",
+          "Services",
+          "Materials",
+          "Finishing"
+        ]
+      },
+      {
+        "h4": "Quick links",
+        "links": [
+          "Home",
+          "Get a quote",
+          "Custom manufacturing",
+          "Company",
+          "Contact us"
+        ]
+      },
+      {
+        "h4": "Industries",
+        "links": [
+          "Industries home",
+          "Aerospace",
+          "Medical devices",
+          "Automotive",
+          "New energy"
+        ]
+      },
+      {
+        "h4": "Solutions",
+        "links": [
+          "Solutions home",
+          "Instant quoting",
+          "Rapid prototyping",
+          "DFM check"
+        ]
+      },
+      {
+        "h4": "Resources",
+        "links": [
+          "Resources home",
+          "Process guide",
+          "Material handbook",
+          "Design guidelines",
+          "Help FAQ"
+        ]
+      },
+      {
+        "h4": "About",
+        "links": [
+          "About us",
+          "Company",
+          "Quality assurance",
+          "Privacy policy",
+          "Terms of service"
+        ]
+      }
+    ],
+    "support": {
+      "contactTitle": "Contact & support",
+      "paymentTitle": "Payment methods",
+      "subscribeTitle": "Subscribe",
+      "subscribeDesc": "Get manufacturing knowledge, industry trends and technical updates.",
+      "paymentNote": "Supported methods, currencies and accounts follow the formal order and contract.",
+      "contactLabels": [
+        "Contact",
+        "Phone",
+        "Email",
+        "Address",
+        "Online support"
+      ],
+      "contactName": "Engineer Zhang",
+      "contactAddress": "B1-320, Zhimeihui Park, Fuhai St., Bao'an, Shenzhen",
+      "contactOnline": "Contact live support",
+      "payments": [
+        "WeChat Pay",
+        "Alipay",
+        "UnionPay",
+        "VISA",
+        "Mastercard",
+        "PayPal",
+        "Bank transfer"
+      ]
+    },
+    "subscribePlaceholder": "Enter your email"
+  },
+  "ai": {
+    "hint": "Try the AI manufacturing assistant",
+    "title": "ProMakeHub AI Assistant",
+    "status": "Guest trial: 3 turns left",
+    "supportHint": "Live support · Ask us",
+    "supportTitle": "Live support",
+    "supportSub": "ChatGPT 4o / real-time response",
+    "supportTip": "Hi! How can we help?",
+    "supportPlaceholder": "Type your question...",
+    "aiPlaceholder": "Describe part structure, material or machining needs...",
+    "contextIndependent": "Independent context",
+    "contextLabel": "Process analysis chat",
+    "quotaText": "Guest: 3 turns left",
+    "loginTitle": "Guest trial limit reached",
+    "loginDesc": "Sign in to keep using all five AI modules with project context saved.",
+    "loginCta": "Sign in to continue",
+    "modules": [
+      {
+        "span": "Process analysis",
+        "small": "Model & drawing review"
+      },
+      {
+        "span": "Smart quote",
+        "small": "Cost & lead-time estimate"
+      },
+      {
+        "span": "Image to 3D",
+        "small": "Sketch & photo modeling"
+      },
+      {
+        "span": "Text to 3D",
+        "small": "Natural-language modeling"
+      },
+      {
+        "span": "DFM check",
+        "small": "Manufacturability advice"
+      }
+    ],
+    "processIntro": "Use this thread for process analysis of models, drawings and machining requirements. Conversations stay separate from quoting or DFM results.",
+    "processUser": "Please analyze this housing model.",
+    "processLabels": [
+      "Recommended process",
+      "Material advice",
+      "Critical tolerance",
+      "Process risk"
+    ],
+    "processValues": [
+      "CNC precision machining",
+      "Al 6061 / 7075",
+      "±0.05 mm",
+      "Control thin-wall distortion"
+    ],
+    "quoteIntro": "Use this thread for standalone quote estimates. Provide material, quantity, finishing, lead time, or basics after model upload.",
+    "quoteCardTitle": "Sample quote estimate",
+    "quoteLabels": [
+      "Quantity",
+      "Machining cost",
+      "Finishing",
+      "Lead time"
+    ],
+    "quoteValues": [
+      "50 pcs",
+      "About ¥180–240 / pc",
+      "Anodizing quoted separately",
+      "5–7 working days"
+    ],
+    "quoteNote": "Formal quotes require drawings, 3D models and quality requirements.",
+    "imageIntro": "Upload product photos, sketches or reference images. I will capture contours and key features, then list dimensions still needed.",
+    "imageCardTitle": "Image-to-3D workflow",
+    "imageLabels": [
+      "Input",
+      "Detect",
+      "Complete",
+      "Output"
+    ],
+    "imageValues": [
+      "Photo / sketch / reference",
+      "Contour, holes and structure",
+      "Confirm critical sizes",
+      "Editable initial 3D model"
+    ],
+    "imageNote": "Results can continue into engineering review, DFM and quoting.",
+    "textIntro": "Describe use, shape, size and structure in natural language. I will break requirements into confirmable modeling parameters.",
+    "textCardTitle": "Text-to-3D workflow",
+    "textLabels": [
+      "Parse",
+      "Parameters",
+      "Generate",
+      "Confirm"
+    ],
+    "textValues": [
+      "Use, structure and constraints",
+      "Size, holes and wall thickness",
+      "Parametric 3D draft",
+      "Tolerance and material needs"
+    ],
+    "textNote": "More specific descriptions produce results closer to manufacturing needs.",
+    "dfmIntro": "Use this thread for standalone DFM advice, focusing on wall thickness, holes, chamfers, assembly gaps and finishing risks.",
+    "dfmCardTitle": "Sample DFM check",
+    "dfmLabels": [
+      "Thin walls",
+      "Deep cavities",
+      "Mating faces",
+      "Finishing"
+    ],
+    "dfmValues": [
+      "Recommend ≥ 1.2 mm",
+      "Evaluate tool stick-out",
+      "Add datum callouts",
+      "Confirm masking before anodize"
+    ],
+    "dfmNote": "Add critical sizes, tolerance grades and cosmetic faces before formal production.",
+    "aria": {
+      "supportPanel": "Live support chat panel",
+      "supportClose": "Collapse live support",
+      "supportInput": "Support input",
+      "supportSend": "Send to support",
+      "supportOpen": "Open live support",
+      "aiPanel": "AI chat panel",
+      "aiClose": "Collapse AI assistant",
+      "aiModules": "AI modules",
+      "aiInput": "AI input",
+      "aiSend": "Send to AI",
+      "aiOpen": "Open AI assistant",
+      "backTop": "Back to top"
+    }
+  },
+  "pages": {
+    "capabilitiesHome": {
+      "docTitle": "Capabilities Center | Processes, Services, Materials and Finishes | ProMakeHub",
+      "heroTitle": "Capabilities Center",
+      "heroDesc": "Explore ProMakeHub manufacturing capabilities across processes, services, materials and surface finishing, then choose the right page for your part geometry, performance goals and delivery stage.",
+      "heroStats": [
+        "Capability Areas",
+        "Manufacturing Processes",
+        "Material Groups",
+        "Finishing Options"
+      ],
+      "sectionTitle": "Choose a Capability Area",
+      "sectionDesc": "Start from the question your project needs to answer: which process fits the geometry, which service supports delivery, which material meets performance, or which finish improves function and appearance.",
+      "process": "Processes",
+      "processDesc": "Review machining, cutting, forming and additive manufacturing routes for different part structures.",
+      "processCta": "View Processes",
+      "service": "Services",
+      "serviceDesc": "Compare prototype, custom manufacturing, forming, inspection and delivery support by project stage.",
+      "serviceCta": "View Services",
+      "material": "Materials",
+      "materialDesc": "Compare metals, engineering plastics and composites by strength, weight, corrosion resistance and cost.",
+      "materialCta": "View Materials",
+      "finish": "Surface Finishing",
+      "finishDesc": "Choose finishing options around appearance, corrosion resistance, wear resistance, insulation and marking.",
+      "finishCta": "View Finishes",
+      "faqTitle": "Capabilities Center FAQ",
+      "faqDesc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+      "faq": [
+        {
+          "q": "What projects is Capabilities Center suitable for?",
+          "a": "Capabilities Center is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+        },
+        {
+          "q": "What information is needed for a Capabilities Center quote?",
+          "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+        },
+        {
+          "q": "How are lead time and cost confirmed for Capabilities Center?",
+          "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+        }
+      ],
+      "ctaTitle": "Need help matching a manufacturing route?",
+      "ctaDesc": "Submit drawings, models or project requirements and engineers can review process, material, finishing and quality needs together.",
+      "ctaButton": "Get a Quote"
+    },
+    "capabilities": {
+      "docTitle": "Manufacturing Processes | ProMakeHub",
+      "heroTitle": "Manufacturing Processes",
+      "heroDesc": "A variety of advanced processes to meet full-process manufacturing needs from prototype to mass production",
+      "heroStats": [
+        "Processing technology",
+        "Advanced equipment",
+        "technical expert",
+        "On-time delivery rate"
+      ],
+      "sectionTitle": "Our Manufacturing Services",
+      "sectionDesc": "Covers a variety of precision machining processes, supports prototype development to mass production, and meets the high-precision parts manufacturing needs of different industries.",
+      "filterTitle": "Filter by Manufacturing Need",
+      "filters": [
+        {
+          "strong": "All Processes",
+          "span": "View every manufacturing process"
+        },
+        {
+          "strong": "Precision Machining",
+          "span": "CNC and complex geometries"
+        },
+        {
+          "strong": "Sheet Cutting & Forming",
+          "span": "Sheet metal, laser and waterjet"
+        },
+        {
+          "strong": "Molding & Casting",
+          "span": "Injection molding and urethane casting"
+        },
+        {
+          "strong": "Additive Manufacturing",
+          "span": "Metal and micro 3D printing"
+        }
+      ],
+      "tipTitle": "Selection Tip",
+      "tipBody": "Use sheet processes for housings and brackets, CNC or complex machining for curved geometry, 3D printing or urethane casting for low-volume validation, and injection molding for production plastic parts.",
+      "learnMore": "Learn more",
+      "cards": [
+        {
+          "h3": "Sheet Metal Fabrication",
+          "p": "Precision cutting, bending and structural fabrication"
+        },
+        {
+          "h3": "Injection Molding",
+          "p": "Repeatable molding for complex plastic parts"
+        },
+        {
+          "h3": "CNC Machining",
+          "p": "Multi-axis milling, turning and complex machining"
+        },
+        {
+          "h3": "Urethane Casting",
+          "p": "Low-volume elastomer and bridge production"
+        },
+        {
+          "h3": "Laser Cutting",
+          "p": "Fast, accurate sheet profile cutting"
+        },
+        {
+          "h3": "Complex Part Machining",
+          "p": "Integrated machining for irregular and complex geometry"
+        },
+        {
+          "h3": "Micro 3D Printing",
+          "p": "High-resolution additive manufacturing for micro features"
+        },
+        {
+          "h3": "Metal 3D Printing",
+          "p": "Rapid additive manufacturing for complex metal structures"
+        }
+      ],
+      "empty": "No processes match this filter. Switch to All to see the full list.",
+      "faqTitle": "Manufacturing Processes FAQ",
+      "faqDesc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+      "faq": [
+        {
+          "q": "What projects is Manufacturing Processes suitable for?",
+          "a": "Manufacturing Processes is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+        },
+        {
+          "q": "What information is needed for a Manufacturing Processes quote?",
+          "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+        },
+        {
+          "q": "How are lead time and cost confirmed for Manufacturing Processes?",
+          "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+        }
+      ],
+      "ctaTitle": "Can't find the right process solution?",
+      "ctaDesc": "Our team of engineers can evaluate drawings, materials and process routes for you and provide more reliable manufacturing suggestions.",
+      "ctaButton": "Contact Us"
+    }
+  }
+}

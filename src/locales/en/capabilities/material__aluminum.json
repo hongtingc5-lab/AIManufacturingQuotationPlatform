@@ -1,0 +1,144 @@
+{
+  "docTitle": "Aluminum Alloys | ProMakeHub",
+  "heroTitle": "Aluminum Alloys",
+  "heroDesc": "A common metal option balancing weight, strength, machinability and finishing compatibility.",
+  "heroStats": [
+    {
+      "value": "about 2.70",
+      "label": "Density g/cm³"
+    },
+    {
+      "value": "6061-T6 about 290-310MPa",
+      "label": "Tensile strength"
+    },
+    {
+      "value": "Excellent",
+      "label": "Machining"
+    },
+    {
+      "value": "Good",
+      "label": "Corrosion resistance"
+    }
+  ],
+  "mediaImg": "/precision/product-flange.jpg",
+  "bodyTitle": "Selection Focus",
+  "bodyDesc": "Aluminum alloys are often used when parts need lower weight, efficient machining and cosmetic finishing. 6061 suits general structures and anodizing, 7075 offers higher strength with more checks on corrosion and color consistency, while 5052 is a good fit for bent sheet-metal structures.",
+  "pills": [
+    "6061, 7075, 5052, 6082",
+    "Built to drawing",
+    "Material documents on request",
+    "Reviewed with process route"
+  ],
+  "panels": [
+    {
+      "title": "Suitable processes",
+      "subtitle": "CNC / Sheet metal / Forming",
+      "body": "The route should be selected by grade, geometry and order quantity."
+    },
+    {
+      "title": "Required inputs",
+      "subtitle": "CAD + drawing + material notes",
+      "body": "Grade, condition, finishing and acceptance requirements should be stated clearly."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review before production",
+      "body": "Thin walls, deep cavities, welding and cosmetic requirements should be checked early."
+    }
+  ],
+  "tableTitle": "Common Grades and Use Guidance",
+  "tableRows": [
+    [
+      "Grade / Type",
+      "Common use",
+      "Notes"
+    ],
+    [
+      "6061",
+      "CNC structures, fixtures, housings",
+      "Balanced performance and good anodizing compatibility"
+    ],
+    [
+      "7075",
+      "High-strength lightweight load parts",
+      "High strength; welding and corrosion requirements need confirmation"
+    ],
+    [
+      "5052",
+      "Sheet-metal and bent housings",
+      "Good formability, lower strength than 7075"
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Common grades",
+      "value": "6061, 7075, 5052, 6082"
+    },
+    {
+      "label": "Typical uses",
+      "value": "Lightweight housings, brackets, fixtures and structural parts."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / material notes"
+    },
+    {
+      "label": "Delivery note",
+      "value": "Confirmed by process and stock"
+    }
+  ],
+  "asideCta": {
+    "title": "Need material advice?",
+    "body": "Share the working condition, load, appearance and cost targets so engineering can compare suitable materials.",
+    "button": "Discuss Selection"
+  },
+  "related": {
+    "title": "Related Materials",
+    "desc": "Similar materials differ in strength, weight, corrosion resistance, cost and finishing compatibility, so they are worth comparing before quoting.",
+    "items": [
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Stainless Steel",
+        "body": "Good corrosion resistance and durability for equipment parts, shafts, fluid-contact and clean environments.",
+        "href": "/capabilities/material/stainless",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-bracket.jpg",
+        "title": "Carbon Steel",
+        "body": "Balanced strength and cost for load structures, bases, shafts and mechanical connectors.",
+        "href": "/capabilities/material/carbon",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/cnc-turned-part-02.png",
+        "title": "Copper Alloys",
+        "body": "Strong electrical and thermal conductivity for contacts, heat-transfer parts, bushings and wear pairs.",
+        "href": "/capabilities/material/copper",
+        "link": "View material"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Aluminum Alloys FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Aluminum Alloys suitable for?",
+        "a": "Aluminum Alloys is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Aluminum Alloys quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Aluminum Alloys?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

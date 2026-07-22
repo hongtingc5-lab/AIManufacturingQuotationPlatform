@@ -1,0 +1,177 @@
+{
+  "docTitle": "Molding Service | ProMakeHub",
+  "heroTitle": "Molding Service",
+  "heroDesc": "From DFM and tool trial to molded plastic part delivery",
+  "heroStats": [
+    {
+      "value": "DFM",
+      "label": "Design Review"
+    },
+    {
+      "value": "T0 / T1",
+      "label": "Tool Trial"
+    },
+    {
+      "value": "Plastic Parts",
+      "label": "Volume Fit"
+    },
+    {
+      "value": "Sampling",
+      "label": "Process Control"
+    }
+  ],
+  "mediaImg": "/precision/molding-service.png",
+  "bodyTitle": "Molding Service from plastic design to stable production",
+  "bodyDesc": "Molding service is suitable for plastic parts that need repeatable production. The review focuses on shrinkage, wall thickness, draft, parting line, gate and cooling design. The process moves from DFM to tool design, trial correction and production delivery.",
+  "pills": [
+    "ABS",
+    "PC",
+    "PP",
+    "PA",
+    "POM",
+    "TPE"
+  ],
+  "panels": [
+    {
+      "title": "Design Review",
+      "subtitle": "Wall / Draft",
+      "body": "Reduces sink, warp, trapped gas and assembly interference risk."
+    },
+    {
+      "title": "Trial Loop",
+      "subtitle": "Sample Confirmation",
+      "body": "Trial samples verify dimensions, appearance and assembly status."
+    },
+    {
+      "title": "Production Control",
+      "subtitle": "Stable Parameters",
+      "body": "Focus on molding parameters, material batches, first article and patrol checks."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "DFM Check",
+      "Wall, radius, undercut, gate, parting line",
+      "Housings, clips, connectors",
+      "Design changes should be completed before tooling"
+    ],
+    [
+      "Tool Stage",
+      "Tool design, machining, assembly and trial",
+      "Production plastic parts",
+      "Trial count and correction scope depend on project"
+    ],
+    [
+      "Material Confirmation",
+      "Resin grade, color, texture and flame rating",
+      "Functional and cosmetic parts",
+      "Material performance follows resin data"
+    ],
+    [
+      "Quality Control",
+      "First article, sampling, appearance and fit check",
+      "Production delivery",
+      "Critical dimensions should be specified on drawing"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Confirm requirements and material",
+      "body": "Confirm use case, quantity, resin grade, cosmetic face and assembly needs."
+    },
+    {
+      "index": "02",
+      "title": "DFM and tool design",
+      "body": "Review shrinkage, draft, parting line, gate and cooling."
+    },
+    {
+      "index": "03",
+      "title": "Tool trial and correction",
+      "body": "Use T0/T1 samples to confirm dimensions and appearance, then correct if needed."
+    },
+    {
+      "index": "04",
+      "title": "Production",
+      "body": "Start volume production, sampling and packaging after parameters stabilize."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "STEP, 2D drawing, resin grade"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Plastic production parts, housings, clips"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Samples, production parts, sampling records"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Shrinkage, draft, cosmetic faces"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/process/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/stamping-service.png",
+        "title": "Metal Stamping Service",
+        "body": "Single-stage or progressive stamping for brackets, springs, housings and connectors.",
+        "href": "/capabilities/service/stamping",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Molding Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Molding Service suitable for?",
+        "a": "Molding Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Molding Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Molding Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

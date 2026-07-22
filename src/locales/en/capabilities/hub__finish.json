@@ -1,0 +1,226 @@
+{
+  "docTitle": "Surface Finishing Center | ProMakeHub",
+  "heroTitle": "Surface Finishing",
+  "heroDesc": "Select post-processing by appearance, corrosion protection, wear behavior, conductivity, marking and cleanability.",
+  "heroStats": [
+    {
+      "value": "Multiple",
+      "label": "Finishing routes"
+    },
+    {
+      "value": "Drawing-based",
+      "label": "Thickness and masking"
+    },
+    {
+      "value": "Samples",
+      "label": "Color and appearance review"
+    },
+    {
+      "value": "Records",
+      "label": "Batch and QC tracking"
+    }
+  ],
+  "sectionTitle": "Surface Finishing Processes",
+  "sectionDesc": "Common finishing routes are organized around appearance, corrosion protection, wear behavior, conductivity, traceability and clean stability, with material, masking, thickness, color and inspection needs confirmed before production.",
+  "filterTitle": "",
+  "filters": [],
+  "tipTitle": "",
+  "tipBody": "",
+  "learnMore": "Learn more",
+  "cards": [
+    {
+      "id": "anodizing",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "img": "/precision/aluminum-flashlight-housing-01.png",
+      "h3": "Anodizing",
+      "title": "Anodizing",
+      "p": "A common aluminum finish that improves corrosion resistance, wear behavior and appearance options such as clear or black.",
+      "body": "A common aluminum finish that improves corrosion resistance, wear behavior and appearance options such as clear or black.",
+      "href": "/capabilities/finish/anodizing",
+      "link": "Learn more"
+    },
+    {
+      "id": "plating",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "img": "/precision/precision-shaft-04.png",
+      "h3": "Electroplating",
+      "title": "Electroplating",
+      "p": "Zinc, nickel, chrome, tin and other plating routes improve corrosion resistance, conductivity, wear or appearance.",
+      "body": "Zinc, nickel, chrome, tin and other plating routes improve corrosion resistance, conductivity, wear or appearance.",
+      "href": "/capabilities/finish/plating",
+      "link": "Learn more"
+    },
+    {
+      "id": "painting",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion"
+      ],
+      "img": "/precision/sheet-metal-part-01.png",
+      "h3": "Painting",
+      "title": "Painting",
+      "p": "Supports color, gloss, insulating protection and masked areas on metal and selected plastic parts.",
+      "body": "Supports color, gloss, insulating protection and masked areas on metal and selected plastic parts.",
+      "href": "/capabilities/finish/painting",
+      "link": "Learn more"
+    },
+    {
+      "id": "powder-coating",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion"
+      ],
+      "img": "/precision/sheet-metal-part-02.png",
+      "h3": "Powder Coating",
+      "title": "Powder Coating",
+      "p": "Good for metal housings, brackets and sheet-metal parts with thicker coating, weather resistance and stable colors.",
+      "body": "Good for metal housings, brackets and sheet-metal parts with thicker coating, weather resistance and stable colors.",
+      "href": "/capabilities/finish/powder-coating",
+      "link": "Learn more"
+    },
+    {
+      "id": "passivation",
+      "group": "",
+      "groups": [
+        "clean",
+        "corrosion"
+      ],
+      "tags": [
+        "clean",
+        "corrosion"
+      ],
+      "img": "/precision/product-shaft.jpg",
+      "h3": "Passivation",
+      "title": "Passivation",
+      "p": "Stabilizes stainless steel surfaces by removing free-iron contamination and improving corrosion performance.",
+      "body": "Stabilizes stainless steel surfaces by removing free-iron contamination and improving corrosion performance.",
+      "href": "/capabilities/finish/passivation",
+      "link": "Learn more"
+    },
+    {
+      "id": "heat-treatment",
+      "group": "",
+      "groups": [
+        "wear"
+      ],
+      "tags": [
+        "wear"
+      ],
+      "img": "/precision/timing-pulley-gear-05.png",
+      "h3": "Heat Treatment",
+      "title": "Heat Treatment",
+      "p": "Quenching, tempering, aging and related routes improve hardness, strength or dimensional stability.",
+      "body": "Quenching, tempering, aging and related routes improve hardness, strength or dimensional stability.",
+      "href": "/capabilities/finish/heat-treatment",
+      "link": "Learn more"
+    },
+    {
+      "id": "laser-marking",
+      "group": "",
+      "groups": [
+        "appearance",
+        "marking"
+      ],
+      "tags": [
+        "appearance",
+        "marking"
+      ],
+      "img": "/precision/precision-shaft-07.png",
+      "h3": "Laser Marking",
+      "title": "Laser Marking",
+      "p": "Permanent serial numbers, QR codes, logos and traceability marks for prototype and batch parts.",
+      "body": "Permanent serial numbers, QR codes, logos and traceability marks for prototype and batch parts.",
+      "href": "/capabilities/finish/laser-marking",
+      "link": "Learn more"
+    },
+    {
+      "id": "polishing",
+      "group": "",
+      "groups": [
+        "appearance",
+        "clean"
+      ],
+      "tags": [
+        "appearance",
+        "clean"
+      ],
+      "img": "/precision/precision-shaft-01.png",
+      "h3": "Polishing",
+      "title": "Polishing",
+      "p": "Improves surface smoothness, touch and local reflectivity for cosmetic parts, sealing faces and sliding contact areas.",
+      "body": "Improves surface smoothness, touch and local reflectivity for cosmetic parts, sealing faces and sliding contact areas.",
+      "href": "/capabilities/finish/polishing",
+      "link": "Learn more"
+    },
+    {
+      "id": "blackening",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion"
+      ],
+      "img": "/precision/cnc-turned-part-01.png",
+      "h3": "Black Oxide",
+      "title": "Black Oxide",
+      "p": "Adds a black appearance and basic rust protection for steel fixtures, bushings, transmission and mechanical parts.",
+      "body": "Adds a black appearance and basic rust protection for steel fixtures, bushings, transmission and mechanical parts.",
+      "href": "/capabilities/finish/blackening",
+      "link": "Learn more"
+    }
+  ],
+  "faq": {
+    "title": "Surface Finishing FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Surface Finishing suitable for?",
+        "a": "Surface Finishing is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Surface Finishing quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Surface Finishing?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a combined finishing route?",
+  "ctaDesc": "Share material, appearance, corrosion, hardness, masking and inspection requirements so the route can be reviewed with part geometry.",
+  "ctaButton": "Discuss Finishing"
+}

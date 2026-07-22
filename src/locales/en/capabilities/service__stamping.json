@@ -1,0 +1,176 @@
+{
+  "docTitle": "Metal Stamping Service | ProMakeHub",
+  "heroTitle": "Metal Stamping Service",
+  "heroDesc": "Metal stamping service for volume forming of sheet parts",
+  "heroStats": [
+    {
+      "value": "Sheet",
+      "label": "Material Fit"
+    },
+    {
+      "value": "Tooling",
+      "label": "Volume-Based"
+    },
+    {
+      "value": "First Article",
+      "label": "Dimension Check"
+    },
+    {
+      "value": "Production",
+      "label": "Stable Run"
+    }
+  ],
+  "mediaImg": "/precision/stamping-service.png",
+  "bodyTitle": "Metal Stamping Service from flat strip to formed production parts",
+  "bodyDesc": "Metal stamping is suitable for blanking, bending, drawing and forming sheet parts such as brackets, shields, springs, terminals and connectors. Review focuses on material thickness, springback, burr direction, tooling method and volume scale, so volume stamping should not be judged like one-off machining.",
+  "pills": [
+    "Stainless Steel",
+    "Spring Steel",
+    "Copper Alloys",
+    "Aluminum Sheet",
+    "Galvanized Sheet"
+  ],
+  "panels": [
+    {
+      "title": "Forming Method",
+      "subtitle": "Blank / Bend",
+      "body": "Select single-stage, compound or progressive tooling by shape and volume."
+    },
+    {
+      "title": "Quality Focus",
+      "subtitle": "Burr / Springback",
+      "body": "Confirm burr direction, bend angle and elastic deformation."
+    },
+    {
+      "title": "Volume Logic",
+      "subtitle": "Tool Amortization",
+      "body": "Higher volumes require attention to tool life and cycle time."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Thickness",
+      "0.1-3mm common",
+      "Springs, brackets, terminals, shields",
+      "Thick or high-strength material needs review"
+    ],
+    [
+      "Tooling Method",
+      "Single-stage, compound, progressive",
+      "Low to high volume",
+      "Selected by volume, geometry and cost"
+    ],
+    [
+      "Critical Dimensions",
+      "Hole pitch, bend angle, profile",
+      "Assembly and connector parts",
+      "Tolerance should account for springback"
+    ],
+    [
+      "Secondary Process",
+      "Cleaning, plating, heat treatment, deburring",
+      "Conductive, anti-corrosion or spring requirements",
+      "Process sequence affects dimension and appearance"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Flat pattern and material review",
+      "body": "Confirm material, thickness, grain direction, burr direction and critical dimensions."
+    },
+    {
+      "index": "02",
+      "title": "Tooling route selection",
+      "body": "Select single-stage, compound or progressive tool by geometry and volume."
+    },
+    {
+      "index": "03",
+      "title": "Trial stamping and correction",
+      "body": "Use samples to confirm dimensions, springback and appearance."
+    },
+    {
+      "index": "04",
+      "title": "Production",
+      "body": "Stabilize stamping rhythm and perform first article, patrol checks and packaging."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "Sheet material, 2D drawing"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Brackets, springs, terminals, shields"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Stamped parts, first-article record"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Springback, burr, tooling cost"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/process/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Metal Stamping Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Metal Stamping Service suitable for?",
+        "a": "Metal Stamping Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Metal Stamping Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Metal Stamping Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

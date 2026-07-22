@@ -1,0 +1,411 @@
+{
+  "details": {
+    "process/sheet-metal": {
+      "category": "process",
+      "slug": "sheet-metal",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/sheet-metal-fabrication.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/injection": {
+      "category": "process",
+      "slug": "injection",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/injection-molding.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/cnc": {
+      "category": "process",
+      "slug": "cnc",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/cnc-machining.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/polyurethane": {
+      "category": "process",
+      "slug": "polyurethane",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/urethane-casting.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/laser": {
+      "category": "process",
+      "slug": "laser",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/laser-cutting.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/special": {
+      "category": "process",
+      "slug": "special",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/factory-floor3.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/micro-3d": {
+      "category": "process",
+      "slug": "micro-3d",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/3dprint.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/metal-3d": {
+      "category": "process",
+      "slug": "metal-3d",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/3dprint.png",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "process/medical": {
+      "category": "process",
+      "slug": "medical",
+      "heroClass": "detail-process",
+      "mediaImg": "/precision/Medical_devices.jpg",
+      "parentHref": "/capabilities/process",
+      "parentLabelKey": "process"
+    },
+    "service/cnc": {
+      "category": "service",
+      "slug": "cnc",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/cnc-machining-service.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/mold": {
+      "category": "service",
+      "slug": "mold",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/molding-service.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/custom": {
+      "category": "service",
+      "slug": "custom",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/manufacturing-service.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/stamping": {
+      "category": "service",
+      "slug": "stamping",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/stamping-service.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/casting": {
+      "category": "service",
+      "slug": "casting",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/casting-service.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/forging": {
+      "category": "service",
+      "slug": "forging",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/forging-service.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/3d-printing": {
+      "category": "service",
+      "slug": "3d-printing",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/3dprint.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "service/rapid-prototype": {
+      "category": "service",
+      "slug": "rapid-prototype",
+      "heroClass": "detail-service",
+      "mediaImg": "/precision/cnc-milled-part-01.png",
+      "parentHref": "/capabilities/service",
+      "parentLabelKey": "service"
+    },
+    "finish/anodizing": {
+      "category": "finish",
+      "slug": "anodizing",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/aluminum-flashlight-housing-01.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/plating": {
+      "category": "finish",
+      "slug": "plating",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/precision-shaft-04.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/painting": {
+      "category": "finish",
+      "slug": "painting",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/sheet-metal-part-01.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/powder-coating": {
+      "category": "finish",
+      "slug": "powder-coating",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/sheet-metal-part-02.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/passivation": {
+      "category": "finish",
+      "slug": "passivation",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/product-shaft.jpg",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/heat-treatment": {
+      "category": "finish",
+      "slug": "heat-treatment",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/timing-pulley-gear-05.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/laser-marking": {
+      "category": "finish",
+      "slug": "laser-marking",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/precision-shaft-07.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/polishing": {
+      "category": "finish",
+      "slug": "polishing",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/precision-shaft-01.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/blackening": {
+      "category": "finish",
+      "slug": "blackening",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/cnc-turned-part-01.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "finish/spray": {
+      "category": "finish",
+      "slug": "spray",
+      "heroClass": "detail-finish",
+      "mediaImg": "/precision/sheet-metal-part-01.png",
+      "parentHref": "/capabilities/finish",
+      "parentLabelKey": "finish"
+    },
+    "material/aluminum": {
+      "category": "material",
+      "slug": "aluminum",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/product-flange.jpg",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    },
+    "material/stainless": {
+      "category": "material",
+      "slug": "stainless",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/product-shaft.jpg",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    },
+    "material/carbon": {
+      "category": "material",
+      "slug": "carbon",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/product-bracket.jpg",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    },
+    "material/copper": {
+      "category": "material",
+      "slug": "copper",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/cnc-turned-part-02.png",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    },
+    "material/plastic": {
+      "category": "material",
+      "slug": "plastic",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/urethane-casting.png",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    },
+    "material/titanium": {
+      "category": "material",
+      "slug": "titanium",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/cnc-five-axis-part-03.png",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    },
+    "material/composite": {
+      "category": "material",
+      "slug": "composite",
+      "heroClass": "detail-material",
+      "mediaImg": "/precision/timing-pulley-gear-06.png",
+      "parentHref": "/capabilities/material",
+      "parentLabelKey": "material"
+    }
+  },
+  "hubs": {
+    "service": {
+      "cards": [
+        {
+          "href": "/capabilities/service/cnc",
+          "img": "/precision/cnc-machining-service.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/mold",
+          "img": "/precision/molding-service.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/custom",
+          "img": "/precision/manufacturing-service.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/stamping",
+          "img": "/precision/stamping-service.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/casting",
+          "img": "/precision/casting-service.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/forging",
+          "img": "/precision/forging-service.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/3d-printing",
+          "img": "/precision/3dprint.png",
+          "id": "",
+          "group": "all"
+        },
+        {
+          "href": "/capabilities/service/rapid-prototype",
+          "img": "/precision/cnc-milled-part-01.png",
+          "id": "",
+          "group": "all"
+        }
+      ]
+    },
+    "material": {
+      "cards": [
+        {
+          "img": "/precision/product-flange.jpg",
+          "id": "aluminum"
+        },
+        {
+          "img": "/precision/product-shaft.jpg",
+          "id": "stainless"
+        },
+        {
+          "img": "/precision/product-bracket.jpg",
+          "id": "carbon"
+        },
+        {
+          "img": "/precision/cnc-turned-part-02.png",
+          "id": "copper"
+        },
+        {
+          "img": "/precision/urethane-casting.png",
+          "id": "plastic"
+        },
+        {
+          "img": "/precision/cnc-five-axis-part-03.png",
+          "id": "titanium"
+        },
+        {
+          "img": "/precision/timing-pulley-gear-06.png",
+          "id": "composite"
+        }
+      ]
+    },
+    "finish": {
+      "cards": [
+        {
+          "href": "/capabilities/finish/anodizing",
+          "img": "/precision/aluminum-flashlight-housing-01.png",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/plating",
+          "img": "/precision/precision-shaft-04.png",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/painting",
+          "img": "/precision/sheet-metal-part-01.png",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/powder-coating",
+          "img": "/precision/sheet-metal-part-02.png",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/passivation",
+          "img": "/precision/product-shaft.jpg",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/heat-treatment",
+          "img": "/precision/timing-pulley-gear-05.png",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/laser-marking",
+          "img": "/precision/precision-shaft-07.png",
+          "id": ""
+        },
+        {
+          "href": "/capabilities/finish/polishing",
+          "img": "/precision/precision-shaft-01.png",
+          "id": ""
+        },
+        {
+          "href": "#",
+          "img": "/precision/cnc-turned-part-01.png",
+          "id": ""
+        }
+      ]
+    }
+  }
+}

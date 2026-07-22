@@ -1,0 +1,176 @@
+{
+  "docTitle": "Urethane Casting | ProMakeHub",
+  "heroTitle": "Urethane Casting",
+  "heroDesc": "Low-volume elastomer and bridge production",
+  "heroStats": [
+    {
+      "value": "10-100 pcs",
+      "label": "Typical Low Volume"
+    },
+    {
+      "value": "±0.25mm or 0.3%",
+      "label": "Dimension Reference"
+    },
+    {
+      "value": "Silicone Mold",
+      "label": "Lower Tool Cost"
+    },
+    {
+      "value": "Multiple Hardness",
+      "label": "Material Options"
+    }
+  ],
+  "mediaImg": "/precision/urethane-casting.png",
+  "bodyTitle": "Urethane Casting for low-volume validation and bridge production",
+  "bodyDesc": "Urethane casting usually uses a master pattern and silicone mold to reproduce plastic or elastomer parts with an appearance close to injection-molded components. It is useful for product validation, display samples, low-volume delivery and bridge production before injection tooling, but dimensional stability depends on shrinkage, wall thickness and silicone mold life.",
+  "pills": [
+    "ABS-like",
+    "PP-like",
+    "Clear PU",
+    "Elastomer",
+    "Low Volume"
+  ],
+  "panels": [
+    {
+      "title": "Best Stage",
+      "subtitle": "Validation / Bridge",
+      "body": "Quickly obtain multiple samples before production tooling."
+    },
+    {
+      "title": "Appearance",
+      "subtitle": "Close to molded",
+      "body": "Supports color, clear, matte and selected local finishing."
+    },
+    {
+      "title": "Limits",
+      "subtitle": "Shrinkage / Mold Life",
+      "body": "Thick walls, deep undercuts and very thin edges increase risk."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Typical Quantity",
+      "10-100 pcs common",
+      "Appearance samples, low-volume validation",
+      "Mold life depends on geometry complexity"
+    ],
+    [
+      "Dimension Reference",
+      "About ±0.25mm or ±0.3%",
+      "Housings, rubber-like parts, buttons",
+      "Use the larger value; thick walls vary more"
+    ],
+    [
+      "Material Hardness",
+      "Shore A / D options",
+      "Soft parts, cushioning, appearance samples",
+      "Subject to available resin grades"
+    ],
+    [
+      "Surface Effects",
+      "Matte / Clear / Colored",
+      "Display and functional samples",
+      "High-gloss clear parts need review"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Master and material review",
+      "body": "Confirm prototype, cosmetic faces, color, hardness and quantity."
+    },
+    {
+      "index": "02",
+      "title": "Silicone mold making",
+      "body": "Create mold around the master and plan parting line and gate."
+    },
+    {
+      "index": "03",
+      "title": "Vacuum casting",
+      "body": "Mix, cast, cure and demold the selected material."
+    },
+    {
+      "index": "04",
+      "title": "Trimming and inspection",
+      "body": "Finish flash, appearance, fit and key dimensions."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "PU Resin / Elastomers"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "10-100 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "STEP / STL / Master"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "Dimensional / Cosmetic Record"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/injection-molding.png",
+        "title": "Injection Molding",
+        "body": "Move to production tooling after validation.",
+        "href": "/capabilities/process/injection",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC Machining",
+        "body": "Creates master patterns and functional prototypes.",
+        "href": "/capabilities/process/cnc",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/3dprint.png",
+        "title": "Micro 3D Printing",
+        "body": "Validates fine features and small structures.",
+        "href": "/capabilities/process/micro-3d",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Urethane Casting FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Urethane Casting suitable for?",
+        "a": "Urethane Casting is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Urethane Casting quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Urethane Casting?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

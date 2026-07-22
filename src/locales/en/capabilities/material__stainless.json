@@ -1,0 +1,144 @@
+{
+  "docTitle": "Stainless Steel | ProMakeHub",
+  "heroTitle": "Stainless Steel",
+  "heroDesc": "A metal choice for corrosion resistance, cleanability and stable structures.",
+  "heroStats": [
+    {
+      "value": "about 7.9",
+      "label": "Density g/cm³"
+    },
+    {
+      "value": "304 from about 515MPa",
+      "label": "Tensile strength"
+    },
+    {
+      "value": "Good",
+      "label": "Machining"
+    },
+    {
+      "value": "Excellent",
+      "label": "Corrosion resistance"
+    }
+  ],
+  "mediaImg": "/precision/product-shaft.jpg",
+  "bodyTitle": "Selection Focus",
+  "bodyDesc": "304 is a common general-purpose stainless grade, 316 is safer for chloride or more aggressive environments, and 17-4PH can gain strength through heat treatment. Final selection should consider media exposure, finishing, magnetic requirements and cost.",
+  "pills": [
+    "304, 316, 17-4PH",
+    "Built to drawing",
+    "Material documents on request",
+    "Reviewed with process route"
+  ],
+  "panels": [
+    {
+      "title": "Suitable processes",
+      "subtitle": "CNC / Sheet metal / Forming",
+      "body": "The route should be selected by grade, geometry and order quantity."
+    },
+    {
+      "title": "Required inputs",
+      "subtitle": "CAD + drawing + material notes",
+      "body": "Grade, condition, finishing and acceptance requirements should be stated clearly."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review before production",
+      "body": "Thin walls, deep cavities, welding and cosmetic requirements should be checked early."
+    }
+  ],
+  "tableTitle": "Common Grades and Use Guidance",
+  "tableRows": [
+    [
+      "Grade / Type",
+      "Common use",
+      "Notes"
+    ],
+    [
+      "304",
+      "General equipment parts, bushings, brackets",
+      "Good overall corrosion resistance; work hardening needs control"
+    ],
+    [
+      "316",
+      "Wet, chloride or cleaning environments",
+      "Better pitting resistance than 304"
+    ],
+    [
+      "17-4PH",
+      "High-strength shafts and structures",
+      "Heat-treatment condition affects strength and size"
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Common grades",
+      "value": "304, 316, 17-4PH"
+    },
+    {
+      "label": "Typical uses",
+      "value": "Corrosion-resistant equipment parts, shafts and clean-environment components."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / material notes"
+    },
+    {
+      "label": "Delivery note",
+      "value": "Confirmed by process and stock"
+    }
+  ],
+  "asideCta": {
+    "title": "Need material advice?",
+    "body": "Share the working condition, load, appearance and cost targets so engineering can compare suitable materials.",
+    "button": "Discuss Selection"
+  },
+  "related": {
+    "title": "Related Materials",
+    "desc": "Similar materials differ in strength, weight, corrosion resistance, cost and finishing compatibility, so they are worth comparing before quoting.",
+    "items": [
+      {
+        "img": "/precision/product-flange.jpg",
+        "title": "Aluminum Alloys",
+        "body": "Low density and stable machinability for housings, brackets, fixtures and lightweight structures.",
+        "href": "/capabilities/material/aluminum",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-bracket.jpg",
+        "title": "Carbon Steel",
+        "body": "Balanced strength and cost for load structures, bases, shafts and mechanical connectors.",
+        "href": "/capabilities/material/carbon",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/cnc-turned-part-02.png",
+        "title": "Copper Alloys",
+        "body": "Strong electrical and thermal conductivity for contacts, heat-transfer parts, bushings and wear pairs.",
+        "href": "/capabilities/material/copper",
+        "link": "View material"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Stainless Steel FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Stainless Steel suitable for?",
+        "a": "Stainless Steel is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Stainless Steel quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Stainless Steel?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

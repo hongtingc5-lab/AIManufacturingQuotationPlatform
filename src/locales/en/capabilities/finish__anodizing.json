@@ -1,0 +1,144 @@
+{
+  "docTitle": "Anodizing | ProMakeHub",
+  "heroTitle": "Anodizing",
+  "heroDesc": "For aluminum cosmetic parts, structural parts and functional parts needing improved corrosion resistance.",
+  "heroStats": [
+    {
+      "value": "Aluminum",
+      "label": "Material fit"
+    },
+    {
+      "value": "5-25μm",
+      "label": "Typical decorative range"
+    },
+    {
+      "value": "25-50μm",
+      "label": "Typical hardcoat range"
+    },
+    {
+      "value": "Confirm",
+      "label": "Color and masking"
+    }
+  ],
+  "mediaImg": "/precision/aluminum-flashlight-housing-01.png",
+  "bodyTitle": "Process Focus",
+  "bodyDesc": "A common aluminum finish that improves corrosion resistance, wear behavior and appearance options such as clear or black. Actual results depend on material grade, pre-treatment, geometry, thickness, masking and acceptance criteria, so these details should be confirmed during quoting.",
+  "pills": [
+    "Drawing-based",
+    "Masking notes",
+    "Sample review",
+    "Batch records"
+  ],
+  "panels": [
+    {
+      "title": "Drawing input",
+      "subtitle": "Material + finish notes",
+      "body": "State color, thickness, masked faces, cosmetic level and inspection standard."
+    },
+    {
+      "title": "Quality check",
+      "subtitle": "Appearance / size / adhesion",
+      "body": "Appearance, thickness, hardness or corrosion test can be confirmed by process type."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review boundaries first",
+      "body": "Deep holes, sharp edges, thin walls, threads and precision fits need early review."
+    }
+  ],
+  "tableTitle": "Application and Design Notes",
+  "tableRows": [
+    [
+      "Item",
+      "Description",
+      "Notes"
+    ],
+    [
+      "Material fit",
+      "Mainly aluminum alloys",
+      "Steel and copper parts normally use other finishing routes."
+    ],
+    [
+      "Appearance",
+      "Clear, black and selected colors",
+      "Color variation can occur by alloy and batch."
+    ],
+    [
+      "Design note",
+      "Mask threads, fit faces and contact points",
+      "Coating thickness affects holes, slots and tight fits."
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Material fit",
+      "value": "Aluminum"
+    },
+    {
+      "label": "Main goal",
+      "value": "Corrosion resistance, wear behavior and clear or black aluminum appearance."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / finish notes"
+    },
+    {
+      "label": "Confirmation",
+      "value": "Drawing, sample or inspection standard"
+    }
+  ],
+  "asideCta": {
+    "title": "Need finishing advice?",
+    "body": "Share material, appearance, function and masking requirements so engineering can match a suitable process.",
+    "button": "Discuss Process"
+  },
+  "related": {
+    "title": "Related Finishes",
+    "desc": "Finishes differ in appearance, thickness, corrosion behavior, wear behavior and cost, so they should be compared against part use.",
+    "items": [
+      {
+        "img": "/precision/precision-shaft-04.png",
+        "title": "Electroplating",
+        "body": "Zinc, nickel, chrome, tin and other plating routes improve corrosion resistance, conductivity, wear or appearance.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      },
+      {
+        "img": "/precision/sheet-metal-part-01.png",
+        "title": "Painting",
+        "body": "Supports color, gloss, insulating protection and masked areas on metal and selected plastic parts.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      },
+      {
+        "img": "/precision/sheet-metal-part-02.png",
+        "title": "Powder Coating",
+        "body": "Good for metal housings, brackets and sheet-metal parts with thicker coating, weather resistance and stable colors.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Anodizing FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Anodizing suitable for?",
+        "a": "Anodizing is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Anodizing quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Anodizing?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

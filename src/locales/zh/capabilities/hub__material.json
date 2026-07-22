@@ -1,0 +1,153 @@
+{
+  "docTitle": "材料中心 | 敏捷智造",
+  "heroTitle": "材料",
+  "heroDesc": "根据零件强度、重量、耐腐蚀、导电导热、绝缘与表面处理需求选择合适材料。",
+  "heroStats": [],
+  "searchPlaceholder": "搜索材料名称、牌号或应用场景",
+  "sectionTitle": "材料分类",
+  "sectionDesc": "围绕轻量化、耐腐蚀、导电导热、高强承载和绝缘耐磨等目标整理常用材料，便于结合零件结构、加工方式、表面处理和成本目标进行初步判断。",
+  "filterAria": "按选材目标筛选",
+  "filterEyebrow": "选材筛选",
+  "filterTitle": "按零件目标缩小范围",
+  "chips": [
+    {
+      "key": "all",
+      "label": "全部材料"
+    },
+    {
+      "key": "lightweight",
+      "label": "轻量结构"
+    },
+    {
+      "key": "corrosion",
+      "label": "耐腐蚀"
+    },
+    {
+      "key": "conductive",
+      "label": "导电导热"
+    },
+    {
+      "key": "strength",
+      "label": "高强承载"
+    },
+    {
+      "key": "insulation",
+      "label": "绝缘耐磨"
+    }
+  ],
+  "cards": [
+    {
+      "id": "aluminum",
+      "tags": [
+        "lightweight",
+        "corrosion",
+        "finishing",
+        "strength"
+      ],
+      "title": "铝合金",
+      "grades": "6061、7075、5052、6082",
+      "body": "密度低、加工稳定，适合外壳、支架、夹具与轻量化结构件。",
+      "img": "/precision/product-flange.jpg",
+      "href": "/capabilities/material/aluminum"
+    },
+    {
+      "id": "stainless",
+      "tags": [
+        "corrosion",
+        "strength",
+        "wear"
+      ],
+      "title": "不锈钢",
+      "grades": "304、316、17-4PH",
+      "body": "耐腐蚀和耐久性好，适合设备零件、轴类件、流体与清洁环境。",
+      "img": "/precision/product-shaft.jpg",
+      "href": "/capabilities/material/stainless"
+    },
+    {
+      "id": "carbon",
+      "tags": [
+        "strength",
+        "wear"
+      ],
+      "title": "碳钢",
+      "grades": "Q235、45#、40Cr",
+      "body": "强度与成本平衡，适合承载结构、底座、轴类和机械连接件。",
+      "img": "/precision/product-bracket.jpg",
+      "href": "/capabilities/material/carbon"
+    },
+    {
+      "id": "copper",
+      "tags": [
+        "conductive",
+        "corrosion",
+        "wear"
+      ],
+      "title": "铜合金",
+      "grades": "紫铜、H62、C36000、锡青铜",
+      "body": "导电导热性能突出，适合电连接、导热件、轴套和耐磨配合件。",
+      "img": "/precision/cnc-turned-part-02.png",
+      "href": "/capabilities/material/copper"
+    },
+    {
+      "id": "plastic",
+      "tags": [
+        "lightweight",
+        "insulation",
+        "wear",
+        "corrosion"
+      ],
+      "title": "工程塑料",
+      "grades": "POM、PA、PC、PEEK、ABS",
+      "body": "轻量、绝缘、耐磨或耐化学需求可选，适合功能样件与低负载结构。",
+      "img": "/precision/urethane-casting.png",
+      "href": "/capabilities/material/plastic"
+    },
+    {
+      "id": "titanium",
+      "tags": [
+        "lightweight",
+        "corrosion",
+        "strength"
+      ],
+      "title": "钛合金",
+      "grades": "TC4、TA2、Ti-6Al-4V",
+      "body": "比强度高、耐腐蚀好，适合高要求轻量结构和特殊环境零件。",
+      "img": "/precision/cnc-five-axis-part-03.png",
+      "href": "/capabilities/material/titanium"
+    },
+    {
+      "id": "composite",
+      "tags": [
+        "lightweight",
+        "insulation",
+        "strength"
+      ],
+      "title": "复合材料",
+      "grades": "碳纤维板、玻纤板、G10/FR4",
+      "body": "适合轻量化、绝缘、层合结构和特定方向刚度需求。",
+      "img": "/precision/timing-pulley-gear-06.png",
+      "href": "/capabilities/material/composite"
+    }
+  ],
+  "faq": {
+    "title": "材料常见问题",
+    "desc": "这些问答用于在提交制造需求前，快速确认适用场景、资料准备和报价评审方式。",
+    "items": [
+      {
+        "q": "材料适合哪些项目？",
+        "a": "材料适合需要根据图纸、材料、数量、公差和交付目标评估制造路线的项目，尤其适合原型验证、小批量试制和功能结构件。"
+      },
+      {
+        "q": "提交材料需求时需要准备什么？",
+        "a": "建议准备 3D 模型、2D 图纸、材料牌号、数量、表面处理、关键公差、检测要求和目标交期，便于工程师快速判断工艺路线。"
+      },
+      {
+        "q": "材料的报价和交期如何确认？",
+        "a": "报价和交期会结合零件结构、材料、加工路线、表面处理、检测范围和数量确认；复杂公差或特殊处理通常需要工程评审后再给出。"
+      }
+    ]
+  },
+  "ctaTitle": "需要材料替代或选型建议？",
+  "ctaDesc": "提交零件用途、使用环境、承载要求和目标成本后，可结合工艺与表面处理给出更稳妥的材料建议。",
+  "ctaButton": "咨询材料方案"
+}
