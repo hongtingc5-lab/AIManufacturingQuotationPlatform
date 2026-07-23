@@ -1,0 +1,49 @@
+# zhizao 上推操作记录
+日期：2026-07-23
+操作人环境：本机 Windows / Git + 代理 127.0.0.1:7897
+
+## 背景
+- 旧流程：编辑目录 robocopy → `marketing-react-main` 镜像目录再 push（`feat/marketing-react`）。
+- 本次起：取消独立上推目录，直接在编辑根目录 `D:\zhizao\zhizao` 初始化 Git 并推送。
+
+## 仓库与分支
+- 远程：https://github.com/hongtingc5-lab/AIManufacturingQuotationPlatform.git
+- 新分支：`feat/zhizao-workspace`（首次推送）
+- 本地根：`D:\zhizao\zhizao`（已含 `.git`）
+- 提交：`d1398edb2da9f2fccfd7d822d5f7e136c0e58b1b`
+- 说明：Initialize zhizao workspace: frontend monorepo, backend stub, and DB requirements.
+- PR 入口：https://github.com/hongtingc5-lab/AIManufacturingQuotationPlatform/pull/new/feat/zhizao-workspace
+
+## 本次纳入内容（约 618 文件）
+- `react/`：五系统 + 入口 monorepo（marketing / user / entry / admin / mes / supplier）
+- `agilmake-system/`：Spring Boot 后端工程骨架
+- `agilemake_sql/`：数据库需求文档（overview + REQ v0.3）
+- 根目录 `.gitignore`：排除 node_modules / dist / target / .idea / Office 锁文件等
+
+## 实际执行命令
+```bat
+cd /d D:\zhizao\zhizao
+git init
+git checkout -b feat/zhizao-workspace
+git add --all
+git commit -m "Initialize zhizao workspace: frontend monorepo, backend stub, and DB requirements."
+git remote add origin https://github.com/hongtingc5-lab/AIManufacturingQuotationPlatform.git
+git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push -u origin feat/zhizao-workspace
+```
+
+## 后续日常上推（编辑目录内直接操作）
+说明文件已更新：`D:\zhizao\zhizao\react\上推git.txt`
+
+```bat
+cd /d D:\zhizao\zhizao
+git status
+git add --all
+git commit -m "描述本次变更 ..."
+git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push
+```
+
+## 注意
+1. 不要再创建 / 使用 `marketing-react-main` 镜像目录。
+2. `node_modules`、`dist`、`target` 等已在 `.gitignore`，推送前无需 robocopy。
+3. `agilmake-system/.../application.properties` 含本机 Postgres 账号口令，仅适合开发环境；生产请改用环境变量或本地覆盖配置，勿把真实生产密钥提交到公开仓库。
+4. 远程仍保留旧分支 `feat/marketing-react` / `main` / `master`；本次为独立历史的新分支，未 force 覆盖任何已有分支。
