@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "home",
+    "route": "/",
+    "file": "home.json"
+  },
+  {
+    "slug": "users",
+    "route": "/users",
+    "file": "users.json"
+  },
+  {
+    "slug": "customers",
+    "route": "/customers",
+    "file": "customers.json"
+  },
+  {
+    "slug": "customers-enterprise",
+    "route": "/customers/enterprise",
+    "file": "customers-enterprise.json"
+  },
+  {
+    "slug": "suppliers",
+    "route": "/suppliers",
+    "file": "suppliers.json"
+  },
+  {
+    "slug": "supply",
+    "route": "/supply",
+    "file": "supply.json"
+  },
+  {
+    "slug": "rfq",
+    "route": "/rfq",
+    "file": "rfq.json"
+  },
+  {
+    "slug": "ai",
+    "route": "/ai",
+    "file": "ai.json"
+  },
+  {
+    "slug": "knowledge",
+    "route": "/knowledge",
+    "file": "knowledge.json"
+  },
+  {
+    "slug": "mes-oversight",
+    "route": "/mes-oversight",
+    "file": "mes-oversight.json"
+  },
+  {
+    "slug": "support",
+    "route": "/support",
+    "file": "support.json"
+  },
+  {
+    "slug": "marketing-cms",
+    "route": "/marketing-cms",
+    "file": "marketing-cms.json"
+  },
+  {
+    "slug": "permissions",
+    "route": "/permissions",
+    "file": "permissions.json"
+  },
+  {
+    "slug": "analytics",
+    "route": "/analytics",
+    "file": "analytics.json"
+  },
+  {
+    "slug": "finance",
+    "route": "/finance",
+    "file": "finance.json"
+  },
+  {
+    "slug": "settings",
+    "route": "/settings",
+    "file": "settings.json"
+  }
+]

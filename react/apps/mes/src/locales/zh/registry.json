@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "home",
+    "route": "/",
+    "file": "home.json"
+  },
+  {
+    "slug": "work-orders",
+    "route": "/work-orders",
+    "file": "work-orders.json"
+  },
+  {
+    "slug": "operations",
+    "route": "/operations",
+    "file": "operations.json"
+  },
+  {
+    "slug": "equipment",
+    "route": "/equipment",
+    "file": "equipment.json"
+  },
+  {
+    "slug": "quality",
+    "route": "/quality",
+    "file": "quality.json"
+  },
+  {
+    "slug": "inventory",
+    "route": "/inventory",
+    "file": "inventory.json"
+  },
+  {
+    "slug": "ai-assistant",
+    "route": "/ai-assistant",
+    "file": "ai-assistant.json"
+  },
+  {
+    "slug": "alerts",
+    "route": "/alerts",
+    "file": "alerts.json"
+  },
+  {
+    "slug": "analytics",
+    "route": "/analytics",
+    "file": "analytics.json"
+  },
+  {
+    "slug": "settings",
+    "route": "/settings",
+    "file": "settings.json"
+  }
+]

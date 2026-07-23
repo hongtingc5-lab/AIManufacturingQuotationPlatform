@@ -1,0 +1,41 @@
+{
+  "name": "zhizao-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "敏捷智造前端 monorepo（五系统：marketing / user / admin / mes / supplier）",
+  "workspaces": [
+    "apps/marketing",
+    "apps/entry",
+    "apps/user",
+    "apps/admin",
+    "apps/mes",
+    "apps/supplier"
+  ],
+  "scripts": {
+    "dev:marketing": "npm run dev -w @zhizao/frontend-marketing",
+    "build:marketing": "npm run build -w @zhizao/frontend-marketing",
+    "preview:marketing": "npm run preview -w @zhizao/frontend-marketing",
+    "dev:entry": "npm run dev -w @zhizao/frontend-entry",
+    "build:entry": "npm run build -w @zhizao/frontend-entry",
+    "preview:entry": "npm run preview -w @zhizao/frontend-entry",
+    "dev:user": "npm run dev -w @zhizao/frontend-user",
+    "build:user": "npm run build -w @zhizao/frontend-user",
+    "preview:user": "npm run preview -w @zhizao/frontend-user",
+    "dev:admin": "npm run dev -w @zhizao/frontend-admin",
+    "build:admin": "npm run build -w @zhizao/frontend-admin",
+    "preview:admin": "npm run preview -w @zhizao/frontend-admin",
+    "dev:mes": "npm run dev -w @zhizao/frontend-mes",
+    "build:mes": "npm run build -w @zhizao/frontend-mes",
+    "preview:mes": "npm run preview -w @zhizao/frontend-mes",
+    "dev:supplier": "npm run dev -w @zhizao/frontend-supplier",
+    "build:supplier": "npm run build -w @zhizao/frontend-supplier",
+    "preview:supplier": "npm run preview -w @zhizao/frontend-supplier",
+    "dev": "node ./scripts/dev.mjs",
+    "build": "npm run build:marketing",
+    "stop": "node ./scripts/stop-dev.mjs",
+    "stop:dev": "node ./scripts/stop-dev.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

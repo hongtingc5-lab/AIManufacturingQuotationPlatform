@@ -1,0 +1,7 @@
+{
+  "docTitle": "服务条款 | 敏捷智造",
+  "bodyClasses": [
+    "supplement-page"
+  ],
+  "mainHtml": "\n<section class=\"supplement-hero\"><div class=\"container supplement-hero-inner\"><div><div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/about\">关于</a><span>/</span><b>服务条款</b></div><h1>服务条款</h1><p>用于说明报价、文件、生产、交付、变更和售后沟通的基本边界。正式上线前建议结合实际合同文本由法务复核。</p><div class=\"supplement-tags\"><span>报价边界</span><span>文件责任</span><span>变更取消</span><span>售后支持</span></div></div><img alt=\"服务条款\" src=\"/precision/quality-process.jpg\"/></div></section>\n<section class=\"supplement-section\"><div class=\"container policy-layout\"><aside class=\"policy-nav\"><a href=\"#quote\">报价</a><a href=\"#file\">文件</a><a href=\"#delivery\">交付</a><a href=\"#after\">售后</a></aside><div><section class=\"policy-block\" id=\"quote\"><h2>报价与订单</h2><p>页面展示、在线估算或初步沟通仅作为需求评估参考，正式价格、交期和服务范围以双方确认的报价单、订单或合同为准。</p></section><section class=\"policy-block\" id=\"file\"><h2>文件与设计责任</h2><p>客户应确保上传文件、图纸、材料要求和用途说明真实、完整且有权使用。因资料缺失或版本错误导致的影响，应在项目沟通中及时确认处理方式。</p></section><section class=\"policy-block\" id=\"delivery\"><h2>生产与交付</h2><p>生产周期受材料、工艺、检测、数量、后处理和物流影响。涉及加急、分批交付或特殊包装时，应在订单确认前明确。</p></section><section class=\"policy-block\" id=\"after\"><h2>变更、取消与售后</h2><p>项目进入生产后，变更或取消可能产生已发生费用。售后处理应以图纸、验收标准、检测记录和双方确认资料为依据。</p></section></div></div></section>\n"
+}

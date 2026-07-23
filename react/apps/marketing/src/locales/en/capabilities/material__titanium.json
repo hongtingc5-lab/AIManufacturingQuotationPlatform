@@ -1,0 +1,144 @@
+{
+  "docTitle": "Titanium Alloys | ProMakeHub",
+  "heroTitle": "Titanium Alloys",
+  "heroDesc": "A precision material for high specific strength, corrosion resistance and biocompatibility evaluation.",
+  "heroStats": [
+    {
+      "value": "about 4.43",
+      "label": "TC4 density g/cm³"
+    },
+    {
+      "value": "TC4 about 900MPa",
+      "label": "Tensile strength"
+    },
+    {
+      "value": "needs dedicated parameters",
+      "label": "Machining"
+    },
+    {
+      "value": "Excellent",
+      "label": "Corrosion resistance"
+    }
+  ],
+  "mediaImg": "/precision/cnc-five-axis-part-03.png",
+  "bodyTitle": "Selection Focus",
+  "bodyDesc": "Titanium alloys have high strength-to-weight ratio and corrosion resistance, but low thermal conductivity and high cutting temperature make tool choice, coolant and process parameters more important. For general load-bearing parts, compare cost and lead time against aluminum, stainless steel and carbon steel.",
+  "pills": [
+    "TC4, TA2, Ti-6Al-4V",
+    "Built to drawing",
+    "Material documents on request",
+    "Reviewed with process route"
+  ],
+  "panels": [
+    {
+      "title": "Suitable processes",
+      "subtitle": "CNC / Sheet metal / Forming",
+      "body": "The route should be selected by grade, geometry and order quantity."
+    },
+    {
+      "title": "Required inputs",
+      "subtitle": "CAD + drawing + material notes",
+      "body": "Grade, condition, finishing and acceptance requirements should be stated clearly."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review before production",
+      "body": "Thin walls, deep cavities, welding and cosmetic requirements should be checked early."
+    }
+  ],
+  "tableTitle": "Common Grades and Use Guidance",
+  "tableRows": [
+    [
+      "Grade / Type",
+      "Common use",
+      "Notes"
+    ],
+    [
+      "TC4 / Ti-6Al-4V",
+      "High-strength lightweight structures, medical-related parts",
+      "High strength with higher machining cost"
+    ],
+    [
+      "TA2",
+      "Corrosion-resistant structures, thin-wall parts",
+      "Lower strength than TC4, better formability"
+    ],
+    [
+      "Titanium weldments",
+      "Special structural assemblies",
+      "Welding environment and distortion need early review"
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Common grades",
+      "value": "TC4, TA2, Ti-6Al-4V"
+    },
+    {
+      "label": "Typical uses",
+      "value": "High specific strength, corrosion resistance and lightweight load-bearing parts."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / material notes"
+    },
+    {
+      "label": "Delivery note",
+      "value": "Confirmed by process and stock"
+    }
+  ],
+  "asideCta": {
+    "title": "Need material advice?",
+    "body": "Share the working condition, load, appearance and cost targets so engineering can compare suitable materials.",
+    "button": "Discuss Selection"
+  },
+  "related": {
+    "title": "Related Materials",
+    "desc": "Similar materials differ in strength, weight, corrosion resistance, cost and finishing compatibility, so they are worth comparing before quoting.",
+    "items": [
+      {
+        "img": "/precision/product-flange.jpg",
+        "title": "Aluminum Alloys",
+        "body": "Low density and stable machinability for housings, brackets, fixtures and lightweight structures.",
+        "href": "/capabilities/material/aluminum",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Stainless Steel",
+        "body": "Good corrosion resistance and durability for equipment parts, shafts, fluid-contact and clean environments.",
+        "href": "/capabilities/material/stainless",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-bracket.jpg",
+        "title": "Carbon Steel",
+        "body": "Balanced strength and cost for load structures, bases, shafts and mechanical connectors.",
+        "href": "/capabilities/material/carbon",
+        "link": "View material"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Titanium Alloys FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Titanium Alloys suitable for?",
+        "a": "Titanium Alloys is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Titanium Alloys quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Titanium Alloys?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

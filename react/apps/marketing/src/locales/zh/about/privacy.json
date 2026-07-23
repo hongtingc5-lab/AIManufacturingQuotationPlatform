@@ -1,0 +1,7 @@
+{
+  "docTitle": "隐私政策 | 敏捷智造",
+  "bodyClasses": [
+    "supplement-page"
+  ],
+  "mainHtml": "\n<section class=\"supplement-hero\"><div class=\"container supplement-hero-inner\"><div><div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/about\">关于</a><span>/</span><b>隐私政策</b></div><h1>隐私政策</h1><p>说明在询价、订阅、沟通和服务过程中可能涉及的信息类型、使用目的和用户选择。正式上线前建议由法务复核。</p><div class=\"supplement-tags\"><span>信息收集</span><span>使用目的</span><span>安全保护</span><span>用户权利</span></div></div><img alt=\"隐私政策\" src=\"/precision/factory-card-interior.jpg\"/></div></section>\n<section class=\"supplement-section\"><div class=\"container policy-layout\"><aside class=\"policy-nav\"><a href=\"#collect\">信息收集</a><a href=\"#use\">使用方式</a><a href=\"#protect\">安全保护</a><a href=\"#choice\">用户选择</a></aside><div><section class=\"policy-block\" id=\"collect\"><h2>我们可能收集的信息</h2><p>当您提交报价、上传模型、订阅资讯或联系我们时，我们可能收集姓名、联系方式、企业信息、项目需求、文件资料和沟通记录等必要信息。</p></section><section class=\"policy-block\" id=\"use\"><h2>信息使用方式</h2><p>相关信息主要用于需求评估、报价沟通、制造服务、客户支持、内容订阅和服务改进。未经必要授权，不应将客户项目文件用于与服务无关的公开展示。</p></section><section class=\"policy-block\" id=\"protect\"><h2>信息安全保护</h2><p>我们会采取合理的访问控制、文件管理和内部流程保护信息安全。涉及保密项目时，建议双方通过保密协议、权限范围和文件交付方式进一步明确。</p></section><section class=\"policy-block\" id=\"choice\"><h2>用户选择与联系</h2><p>您可以通过页面联系方式提出订阅退订、信息更正、项目文件删除或隐私相关咨询。具体处理方式应结合账号状态、合同要求和法定义务确认。</p></section></div></div></section>\n"
+}

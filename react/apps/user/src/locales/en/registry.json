@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "home",
+    "route": "/",
+    "file": "home.json"
+  },
+  {
+    "slug": "ai-smart-quote",
+    "route": "/ai/smart-quote",
+    "file": "ai-smart-quote.json"
+  },
+  {
+    "slug": "ai-text-to-3d",
+    "route": "/ai/text-to-3d",
+    "file": "ai-text-to-3d.json"
+  },
+  {
+    "slug": "ai-image-to-3d",
+    "route": "/ai/image-to-3d",
+    "file": "ai-image-to-3d.json"
+  },
+  {
+    "slug": "quote-upload",
+    "route": "/quotes/upload",
+    "file": "quote-upload.json"
+  },
+  {
+    "slug": "orders",
+    "route": "/orders",
+    "file": "orders.json"
+  },
+  {
+    "slug": "quote-detail",
+    "route": "/quotes/detail",
+    "file": "quote-detail.json"
+  },
+  {
+    "slug": "quote-edit",
+    "route": "/quotes/edit",
+    "file": "quote-edit.json"
+  },
+  {
+    "slug": "models",
+    "route": "/models",
+    "file": "models.json"
+  },
+  {
+    "slug": "membership",
+    "route": "/membership",
+    "file": "membership.json"
+  },
+  {
+    "slug": "account",
+    "route": "/account",
+    "file": "account.json"
+  },
+  {
+    "slug": "messages",
+    "route": "/messages",
+    "file": "messages.json"
+  },
+  {
+    "slug": "analytics",
+    "route": "/analytics",
+    "file": "analytics.json"
+  }
+]

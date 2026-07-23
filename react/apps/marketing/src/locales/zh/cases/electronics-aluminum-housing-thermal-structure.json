@@ -1,0 +1,9 @@
+{
+  "slug": "电子铝合金外壳与散热结构",
+  "fileKey": "electronics-aluminum-housing-thermal-structure",
+  "docTitle": "铝合金外壳与散热结构 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/insight-device.jpg)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/electronics\">电子</a><span>/</span><b>行业案例</b></div>\n<span>电子案例</span>\n<h1>铝合金外壳与散热结构</h1>\n<p>散热 / 接口 / 外观样机</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>电子</strong></div>\n<div><span>零件功能</span><strong>散热 / 接口 / 外观样机</strong></div>\n<div><span>制造能力</span><strong>CNC加工、喷砂阳极、接口孔检测、外观处理</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>同步处理散热片、接口位、外观边界和装配扣位，支持研发样机验证。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>外观样机具备装配、展示和初步散热验证条件。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"铝合金外壳与散热结构\" src=\"/precision/insight-device.jpg\"/>\n<h3>电子行业制造能力</h3>\n<p>继续查看铝合金外壳、内部支架和铜合金连接件等电子结构案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/electronics\">返回电子行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

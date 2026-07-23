@@ -1,0 +1,176 @@
+{
+  "docTitle": "3D Printing Service | ProMakeHub",
+  "heroTitle": "3D Printing Service",
+  "heroDesc": "Additive manufacturing for rapid validation, complex geometry and low-volume parts",
+  "heroStats": [
+    {
+      "value": "STL / STEP",
+      "label": "Model Input"
+    },
+    {
+      "value": "Resin / Nylon / Metal",
+      "label": "Material Review"
+    },
+    {
+      "value": "Low Volume",
+      "label": "Flexible Delivery"
+    },
+    {
+      "value": "Post-Process",
+      "label": "Appearance Improvement"
+    }
+  ],
+  "mediaImg": "/precision/3dprint.png",
+  "bodyTitle": "3D Printing Service from model review to post-processed delivery",
+  "bodyDesc": "3D printing service is suitable for rapid prototypes, complex geometry, low-volume parts and internal channels or lattice structures that are difficult to machine conventionally. Material and process choices differ in strength, accuracy, surface and cost, so review starts with intended use before selecting resin, nylon, metal or another route.",
+  "pills": [
+    "SLA",
+    "SLS",
+    "MJF",
+    "Metal Printing",
+    "Low Volume"
+  ],
+  "panels": [
+    {
+      "title": "Use Case",
+      "subtitle": "Validation / Complex Geometry",
+      "body": "Good for visual checks, assembly validation, complex channels and lightweight structures."
+    },
+    {
+      "title": "Material Choice",
+      "subtitle": "Use-Case Driven",
+      "body": "Appearance, strength, heat resistance and cost affect process selection."
+    },
+    {
+      "title": "Post-Processing",
+      "subtitle": "Cleaning / Blasting / Dyeing",
+      "body": "Surface texture and support marks differ by process and need specific treatment."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Model Check",
+      "Wall, hole, support, enclosed cavity",
+      "Prototypes and complex geometry",
+      "Thin features and trapped powder need review"
+    ],
+    [
+      "Process Choice",
+      "Resin, nylon, metal and more",
+      "Cosmetic, functional and low-volume parts",
+      "Material performance depends on process and grade"
+    ],
+    [
+      "Dimension Reference",
+      "Reviewed by process, size and material",
+      "Assembly and functional samples",
+      "Critical dimensions may need post-machining"
+    ],
+    [
+      "Post-Process",
+      "Support removal, cleaning, blasting, dyeing, heat treatment",
+      "Appearance and function improvement",
+      "Surface result should be confirmed early"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Model check",
+      "body": "Check file integrity, wall thickness, holes, supports and powder removal paths."
+    },
+    {
+      "index": "02",
+      "title": "Process and material selection",
+      "body": "Match route by use case, strength, appearance and budget."
+    },
+    {
+      "index": "03",
+      "title": "Printing and cleaning",
+      "body": "Print, remove supports, depowder, cure or heat treat as needed."
+    },
+    {
+      "index": "04",
+      "title": "Post-process delivery",
+      "body": "Complete blasting, dyeing, sanding or local post-machining as required."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "STL, STEP, use-case notes"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Prototypes, complex geometry, low volume"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Printed parts, finished parts, records"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Walls, supports, material performance"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/service/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "3D Printing Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is 3D Printing Service suitable for?",
+        "a": "3D Printing Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a 3D Printing Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for 3D Printing Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

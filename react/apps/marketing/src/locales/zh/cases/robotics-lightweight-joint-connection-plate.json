@@ -1,0 +1,9 @@
+{
+  "slug": "机器人轻量化关节连接板",
+  "fileKey": "robotics-lightweight-joint-connection-plate",
+  "docTitle": "轻量化关节连接板 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/cnc-milled-part-01.png)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/robotics\">机器人技术</a><span>/</span><b>行业案例</b></div>\n<span>机器人技术案例</span>\n<h1>轻量化关节连接板</h1>\n<p>关节连接 / 减重结构 / 装配基准</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>机器人技术</strong></div>\n<div><span>零件功能</span><strong>关节连接 / 减重结构 / 装配基准</strong></div>\n<div><span>制造能力</span><strong>五轴加工、铝合金、阳极氧化、平面度检测</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>针对机械臂关节连接件，控制重量、刚性和安装基准。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>连接板兼顾轻量化和装配稳定性，适合小批验证。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"轻量化关节连接板\" src=\"/precision/cnc-milled-part-01.png\"/>\n<h3>机器人制造能力</h3>\n<p>继续查看末端执行器、关节连接板和产线检测治具等机器人制造案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/robotics\">返回机器人技术行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

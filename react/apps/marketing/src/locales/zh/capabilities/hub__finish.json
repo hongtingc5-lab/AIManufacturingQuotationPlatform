@@ -1,0 +1,226 @@
+{
+  "docTitle": "表面处理中心 | 敏捷智造",
+  "heroTitle": "表面处理",
+  "heroDesc": "围绕外观、防腐、耐磨、导电、标识和清洁稳定性选择合适的后处理方案。",
+  "heroStats": [
+    {
+      "value": "多类",
+      "label": "表面处理路线"
+    },
+    {
+      "value": "按图",
+      "label": "膜厚与遮蔽确认"
+    },
+    {
+      "value": "样板",
+      "label": "颜色与外观评估"
+    },
+    {
+      "value": "记录",
+      "label": "批次与质检追踪"
+    }
+  ],
+  "sectionTitle": "表面处理工艺",
+  "sectionDesc": "围绕外观颜色、耐腐蚀、耐磨硬化、导电标识和清洁稳定等目标整理常见表面处理路线，便于在报价前明确材质、遮蔽、膜厚、颜色和检验要求。",
+  "filterTitle": "",
+  "filters": [],
+  "tipTitle": "",
+  "tipBody": "",
+  "learnMore": "了解更多",
+  "cards": [
+    {
+      "id": "anodizing",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "img": "/precision/aluminum-flashlight-housing-01.png",
+      "h3": "阳极氧化",
+      "title": "阳极氧化",
+      "p": "铝合金常用表面处理，可提升耐蚀性、耐磨性并提供本色、黑色等外观选择。",
+      "body": "铝合金常用表面处理，可提升耐蚀性、耐磨性并提供本色、黑色等外观选择。",
+      "href": "/capabilities/finish/anodizing",
+      "link": "了解更多"
+    },
+    {
+      "id": "plating",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion",
+        "wear"
+      ],
+      "img": "/precision/precision-shaft-04.png",
+      "h3": "电镀",
+      "title": "电镀",
+      "p": "通过镀锌、镀镍、镀铬、镀锡等工艺改善耐蚀、导电、耐磨或外观效果。",
+      "body": "通过镀锌、镀镍、镀铬、镀锡等工艺改善耐蚀、导电、耐磨或外观效果。",
+      "href": "/capabilities/finish/plating",
+      "link": "了解更多"
+    },
+    {
+      "id": "painting",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion"
+      ],
+      "img": "/precision/sheet-metal-part-01.png",
+      "h3": "喷涂",
+      "title": "喷涂",
+      "p": "适合颜色、光泽、绝缘保护和局部遮蔽需求，可用于金属与部分塑料零件。",
+      "body": "适合颜色、光泽、绝缘保护和局部遮蔽需求，可用于金属与部分塑料零件。",
+      "href": "/capabilities/finish/painting",
+      "link": "了解更多"
+    },
+    {
+      "id": "powder-coating",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion"
+      ],
+      "img": "/precision/sheet-metal-part-02.png",
+      "h3": "粉末喷涂",
+      "title": "粉末喷涂",
+      "p": "适合金属外壳、支架和钣金件，涂层厚、耐候性和颜色稳定性较好。",
+      "body": "适合金属外壳、支架和钣金件，涂层厚、耐候性和颜色稳定性较好。",
+      "href": "/capabilities/finish/powder-coating",
+      "link": "了解更多"
+    },
+    {
+      "id": "passivation",
+      "group": "",
+      "groups": [
+        "clean",
+        "corrosion"
+      ],
+      "tags": [
+        "clean",
+        "corrosion"
+      ],
+      "img": "/precision/product-shaft.jpg",
+      "h3": "钝化处理",
+      "title": "钝化处理",
+      "p": "用于不锈钢表面稳定化，去除游离铁污染并提升耐腐蚀稳定性。",
+      "body": "用于不锈钢表面稳定化，去除游离铁污染并提升耐腐蚀稳定性。",
+      "href": "/capabilities/finish/passivation",
+      "link": "了解更多"
+    },
+    {
+      "id": "heat-treatment",
+      "group": "",
+      "groups": [
+        "wear"
+      ],
+      "tags": [
+        "wear"
+      ],
+      "img": "/precision/timing-pulley-gear-05.png",
+      "h3": "热处理",
+      "title": "热处理",
+      "p": "通过淬火、回火、调质、时效等方式改善硬度、强度或尺寸稳定性。",
+      "body": "通过淬火、回火、调质、时效等方式改善硬度、强度或尺寸稳定性。",
+      "href": "/capabilities/finish/heat-treatment",
+      "link": "了解更多"
+    },
+    {
+      "id": "laser-marking",
+      "group": "",
+      "groups": [
+        "appearance",
+        "marking"
+      ],
+      "tags": [
+        "appearance",
+        "marking"
+      ],
+      "img": "/precision/precision-shaft-07.png",
+      "h3": "激光打标",
+      "title": "激光打标",
+      "p": "用于序列号、二维码、LOGO和追溯信息的永久标识，适合小批量与批量零件。",
+      "body": "用于序列号、二维码、LOGO和追溯信息的永久标识，适合小批量与批量零件。",
+      "href": "/capabilities/finish/laser-marking",
+      "link": "了解更多"
+    },
+    {
+      "id": "polishing",
+      "group": "",
+      "groups": [
+        "appearance",
+        "clean"
+      ],
+      "tags": [
+        "appearance",
+        "clean"
+      ],
+      "img": "/precision/precision-shaft-01.png",
+      "h3": "抛光",
+      "title": "抛光",
+      "p": "改善光洁度、触感和局部反光效果，适合外观件、密封面和滑动接触面。",
+      "body": "改善光洁度、触感和局部反光效果，适合外观件、密封面和滑动接触面。",
+      "href": "/capabilities/finish/polishing",
+      "link": "了解更多"
+    },
+    {
+      "id": "blackening",
+      "group": "",
+      "groups": [
+        "appearance",
+        "corrosion"
+      ],
+      "tags": [
+        "appearance",
+        "corrosion"
+      ],
+      "img": "/precision/cnc-turned-part-01.png",
+      "h3": "发黑处理",
+      "title": "发黑处理",
+      "p": "用于钢件深色外观和基础防锈，常见于夹具、轴套、传动件和机械零件。",
+      "body": "用于钢件深色外观和基础防锈，常见于夹具、轴套、传动件和机械零件。",
+      "href": "/capabilities/finish/blackening",
+      "link": "了解更多"
+    }
+  ],
+  "faq": {
+    "title": "表面处理常见问题",
+    "desc": "这些问答用于在提交制造需求前，快速确认适用场景、资料准备和报价评审方式。",
+    "items": [
+      {
+        "q": "表面处理适合哪些项目？",
+        "a": "表面处理适合需要根据图纸、材料、数量、公差和交付目标评估制造路线的项目，尤其适合原型验证、小批量试制和功能结构件。"
+      },
+      {
+        "q": "提交表面处理需求时需要准备什么？",
+        "a": "建议准备 3D 模型、2D 图纸、材料牌号、数量、表面处理、关键公差、检测要求和目标交期，便于工程师快速判断工艺路线。"
+      },
+      {
+        "q": "表面处理的报价和交期如何确认？",
+        "a": "报价和交期会结合零件结构、材料、加工路线、表面处理、检测范围和数量确认；复杂公差或特殊处理通常需要工程评审后再给出。"
+      }
+    ]
+  },
+  "ctaTitle": "需要组合表面处理方案？",
+  "ctaDesc": "提交材料、外观、耐蚀、硬度、遮蔽和检验要求后，可结合零件结构评估更稳妥的处理路线。",
+  "ctaButton": "咨询处理方案"
+}

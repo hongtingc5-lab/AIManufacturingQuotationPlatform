@@ -1,0 +1,9 @@
+{
+  "slug": "机器人自动化产线检测治具",
+  "fileKey": "robotics-automation-line-inspection-fixture",
+  "docTitle": "自动化产线检测治具 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/Industrial_Automation.jpg)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/robotics\">机器人技术</a><span>/</span><b>行业案例</b></div>\n<span>机器人技术案例</span>\n<h1>自动化产线检测治具</h1>\n<p>定位检测 / 快换治具 / 产线辅助</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>机器人技术</strong></div>\n<div><span>零件功能</span><strong>定位检测 / 快换治具 / 产线辅助</strong></div>\n<div><span>制造能力</span><strong>CNC、工程塑料、装配校准、批次追溯</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>围绕产线节拍和重复定位需求加工检测治具和辅助件。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>治具可快速装配替换，支持产线改造和维护备件交付。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"自动化产线检测治具\" src=\"/precision/Industrial_Automation.jpg\"/>\n<h3>机器人制造能力</h3>\n<p>继续查看末端执行器、关节连接板和产线检测治具等机器人制造案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/robotics\">返回机器人技术行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

@@ -1,0 +1,95 @@
+{
+  "brand": {
+    "zh": "敏捷智造",
+    "en": "AgileMakeAI"
+  },
+  "brandSub": {
+    "zh": "AGILE MANUFACTURING",
+    "en": "AGILE MANUFACTURING"
+  },
+  "searchPlaceholder": {
+    "zh": "搜索模型、订单或报价…",
+    "en": "Search models, orders or quotes…"
+  },
+  "ctaSmart": {
+    "zh": "开始智能报价",
+    "en": "Smart quote"
+  },
+  "ctaPro": {
+    "zh": "开始专业报价",
+    "en": "Pro quote"
+  },
+  "userName": {
+    "zh": "张伟",
+    "en": "Wei Zhang"
+  },
+  "userRole": {
+    "zh": "高级工程师",
+    "en": "Senior Engineer"
+  },
+  "nav": [
+    {
+      "id": "home",
+      "to": "/",
+      "icon": "dashboard",
+      "labelZh": "工作台",
+      "labelEn": "Workspace"
+    },
+    {
+      "id": "ai-smart-quote",
+      "to": "/ai/smart-quote",
+      "icon": "auto_awesome",
+      "labelZh": "智能工作台",
+      "labelEn": "Smart workspace"
+    },
+    {
+      "id": "quote-upload",
+      "to": "/quotes/upload",
+      "icon": "precision_manufacturing",
+      "labelZh": "专业报价",
+      "labelEn": "Pro quote"
+    },
+    {
+      "id": "orders",
+      "to": "/orders",
+      "icon": "shopping_cart",
+      "labelZh": "订单中心",
+      "labelEn": "Orders"
+    },
+    {
+      "id": "analytics",
+      "to": "/analytics",
+      "icon": "analytics",
+      "labelZh": "数据分析",
+      "labelEn": "Analytics"
+    },
+    {
+      "id": "models",
+      "to": "/models",
+      "icon": "deployed_code",
+      "labelZh": "模型中心",
+      "labelEn": "Models"
+    },
+    {
+      "id": "membership",
+      "to": "/membership",
+      "icon": "workspace_premium",
+      "labelZh": "会员中心",
+      "labelEn": "Membership"
+    },
+    {
+      "id": "messages",
+      "to": "/messages",
+      "icon": "mail",
+      "labelZh": "消息中心",
+      "labelEn": "Messages"
+    },
+    {
+      "id": "account",
+      "to": "/account",
+      "icon": "person",
+      "labelZh": "账号中心",
+      "labelEn": "Account"
+    }
+  ]
+}

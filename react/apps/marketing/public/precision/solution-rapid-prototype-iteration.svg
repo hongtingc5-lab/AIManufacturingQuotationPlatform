@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-label="快速原型制造与迭代流程">
+  <rect width="1200" height="680" fill="#f6f9fd"/>
+  <rect x="92" y="80" width="1016" height="520" rx="18" fill="#ffffff" stroke="#d9e4f2"/>
+  <text x="140" y="146" fill="#13233b" font-size="36" font-weight="900">快速原型迭代</text>
+  <text x="140" y="188" fill="#536173" font-size="19" font-weight="700">功能样件、外观样件和装配验证同步推进</text>
+  <rect x="150" y="260" width="212" height="220" rx="16" fill="#f7fbff" stroke="#dbe7f5"/>
+  <path d="M204 414l50-94 58 94z" fill="#dce8f7" stroke="#8aa6c8" stroke-width="4"/>
+  <text x="188" y="524" fill="#004ac6" font-size="22" font-weight="900">01 CAD 方案</text>
+  <rect x="494" y="220" width="212" height="260" rx="16" fill="#13233b"/>
+  <path d="M548 390l54-118 54 118z" fill="#8eb8ff"/>
+  <rect x="560" y="408" width="84" height="22" rx="6" fill="#ffffff"/>
+  <text x="532" y="524" fill="#004ac6" font-size="22" font-weight="900">02 打样验证</text>
+  <rect x="838" y="260" width="212" height="220" rx="16" fill="#f7fbff" stroke="#dbe7f5"/>
+  <path d="M894 408h100l-20-84h-60z" fill="#dce8f7" stroke="#8aa6c8" stroke-width="4"/>
+  <path d="M884 330h120" stroke="#004ac6" stroke-width="8" stroke-linecap="round"/>
+  <text x="876" y="524" fill="#004ac6" font-size="22" font-weight="900">03 小批迭代</text>
+  <path d="M386 350h72M732 350h72" stroke="#004ac6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M438 322l34 28-34 28M784 322l34 28-34 28" fill="none" stroke="#004ac6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

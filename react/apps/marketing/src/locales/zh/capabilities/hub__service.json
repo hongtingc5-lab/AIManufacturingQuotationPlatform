@@ -1,0 +1,227 @@
+{
+  "docTitle": "服务 | 敏捷智造",
+  "heroTitle": "服务",
+  "heroDesc": "围绕原型、小批量和多工艺项目，协同完成工艺评估、生产执行、质量文件和交付跟踪。",
+  "heroStats": [
+    {
+      "value": "3D / 2D",
+      "label": "需求输入"
+    },
+    {
+      "value": "DFM",
+      "label": "工程评估"
+    },
+    {
+      "value": "FAI / CMM",
+      "label": "质量选项"
+    },
+    {
+      "value": "交付",
+      "label": "进度跟踪"
+    }
+  ],
+  "sectionTitle": "按项目阶段选择服务",
+  "sectionDesc": "按项目当前需要选择：快速验证、量产准备、金属成形或多工艺交付。每个服务页面会说明输入资料、服务边界和质量关注点，不把参数写成固定承诺。",
+  "filterTitle": "按项目阶段筛选",
+  "filters": [
+    {
+      "key": "all",
+      "strong": "全部服务",
+      "span": "查看所有服务类型"
+    },
+    {
+      "key": "prototype",
+      "strong": "原型验证",
+      "span": "样件与快速验证"
+    },
+    {
+      "key": "production",
+      "strong": "量产准备",
+      "span": "成型与批量工艺"
+    },
+    {
+      "key": "metal",
+      "strong": "金属成形",
+      "span": "冲压、铸造、锻造"
+    },
+    {
+      "key": "integrated",
+      "strong": "一站式交付",
+      "span": "多工艺项目协同"
+    }
+  ],
+  "tipTitle": "选择提示",
+  "tipBody": "结构还不确定时优先看原型验证；材料、数量和验收标准明确后，再进入量产准备或金属成形服务。",
+  "learnMore": "了解更多",
+  "cards": [
+    {
+      "id": "cnc-service",
+      "group": "prototype",
+      "groups": [
+        "prototype",
+        "integrated"
+      ],
+      "tags": [
+        "prototype",
+        "integrated"
+      ],
+      "img": "/precision/cnc-machining-service.png",
+      "h3": "CNC加工服务",
+      "title": "CNC加工服务",
+      "p": "覆盖铣削、车削、车铣复合和孔系加工，适合金属与工程塑料功能件。",
+      "body": "覆盖铣削、车削、车铣复合和孔系加工，适合金属与工程塑料功能件。",
+      "href": "/capabilities/service/cnc",
+      "link": "查看服务"
+    },
+    {
+      "id": "molding-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "integrated"
+      ],
+      "tags": [
+        "production",
+        "integrated"
+      ],
+      "img": "/precision/molding-service.png",
+      "h3": "模具成型服务",
+      "title": "模具成型服务",
+      "p": "支持注塑、试模、小批量成型和结构优化，适合外壳、连接件与批量塑胶件。",
+      "body": "支持注塑、试模、小批量成型和结构优化，适合外壳、连接件与批量塑胶件。",
+      "href": "/capabilities/service/mold",
+      "link": "查看服务"
+    },
+    {
+      "id": "custom-service",
+      "group": "integrated",
+      "groups": [
+        "integrated"
+      ],
+      "tags": [
+        "integrated"
+      ],
+      "img": "/precision/manufacturing-service.png",
+      "h3": "定制加工服务",
+      "title": "定制加工服务",
+      "p": "整合 CNC、钣金、表面处理、采购件和装配流程，为复杂项目提供制造协同。",
+      "body": "整合 CNC、钣金、表面处理、采购件和装配流程，为复杂项目提供制造协同。",
+      "href": "/capabilities/service/custom",
+      "link": "查看服务"
+    },
+    {
+      "id": "stamping-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "metal"
+      ],
+      "tags": [
+        "production",
+        "metal"
+      ],
+      "img": "/precision/stamping-service.png",
+      "h3": "金属冲压服务",
+      "title": "金属冲压服务",
+      "p": "面向薄板支架、弹片、壳体和连接件，可按批量匹配单工序或连续模方案。",
+      "body": "面向薄板支架、弹片、壳体和连接件，可按批量匹配单工序或连续模方案。",
+      "href": "/capabilities/service/stamping",
+      "link": "查看服务"
+    },
+    {
+      "id": "casting-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "metal"
+      ],
+      "tags": [
+        "production",
+        "metal"
+      ],
+      "img": "/precision/casting-service.png",
+      "h3": "金属铸造服务",
+      "title": "金属铸造服务",
+      "p": "适合复杂外形、腔体和批量金属结构件，可衔接 CNC 精加工与表面处理。",
+      "body": "适合复杂外形、腔体和批量金属结构件，可衔接 CNC 精加工与表面处理。",
+      "href": "/capabilities/service/casting",
+      "link": "查看服务"
+    },
+    {
+      "id": "forging-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "metal"
+      ],
+      "tags": [
+        "production",
+        "metal"
+      ],
+      "img": "/precision/forging-service.png",
+      "h3": "金属锻造服务",
+      "title": "金属锻造服务",
+      "p": "适合高强度轴类、连接件和承力零件，通过成形与后加工提升材料利用率。",
+      "body": "适合高强度轴类、连接件和承力零件，通过成形与后加工提升材料利用率。",
+      "href": "/capabilities/service/forging",
+      "link": "查看服务"
+    },
+    {
+      "id": "printing-service",
+      "group": "prototype",
+      "groups": [
+        "prototype",
+        "integrated"
+      ],
+      "tags": [
+        "prototype",
+        "integrated"
+      ],
+      "img": "/precision/3dprint.png",
+      "h3": "3D打印服务",
+      "title": "3D打印服务",
+      "p": "支持复杂流道、轻量化结构、验证样件和小批量增材制造，可衔接后处理。",
+      "body": "支持复杂流道、轻量化结构、验证样件和小批量增材制造，可衔接后处理。",
+      "href": "/capabilities/service/3d-printing",
+      "link": "查看服务"
+    },
+    {
+      "id": "prototype-service",
+      "group": "prototype",
+      "groups": [
+        "prototype"
+      ],
+      "tags": [
+        "prototype"
+      ],
+      "img": "/precision/cnc-milled-part-01.png",
+      "h3": "快速手板模型服务",
+      "title": "快速手板模型服务",
+      "p": "面向设计验证、装配测试、展示样件和试产前评估，帮助项目尽快进入实物验证。",
+      "body": "面向设计验证、装配测试、展示样件和试产前评估，帮助项目尽快进入实物验证。",
+      "href": "/capabilities/service/rapid-prototype",
+      "link": "查看服务"
+    }
+  ],
+  "faq": {
+    "title": "服务常见问题",
+    "desc": "这些问答用于在提交制造需求前，快速确认适用场景、资料准备和报价评审方式。",
+    "items": [
+      {
+        "q": "服务适合哪些项目？",
+        "a": "服务适合需要根据图纸、材料、数量、公差和交付目标评估制造路线的项目，尤其适合原型验证、小批量试制和功能结构件。"
+      },
+      {
+        "q": "提交服务需求时需要准备什么？",
+        "a": "建议准备 3D 模型、2D 图纸、材料牌号、数量、表面处理、关键公差、检测要求和目标交期，便于工程师快速判断工艺路线。"
+      },
+      {
+        "q": "服务的报价和交期如何确认？",
+        "a": "报价和交期会结合零件结构、材料、加工路线、表面处理、检测范围和数量确认；复杂公差或特殊处理通常需要工程评审后再给出。"
+      }
+    ]
+  },
+  "ctaTitle": "需要协助选择服务路线？",
+  "ctaDesc": "工程师可先评估图纸、材料和交付目标，再给出更贴合项目阶段的制造建议。",
+  "ctaButton": "联系我们"
+}

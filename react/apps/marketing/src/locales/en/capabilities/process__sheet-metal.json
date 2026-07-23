@@ -1,0 +1,176 @@
+{
+  "docTitle": "Sheet Metal Fabrication | ProMakeHub",
+  "heroTitle": "Sheet Metal Fabrication",
+  "heroDesc": "Precision cutting, bending and structural fabrication",
+  "heroStats": [
+    {
+      "value": "0.5-6mm",
+      "label": "Common Thickness"
+    },
+    {
+      "value": "±0.1-0.3mm",
+      "label": "Cutting Reference"
+    },
+    {
+      "value": "±1°",
+      "label": "Bend Angle Reference"
+    },
+    {
+      "value": "DXF / DWG",
+      "label": "Flat Patterns"
+    }
+  ],
+  "mediaImg": "/precision/sheet-metal-fabrication.png",
+  "bodyTitle": "Sheet Metal Fabrication from flat pattern to formed assembly",
+  "bodyDesc": "Sheet metal fabrication is suited to enclosures, brackets, panels, mounting plates and lightweight structures. The ranges below are conservative engineering references; final tolerances depend on material, thickness, flat pattern size, bend count and finishing requirements.",
+  "pills": [
+    "Aluminum Sheet",
+    "Stainless Steel",
+    "Cold-Rolled Steel",
+    "Galvanized Sheet",
+    "Formed Parts"
+  ],
+  "panels": [
+    {
+      "title": "Geometry Fit",
+      "subtitle": "Enclosures / Brackets",
+      "body": "Best for parts with flat patterns, bends and hole relationships."
+    },
+    {
+      "title": "Dimension Control",
+      "subtitle": "Drawing Review",
+      "body": "Single-face features are generally easier to hold than dimensions across bends."
+    },
+    {
+      "title": "Finishing",
+      "subtitle": "Coating / Anodizing",
+      "body": "Can be paired with brushing, powder coating, anodizing and marking."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Thickness",
+      "0.5-6mm common",
+      "Enclosures, panels, brackets",
+      "Thicker or special stock needs review"
+    ],
+    [
+      "Cutting Tolerance",
+      "About ±0.1-0.3mm",
+      "Holes, profiles, slots",
+      "Depends on thickness, heat and contour complexity"
+    ],
+    [
+      "Bend Angle",
+      "About ±1°",
+      "Flanges, ribs, folded edges",
+      "Springback and tooling radius affect results"
+    ],
+    [
+      "Minimum Bend Radius",
+      "Preferably no less than material thickness",
+      "Typical formed geometry",
+      "Special radii require tooling review"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Drawing and flat-pattern check",
+      "body": "Confirm thickness, bend direction, hole-to-bend distance and cosmetic direction."
+    },
+    {
+      "index": "02",
+      "title": "Cutting and deburring",
+      "body": "Cut by laser, punching or waterjet and remove sharp edges."
+    },
+    {
+      "index": "03",
+      "title": "Bending and forming",
+      "body": "Control angle, dimensions and springback by datum edge and bend sequence."
+    },
+    {
+      "index": "04",
+      "title": "Finishing and assembly",
+      "body": "Complete coating, anodizing, inserts, welding or assembly inspection."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Sheet Metals"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "1-5000 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "DXF / DWG / STEP"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "FAI / Dimensional Report"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/laser-cutting.png",
+        "title": "Laser Cutting",
+        "body": "Fast profile cutting for thin and medium sheet.",
+        "href": "/capabilities/process/laser",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC machining",
+        "body": "Precision parts and complex surfaces.",
+        "href": "/capabilities/process/cnc",
+        "link": "View process details"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Surface Finishing",
+        "body": "Improves appearance, corrosion resistance and assembly performance.",
+        "href": "/capabilities/finish",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Sheet Metal Fabrication FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Sheet Metal Fabrication suitable for?",
+        "a": "Sheet Metal Fabrication is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Sheet Metal Fabrication quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Sheet Metal Fabrication?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

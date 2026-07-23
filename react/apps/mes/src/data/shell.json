@@ -1,0 +1,94 @@
+{
+  "brand": {
+    "zh": "敏捷智造",
+    "en": "AgileMakeAI"
+  },
+  "brandSub": {
+    "zh": "制造执行系统",
+    "en": "Manufacturing Execution"
+  },
+  "searchPlaceholder": {
+    "zh": "搜索工单、设备或告警…",
+    "en": "Search work orders, equipment or alerts…"
+  },
+  "userName": {
+    "zh": "运营账号",
+    "en": "Operator"
+  },
+  "userRole": {
+    "zh": "已认证",
+    "en": "Verified"
+  },
+  "nav": [
+    {
+      "id": "home",
+      "to": "/",
+      "icon": "dashboard",
+      "labelZh": "MES首页",
+      "labelEn": "MES home"
+    },
+    {
+      "id": "work-orders",
+      "to": "/work-orders",
+      "icon": "precision_manufacturing",
+      "labelZh": "工单管理",
+      "labelEn": "Work orders"
+    },
+    {
+      "id": "operations",
+      "to": "/operations",
+      "icon": "settings_suggest",
+      "labelZh": "工序执行",
+      "labelEn": "Operations"
+    },
+    {
+      "id": "equipment",
+      "to": "/equipment",
+      "icon": "home_repair_service",
+      "labelZh": "设备管理",
+      "labelEn": "Equipment"
+    },
+    {
+      "id": "quality",
+      "to": "/quality",
+      "icon": "verified_user",
+      "labelZh": "质量管理",
+      "labelEn": "Quality"
+    },
+    {
+      "id": "inventory",
+      "to": "/inventory",
+      "icon": "inventory_2",
+      "labelZh": "物料库存",
+      "labelEn": "Inventory"
+    },
+    {
+      "id": "ai-assistant",
+      "to": "/ai-assistant",
+      "icon": "psychology",
+      "labelZh": "AI生产助手",
+      "labelEn": "AI assistant"
+    },
+    {
+      "id": "alerts",
+      "to": "/alerts",
+      "icon": "notifications_active",
+      "labelZh": "告警中心",
+      "labelEn": "Alerts"
+    },
+    {
+      "id": "analytics",
+      "to": "/analytics",
+      "icon": "monitoring",
+      "labelZh": "数据分析",
+      "labelEn": "Analytics"
+    },
+    {
+      "id": "settings",
+      "to": "/settings",
+      "icon": "admin_panel_settings",
+      "labelZh": "系统管理",
+      "labelEn": "Settings"
+    }
+  ]
+}

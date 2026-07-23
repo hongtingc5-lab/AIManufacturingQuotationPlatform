@@ -1,0 +1,176 @@
+{
+  "docTitle": "Metal Forging Service | ProMakeHub",
+  "heroTitle": "Metal Forging Service",
+  "heroDesc": "Forging service for load-bearing and high-strength metal parts",
+  "heroStats": [
+    {
+      "value": "Load Parts",
+      "label": "Scenario Fit"
+    },
+    {
+      "value": "Hot / Cold",
+      "label": "Route Review"
+    },
+    {
+      "value": "Heat Treat",
+      "label": "Property Control"
+    },
+    {
+      "value": "CNC",
+      "label": "Post-Machining"
+    }
+  ],
+  "mediaImg": "/precision/forging-service.png",
+  "bodyTitle": "Metal Forging Service from billet forming to critical face machining",
+  "bodyDesc": "Metal forging uses pressure forming to improve grain flow and blank density. It is suitable for shafts, flanges, connectors, load-bearing structures and volume metal blanks. Review focuses on material grade, forging route, tooling cost, heat treatment, machining allowance and final inspection standard.",
+  "pills": [
+    "Carbon Steel",
+    "Alloy Steel",
+    "Stainless Steel",
+    "Aluminum Alloys",
+    "Shaft Parts"
+  ],
+  "panels": [
+    {
+      "title": "Performance Goal",
+      "subtitle": "Strength / Toughness",
+      "body": "Suitable for parts requiring material structure and load performance."
+    },
+    {
+      "title": "Manufacturing Route",
+      "subtitle": "Forging + Finishing",
+      "body": "Forging creates the blank, then critical faces are machined."
+    },
+    {
+      "title": "Cost Factor",
+      "subtitle": "Tooling and Volume",
+      "body": "Higher volume improves the cost case for forged blanks."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Forging Route",
+      "Open-die, closed-die, cold forging reviewable",
+      "Shafts, flanges, links, load parts",
+      "Selected by material, size and volume"
+    ],
+    [
+      "Material Condition",
+      "Post-forging heat treatment or quench/temper",
+      "High-strength structures",
+      "Performance requirements need standards"
+    ],
+    [
+      "Machining Allowance",
+      "Allowance for holes, faces and threads",
+      "Assembly and sealing areas",
+      "Allowance affects material use and cost"
+    ],
+    [
+      "Inspection",
+      "Dimension, hardness, NDT if required",
+      "Safety and load-bearing parts",
+      "Confirmed by drawing and order"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Material and property review",
+      "body": "Confirm alloy grade, strength requirement, quantity and critical dimensions."
+    },
+    {
+      "index": "02",
+      "title": "Forging plan",
+      "body": "Define billet, heating, tooling, allowance and heat treatment route."
+    },
+    {
+      "index": "03",
+      "title": "Forging and heat treatment",
+      "body": "Complete forming, cooling, cleaning and required heat treatment."
+    },
+    {
+      "index": "04",
+      "title": "Post-machining and inspection",
+      "body": "Machine critical faces and perform dimensional, hardness or agreed inspection."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "Material standard, drawing, volume"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Shafts, flanges, load-bearing connectors"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Forgings, machined parts, records"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Tooling cost, heat treatment, allowance"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/service/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Metal Forging Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Metal Forging Service suitable for?",
+        "a": "Metal Forging Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Metal Forging Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Metal Forging Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

@@ -1,0 +1,141 @@
+{
+  "slugs": [
+    "医疗器械PEEK定位块与测试夹具",
+    "医疗器械实验仪器铝合金腔体加工",
+    "医疗器械研发样件与定位治具",
+    "半导体洁净包装精密备件",
+    "半导体设备定位夹具小批量加工",
+    "半导体设备腔体周边结构件",
+    "新能源储能模块测试夹具",
+    "新能源电池包绝缘隔离件",
+    "新能源电驱控制器散热底板",
+    "机器人末端执行器安装座",
+    "机器人自动化产线检测治具",
+    "机器人轻量化关节连接板",
+    "汽车传感器安装座小批交付",
+    "汽车动力系统支架试制",
+    "汽车测试夹具与小批试制件",
+    "消费品外观样机与功能件试制",
+    "消费品小家电内部支架小批试制",
+    "消费品智能穿戴外壳样件",
+    "电子便携设备内部支架试制",
+    "电子铜合金连接件小批加工",
+    "电子铝合金外壳与散热结构",
+    "航天星载设备安装板小批加工",
+    "航天轻量化支架与复杂腔体",
+    "航天钛合金连接件首件验证",
+    "通信户外设备安装支架",
+    "通信散热基板与端盖加工",
+    "通信模块外壳与连接件配套"
+  ],
+  "bySlug": {
+    "医疗器械PEEK定位块与测试夹具": {
+      "fileKey": "medical-device-peek-positioning-block-test-fixture",
+      "route": "/cases/医疗器械PEEK定位块与测试夹具"
+    },
+    "医疗器械实验仪器铝合金腔体加工": {
+      "fileKey": "medical-device-lab-instrument-aluminum-housing",
+      "route": "/cases/医疗器械实验仪器铝合金腔体加工"
+    },
+    "医疗器械研发样件与定位治具": {
+      "fileKey": "medical-device-rd-prototype-positioning-fixture",
+      "route": "/cases/医疗器械研发样件与定位治具"
+    },
+    "半导体洁净包装精密备件": {
+      "fileKey": "semiconductor-clean-packaging-precision-spares",
+      "route": "/cases/半导体洁净包装精密备件"
+    },
+    "半导体设备定位夹具小批量加工": {
+      "fileKey": "semiconductor-equipment-positioning-fixture-low-volume",
+      "route": "/cases/半导体设备定位夹具小批量加工"
+    },
+    "半导体设备腔体周边结构件": {
+      "fileKey": "semiconductor-equipment-chamber-structural-parts",
+      "route": "/cases/半导体设备腔体周边结构件"
+    },
+    "新能源储能模块测试夹具": {
+      "fileKey": "new-energy-storage-module-test-fixture",
+      "route": "/cases/新能源储能模块测试夹具"
+    },
+    "新能源电池包绝缘隔离件": {
+      "fileKey": "new-energy-battery-pack-insulation-spacer",
+      "route": "/cases/新能源电池包绝缘隔离件"
+    },
+    "新能源电驱控制器散热底板": {
+      "fileKey": "new-energy-drive-controller-heat-sink-base",
+      "route": "/cases/新能源电驱控制器散热底板"
+    },
+    "机器人末端执行器安装座": {
+      "fileKey": "robotics-end-effector-mounting-base",
+      "route": "/cases/机器人末端执行器安装座"
+    },
+    "机器人自动化产线检测治具": {
+      "fileKey": "robotics-automation-line-inspection-fixture",
+      "route": "/cases/机器人自动化产线检测治具"
+    },
+    "机器人轻量化关节连接板": {
+      "fileKey": "robotics-lightweight-joint-connection-plate",
+      "route": "/cases/机器人轻量化关节连接板"
+    },
+    "汽车传感器安装座小批交付": {
+      "fileKey": "automotive-sensor-mount-low-volume-delivery",
+      "route": "/cases/汽车传感器安装座小批交付"
+    },
+    "汽车动力系统支架试制": {
+      "fileKey": "automotive-powertrain-bracket-prototype",
+      "route": "/cases/汽车动力系统支架试制"
+    },
+    "汽车测试夹具与小批试制件": {
+      "fileKey": "automotive-test-fixture-low-volume-parts",
+      "route": "/cases/汽车测试夹具与小批试制件"
+    },
+    "消费品外观样机与功能件试制": {
+      "fileKey": "consumer-products-appearance-prototype-functional-parts",
+      "route": "/cases/消费品外观样机与功能件试制"
+    },
+    "消费品小家电内部支架小批试制": {
+      "fileKey": "consumer-products-small-appliance-internal-bracket",
+      "route": "/cases/消费品小家电内部支架小批试制"
+    },
+    "消费品智能穿戴外壳样件": {
+      "fileKey": "consumer-products-smart-wearable-housing-prototype",
+      "route": "/cases/消费品智能穿戴外壳样件"
+    },
+    "电子便携设备内部支架试制": {
+      "fileKey": "electronics-portable-device-internal-bracket",
+      "route": "/cases/电子便携设备内部支架试制"
+    },
+    "电子铜合金连接件小批加工": {
+      "fileKey": "electronics-copper-alloy-connector-low-volume",
+      "route": "/cases/电子铜合金连接件小批加工"
+    },
+    "电子铝合金外壳与散热结构": {
+      "fileKey": "electronics-aluminum-housing-thermal-structure",
+      "route": "/cases/电子铝合金外壳与散热结构"
+    },
+    "航天星载设备安装板小批加工": {
+      "fileKey": "aerospace-satellite-equipment-mounting-plate",
+      "route": "/cases/航天星载设备安装板小批加工"
+    },
+    "航天轻量化支架与复杂腔体": {
+      "fileKey": "aerospace-lightweight-bracket-complex-cavity",
+      "route": "/cases/航天轻量化支架与复杂腔体"
+    },
+    "航天钛合金连接件首件验证": {
+      "fileKey": "aerospace-titanium-connector-first-article",
+      "route": "/cases/航天钛合金连接件首件验证"
+    },
+    "通信户外设备安装支架": {
+      "fileKey": "telecommunications-outdoor-equipment-mounting-bracket",
+      "route": "/cases/通信户外设备安装支架"
+    },
+    "通信散热基板与端盖加工": {
+      "fileKey": "telecommunications-thermal-baseplate-end-cover",
+      "route": "/cases/通信散热基板与端盖加工"
+    },
+    "通信模块外壳与连接件配套": {
+      "fileKey": "telecommunications-module-housing-connector-set",
+      "route": "/cases/通信模块外壳与连接件配套"
+    }
+  }
+}

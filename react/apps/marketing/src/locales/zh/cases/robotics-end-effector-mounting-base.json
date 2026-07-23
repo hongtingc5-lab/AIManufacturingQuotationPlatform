@@ -1,0 +1,9 @@
+{
+  "slug": "机器人末端执行器安装座",
+  "fileKey": "robotics-end-effector-mounting-base",
+  "docTitle": "末端执行器安装座 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/Industrial_Automation.jpg)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/robotics\">机器人技术</a><span>/</span><b>行业案例</b></div>\n<span>机器人技术案例</span>\n<h1>末端执行器安装座</h1>\n<p>运动结构 / 快换接口 / 重复定位</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>机器人技术</strong></div>\n<div><span>零件功能</span><strong>运动结构 / 快换接口 / 重复定位</strong></div>\n<div><span>制造能力</span><strong>铝合金加工、硬质阳极、孔位检测、装配复核</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>围绕负载、重量和重复定位要求，控制安装面、孔系和表面耐磨性。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>安装座支持多轮末端工具验证，降低调试阶段的装配偏差。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"末端执行器安装座\" src=\"/precision/Industrial_Automation.jpg\"/>\n<h3>机器人制造能力</h3>\n<p>继续查看末端执行器、关节连接板和产线检测治具等机器人制造案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/robotics\">返回机器人技术行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

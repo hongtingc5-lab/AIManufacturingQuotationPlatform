@@ -1,0 +1,227 @@
+{
+  "docTitle": "Manufacturing Services | ProMakeHub",
+  "heroTitle": "Manufacturing Services",
+  "heroDesc": "Coordinate process review, manufacturing execution, inspection documents and delivery for prototype and low-volume projects.",
+  "heroStats": [
+    {
+      "value": "3D / 2D",
+      "label": "Requirement Input"
+    },
+    {
+      "value": "DFM",
+      "label": "Engineering Review"
+    },
+    {
+      "value": "FAI / CMM",
+      "label": "Quality Options"
+    },
+    {
+      "value": "Delivery",
+      "label": "Progress Tracking"
+    }
+  ],
+  "sectionTitle": "Services organized by project stage",
+  "sectionDesc": "Choose by what the project needs next: quick validation, production preparation, metal forming or integrated delivery. Each service page explains inputs, scope and quality focus without overstating fixed results.",
+  "filterTitle": "Filter by Project Stage",
+  "filters": [
+    {
+      "key": "all",
+      "strong": "All Services",
+      "span": "View every service"
+    },
+    {
+      "key": "prototype",
+      "strong": "Prototype Validation",
+      "span": "Samples and quick verification"
+    },
+    {
+      "key": "production",
+      "strong": "Production Preparation",
+      "span": "Molding and volume processes"
+    },
+    {
+      "key": "metal",
+      "strong": "Metal Forming",
+      "span": "Stamping, casting and forging"
+    },
+    {
+      "key": "integrated",
+      "strong": "Integrated Delivery",
+      "span": "Multi-process coordination"
+    }
+  ],
+  "tipTitle": "Selection Tip",
+  "tipBody": "Start with prototype validation when geometry is uncertain; choose production services when material, volume and acceptance criteria are clearer.",
+  "learnMore": "Learn more",
+  "cards": [
+    {
+      "id": "cnc-service",
+      "group": "prototype",
+      "groups": [
+        "prototype",
+        "integrated"
+      ],
+      "tags": [
+        "prototype",
+        "integrated"
+      ],
+      "img": "/precision/cnc-machining-service.png",
+      "h3": "CNC Machining Service",
+      "title": "CNC Machining Service",
+      "p": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+      "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+      "href": "/capabilities/service/cnc",
+      "link": "View Service"
+    },
+    {
+      "id": "molding-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "integrated"
+      ],
+      "tags": [
+        "production",
+        "integrated"
+      ],
+      "img": "/precision/molding-service.png",
+      "h3": "Molding Service",
+      "title": "Molding Service",
+      "p": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+      "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+      "href": "/capabilities/service/mold",
+      "link": "View Service"
+    },
+    {
+      "id": "custom-service",
+      "group": "integrated",
+      "groups": [
+        "integrated"
+      ],
+      "tags": [
+        "integrated"
+      ],
+      "img": "/precision/manufacturing-service.png",
+      "h3": "Custom Manufacturing Service",
+      "title": "Custom Manufacturing Service",
+      "p": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+      "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+      "href": "/capabilities/service/custom",
+      "link": "View Service"
+    },
+    {
+      "id": "stamping-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "metal"
+      ],
+      "tags": [
+        "production",
+        "metal"
+      ],
+      "img": "/precision/stamping-service.png",
+      "h3": "Metal Stamping Service",
+      "title": "Metal Stamping Service",
+      "p": "Single-stage or progressive stamping for brackets, springs, housings and connectors.",
+      "body": "Single-stage or progressive stamping for brackets, springs, housings and connectors.",
+      "href": "/capabilities/service/stamping",
+      "link": "View Service"
+    },
+    {
+      "id": "casting-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "metal"
+      ],
+      "tags": [
+        "production",
+        "metal"
+      ],
+      "img": "/precision/casting-service.png",
+      "h3": "Metal Casting Service",
+      "title": "Metal Casting Service",
+      "p": "Casting for complex shapes, cavities and metal structures, with CNC finishing and surface treatment links.",
+      "body": "Casting for complex shapes, cavities and metal structures, with CNC finishing and surface treatment links.",
+      "href": "/capabilities/service/casting",
+      "link": "View Service"
+    },
+    {
+      "id": "forging-service",
+      "group": "production",
+      "groups": [
+        "production",
+        "metal"
+      ],
+      "tags": [
+        "production",
+        "metal"
+      ],
+      "img": "/precision/forging-service.png",
+      "h3": "Metal Forging Service",
+      "title": "Metal Forging Service",
+      "p": "Forging for high-strength shafts, connectors and load-bearing parts with post-machining.",
+      "body": "Forging for high-strength shafts, connectors and load-bearing parts with post-machining.",
+      "href": "/capabilities/service/forging",
+      "link": "View Service"
+    },
+    {
+      "id": "printing-service",
+      "group": "prototype",
+      "groups": [
+        "prototype",
+        "integrated"
+      ],
+      "tags": [
+        "prototype",
+        "integrated"
+      ],
+      "img": "/precision/3dprint.png",
+      "h3": "3D Printing Service",
+      "title": "3D Printing Service",
+      "p": "Additive manufacturing for complex channels, lightweight structures, prototypes and low-volume parts.",
+      "body": "Additive manufacturing for complex channels, lightweight structures, prototypes and low-volume parts.",
+      "href": "/capabilities/service/3d-printing",
+      "link": "View Service"
+    },
+    {
+      "id": "prototype-service",
+      "group": "prototype",
+      "groups": [
+        "prototype"
+      ],
+      "tags": [
+        "prototype"
+      ],
+      "img": "/precision/cnc-milled-part-01.png",
+      "h3": "Rapid Prototype Service",
+      "title": "Rapid Prototype Service",
+      "p": "Prototype parts for design validation, assembly testing, display samples and pilot-build review.",
+      "body": "Prototype parts for design validation, assembly testing, display samples and pilot-build review.",
+      "href": "/capabilities/service/rapid-prototype",
+      "link": "View Service"
+    }
+  ],
+  "faq": {
+    "title": "Manufacturing Services FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Manufacturing Services suitable for?",
+        "a": "Manufacturing Services is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Manufacturing Services quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Manufacturing Services?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need help choosing a service route?",
+  "ctaDesc": "Engineers can review drawings, materials and delivery goals before suggesting a practical manufacturing path.",
+  "ctaButton": "Contact Us"
+}

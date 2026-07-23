@@ -1,0 +1,94 @@
+{
+  "brand": {
+    "zh": "敏捷智造",
+    "en": "AgileMakeAI"
+  },
+  "brandSub": {
+    "zh": "供应商门户",
+    "en": "Supplier Portal"
+  },
+  "searchPlaceholder": {
+    "zh": "搜索订单、物料或 RFQ…",
+    "en": "Search orders, materials or RFQ…"
+  },
+  "userName": {
+    "zh": "运营账号",
+    "en": "Operator"
+  },
+  "userRole": {
+    "zh": "已认证",
+    "en": "Verified"
+  },
+  "nav": [
+    {
+      "id": "home",
+      "to": "/",
+      "icon": "dashboard",
+      "labelZh": "经营驾驶舱",
+      "labelEn": "Dashboard"
+    },
+    {
+      "id": "onboarding",
+      "to": "/onboarding",
+      "icon": "business_center",
+      "labelZh": "企业入驻",
+      "labelEn": "Onboarding"
+    },
+    {
+      "id": "rfq",
+      "to": "/rfq",
+      "icon": "request_quote",
+      "labelZh": "RFQ竞价中心",
+      "labelEn": "RFQ bidding"
+    },
+    {
+      "id": "orders-platform",
+      "to": "/orders/platform",
+      "icon": "shopping_cart",
+      "labelZh": "平台订单",
+      "labelEn": "Platform orders"
+    },
+    {
+      "id": "orders-crm",
+      "to": "/orders/crm",
+      "icon": "receipt_long",
+      "labelZh": "业务订单",
+      "labelEn": "CRM orders"
+    },
+    {
+      "id": "enterprise",
+      "to": "/enterprise",
+      "icon": "domain",
+      "labelZh": "企业中心",
+      "labelEn": "Enterprise"
+    },
+    {
+      "id": "training",
+      "to": "/training",
+      "icon": "school",
+      "labelZh": "培训中心",
+      "labelEn": "Training"
+    },
+    {
+      "id": "assessment",
+      "to": "/assessment",
+      "icon": "assignment_turned_in",
+      "labelZh": "考核中心",
+      "labelEn": "Assessment"
+    },
+    {
+      "id": "messages",
+      "to": "/messages",
+      "icon": "mail",
+      "labelZh": "消息中心",
+      "labelEn": "Messages"
+    },
+    {
+      "id": "help",
+      "to": "/help",
+      "icon": "help",
+      "labelZh": "帮助中心",
+      "labelEn": "Help"
+    }
+  ]
+}

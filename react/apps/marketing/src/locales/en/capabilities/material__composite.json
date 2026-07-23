@@ -1,0 +1,144 @@
+{
+  "docTitle": "Composites | ProMakeHub",
+  "heroTitle": "Composites",
+  "heroDesc": "Anisotropic materials selected by layup direction, resin system and machining limits.",
+  "heroStats": [
+    {
+      "value": "system dependent",
+      "label": "Density"
+    },
+    {
+      "value": "direction dependent",
+      "label": "Strength / stiffness"
+    },
+    {
+      "value": "delamination control",
+      "label": "Machining focus"
+    },
+    {
+      "value": "material dependent",
+      "label": "Heat / insulation"
+    }
+  ],
+  "mediaImg": "/precision/timing-pulley-gear-06.png",
+  "bodyTitle": "Selection Focus",
+  "bodyDesc": "Composites should not be selected like metals alone. Fiber direction, ply thickness, edge quality, hole burrs and insulation requirements should be confirmed early. Carbon fiber suits lightweight high-stiffness parts, while G10/FR4 is often used for insulating structures and fixture plates.",
+  "pills": [
+    "Carbon fiber sheet, fiberglass sheet, G10/FR4",
+    "Built to drawing",
+    "Material documents on request",
+    "Reviewed with process route"
+  ],
+  "panels": [
+    {
+      "title": "Suitable processes",
+      "subtitle": "CNC / Sheet metal / Forming",
+      "body": "The route should be selected by grade, geometry and order quantity."
+    },
+    {
+      "title": "Required inputs",
+      "subtitle": "CAD + drawing + material notes",
+      "body": "Grade, condition, finishing and acceptance requirements should be stated clearly."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review before production",
+      "body": "Thin walls, deep cavities, welding and cosmetic requirements should be checked early."
+    }
+  ],
+  "tableTitle": "Common Grades and Use Guidance",
+  "tableRows": [
+    [
+      "Grade / Type",
+      "Common use",
+      "Notes"
+    ],
+    [
+      "Carbon fiber sheet",
+      "Lightweight panels, supports, UAV structures",
+      "Strong directionality; hole edges need control"
+    ],
+    [
+      "Fiberglass / G10",
+      "Insulating supports, fixture plates",
+      "Good insulation; machining dust needs handling"
+    ],
+    [
+      "Custom laminates",
+      "Special stiffness or appearance needs",
+      "Layup and secondary machining need confirmation"
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Common grades",
+      "value": "Carbon fiber sheet, fiberglass sheet, G10/FR4"
+    },
+    {
+      "label": "Typical uses",
+      "value": "Lightweight, insulating, laminated structures and directional stiffness needs."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / material notes"
+    },
+    {
+      "label": "Delivery note",
+      "value": "Confirmed by process and stock"
+    }
+  ],
+  "asideCta": {
+    "title": "Need material advice?",
+    "body": "Share the working condition, load, appearance and cost targets so engineering can compare suitable materials.",
+    "button": "Discuss Selection"
+  },
+  "related": {
+    "title": "Related Materials",
+    "desc": "Similar materials differ in strength, weight, corrosion resistance, cost and finishing compatibility, so they are worth comparing before quoting.",
+    "items": [
+      {
+        "img": "/precision/product-flange.jpg",
+        "title": "Aluminum Alloys",
+        "body": "Low density and stable machinability for housings, brackets, fixtures and lightweight structures.",
+        "href": "/capabilities/material/aluminum",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Stainless Steel",
+        "body": "Good corrosion resistance and durability for equipment parts, shafts, fluid-contact and clean environments.",
+        "href": "/capabilities/material/stainless",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-bracket.jpg",
+        "title": "Carbon Steel",
+        "body": "Balanced strength and cost for load structures, bases, shafts and mechanical connectors.",
+        "href": "/capabilities/material/carbon",
+        "link": "View material"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Composites FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Composites suitable for?",
+        "a": "Composites is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Composites quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Composites?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

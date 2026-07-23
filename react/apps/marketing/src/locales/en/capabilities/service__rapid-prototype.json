@@ -1,0 +1,176 @@
+{
+  "docTitle": "Rapid Prototype Service | ProMakeHub",
+  "heroTitle": "Rapid Prototype Service",
+  "heroDesc": "Move designs quickly from model to physical validation",
+  "heroStats": [
+    {
+      "value": "3D / 2D",
+      "label": "Data Input"
+    },
+    {
+      "value": "CNC / 3D Print",
+      "label": "Process Match"
+    },
+    {
+      "value": "Prototype",
+      "label": "Validation Use"
+    },
+    {
+      "value": "Feedback",
+      "label": "Design Iteration"
+    }
+  ],
+  "mediaImg": "/precision/cnc-milled-part-01.png",
+  "bodyTitle": "Rapid Prototype Service for appearance, structure and assembly validation",
+  "bodyDesc": "Rapid prototype service focuses on validation speed and feedback. It is used for product appearance review, structural assembly, functional testing and pilot-build preparation. A prototype is not treated as the final production part; it helps teams identify geometry, material, assembly and appearance issues early.",
+  "pills": [
+    "Appearance Sample",
+    "Structural Sample",
+    "Functional Sample",
+    "Assembly Check",
+    "Pilot Build"
+  ],
+  "panels": [
+    {
+      "title": "Validation Goal",
+      "subtitle": "Define First",
+      "body": "Appearance, dimension, assembly and function tests need different process choices."
+    },
+    {
+      "title": "Process Match",
+      "subtitle": "Speed and Accuracy",
+      "body": "CNC, 3D printing, casting and sheet metal can be combined by goal."
+    },
+    {
+      "title": "Iteration Support",
+      "subtitle": "Feedback",
+      "body": "Prototype results help adjust geometry, material and production route."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Prototype Type",
+      "Appearance, structural, functional samples",
+      "Product development and review",
+      "Different goals require different materials and processes"
+    ],
+    [
+      "Common Processes",
+      "CNC, 3D printing, casting, sheet metal",
+      "Rapid validation and pilot builds",
+      "Selected by quantity, appearance and function"
+    ],
+    [
+      "Quality Check",
+      "Dimension, appearance, fit, functional records",
+      "Design iteration",
+      "Prototype standard should be stated early"
+    ],
+    [
+      "Next Step",
+      "DFM, material adjustment, production process advice",
+      "Pre-production review",
+      "Prototype findings are not production parameters"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Define validation goal",
+      "body": "Explain whether samples are for appearance, assembly, function or customer review."
+    },
+    {
+      "index": "02",
+      "title": "Select prototype route",
+      "body": "Match CNC, 3D printing, casting or sheet metal by goal."
+    },
+    {
+      "index": "03",
+      "title": "Build prototypes",
+      "body": "Complete manufacturing, finishing and basic dimensional or visual check."
+    },
+    {
+      "index": "04",
+      "title": "Feedback and iterate",
+      "body": "Adjust geometry and manufacturing route based on prototype results."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "3D model, 2D drawing, validation goal"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Appearance, structure, function validation"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Prototype, finished parts, feedback record"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Use case, material, prototype standard"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/service/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/manufacturing-service.png",
+        "title": "Custom Manufacturing Service",
+        "body": "Coordinates CNC, sheet metal, finishing, purchased parts and assembly for complex projects.",
+        "href": "/capabilities/service/custom",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Rapid Prototype Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Rapid Prototype Service suitable for?",
+        "a": "Rapid Prototype Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Rapid Prototype Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Rapid Prototype Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

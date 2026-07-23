@@ -1,0 +1,21 @@
+# zhizao 工作区直接上推（不再使用 marketing-react-main 镜像目录）
+# 仓库：https://github.com/hongtingc5-lab/AIManufacturingQuotationPlatform
+# 本地根目录：D:\zhizao\zhizao（已含 .git）
+# 当前常用分支：feat/zhizao-workspace
+
+# 1. 进入编辑目录（即仓库根）
+cd "D:\zhizao\zhizao"
+
+# 2. 查看状态
+git status
+
+# 3. 提交
+git add --all
+git commit -m "描述本次变更 ..."
+
+# 4. 推送到 GitHub（走本机代理 7897；分支按需改名）
+git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push -u origin HEAD
+
+# 若要新建分支再推：
+# git checkout -b feat/your-branch-name
+# git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push -u origin feat/your-branch-name

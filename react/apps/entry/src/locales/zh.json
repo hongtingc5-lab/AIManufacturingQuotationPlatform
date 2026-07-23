@@ -1,0 +1,58 @@
+{
+  "brand": "敏捷智造",
+  "tagline": "AGILE MANUFACTURING CLOUD",
+  "hub": {
+    "title": "敏捷智造 | 平台入口",
+    "eyebrow": "统一入口（默认客户工作台）",
+    "heroTitle": "进入客户工作台，或其他系统",
+    "heroText": "当前默认开放客户工作台登录。管理后台、MES、供应商等入口路由已预留，后续再正式链接。",
+    "login": "登录",
+    "register": "注册",
+    "visit": "访问站点",
+    "comingSoon": "后续链接",
+    "footer": "共用登录入口 · 默认进入客户工作台",
+    "langAria": "语言",
+    "systems": [
+      {
+        "id": "marketing",
+        "icon": "public",
+        "title": "营销页",
+        "description": "了解服务能力、行业方案与在线报价入口，面向访客与潜在客户。"
+      },
+      {
+        "id": "user",
+        "icon": "groups",
+        "title": "客户工作台",
+        "description": "查看报价、订单、模型与交付进度，管理 RFQ 与工程协作。（默认登录目标）"
+      },
+      {
+        "id": "admin",
+        "icon": "admin_panel_settings",
+        "title": "管理后台",
+        "description": "权限、运营与审计控制台，面向内部管理员与运营人员。"
+      },
+      {
+        "id": "mes",
+        "icon": "precision_manufacturing",
+        "title": "MES 工作台",
+        "description": "生产执行、工序排程与交付追踪，面向工厂与产线人员。"
+      },
+      {
+        "id": "supplier",
+        "icon": "local_shipping",
+        "title": "供应商端",
+        "description": "订单协同、交付响应与资质管理，面向外部供应商伙伴。"
+      }
+    ]
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "forgot": "忘记密码？",
+    "sendCode": "发送验证码",
+    "accountTab": "账号 / 邮箱",
+    "smsTab": "手机号",
+    "remember": "30 天内记住账号",
+    "orOther": "或使用其他方式"
+  }
+}

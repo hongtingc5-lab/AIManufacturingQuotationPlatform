@@ -1,0 +1,44 @@
+# --- dependencies & build ---
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+target/
+**/target/
+build/
+.turbo/
+
+# --- IDE / OS ---
+.idea/
+**/.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+*.local
+__pycache__/
+*.pyc
+
+# --- Maven wrapper jar (optional large binary) ---
+.mvn/wrapper/maven-wrapper.jar
+
+# --- env / secrets (keep examples only) ---
+.env
+.env.*
+!.env.example
+**/application-local.properties
+
+# --- caches ---
+.cache/
+coverage/
+
+# --- Office lock / temp ---
+~$*
+**/~$*
+*.tmp
+react/tmp-*.json

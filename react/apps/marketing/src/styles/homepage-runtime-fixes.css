@@ -1,0 +1,642 @@
+/**
+ * Runtime fixes when global.css coexists with homepage styles.
+ * Do NOT reshape EN hero proportions here — that belongs in en-overrides.css
+ * so we stay 1:1 with 营销页（已核对）/EN.
+ */
+
+/* Home hero: no muddy text-shadow (match clean second-pane look) */
+body.is-home .hero .hero-copy,
+body.is-home .hero .hero-copy *,
+body#top.is-home .hero .hero-copy,
+body#top.is-home .hero .hero-copy * {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+}
+
+/* Keep homepage hero as a horizontal row (left / right panes). */
+body#top .hero .hero-inner {
+  position: static;
+  z-index: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: min(1320px, calc(100% - 48px));
+  min-height: calc(clamp(600px, 72vh, 740px) - 88px);
+  margin: 88px auto 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+body#top .hero .hero-pane--second .hero-inner {
+  justify-content: flex-end;
+}
+
+@media (max-width: 780px) {
+  body#top .hero .hero-inner {
+    width: min(calc(100vw - 28px), 1320px);
+    min-height: 500px;
+    margin-top: 136px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body#top .hero .hero-pane--second .hero-inner {
+    justify-content: flex-start;
+  }
+}
+
+/* Service cards: image must fill the card frame */
+body#top #services .service-card {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+body#top #services .service-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Floating AI / support above page chrome */
+body > .floating-ai,
+body > .floating-support,
+body > .back-top {
+  z-index: 100001;
+}
+
+body > .floating-ai:not(.is-collapsed) {
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 40px);
+  overflow: visible;
+}
+
+body > .floating-ai:not(.is-collapsed) .ai-panel {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+button.lang-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+/*
+ * Subpage nav = global.css white bar (not homepage hero nav).
+ * home.css is still injected for float widgets; these rules restore subpage chrome.
+ */
+body:not(.is-home) .site-header {
+  z-index: 10000;
+  isolation: auto;
+}
+
+body:not(.is-home) .site-header .topbar,
+body:not(.is-home) .site-header.is-light .topbar,
+body:not(.is-home) .site-header:hover .topbar,
+body:not(.is-home) .site-header:focus-within .topbar,
+body:not(.is-home) .site-header.is-light:hover .topbar,
+body:not(.is-home) .site-header.is-light:focus-within .topbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(36, 74, 120, 0.12) !important;
+  box-shadow: 0 18px 38px rgba(15, 31, 55, 0.08) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body:not(.is-home) .site-header .brand,
+body:not(.is-home) .site-header.is-light .brand,
+body:not(.is-home) .site-header:hover .brand,
+body:not(.is-home) .site-header:focus-within .brand,
+body:not(.is-home) .site-header.is-light:hover .brand,
+body:not(.is-home) .site-header.is-light:focus-within .brand {
+  color: #004ac6 !important;
+  text-shadow: none !important;
+}
+
+body:not(.is-home) .site-header .brand-wordmark strong {
+  color: #004ac6 !important;
+}
+
+body:not(.is-home) .site-header .brand-wordmark span {
+  color: #6c7480 !important;
+  opacity: 1 !important;
+}
+
+body:not(.is-home) .site-header .brand-symbol-primary {
+  fill: currentColor !important;
+}
+
+body:not(.is-home) .site-header .brand-symbol-secondary,
+body:not(.is-home) .site-header.is-light .brand-symbol-secondary,
+body:not(.is-home) .site-header:hover .brand-symbol-secondary,
+body:not(.is-home) .site-header:focus-within .brand-symbol-secondary {
+  fill: #6c7480 !important;
+}
+
+body:not(.is-home) .site-header .nav-item,
+body:not(.is-home) .site-header.is-light .nav-item,
+body:not(.is-home) .site-header:hover .nav-item,
+body:not(.is-home) .site-header:focus-within .nav-item,
+body:not(.is-home) .site-header.is-light:hover .nav-item,
+body:not(.is-home) .site-header.is-light:focus-within .nav-item {
+  color: #244a78 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+}
+
+body:not(.is-home) .site-header .nav-item:hover,
+body:not(.is-home) .site-header .nav-item:focus-visible,
+body:not(.is-home) .site-header .nav-dropdown:focus-within > .nav-item,
+body:not(.is-home) .site-header .nav-capability:focus-within .nav-item--capability {
+  color: #004ac6 !important;
+}
+
+/* Keep section underline for current route (capability had ::after disabled in home.css) */
+body:not(.is-home) .site-header .nav-item.active,
+body:not(.is-home) .site-header .nav-item.active.nav-item--capability {
+  color: #004ac6 !important;
+}
+
+body:not(.is-home) .site-header .nav-item.active::after,
+body:not(.is-home) .site-header .nav-item.active.nav-item--capability::after,
+.site-header .nav-item.active.nav-item--capability::after {
+  content: "" !important;
+  transform: scaleX(1) !important;
+  background: currentColor !important;
+}
+
+body:not(.is-home) .site-header .login-link,
+body:not(.is-home) .site-header .lang-link,
+body:not(.is-home) .site-header.is-light .login-link,
+body:not(.is-home) .site-header.is-light .lang-link,
+body:not(.is-home) .site-header:hover .login-link,
+body:not(.is-home) .site-header:hover .lang-link {
+  color: #244a78 !important;
+  background: transparent !important;
+}
+
+body:not(.is-home) .site-header .login-link:hover,
+body:not(.is-home) .site-header .lang-link:hover {
+  color: #004ac6 !important;
+}
+
+body:not(.is-home) .site-header .topbar .btn-primary,
+body:not(.is-home) .site-header.is-light .topbar .btn-primary,
+body:not(.is-home) .site-header:hover .topbar .btn-primary {
+  color: #ffffff !important;
+  background: #004ac6 !important;
+  border-color: #004ac6 !important;
+}
+
+/* Mega / dropdown menus must stay interactive on subpages */
+body:not(.is-home) .capability-menu,
+body:not(.is-home) .nav-menu {
+  z-index: 10001 !important;
+}
+
+body:not(.is-home) .nav-capability:hover .capability-menu,
+body:not(.is-home) .nav-capability:focus-within .capability-menu,
+body:not(.is-home) .nav-dropdown:hover .nav-menu,
+body:not(.is-home) .nav-dropdown:focus-within .nav-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+/* After SPA navigation: force-close mega/dropdown until pointer leaves header.
+   Must beat body:not(.is-home) .nav-capability:hover .capability-menu (!important). */
+body:not(.is-home) .site-header.is-menus-suppressed .nav-capability:hover .capability-menu,
+body:not(.is-home) .site-header.is-menus-suppressed .nav-capability:focus-within .capability-menu,
+body:not(.is-home) .site-header.is-menus-suppressed .nav-dropdown:hover .nav-menu,
+body:not(.is-home) .site-header.is-menus-suppressed .nav-dropdown:focus-within .nav-menu,
+body.is-home .site-header.is-menus-suppressed .nav-capability:hover .capability-menu,
+body.is-home .site-header.is-menus-suppressed .nav-capability:focus-within .capability-menu,
+body.is-home .site-header.is-menus-suppressed .nav-dropdown:hover .nav-menu,
+body.is-home .site-header.is-menus-suppressed .nav-dropdown:focus-within .nav-menu,
+.site-header.is-menus-suppressed .nav-capability:hover .capability-menu,
+.site-header.is-menus-suppressed .nav-capability:focus-within .capability-menu,
+.site-header.is-menus-suppressed .nav-dropdown:hover .nav-menu,
+.site-header.is-menus-suppressed .nav-dropdown:focus-within .nav-menu,
+.site-header.is-menus-suppressed .capability-menu,
+.site-header.is-menus-suppressed .nav-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(-8px) !important;
+}
+
+/*
+ * Subpage page-hero / CTA: home.css `.hero-inner` / `.hero-copy` / `.cta-band`
+ * bleed onto hubs. home.css sets `.hero-copy { opacity: 0 }` (animation start) —
+ * that was wiping all hub hero titles. Restore global.css subpage metrics.
+ */
+body:not(.is-home) .page-hero .hero-inner {
+  position: relative !important;
+  z-index: 1 !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  min-height: 338px !important;
+  width: min(1340px, calc(100% - 56px)) !important;
+  margin: 0 auto !important;
+  padding: 54px 0 44px !important;
+  pointer-events: auto !important;
+}
+
+body:not(.is-home) .page-hero .hero-copy {
+  max-width: 720px !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  text-shadow: none !important;
+  animation: none !important;
+}
+
+body:not(.is-home) .page-hero .hero-copy h1 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-size: clamp(34px, 4vw, 48px) !important;
+  line-height: 1.15 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+body:not(.is-home) .page-hero .hero-copy > p {
+  margin: 14px 0 0 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
+}
+
+/* Force light overlay on industry light heroes (beats earlier dark ::before blocks) */
+body:not(.is-home).industry-hub-page .page-hero.industry,
+body:not(.is-home).industry-detail-page .page-hero.detail-industry {
+  color: #132238 !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry::before {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 251, 255, 0.96) 0%,
+    rgba(247, 251, 255, 0.82) 58%,
+    rgba(247, 251, 255, 0.12) 100%
+  ) !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry {
+  background-image:
+    linear-gradient(90deg, #f7fbff 0%, rgba(247, 251, 255, 0.94) 54%, rgba(247, 251, 255, 0.48) 100%),
+    url("/precision/manufacturing-service.png") !important;
+  background-position: center 44% !important;
+  min-height: 360px !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry::before {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 251, 255, 0.96) 0%,
+    rgba(247, 251, 255, 0.84) 60%,
+    rgba(247, 251, 255, 0.14) 100%
+  ) !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry {
+  background-image:
+    linear-gradient(90deg, #f7fbff 0%, rgba(247, 251, 255, 0.92) 54%, rgba(247, 251, 255, 0.42) 100%),
+    url("/precision/Aerospace.jpg") !important;
+  background-position: center 46% !important;
+  min-height: 330px !important;
+}
+
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-copy h1 {
+  color: #132238 !important;
+  font-size: clamp(38px, 4.2vw, 56px) !important;
+  line-height: 1.12 !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-copy > p {
+  color: #607086 !important;
+  font-size: 16px !important;
+  line-height: 1.85 !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-stats {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-top: 28px !important;
+  width: min(760px, 100%) !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-stat {
+  min-height: 82px !important;
+  padding: 18px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid #dce7f3 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 28px rgba(20, 34, 52, 0.06) !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-stat strong {
+  color: #004ac6 !important;
+  font-size: 23px !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-stat span {
+  color: #66778c !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-copy h1,
+body:not(.is-home).industry-hub-page .page-hero.industry .hero-copy > p {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Kill residual glow on industry classification titles / section heads */
+body:not(.is-home).industry-hub-page .industry-category-card h3,
+body:not(.is-home).industry-hub-page .industry-category-card span,
+body:not(.is-home).industry-hub-page .industry-category-card p,
+body:not(.is-home).industry-hub-page .industry-category-card .category-tags b,
+body:not(.is-home).industry-hub-page .section-head h2,
+body:not(.is-home).industry-hub-page .section-head p {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Aerospace detail (and any .detail-industry) also uses light hero — match static HTML */
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-inner {
+  min-height: 330px !important;
+  padding: 38px 0 34px !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-copy h1 {
+  color: #132238 !important;
+  font-size: clamp(36px, 3.8vw, 54px) !important;
+  line-height: 1.12 !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-copy > p {
+  color: #607086 !important;
+  font-size: 16px !important;
+  line-height: 1.85 !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .breadcrumb,
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .breadcrumb a,
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .breadcrumb span {
+  color: #738397 !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .breadcrumb b {
+  color: #132238 !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-top: 28px !important;
+  width: min(760px, 100%) !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-stat {
+  min-height: 86px !important;
+  padding: 18px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #dce7f3 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 28px rgba(20, 34, 52, 0.06) !important;
+  backdrop-filter: none !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-stat strong {
+  color: #004ac6 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+body:not(.is-home).industry-detail-page .page-hero.detail-industry .hero-stat span {
+  color: #66778c !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+body:not(.is-home) .page-hero .hero-stats {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 18px 28px !important;
+  margin-top: 28px !important;
+}
+
+body:not(.is-home) .cta-band {
+  padding: 0 !important;
+  background: #004ac6 !important;
+}
+
+body:not(.is-home) .cta-band .cta-inner {
+  min-height: 146px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 28px !important;
+  padding: 32px 0 !important;
+  width: min(1340px, calc(100% - 56px)) !important;
+  margin: 0 auto !important;
+}
+
+body:not(.is-home) .cta-band .cta-inner h2 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-size: 25px !important;
+  line-height: 1.3 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(.is-home) .cta-band .cta-inner p {
+  margin: 10px 0 0 !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+body:not(.is-home) .cta-band .light-btn {
+  min-width: 108px !important;
+  height: 40px !important;
+  padding: 0 18px !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+}
+
+/*
+ * Homepage mobile hardening (body.is-home).
+ * Complements home.css breakpoints; fixes common React-port overflow / stacking issues.
+ */
+@media (max-width: 980px) {
+  body.is-home .topbar {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  body.is-home .nav {
+    width: 100%;
+    order: 3;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  body.is-home .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.is-home .capability-menu,
+  body.is-home .nav-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-height: min(70vh, 560px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 760px) {
+  body.is-home {
+    overflow-x: clip;
+  }
+
+  body.is-home .hero {
+    min-height: 560px;
+  }
+
+  body.is-home .hero-pane {
+    min-height: 280px;
+  }
+
+  body.is-home .hero-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  body.is-home .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.is-home .stat-item {
+    border-right: 0;
+    min-height: 88px;
+    padding: 18px 12px;
+  }
+
+  body.is-home .partner-logos {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  body.is-home .service-grid,
+  body.is-home .card-grid,
+  body.is-home .insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.is-home .process-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.is-home .footer-payment-brand-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.is-home .floating-ai,
+  body.is-home .floating-support {
+    right: 12px;
+  }
+}
+
+/* ========== Quote guest page: force gap + kill text glow (zh/en identical DOM) ========== */
+.quote-guest-page .guest-entry-bar,
+body.quote-guest-page .guest-entry-bar {
+  margin-bottom: clamp(30px, 4vw, 54px) !important;
+  padding-bottom: 0 !important;
+}
+
+.quote-guest-page .guest-quote-hero.is-upload-layout .guest-entry-bar,
+body.quote-guest-page .guest-quote-hero.is-upload-layout .guest-entry-bar {
+  margin-bottom: clamp(64px, 7vw, 100px) !important;
+}
+
+.quote-guest-page .guest-quote-layout,
+body.quote-guest-page .guest-quote-layout {
+  align-items: start !important;
+  margin-top: 0 !important;
+}
+
+.quote-guest-page .guest-quote-copy,
+.quote-guest-page .guest-quote-copy .template-kicker,
+.quote-guest-page .guest-quote-copy h1,
+.quote-guest-page .guest-quote-copy p,
+.quote-guest-page .guest-quote-points span,
+body.quote-guest-page .guest-quote-copy,
+body.quote-guest-page .guest-quote-copy .template-kicker,
+body.quote-guest-page .guest-quote-copy h1,
+body.quote-guest-page .guest-quote-copy p,
+body.quote-guest-page .guest-quote-points span {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+}
+
+/* Nuclear: industry light heroes must never carry dark-hero text glow */
+.industry-hub-page .page-hero.industry .hero-copy,
+.industry-hub-page .page-hero.industry .hero-copy *,
+.industry-detail-page .page-hero.detail-industry .hero-copy,
+.industry-detail-page .page-hero.detail-industry .hero-copy *,
+main.industry-hub-page .page-hero.industry .hero-copy,
+main.industry-hub-page .page-hero.industry .hero-copy *,
+main.industry-detail-page .page-hero.detail-industry .hero-copy,
+main.industry-detail-page .page-hero.detail-industry .hero-copy *,
+body.industry-hub-page .page-hero.industry .hero-copy,
+body.industry-hub-page .page-hero.industry .hero-copy *,
+body.industry-detail-page .page-hero.detail-industry .hero-copy,
+body.industry-detail-page .page-hero.detail-industry .hero-copy * {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+  text-rendering: geometricPrecision;
+}

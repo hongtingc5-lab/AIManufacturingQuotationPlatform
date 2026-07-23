@@ -1,0 +1,176 @@
+{
+  "docTitle": "Medical Part Machining | ProMakeHub",
+  "heroTitle": "Medical Part Machining",
+  "heroDesc": "High-cleanliness precision manufacturing for medical parts",
+  "heroStats": [
+    {
+      "value": "±0.01mm",
+      "label": "Typical machining tolerances"
+    },
+    {
+      "value": "5 axis",
+      "label": "Complex surface processing"
+    },
+    {
+      "value": "48h",
+      "label": "Fastest sample delivery"
+    },
+    {
+      "value": "200+",
+      "label": "Equipment resources"
+    }
+  ],
+  "mediaImg": "/precision/Medical_devices.jpg",
+  "bodyTitle": "Medical Part Machining from validation to stable production",
+  "bodyDesc": "CNC precision machining achieves stable forming of complex contours, hole systems, cavities, threads and assembly reference planes through the collaboration of digital programming, fixture solutions and process inspection. The engineering team evaluates structure, materials, tool path and clamping risks before manufacturing to help customers reduce rework and delivery uncertainty.",
+  "pills": [
+    "Aluminum Alloys",
+    "Stainless Steel",
+    "Titanium Alloys",
+    "Engineering Plastics",
+    "low-volume mass production"
+  ],
+  "panels": [
+    {
+      "title": "Precision Capabilities",
+      "subtitle": "±0.01mm",
+      "body": "For critical dimensions, a testing plan can be developed according to the drawing requirements."
+    },
+    {
+      "title": "Surface Quality",
+      "subtitle": "Ra 0.8",
+      "body": "It can be used with post-processing such as sandblasting, anodizing, and electroplating."
+    },
+    {
+      "title": "Lead Times",
+      "subtitle": "48h+",
+      "body": "Simple structural prototypes can be quickly scheduled and delivered."
+    }
+  ],
+  "tableTitle": "Processing capability parameters",
+  "tableRows": [
+    [
+      "Ability items",
+      "Standard range",
+      "Applicable scenarios",
+      "Remarks"
+    ],
+    [
+      "Processing size",
+      "1200 × 800 × 600mm",
+      "Box, panels, brackets",
+      "Oversizes can be assessed individually"
+    ],
+    [
+      "Typical tolerances",
+      "±0.01-0.05mm",
+      "Assembly datum, hole system positioning",
+      "Adjust according to material and structure"
+    ],
+    [
+      "Minimum aperture",
+      "0.8mm",
+      "Micropores, flow channels, heat dissipation holes",
+      "Need to be combined with the aspect ratio"
+    ],
+    [
+      "surface roughness",
+      "Ra 0.8-3.2",
+      "Appearance surface, assembly surface",
+      "Can be refined later"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Drawing evaluation",
+      "body": "Identify tolerances, materials, heat treatment and surface requirements."
+    },
+    {
+      "index": "02",
+      "title": "process programming",
+      "body": "Determine the tool path, clamping, datum and inspection nodes."
+    },
+    {
+      "index": "03",
+      "title": "Processing and testing",
+      "body": "After the first piece is confirmed, stable processing and process sampling will begin."
+    },
+    {
+      "index": "04",
+      "title": "post processing delivery",
+      "body": "Complete cleaning, appearance, protective packaging and shipment."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable materials",
+      "value": "metal / plastic"
+    },
+    {
+      "label": "Typical batch size",
+      "value": "1-10000 pieces"
+    },
+    {
+      "label": "Drawing format",
+      "value": "STEP / DWG"
+    },
+    {
+      "label": "Quality Documentation",
+      "value": "FAI / CMM"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a processing solution?",
+    "body": "After submitting the drawings, engineers will give more appropriate processing suggestions based on structure and batch size.",
+    "button": "Consult now"
+  },
+  "related": {
+    "title": "Related process recommendations",
+    "desc": "Depending on the part structure and delivery stage, turning, sheet metal, Surface Finishing and other capabilities can be combined to form a complete manufacturing link.",
+    "items": [
+      {
+        "img": "/precision/quality-process.jpg",
+        "title": "Precision Turning",
+        "body": "Suitable for shafts, sleeves, and rotary parts.",
+        "href": "/capabilities",
+        "link": "View details"
+      },
+      {
+        "img": "/precision/product-bracket.jpg",
+        "title": "Sheet Metal Bending",
+        "body": "Suitable for stands, enclosures and lightweight construction.",
+        "href": "/capabilities/process/sheet-metal",
+        "link": "View details"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Surface Finishing",
+        "body": "Improve corrosion resistance, appearance and assembly performance.",
+        "href": "/capabilities",
+        "link": "View details"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Medical Part Machining FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Medical Part Machining suitable for?",
+        "a": "Medical Part Machining is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Medical Part Machining quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Medical Part Machining?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

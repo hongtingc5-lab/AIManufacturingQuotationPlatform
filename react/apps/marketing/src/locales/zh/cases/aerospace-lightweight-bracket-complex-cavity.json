@@ -1,0 +1,9 @@
+{
+  "slug": "航天轻量化支架与复杂腔体",
+  "fileKey": "aerospace-lightweight-bracket-complex-cavity",
+  "docTitle": "轻量化支架与复杂腔体加工 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/case-aero.jpg)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/aerospace\">航天</a><span>/</span><b>行业案例</b></div>\n<span>航天案例</span>\n<h1>轻量化支架与复杂腔体加工</h1>\n<p>承力结构 / 薄壁腔体 / 高强连接</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>航天</strong></div>\n<div><span>零件功能</span><strong>承力结构 / 薄壁腔体 / 高强连接</strong></div>\n<div><span>制造能力</span><strong>五轴加工、铝/钛合金加工、CMM检测、首件资料</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>通过夹具设计、刀路控制和关键尺寸复核，降低薄壁变形对装配基准的影响。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>关键孔系、装配面和外观状态随首件资料同步确认，便于后续小批交付。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"轻量化支架与复杂腔体加工\" src=\"/precision/case-aero.jpg\"/>\n<h3>航天行业制造能力</h3>\n<p>继续查看轻量化结构、钛合金连接件和星载安装板等航天制造案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/aerospace\">返回航天行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

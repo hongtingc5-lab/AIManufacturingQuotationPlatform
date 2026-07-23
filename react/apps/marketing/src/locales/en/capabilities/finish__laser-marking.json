@@ -1,0 +1,144 @@
+{
+  "docTitle": "Laser Marking | ProMakeHub",
+  "heroTitle": "Laser Marking",
+  "heroDesc": "For parts requiring identification, traceability, assembly direction or branding.",
+  "heroStats": [
+    {
+      "value": "Metal / plastic",
+      "label": "Material based"
+    },
+    {
+      "value": "Permanent mark",
+      "label": "Main goal"
+    },
+    {
+      "value": "Low impact",
+      "label": "Local process"
+    },
+    {
+      "value": "Need file",
+      "label": "Artwork / position"
+    }
+  ],
+  "mediaImg": "/precision/precision-shaft-07.png",
+  "bodyTitle": "Process Focus",
+  "bodyDesc": "Permanent serial numbers, QR codes, logos and traceability marks for prototype and batch parts. Actual results depend on material grade, pre-treatment, geometry, thickness, masking and acceptance criteria, so these details should be confirmed during quoting.",
+  "pills": [
+    "Drawing-based",
+    "Masking notes",
+    "Sample review",
+    "Batch records"
+  ],
+  "panels": [
+    {
+      "title": "Drawing input",
+      "subtitle": "Material + finish notes",
+      "body": "State color, thickness, masked faces, cosmetic level and inspection standard."
+    },
+    {
+      "title": "Quality check",
+      "subtitle": "Appearance / size / adhesion",
+      "body": "Appearance, thickness, hardness or corrosion test can be confirmed by process type."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review boundaries first",
+      "body": "Deep holes, sharp edges, thin walls, threads and precision fits need early review."
+    }
+  ],
+  "tableTitle": "Application and Design Notes",
+  "tableRows": [
+    [
+      "Item",
+      "Description",
+      "Notes"
+    ],
+    [
+      "Mark content",
+      "QR code, serial number, logo and direction mark",
+      "Vector or clear artwork files are recommended."
+    ],
+    [
+      "Control points",
+      "Position, contrast, depth and size",
+      "Mark contrast varies by material."
+    ],
+    [
+      "Design note",
+      "Avoid fit faces and high-wear surfaces",
+      "Durability depends on material and mark depth."
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Material fit",
+      "value": "Metal / plastic"
+    },
+    {
+      "label": "Main goal",
+      "value": "Serial numbers, QR codes and traceability marks."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / finish notes"
+    },
+    {
+      "label": "Confirmation",
+      "value": "Drawing, sample or inspection standard"
+    }
+  ],
+  "asideCta": {
+    "title": "Need finishing advice?",
+    "body": "Share material, appearance, function and masking requirements so engineering can match a suitable process.",
+    "button": "Discuss Process"
+  },
+  "related": {
+    "title": "Related Finishes",
+    "desc": "Finishes differ in appearance, thickness, corrosion behavior, wear behavior and cost, so they should be compared against part use.",
+    "items": [
+      {
+        "img": "/precision/aluminum-flashlight-housing-01.png",
+        "title": "Anodizing",
+        "body": "A common aluminum finish that improves corrosion resistance, wear behavior and appearance options such as clear or black.",
+        "href": "/capabilities/finish/anodizing",
+        "link": "View process"
+      },
+      {
+        "img": "/precision/precision-shaft-04.png",
+        "title": "Electroplating",
+        "body": "Zinc, nickel, chrome, tin and other plating routes improve corrosion resistance, conductivity, wear or appearance.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      },
+      {
+        "img": "/precision/sheet-metal-part-01.png",
+        "title": "Painting",
+        "body": "Supports color, gloss, insulating protection and masked areas on metal and selected plastic parts.",
+        "href": "/capabilities/finish",
+        "link": "View process"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Laser Marking FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Laser Marking suitable for?",
+        "a": "Laser Marking is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Laser Marking quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Laser Marking?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

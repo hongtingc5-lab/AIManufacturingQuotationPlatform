@@ -1,0 +1,176 @@
+{
+  "docTitle": "Custom Manufacturing Service | ProMakeHub",
+  "heroTitle": "Custom Manufacturing Service",
+  "heroDesc": "Integrated manufacturing coordination for multi-process, multi-part projects",
+  "heroStats": [
+    {
+      "value": "Multi-Process",
+      "label": "Route Review"
+    },
+    {
+      "value": "BOM",
+      "label": "Part Breakdown"
+    },
+    {
+      "value": "Milestones",
+      "label": "Progress Tracking"
+    },
+    {
+      "value": "Records",
+      "label": "Delivery Archive"
+    }
+  ],
+  "mediaImg": "/precision/manufacturing-service.png",
+  "bodyTitle": "Custom Manufacturing Service turns multi-part requirements into a manufacturable plan",
+  "bodyDesc": "Custom manufacturing service is suitable for projects with multiple parts, multiple processes or assembly delivery. The focus is not a single machine capability, but requirement breakdown, process matching, supplier coordination, quality gates and delivery rhythm. The more complex the project, the more important it is to define use case, assembly relationships and quality documents before quoting.",
+  "pills": [
+    "Multi-Part Projects",
+    "Assemblies",
+    "Fixtures",
+    "Prototypes",
+    "Low Volume"
+  ],
+  "panels": [
+    {
+      "title": "Project Breakdown",
+      "subtitle": "BOM / Drawings",
+      "body": "Split assemblies, purchased parts and made-to-order parts into executable tasks."
+    },
+    {
+      "title": "Process Matching",
+      "subtitle": "Part-by-Part",
+      "body": "Review CNC, sheet metal, molding, 3D printing and finishing combinations."
+    },
+    {
+      "title": "Delivery Management",
+      "subtitle": "Visible Gates",
+      "body": "Track risk through first article, process, assembly and shipment gates."
+    }
+  ],
+  "tableTitle": "Service Scope Reference",
+  "tableRows": [
+    [
+      "Item",
+      "Service Scope",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Requirement Input",
+      "Assembly drawing, part drawings, BOM, quantity, use case",
+      "Equipment modules, prototypes, fixtures",
+      "Complete data improves review accuracy"
+    ],
+    [
+      "Process Mix",
+      "CNC, sheet metal, molding, finishing, assembly",
+      "Multi-part delivery",
+      "Different process lead times need unified scheduling"
+    ],
+    [
+      "Quality Gates",
+      "First article, sampling, assembly check, final inspection",
+      "Functional and assembled parts",
+      "Critical parts need clear inspection criteria"
+    ],
+    [
+      "Delivery Mode",
+      "Partial shipment or assembly delivery",
+      "Prototype and low-volume projects",
+      "Packaging and labels follow order agreement"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Organize requirements",
+      "body": "Provide assembly, BOM, part drawings, quantity, use case and delivery goals."
+    },
+    {
+      "index": "02",
+      "title": "Break down tasks",
+      "body": "Create machining, purchasing, finishing and assembly tasks by part and process."
+    },
+    {
+      "index": "03",
+      "title": "Execute and track",
+      "body": "Move through first article, production, external processing and assembly checks."
+    },
+    {
+      "index": "04",
+      "title": "Archive and deliver",
+      "body": "Prepare parts, inspection records, packaging labels and delivery list."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Suggested Inputs",
+      "value": "Assembly drawing, BOM, part drawings"
+    },
+    {
+      "label": "Project Fit",
+      "value": "Multi-part, assembly, low-volume projects"
+    },
+    {
+      "label": "Deliverables",
+      "value": "Parts, assemblies, delivery list"
+    },
+    {
+      "label": "Quality Focus",
+      "value": "Process handoff, lead time, assembly relationship"
+    }
+  ],
+  "asideCta": {
+    "title": "Submit Requirements",
+    "body": "Upload drawings and project goals so engineers can review the service route.",
+    "button": "Submit Requirements"
+  },
+  "related": {
+    "title": "Related Service Combinations",
+    "desc": "Complex projects often combine multiple services. Review by geometry, volume, material and delivery goals.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining-service.png",
+        "title": "CNC Machining Service",
+        "body": "Milling, turning, mill-turn and hole-pattern machining for metal and engineering plastic parts.",
+        "href": "/capabilities/service/cnc",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/molding-service.png",
+        "title": "Molding Service",
+        "body": "Injection molding, tool trials, low-volume molding and design optimization for plastic parts.",
+        "href": "/capabilities/service/mold",
+        "link": "View Service"
+      },
+      {
+        "img": "/precision/stamping-service.png",
+        "title": "Metal Stamping Service",
+        "body": "Single-stage or progressive stamping for brackets, springs, housings and connectors.",
+        "href": "/capabilities/service/stamping",
+        "link": "View Service"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Custom Manufacturing Service FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Custom Manufacturing Service suitable for?",
+        "a": "Custom Manufacturing Service is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Custom Manufacturing Service quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Custom Manufacturing Service?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

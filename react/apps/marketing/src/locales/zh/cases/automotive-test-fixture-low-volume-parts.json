@@ -1,0 +1,9 @@
+{
+  "slug": "汽车测试夹具与小批试制件",
+  "fileKey": "automotive-test-fixture-low-volume-parts",
+  "docTitle": "测试夹具与小批试制件 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/fixture-assembly-product-01.png)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/automotive\">汽车</a><span>/</span><b>行业案例</b></div>\n<span>汽车案例</span>\n<h1>测试夹具与小批试制件</h1>\n<p>装配验证 / 强度验证 / 试产准备</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>汽车</strong></div>\n<div><span>零件功能</span><strong>装配验证 / 强度验证 / 试产准备</strong></div>\n<div><span>制造能力</span><strong>CNC、钣金、表面处理、装配校准</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>将夹具定位、试制零件和检测基准一并评估，服务研发样车和试产准备。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>多版本样件可快速切换，关键装配尺寸保持批次一致。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"测试夹具与小批试制件\" src=\"/precision/fixture-assembly-product-01.png\"/>\n<h3>汽车行业制造能力</h3>\n<p>继续查看测试夹具、动力支架和传感器安装座等汽车试制案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/automotive\">返回汽车行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

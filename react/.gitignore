@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+*.local
+.DS_Store
+Thumbs.db
+__pycache__/
+*.log
+.turbo/

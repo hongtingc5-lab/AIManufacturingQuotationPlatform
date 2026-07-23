@@ -1,0 +1,176 @@
+{
+  "docTitle": "Metal 3D Printing | ProMakeHub",
+  "heroTitle": "Metal 3D Printing",
+  "heroDesc": "Additive manufacturing for complex metal structures",
+  "heroStats": [
+    {
+      "value": "20-60µm",
+      "label": "Layer Reference"
+    },
+    {
+      "value": "±0.1-0.3mm",
+      "label": "As-Printed Reference"
+    },
+    {
+      "value": "316L / Ti / Al",
+      "label": "Common Materials"
+    },
+    {
+      "value": "Post-Machining",
+      "label": "Critical Faces"
+    }
+  ],
+  "mediaImg": "/precision/3dprint.png",
+  "bodyTitle": "Metal 3D Printing for internal channels, lightweight structures and low-volume metal parts",
+  "bodyDesc": "Metal 3D printing is useful for complex internal channels, lattice lightweighting, conformal cooling and low-volume high-value metal parts that are difficult to machine subtractively. Common powder-bed fusion parts usually require support removal, heat treatment, blasting and CNC post-machining on critical mating surfaces.",
+  "pills": [
+    "316L",
+    "AlSi10Mg",
+    "Ti-6Al-4V",
+    "Tool Cooling",
+    "Lightweight Structures"
+  ],
+  "panels": [
+    {
+      "title": "Design Value",
+      "subtitle": "Internal Channels",
+      "body": "Good for channels, lattice and integrated structures hard to reach by machining."
+    },
+    {
+      "title": "Quality Focus",
+      "subtitle": "Support / Distortion",
+      "body": "Overhangs, thermal stress and powder removal affect delivery quality."
+    },
+    {
+      "title": "Post-Processing",
+      "subtitle": "Heat Treat / CNC",
+      "body": "Mating faces, holes and threads are usually post-machined."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Layer Reference",
+      "20-60µm common",
+      "Precision metal printing, tool inserts",
+      "Depends on machine, material and throughput"
+    ],
+    [
+      "As-Printed Tolerance",
+      "About ±0.1-0.3mm",
+      "Blank size and non-mating surfaces",
+      "Critical dimensions should be CNC machined"
+    ],
+    [
+      "Minimum Wall",
+      "Preferably 0.6-1.0mm+",
+      "Thin walls and lightweight structures",
+      "Depends on material and support strategy"
+    ],
+    [
+      "Post-Processing",
+      "Support removal, heat treatment, blasting",
+      "Structural and functional parts",
+      "Threads and sealing faces should be machined"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Additive manufacturability review",
+      "body": "Check walls, channels, support, powder removal and machining allowance."
+    },
+    {
+      "index": "02",
+      "title": "Orientation and support design",
+      "body": "Control thermal distortion, surface direction and support-removal access."
+    },
+    {
+      "index": "03",
+      "title": "Printing and heat treatment",
+      "body": "Build, depowder, remove support and stress relieve as needed."
+    },
+    {
+      "index": "04",
+      "title": "Post-machining and inspection",
+      "body": "Finish mating faces, holes, threads and sealing faces."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Stainless / Titanium / Aluminum"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "1-500 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "STEP / STL"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "Dimensional / Material Cert Review"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC Machining",
+        "body": "Post-machines critical surfaces on printed parts.",
+        "href": "/capabilities/process/cnc",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/factory-floor3.png",
+        "title": "Complex Part Machining",
+        "body": "Combines process planning for difficult geometry.",
+        "href": "/capabilities/process/special",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/3dprint.png",
+        "title": "Micro 3D Printing",
+        "body": "For smaller resin microstructures.",
+        "href": "/capabilities/process/micro-3d",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Metal 3D Printing FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Metal 3D Printing suitable for?",
+        "a": "Metal 3D Printing is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Metal 3D Printing quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Metal 3D Printing?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

@@ -1,0 +1,144 @@
+{
+  "docTitle": "Carbon Steel | ProMakeHub",
+  "heroTitle": "Carbon Steel",
+  "heroDesc": "A structural material for strength, rigidity, cost control and heat treatment.",
+  "heroStats": [
+    {
+      "value": "about 7.85",
+      "label": "Density g/cm³"
+    },
+    {
+      "value": "grade dependent",
+      "label": "Strength range"
+    },
+    {
+      "value": "Good",
+      "label": "Machining / welding"
+    },
+    {
+      "value": "Needs protection",
+      "label": "Corrosion resistance"
+    }
+  ],
+  "mediaImg": "/precision/product-bracket.jpg",
+  "bodyTitle": "Selection Focus",
+  "bodyDesc": "Carbon steel is widely available and cost controlled, commonly used for machine bases, brackets, shafts, gear blanks and welded structures. Bare steel has limited corrosion resistance, so black oxide, zinc plating, painting, phosphating or other protection is often required.",
+  "pills": [
+    "Q235, 45#, 40Cr",
+    "Built to drawing",
+    "Material documents on request",
+    "Reviewed with process route"
+  ],
+  "panels": [
+    {
+      "title": "Suitable processes",
+      "subtitle": "CNC / Sheet metal / Forming",
+      "body": "The route should be selected by grade, geometry and order quantity."
+    },
+    {
+      "title": "Required inputs",
+      "subtitle": "CAD + drawing + material notes",
+      "body": "Grade, condition, finishing and acceptance requirements should be stated clearly."
+    },
+    {
+      "title": "Risk control",
+      "subtitle": "Review before production",
+      "body": "Thin walls, deep cavities, welding and cosmetic requirements should be checked early."
+    }
+  ],
+  "tableTitle": "Common Grades and Use Guidance",
+  "tableRows": [
+    [
+      "Grade / Type",
+      "Common use",
+      "Notes"
+    ],
+    [
+      "Q235",
+      "Weldments, bases, general brackets",
+      "Defined yield grade and good economy"
+    ],
+    [
+      "45#",
+      "Shafts, connectors, machined structures",
+      "Can be quenched and tempered; stronger than low-carbon steel"
+    ],
+    [
+      "40Cr",
+      "Load shafts, gears, transmission parts",
+      "Better overall properties after heat treatment"
+    ]
+  ],
+  "steps": [],
+  "asideItems": [
+    {
+      "label": "Common grades",
+      "value": "Q235, 45#, 40Cr"
+    },
+    {
+      "label": "Typical uses",
+      "value": "Bases, brackets, shafts and load-bearing mechanical connectors."
+    },
+    {
+      "label": "Suggested files",
+      "value": "STEP / DWG / material notes"
+    },
+    {
+      "label": "Delivery note",
+      "value": "Confirmed by process and stock"
+    }
+  ],
+  "asideCta": {
+    "title": "Need material advice?",
+    "body": "Share the working condition, load, appearance and cost targets so engineering can compare suitable materials.",
+    "button": "Discuss Selection"
+  },
+  "related": {
+    "title": "Related Materials",
+    "desc": "Similar materials differ in strength, weight, corrosion resistance, cost and finishing compatibility, so they are worth comparing before quoting.",
+    "items": [
+      {
+        "img": "/precision/product-flange.jpg",
+        "title": "Aluminum Alloys",
+        "body": "Low density and stable machinability for housings, brackets, fixtures and lightweight structures.",
+        "href": "/capabilities/material/aluminum",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Stainless Steel",
+        "body": "Good corrosion resistance and durability for equipment parts, shafts, fluid-contact and clean environments.",
+        "href": "/capabilities/material/stainless",
+        "link": "View material"
+      },
+      {
+        "img": "/precision/cnc-turned-part-02.png",
+        "title": "Copper Alloys",
+        "body": "Strong electrical and thermal conductivity for contacts, heat-transfer parts, bushings and wear pairs.",
+        "href": "/capabilities/material/copper",
+        "link": "View material"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Carbon Steel FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Carbon Steel suitable for?",
+        "a": "Carbon Steel is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Carbon Steel quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Carbon Steel?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

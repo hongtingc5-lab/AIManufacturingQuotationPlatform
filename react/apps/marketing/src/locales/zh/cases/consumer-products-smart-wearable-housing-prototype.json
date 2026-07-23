@@ -1,0 +1,9 @@
+{
+  "slug": "消费品智能穿戴外壳样件",
+  "fileKey": "consumer-products-smart-wearable-housing-prototype",
+  "docTitle": "智能穿戴外壳样件 | 敏捷智造",
+  "bodyClasses": [
+    "industry-case-page"
+  ],
+  "mainHtml": "\n<section class=\"case-hero\" style=\"--case-bg: url(/precision/industry-consumer-smartwatch.jpg)\">\n<div class=\"container case-hero-inner\">\n<div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/industries\">行业</a><span>/</span><a href=\"/industries/consumer\">消费品</a><span>/</span><b>行业案例</b></div>\n<span>消费品案例</span>\n<h1>智能穿戴外壳样件</h1>\n<p>外观外壳 / 手感验证 / 小尺寸结构</p>\n</div>\n</section>\n<section class=\"section case-detail-section\">\n<div class=\"container case-detail-layout\">\n<article class=\"case-story\">\n<div class=\"case-summary-grid\">\n<div><span>行业</span><strong>消费品</strong></div>\n<div><span>零件功能</span><strong>外观外壳 / 手感验证 / 小尺寸结构</strong></div>\n<div><span>制造能力</span><strong>CNC、喷砂阳极、抛光、喷涂</strong></div>\n</div>\n<h2>项目场景</h2>\n<p>围绕外壳手感、按键装配和外观细节加工展示样件。</p>\n<h2>方案配置</h2>\n<div class=\"case-step-grid\">\n<div><b>01</b><strong>零件功能确认</strong><span>明确装配位置、受力方式、环境条件和验证目标。</span></div>\n<div><b>02</b><strong>工艺与材料匹配</strong><span>根据尺寸、公差、表面和批次要求组合制造能力。</span></div>\n<div><b>03</b><strong>检测与交付</strong><span>围绕关键尺寸、外观状态和装配反馈输出交付资料。</span></div>\n</div>\n<h2>交付结果</h2>\n<p>样件具备展示和装配验证条件，适合发布前评审。</p>\n</article>\n<aside class=\"case-aside\">\n<img alt=\"智能穿戴外壳样件\" src=\"/precision/industry-consumer-smartwatch.jpg\"/>\n<h3>消费品制造能力</h3>\n<p>继续查看外观样机、穿戴外壳和小家电内部支架等消费品试制案例。</p>\n<a class=\"btn btn-primary\" href=\"/industries/consumer\">返回消费品行业</a>\n<a class=\"btn btn-secondary\" href=\"/quote#quote-upload\">提交类似需求</a>\n</aside>\n</div>\n</section>\n"
+}

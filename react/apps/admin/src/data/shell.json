@@ -1,0 +1,129 @@
+{
+  "brand": {
+    "zh": "敏捷智造",
+    "en": "AgileMakeAI"
+  },
+  "brandSub": {
+    "zh": "运营后台",
+    "en": "Ops Console"
+  },
+  "searchPlaceholder": {
+    "zh": "搜索订单、客户、供应商、RFQ…",
+    "en": "Search orders, customers, suppliers, RFQ…"
+  },
+  "adminName": {
+    "zh": "平台管理员",
+    "en": "Platform Admin"
+  },
+  "adminRole": {
+    "zh": "管理员",
+    "en": "Administrator"
+  },
+  "nav": [
+    {
+      "id": "home",
+      "to": "/",
+      "icon": "dashboard",
+      "labelZh": "平台总览",
+      "labelEn": "Overview"
+    },
+    {
+      "id": "users",
+      "to": "/users",
+      "icon": "group",
+      "labelZh": "用户管理",
+      "labelEn": "Users"
+    },
+    {
+      "id": "customers",
+      "to": "/customers",
+      "icon": "handshake",
+      "labelZh": "客户管理",
+      "labelEn": "Customers"
+    },
+    {
+      "id": "suppliers",
+      "to": "/suppliers",
+      "icon": "factory",
+      "labelZh": "供应商管理",
+      "labelEn": "Suppliers"
+    },
+    {
+      "id": "supply",
+      "to": "/supply",
+      "icon": "inventory_2",
+      "labelZh": "供应管理",
+      "labelEn": "Supply"
+    },
+    {
+      "id": "rfq",
+      "to": "/rfq",
+      "icon": "request_quote",
+      "labelZh": "RFQ管理",
+      "labelEn": "RFQ"
+    },
+    {
+      "id": "ai",
+      "to": "/ai",
+      "icon": "psychology",
+      "labelZh": "AI管理",
+      "labelEn": "AI"
+    },
+    {
+      "id": "knowledge",
+      "to": "/knowledge",
+      "icon": "database",
+      "labelZh": "知识库管理",
+      "labelEn": "Knowledge"
+    },
+    {
+      "id": "mes-oversight",
+      "to": "/mes-oversight",
+      "icon": "precision_manufacturing",
+      "labelZh": "MES监管",
+      "labelEn": "MES Oversight"
+    },
+    {
+      "id": "support",
+      "to": "/support",
+      "icon": "support_agent",
+      "labelZh": "客服中心",
+      "labelEn": "Support"
+    },
+    {
+      "id": "marketing-cms",
+      "to": "/marketing-cms",
+      "icon": "campaign",
+      "labelZh": "营销页面管理",
+      "labelEn": "Marketing CMS"
+    },
+    {
+      "id": "permissions",
+      "to": "/permissions",
+      "icon": "vpn_key",
+      "labelZh": "平台权限中心",
+      "labelEn": "Permissions"
+    },
+    {
+      "id": "finance",
+      "to": "/finance",
+      "icon": "payments",
+      "labelZh": "财务管理",
+      "labelEn": "Finance"
+    },
+    {
+      "id": "analytics",
+      "to": "/analytics",
+      "icon": "analytics",
+      "labelZh": "数据分析",
+      "labelEn": "Analytics"
+    },
+    {
+      "id": "settings",
+      "to": "/settings",
+      "icon": "settings",
+      "labelZh": "系统设置",
+      "labelEn": "Settings"
+    }
+  ]
+}

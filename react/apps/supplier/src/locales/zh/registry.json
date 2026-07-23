@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "home",
+    "route": "/",
+    "file": "home.json"
+  },
+  {
+    "slug": "onboarding",
+    "route": "/onboarding",
+    "file": "onboarding.json"
+  },
+  {
+    "slug": "rfq",
+    "route": "/rfq",
+    "file": "rfq.json"
+  },
+  {
+    "slug": "orders-platform",
+    "route": "/orders/platform",
+    "file": "orders-platform.json"
+  },
+  {
+    "slug": "orders-crm",
+    "route": "/orders/crm",
+    "file": "orders-crm.json"
+  },
+  {
+    "slug": "enterprise",
+    "route": "/enterprise",
+    "file": "enterprise.json"
+  },
+  {
+    "slug": "training",
+    "route": "/training",
+    "file": "training.json"
+  },
+  {
+    "slug": "assessment",
+    "route": "/assessment",
+    "file": "assessment.json"
+  },
+  {
+    "slug": "messages",
+    "route": "/messages",
+    "file": "messages.json"
+  },
+  {
+    "slug": "help",
+    "route": "/help",
+    "file": "help.json"
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "brand": "AgileMakeAI",
+  "tagline": "AGILE MANUFACTURING CLOUD",
+  "hub": {
+    "title": "AgileMakeAI | Platform Entry",
+    "eyebrow": "Shared entry (customer workspace by default)",
+    "heroTitle": "Customer workspace first",
+    "heroText": "Customer workspace login is open by default. Admin, MES, and supplier portals are reserved and will be linked later.",
+    "login": "Log in",
+    "register": "Register",
+    "visit": "Visit site",
+    "comingSoon": "Link later",
+    "footer": "Shared auth entry · defaults to customer workspace",
+    "langAria": "Language",
+    "systems": [
+      {
+        "id": "marketing",
+        "icon": "public",
+        "title": "Marketing",
+        "description": "Explore services, industry solutions, and online quoting for visitors and prospects."
+      },
+      {
+        "id": "user",
+        "icon": "groups",
+        "title": "Customer Workspace",
+        "description": "Review quotes, orders, models, and delivery progress. Default login target."
+      },
+      {
+        "id": "admin",
+        "icon": "admin_panel_settings",
+        "title": "Admin Console",
+        "description": "Permissions, operations, and audit console for internal administrators."
+      },
+      {
+        "id": "mes",
+        "icon": "precision_manufacturing",
+        "title": "MES Console",
+        "description": "Production execution, scheduling, and delivery tracking for shop-floor teams."
+      },
+      {
+        "id": "supplier",
+        "icon": "local_shipping",
+        "title": "Supplier Portal",
+        "description": "Order collaboration, delivery response, and credential management for supplier partners."
+      }
+    ]
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Register",
+    "forgot": "Forgot password?",
+    "sendCode": "Send Code",
+    "accountTab": "Account / Email",
+    "smsTab": "Phone",
+    "remember": "Remember this account for 30 days",
+    "orOther": "Or use another access route"
+  }
+}

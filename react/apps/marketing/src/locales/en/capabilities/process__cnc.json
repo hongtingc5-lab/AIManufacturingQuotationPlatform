@@ -1,0 +1,176 @@
+{
+  "docTitle": "CNC Machining | ProMakeHub",
+  "heroTitle": "CNC Machining",
+  "heroDesc": "Multi-axis milling, turning and complex machining",
+  "heroStats": [
+    {
+      "value": "±0.02-0.05mm",
+      "label": "Typical Tolerance"
+    },
+    {
+      "value": "3/4/5 Axis",
+      "label": "Machining Options"
+    },
+    {
+      "value": "Ra1.6-3.2",
+      "label": "Standard Finish"
+    },
+    {
+      "value": "FAI / CMM",
+      "label": "Inspection Support"
+    }
+  ],
+  "mediaImg": "/precision/cnc-machining.png",
+  "bodyTitle": "CNC Machining for precision metal and plastic functional parts",
+  "bodyDesc": "CNC machining uses milling, turning, drilling, tapping and multi-axis operations to manufacture precision parts for prototypes, low-volume runs and demanding functional components. Tolerance capability depends on material, size, wall thickness, fixturing and heat treatment, so critical requirements should be specified on a 2D drawing.",
+  "pills": [
+    "Aluminum",
+    "Stainless Steel",
+    "Copper Alloys",
+    "Titanium",
+    "POM / PEEK"
+  ],
+  "panels": [
+    {
+      "title": "Process Range",
+      "subtitle": "Milling / Turning",
+      "body": "Suitable for hole patterns, cavities, threads, surfaces and assembly datums."
+    },
+    {
+      "title": "Precision Control",
+      "subtitle": "Datum First",
+      "body": "Critical dimensions are controlled through fixturing, toolpath and in-process inspection."
+    },
+    {
+      "title": "Finishing",
+      "subtitle": "Combined as Needed",
+      "body": "Can pair with anodizing, bead blasting, passivation, black oxide and heat treatment."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Typical Tolerance",
+      "±0.02-0.05mm common",
+      "Hole positions, mating faces, datum surfaces",
+      "Tighter tolerances require drawing and process review"
+    ],
+    [
+      "Minimum Hole",
+      "About Ø0.5-1.0mm and up",
+      "Small holes, channels, vent holes",
+      "Depends on aspect ratio and tool reach"
+    ],
+    [
+      "Minimum Wall",
+      "Metals about 0.8mm+, plastics about 1.5mm+",
+      "Thin-wall housings, fixtures, structures",
+      "Thin walls may deform during fixturing"
+    ],
+    [
+      "Surface Roughness",
+      "Ra1.6-3.2 common",
+      "Mating and cosmetic surfaces",
+      "Fine machining or polishing can improve finish"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "Drawing and tolerance review",
+      "body": "Confirm material, critical dimensions, datums, threads and finish requirements."
+    },
+    {
+      "index": "02",
+      "title": "Process and fixture planning",
+      "body": "Define setups, toolpaths, stock allowance and inspection points."
+    },
+    {
+      "index": "03",
+      "title": "Machining and in-process checks",
+      "body": "Start stable machining after first-article confirmation."
+    },
+    {
+      "index": "04",
+      "title": "Finishing and delivery",
+      "body": "Complete deburring, cleaning, finishing, inspection and packaging."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Metals / Engineering Plastics"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "1-10000 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "STEP / IGES / 2D"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "FAI / CMM"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/factory-floor3.png",
+        "title": "Complex Part Machining",
+        "body": "For curved surfaces and multi-datum geometry.",
+        "href": "/capabilities/process/special",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/3dprint.png",
+        "title": "Metal 3D Printing",
+        "body": "For internal channels and lightweight structures.",
+        "href": "/capabilities/process/metal-3d",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Surface Finishing",
+        "body": "Improves corrosion resistance, appearance and function.",
+        "href": "/capabilities/finish",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "CNC Machining FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is CNC Machining suitable for?",
+        "a": "CNC Machining is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a CNC Machining quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for CNC Machining?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

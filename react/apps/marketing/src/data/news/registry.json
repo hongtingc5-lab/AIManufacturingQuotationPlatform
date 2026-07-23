@@ -1,0 +1,51 @@
+{
+  "slugs": [
+    "dfm-design-review",
+    "manufacturing-service-upgrade",
+    "five-axis-complex-parts",
+    "material-performance-comparison",
+    "precision-machining-risk-control",
+    "automation-parts-trends",
+    "aluminum-stainless-titanium",
+    "first-article-cmm",
+    "first-article-batch"
+  ],
+  "bySlug": {
+    "dfm-design-review": {
+      "zhHtml": "资源中心—新闻动态—DFM设计审查子页面.html",
+      "route": "/resources/news/dfm-design-review"
+    },
+    "manufacturing-service-upgrade": {
+      "zhHtml": "资源中心—新闻动态—制造服务能力升级子页面.html",
+      "route": "/resources/news/manufacturing-service-upgrade"
+    },
+    "five-axis-complex-parts": {
+      "zhHtml": "资源中心—新闻动态—复杂零件五轴加工子页面.html",
+      "route": "/resources/news/five-axis-complex-parts"
+    },
+    "material-performance-comparison": {
+      "zhHtml": "资源中心—新闻动态—材料性能参数对比子页面.html",
+      "route": "/resources/news/material-performance-comparison"
+    },
+    "precision-machining-risk-control": {
+      "zhHtml": "资源中心—新闻动态—精密加工项目风险控制子页面.html",
+      "route": "/resources/news/precision-machining-risk-control"
+    },
+    "automation-parts-trends": {
+      "zhHtml": "资源中心—新闻动态—自动化零部件制造趋势子页面.html",
+      "route": "/resources/news/automation-parts-trends"
+    },
+    "aluminum-stainless-titanium": {
+      "zhHtml": "资源中心—新闻动态—铝合金不锈钢钛合金对比子页面.html",
+      "route": "/resources/news/aluminum-stainless-titanium"
+    },
+    "first-article-cmm": {
+      "zhHtml": "资源中心—新闻动态—首件检测与CMM验收子页面.html",
+      "route": "/resources/news/first-article-cmm"
+    },
+    "first-article-batch": {
+      "zhHtml": "资源中心—新闻动态—首件检测与批量验收子页面.html",
+      "route": "/resources/news/first-article-batch"
+    }
+  }
+}

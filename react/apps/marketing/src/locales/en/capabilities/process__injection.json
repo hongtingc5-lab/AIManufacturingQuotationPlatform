@@ -1,0 +1,177 @@
+{
+  "docTitle": "Injection Molding | ProMakeHub",
+  "heroTitle": "Injection Molding",
+  "heroDesc": "Repeatable molding for complex plastic parts",
+  "heroStats": [
+    {
+      "value": "±0.05-0.20mm",
+      "label": "Typical Reference"
+    },
+    {
+      "value": "1.0-3.0mm",
+      "label": "Common Wall"
+    },
+    {
+      "value": "T0 / T1",
+      "label": "Tool Trial"
+    },
+    {
+      "value": "100+ pcs",
+      "label": "Production Fit"
+    }
+  ],
+  "mediaImg": "/precision/injection-molding.png",
+  "bodyTitle": "Injection Molding from DFM and tool trial to production",
+  "bodyDesc": "Injection molding is suitable for plastic parts with production demand. Key factors include material shrinkage, uniform wall thickness, draft angle, gate location and mold cooling. The ranges below are typical references; actual precision depends on resin, part size, tool design and inspection datum.",
+  "pills": [
+    "ABS",
+    "PC",
+    "PP",
+    "PA",
+    "POM",
+    "TPE"
+  ],
+  "panels": [
+    {
+      "title": "Design Focus",
+      "subtitle": "Wall / Draft",
+      "body": "Uniform wall thickness and proper radii help reduce sink, warp and trapped gas."
+    },
+    {
+      "title": "Tool Stage",
+      "subtitle": "Trial Correction",
+      "body": "T0/T1 samples verify dimensions, appearance and assembly."
+    },
+    {
+      "title": "Production Stability",
+      "subtitle": "Process Control",
+      "body": "Production focuses on molding parameters, material batches and first-article checks."
+    }
+  ],
+  "tableTitle": "Process Reference Parameters",
+  "tableRows": [
+    [
+      "Item",
+      "Reference Range",
+      "Suitable Use",
+      "Notes"
+    ],
+    [
+      "Typical Tolerance",
+      "About ±0.05-0.20mm",
+      "Housings, clips, functional plastic parts",
+      "Affected by shrinkage and part size"
+    ],
+    [
+      "Suggested Wall",
+      "1.0-3.0mm common",
+      "Electronics and equipment housings",
+      "Abrupt thickness changes may cause sink or warp"
+    ],
+    [
+      "Draft Angle",
+      "Preferably 1°-2° or more",
+      "Side walls, ribs, deep cavities",
+      "Texture or deep cavities need more draft"
+    ],
+    [
+      "Shrinkage Review",
+      "About 0.2%-2.5% by material",
+      "ABS, PC, PP, PA and more",
+      "Refined by resin grade and trial results"
+    ]
+  ],
+  "steps": [
+    {
+      "index": "01",
+      "title": "DFM and material review",
+      "body": "Check walls, undercuts, parting lines, gates and cosmetic surfaces."
+    },
+    {
+      "index": "02",
+      "title": "Tool design and build",
+      "body": "Design cavity, cooling, ejection and venting structures."
+    },
+    {
+      "index": "03",
+      "title": "Tool trial and correction",
+      "body": "Use T0/T1 samples to verify dimensions, appearance and assembly risks."
+    },
+    {
+      "index": "04",
+      "title": "Production and inspection",
+      "body": "Stabilize parameters and perform first-article, patrol and packaging checks."
+    }
+  ],
+  "asideItems": [
+    {
+      "label": "Applicable Materials",
+      "value": "Engineering Plastics"
+    },
+    {
+      "label": "Typical Volume",
+      "value": "100-100000 pcs"
+    },
+    {
+      "label": "File Formats",
+      "value": "STEP / 2D Drawing"
+    },
+    {
+      "label": "Quality Documents",
+      "value": "FAI / Sampling Report"
+    }
+  ],
+  "asideCta": {
+    "title": "Need a Manufacturing Plan?",
+    "body": "After drawings are submitted, engineers can review geometry, material and volume to suggest a suitable process route.",
+    "button": "Consult Now"
+  },
+  "related": {
+    "title": "Related Process Recommendations",
+    "desc": "Depending on geometry, material and delivery stage, other processes can be combined into a complete manufacturing flow.",
+    "items": [
+      {
+        "img": "/precision/urethane-casting.png",
+        "title": "Urethane Casting",
+        "body": "Low-volume validation before injection tooling.",
+        "href": "/capabilities/process/polyurethane",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/cnc-machining.png",
+        "title": "CNC Machining",
+        "body": "Plastic prototypes for fit and assembly checks.",
+        "href": "/capabilities/process/cnc",
+        "link": "View capability"
+      },
+      {
+        "img": "/precision/product-shaft.jpg",
+        "title": "Surface Finishing",
+        "body": "Supports painting, printing and texture appearance.",
+        "href": "/capabilities/finish",
+        "link": "View capability"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Injection Molding FAQ",
+    "desc": "These answers help clarify fit, input files and quotation review before submitting a manufacturing request.",
+    "items": [
+      {
+        "q": "What projects is Injection Molding suitable for?",
+        "a": "Injection Molding is suitable for projects that need manufacturing review based on drawings, material, quantity, tolerances and delivery goals, especially prototypes, low-volume parts and functional components."
+      },
+      {
+        "q": "What information is needed for a Injection Molding quote?",
+        "a": "Prepare 3D files, 2D drawings when tolerances matter, material grade, quantity, finish requirements, inspection needs and target delivery timing so engineers can evaluate the route accurately."
+      },
+      {
+        "q": "How are lead time and cost confirmed for Injection Molding?",
+        "a": "Lead time and cost are confirmed after reviewing geometry, material, process route, finishing, inspection scope and order quantity. Complex tolerances or special finishes may require engineering confirmation."
+      }
+    ]
+  },
+  "ctaTitle": "Need a manufacturing plan?",
+  "ctaDesc": "Share drawings and requirements — our engineers will recommend a stable process route.",
+  "ctaButton": "Get a quote"
+}

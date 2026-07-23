@@ -1,0 +1,7 @@
+{
+  "docTitle": "设计规范与图纸准备 | 敏捷智造",
+  "bodyClasses": [
+    "supplement-page"
+  ],
+  "mainHtml": "\n<section class=\"supplement-hero\"><div class=\"container supplement-hero-inner\"><div><div class=\"breadcrumb\"><a href=\"/\">首页</a><span>/</span><a href=\"/resources\">资源中心</a><span>/</span><b>设计规范</b></div><h1>图纸与设计规范准备</h1><p>把模型、图纸、公差、材料、表面处理和检测要求整理清楚，可以显著减少报价沟通和生产返工风险。</p><div class=\"supplement-tags\"><span>2D图纸</span><span>关键尺寸</span><span>公差</span><span>检测要求</span></div></div><img alt=\"设计规范与图纸准备\" src=\"/precision/insight-guide.jpg\"/></div></section>\n<section class=\"supplement-section\"><div class=\"container\"><div class=\"supplement-title\"><h2>报价前资料清单</h2><p>报价前把模型、图纸、验收和包装要求准备完整，可以更快完成工艺评估。</p></div><div class=\"supplement-grid\"><article class=\"supplement-card\"><h3>模型信息</h3><p>确认单位、坐标方向、版本号和装配关系，避免模型与图纸不一致。</p></article><article class=\"supplement-card\"><h3>图纸标注</h3><p>标出关键尺寸、公差、螺纹、倒角、表面粗糙度和热处理要求。</p></article><article class=\"supplement-card\"><h3>验收要求</h3><p>说明检测报告、材料证明、外观标准和包装运输要求。</p></article></div></div></section>\n<section class=\"supplement-section soft\"><div class=\"container\"><div class=\"supplement-title\"><h2>容易被遗漏的事项</h2></div><div class=\"process-list\"><div class=\"process-step\"><b>01</b><div><strong>单位与比例</strong><span>英寸、毫米或缩放比例错误会直接影响报价和加工。</span></div></div><div class=\"process-step\"><b>02</b><div><strong>默认公差</strong><span>未标注公差时，应说明采用的通用标准或项目约定。</span></div></div><div class=\"process-step\"><b>03</b><div><strong>表面范围</strong><span>阳极氧化、喷涂、打标等需要明确颜色、区域和遮蔽要求。</span></div></div></div></div></section>\n"
+}
